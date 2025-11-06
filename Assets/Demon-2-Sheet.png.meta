@@ -1,0 +1,847 @@
+fileFormatVersion: 2
+guid: 0790a5d20ed75bf469f6a949d6de2544
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1791118027412482741
+    second: Demon-2-Sheet_0
+  - first:
+      213: -4223761384779500311
+    second: Demon-2-Sheet_1
+  - first:
+      213: 5154679838301988855
+    second: Demon-2-Sheet_2
+  - first:
+      213: 4136676086444707288
+    second: Demon-2-Sheet_3
+  - first:
+      213: 3291897705675303219
+    second: Demon-2-Sheet_4
+  - first:
+      213: -7590909272406106916
+    second: Demon-2-Sheet_5
+  - first:
+      213: -5989181493528424922
+    second: Demon-2-Sheet_6
+  - first:
+      213: 8226651144053548974
+    second: Demon-2-Sheet_7
+  - first:
+      213: -2977954034504173624
+    second: Demon-2-Sheet_8
+  - first:
+      213: 5215872473253934765
+    second: Demon-2-Sheet_9
+  - first:
+      213: 108041546400716257
+    second: Demon-2-Sheet_10
+  - first:
+      213: -1277961816943241842
+    second: Demon-2-Sheet_11
+  - first:
+      213: 4894813746658107728
+    second: Demon-2-Sheet_12
+  - first:
+      213: -651672437140054764
+    second: Demon-2-Sheet_13
+  - first:
+      213: -2243909115539793878
+    second: Demon-2-Sheet_14
+  - first:
+      213: -3055558794456969409
+    second: Demon-2-Sheet_15
+  - first:
+      213: -6163342030842668410
+    second: Demon-2-Sheet_16
+  - first:
+      213: 6415609554972902346
+    second: Demon-2-Sheet_17
+  - first:
+      213: 5647822123283991094
+    second: Demon-2-Sheet_18
+  - first:
+      213: 611058122106085610
+    second: Demon-2-Sheet_19
+  - first:
+      213: 5456719276724965675
+    second: Demon-2-Sheet_20
+  - first:
+      213: -4378695702703053605
+    second: Demon-2-Sheet_21
+  - first:
+      213: 539574888555677098
+    second: Demon-2-Sheet_22
+  - first:
+      213: -360211466218795549
+    second: Demon-2-Sheet_23
+  - first:
+      213: -5646073158447426669
+    second: Demon-2-Sheet_24
+  - first:
+      213: -7494332878713606563
+    second: Demon-2-Sheet_25
+  - first:
+      213: -139874959473255548
+    second: Demon-2-Sheet_26
+  - first:
+      213: 4540040153675322845
+    second: Demon-2-Sheet_27
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 48
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Demon-2-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 154
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b45d741d4aba427e0800000000000000
+      internalID: -1791118027412482741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon-2-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 155
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e4b434266f2265c0800000000000000
+      internalID: -4223761384779500311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon-2-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 156
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f7abd4900a198740800000000000000
+      internalID: 5154679838301988855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon-2-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 155
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ddc36bcbfc686930800000000000000
+      internalID: 4136676086444707288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon-2-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 156
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33923b7a58b2fad20800000000000000
+      internalID: 3291897705675303219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon-2-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 125
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdcd3003c3ca7a690800000000000000
+      internalID: -7590909272406106916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon-2-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 126
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62e05e6e92722eca0800000000000000
+      internalID: -5989181493528424922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon-2-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 126
+        width: 11
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea76f5cf0afea2270800000000000000
+      internalID: 8226651144053548974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon-2-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 125
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c7ffef559e2ca6d0800000000000000
+      internalID: -2977954034504173624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon-2-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 128
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da6f90a2160826840800000000000000
+      internalID: 5215872473253934765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon-2-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 127
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e5d23ac637df7100800000000000000
+      internalID: 108041546400716257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon-2-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 95
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e85d5989f74c34ee0800000000000000
+      internalID: -1277961816943241842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon-2-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 95
+        width: 9
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05161433b2fdde340800000000000000
+      internalID: 4894813746658107728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon-2-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 95
+        width: 10
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41d9a520f5bc4f6f0800000000000000
+      internalID: -651672437140054764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon-2-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 95
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a285df35c880cd0e0800000000000000
+      internalID: -2243909115539793878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon-2-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 100
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3f421a27797895d0800000000000000
+      internalID: -3055558794456969409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon-2-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 95
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68a5366e319677aa0800000000000000
+      internalID: -6163342030842668410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon-2-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 65
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac303cd16e2d80950800000000000000
+      internalID: 6415609554972902346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon-2-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 65
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63a4fe43c48116e40800000000000000
+      internalID: 5647822123283991094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon-2-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 66
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae02041ef1aea7800800000000000000
+      internalID: 611058122106085610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon-2-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 66
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b21d73075492abb40800000000000000
+      internalID: 5456719276724965675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon-2-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 68
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd4eadc257fbb33c0800000000000000
+      internalID: -4378695702703053605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon-2-Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 69
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa5051a9084fc7700800000000000000
+      internalID: 539574888555677098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon-2-Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 36
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ed81087495400bf0800000000000000
+      internalID: -360211466218795549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon-2-Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 35
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3939fd6606e15a1b0800000000000000
+      internalID: -5646073158447426669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon-2-Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 38
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5eaeb714f7cef790800000000000000
+      internalID: -7494332878713606563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon-2-Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 5
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48bdf9727701f0ef0800000000000000
+      internalID: -139874959473255548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon-2-Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 10
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd5d3d13776710f30800000000000000
+      internalID: 4540040153675322845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: ddb55f2a6486e9446ad553f269a3067c
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":48.0,"y":48.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Demon-2-Sheet_0: -1791118027412482741
+      Demon-2-Sheet_1: -4223761384779500311
+      Demon-2-Sheet_10: 108041546400716257
+      Demon-2-Sheet_11: -1277961816943241842
+      Demon-2-Sheet_12: 4894813746658107728
+      Demon-2-Sheet_13: -651672437140054764
+      Demon-2-Sheet_14: -2243909115539793878
+      Demon-2-Sheet_15: -3055558794456969409
+      Demon-2-Sheet_16: -6163342030842668410
+      Demon-2-Sheet_17: 6415609554972902346
+      Demon-2-Sheet_18: 5647822123283991094
+      Demon-2-Sheet_19: 611058122106085610
+      Demon-2-Sheet_2: 5154679838301988855
+      Demon-2-Sheet_20: 5456719276724965675
+      Demon-2-Sheet_21: -4378695702703053605
+      Demon-2-Sheet_22: 539574888555677098
+      Demon-2-Sheet_23: -360211466218795549
+      Demon-2-Sheet_24: -5646073158447426669
+      Demon-2-Sheet_25: -7494332878713606563
+      Demon-2-Sheet_26: -139874959473255548
+      Demon-2-Sheet_27: 4540040153675322845
+      Demon-2-Sheet_3: 4136676086444707288
+      Demon-2-Sheet_4: 3291897705675303219
+      Demon-2-Sheet_5: -7590909272406106916
+      Demon-2-Sheet_6: -5989181493528424922
+      Demon-2-Sheet_7: 8226651144053548974
+      Demon-2-Sheet_8: -2977954034504173624
+      Demon-2-Sheet_9: 5215872473253934765
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
