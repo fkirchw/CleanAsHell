@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     [SerializeField] private Animator animator;
     private SpriteRenderer spriteRenderer;
     private Rigidbody2D rb;
-    private bool isGrounded = true; // Zum Pr�fen, ob Spieler auf dem Boden ist
+    private bool isGrounded = true; // Check if player is grounded
 
     private void Awake()
     {   
@@ -21,23 +21,23 @@ public class Player : MonoBehaviour
     {
         float horizontal = Input.GetAxisRaw("Horizontal");
 
-        // Bewegung
+        // horizontal movement
         rb.linearVelocity = new Vector2(horizontal * moveSpeed, rb.linearVelocity.y);
 
-        // Richtung umdrehen
+        // Filp direction
         if (horizontal < 0)
             spriteRenderer.flipX = true;
         else if (horizontal > 0)
             spriteRenderer.flipX = false;
         
-        // Animation
+        // set animation
         animator.SetBool(IsRunning, horizontal != 0);
 
-        // Sprung
+        // jump
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
-            isGrounded = false; // verhindert Doppelspr�nge
+            isGrounded = false; // prevent double jumps
             animator.speed = 0f;
         }
     }
@@ -47,7 +47,7 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
-            isGrounded = true;
+            isGrounded = true; // player has landed and can jump again
             animator.speed = 1f;
         }
     }
