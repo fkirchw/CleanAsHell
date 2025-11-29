@@ -1187,6 +1187,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 9130070834639896762, guid: 2c634abe36fa3a1c7b7a09f9ea4ad2e7, type: 3}
+      propertyPath: m_BoneTransforms.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9130070834639896762, guid: 2c634abe36fa3a1c7b7a09f9ea4ad2e7, type: 3}
       propertyPath: 'm_BoneTransforms.Array.data[0]'
       value: 
       objectReference: {fileID: 0}
@@ -1194,8 +1198,7 @@ PrefabInstance:
       propertyPath: 'm_BoneTransforms.Array.data[1]'
       value: 
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 3328535354420056128, guid: 2c634abe36fa3a1c7b7a09f9ea4ad2e7, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 2266672825221267744, guid: 2c634abe36fa3a1c7b7a09f9ea4ad2e7, type: 3}
     m_AddedGameObjects: []
