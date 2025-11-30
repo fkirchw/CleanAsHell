@@ -40,6 +40,12 @@ public class Player : MonoBehaviour
             isGrounded = false; // verhindert Doppelsprünge
             animator.speed = 0f;
         }
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            LuciferMain lucifer = GetComponent<LuciferMain>();
+            lucifer.TriggeredByPlayer();
+        }
     }
 
     // Prüfen, ob der Spieler wieder auf dem Boden ist
@@ -51,4 +57,6 @@ public class Player : MonoBehaviour
             animator.speed = 1f;
         }
     }
+
+    
 }
