@@ -112,6 +112,9 @@ Cache/
 .idea/
 *.iml
 
+# Crash/Recovery files
+/Assets/_Recovery/
+mono_crash.mem*
 # ============================================
 # End of Unity.gitignore
 # ============================================
