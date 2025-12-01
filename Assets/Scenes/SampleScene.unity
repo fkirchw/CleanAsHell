@@ -269,7 +269,7 @@ Transform:
   m_GameObject: {fileID: 170008830}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.02, y: -3.734, z: 0}
+  m_LocalPosition: {x: -0.49, y: -3.734, z: 0}
   m_LocalScale: {x: 3.5, y: 3.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1331,9 +1331,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1093966860}
     - target: {fileID: 8887320234082179659, guid: 795d13b5168cc3ed5adc61375ac83f05, type: 3}
+      propertyPath: bloodTiling
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8887320234082179659, guid: 795d13b5168cc3ed5adc61375ac83f05, type: 3}
       propertyPath: floorTilemap
       value: 
       objectReference: {fileID: 1041884314}
+    - target: {fileID: 8887320234082179659, guid: 795d13b5168cc3ed5adc61375ac83f05, type: 3}
+      propertyPath: enableDripping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8887320234082179659, guid: 795d13b5168cc3ed5adc61375ac83f05, type: 3}
+      propertyPath: enableSpreading
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8887320234082179659, guid: 795d13b5168cc3ed5adc61375ac83f05, type: 3}
+      propertyPath: bloodSplatTexture
+      value: 
+      objectReference: {fileID: 2800000, guid: 17c64cc824c54337bf8cfd60bdc8b6de, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1394,11 +1410,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1889392903192716786, guid: 2c634abe36fa3a1c7b7a09f9ea4ad2e7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.528
+      value: -3.71
       objectReference: {fileID: 0}
     - target: {fileID: 1889392903192716786, guid: 2c634abe36fa3a1c7b7a09f9ea4ad2e7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.89
+      value: -3.65
       objectReference: {fileID: 0}
     - target: {fileID: 1889392903192716786, guid: 2c634abe36fa3a1c7b7a09f9ea4ad2e7, type: 3}
       propertyPath: m_LocalPosition.z
