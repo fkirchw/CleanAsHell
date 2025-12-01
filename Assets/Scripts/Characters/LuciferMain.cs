@@ -31,7 +31,7 @@ public class LuciferMain : MonoBehaviour, IDamageable
             return;
         }
 
-        if (playerDetected && playerPosition != null)
+        if (playerDetected && playerPosition)
         {
             HandleMovement();
         }
@@ -119,6 +119,17 @@ public class LuciferMain : MonoBehaviour, IDamageable
     {
         health -= damage;
 
+        // Add blood
+        if (BloodSystem.Instance)
+        {
+            BloodSystem.Instance.OnEnemyHit(
+                transform.position,
+                knockbackDir,
+                false,
+                0.3f // Blood amount
+            );
+        }
+        
         if (health <= 0)
         {
             isDead = true;
