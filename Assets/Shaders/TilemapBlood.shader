@@ -104,13 +104,13 @@ Shader "Custom/TilemapBlood"
                 fixed4 bloodPattern = tex2D(_BloodTexture, i.texcoord * _BloodTiling);
 
                 // Darken the base tile where blood is (blood soaks in)
-                fixed4 darkenedBase = baseColor * (1.0 - bloodAmount * 0.3);
+                fixed4 darkenedBase = baseColor * (1.0 - bloodAmount * 0.15);
 
                 // Create blood overlay color
                 fixed4 bloodOverlay = bloodPattern * _BloodColor;
 
                 // Combine: darkened base + blood on top
-                fixed4 finalColor = darkenedBase + (bloodOverlay * bloodAmount);
+                fixed4 finalColor = darkenedBase + (bloodOverlay * bloodAmount * 2.0);
 
                 // Apply vertex color
                 finalColor *= i.color;

@@ -12,8 +12,11 @@ public class PlayerScript : MonoBehaviour, IDamageable
     
     [Header("Ground-Based Cleaning")]
     [SerializeField] private bool useGroundBasedCleaning = true;
-    [SerializeField] private float maxCleaningHeight = 2f; // Max distance below player to clean
-    [SerializeField] private float verticalTolerance = 0.3f; // Tolerance for same platform
+    [SerializeField] private float maxCleaningHeight = 2f;
+    [SerializeField] private float verticalTolerance = 0.3f;
+    [SerializeField] private bool useMultiRaycast = true; // NEW: Use multiple raycasts
+    [SerializeField] private int raycastCount = 5; // NEW: Number of raycasts to use
+    [SerializeField] private float raycastSpread = 1f; // NEW: How far apart the raycasts are
 
     [Header("Foam Visual Feedback")] 
     [SerializeField] private ParticleSystem foamParticles;
@@ -48,6 +51,7 @@ public class PlayerScript : MonoBehaviour, IDamageable
     // Debugging
     private float bloodCleanedThisFrame;
     private int cleaningFrames;
+    private Vector2[] raycastPositions; // For debug visualization
 
     private void Start()
     {
@@ -192,7 +196,6 @@ public class PlayerScript : MonoBehaviour, IDamageable
         cleaningFrames = 0;
         hasGroundHeight = false;
         
-        // Find the ground height when starting to clean
         if (useGroundBasedCleaning)
         {
             FindGroundHeight();
@@ -205,12 +208,25 @@ public class PlayerScript : MonoBehaviour, IDamageable
     {
         isCleaning = false;
         hasGroundHeight = false;
+        raycastPositions = null;
         Debug.Log($"Stopped cleaning. Cleaned for {cleaningFrames} frames.");
     }
 
     void FindGroundHeight()
     {
-        // Raycast downward to find the ground beneath the player
+        if (useMultiRaycast)
+        {
+            FindGroundHeightMultiRaycast();
+        }
+        else
+        {
+            FindGroundHeightSingleRaycast();
+        }
+    }
+
+    void FindGroundHeightSingleRaycast()
+    {
+        // Original single raycast method
         RaycastHit2D hit = Physics2D.Raycast(
             transform.position,
             Vector2.down,
@@ -218,24 +234,74 @@ public class PlayerScript : MonoBehaviour, IDamageable
             groundLayer
         );
 
-        if (hit.collider)
+        if (hit.collider != null)
         {
             groundY = hit.point.y;
             hasGroundHeight = true;
-            Debug.Log($"Found ground at Y={groundY:F2}");
         }
         else
         {
-            // Fallback: use player's Y position
             groundY = transform.position.y;
             hasGroundHeight = true;
             Debug.LogWarning($"No ground found below player, using player Y={groundY:F2}");
         }
     }
 
+    void FindGroundHeightMultiRaycast()
+    {
+        // Cast multiple rays in a line to catch platform edges
+        // This helps when player is at edge of platform with pit below
+        
+        raycastPositions = new Vector2[raycastCount];
+        float closestGroundY = float.NegativeInfinity;
+        bool foundAnyGround = false;
+
+        // Calculate ray positions spread out horizontally
+        float startX = -raycastSpread / 2f;
+        float stepX = raycastCount > 1 ? raycastSpread / (raycastCount - 1) : 0;
+
+        for (int i = 0; i < raycastCount; i++)
+        {
+            float offsetX = startX + (stepX * i);
+            Vector2 rayOrigin = new Vector2(transform.position.x + offsetX, transform.position.y);
+            raycastPositions[i] = rayOrigin;
+
+            RaycastHit2D hit = Physics2D.Raycast(
+                rayOrigin,
+                Vector2.down,
+                maxCleaningHeight,
+                groundLayer
+            );
+
+            if (hit.collider != null)
+            {
+                // Found ground - use the closest (highest) ground
+                if (hit.point.y > closestGroundY)
+                {
+                    closestGroundY = hit.point.y;
+                    foundAnyGround = true;
+                }
+            }
+        }
+
+        if (foundAnyGround)
+        {
+            groundY = closestGroundY;
+            hasGroundHeight = true;
+            Debug.Log($"Multi-raycast found ground at Y={groundY:F2}");
+        }
+        else
+        {
+            // No ground found by any raycast - fallback to player height
+            groundY = transform.position.y;
+            hasGroundHeight = true;
+            Debug.LogWarning($"Multi-raycast found no ground, using player Y={groundY:F2}");
+        }
+    }
+
     void PerformCleaning()
     {
-        if (!BloodSystem.Instance)
+        if (BloodSystem.Instance == null)
         {
             Debug.LogWarning("Cannot clean - BloodSystem.Instance is null!");
             return;
@@ -253,7 +319,6 @@ public class PlayerScript : MonoBehaviour, IDamageable
         
         if (useGroundBasedCleaning && hasGroundHeight)
         {
-            // Use ground-based cleaning that only cleans the floor we're on
             BloodSystem.Instance.CleanBloodOnGround(
                 transform.position,
                 groundY,
@@ -264,7 +329,6 @@ public class PlayerScript : MonoBehaviour, IDamageable
         }
         else
         {
-            // Use simple radius-based cleaning (old behavior)
             BloodSystem.Instance.CleanBlood(
                 transform.position,
                 cleanRadius,
@@ -304,7 +368,6 @@ public class PlayerScript : MonoBehaviour, IDamageable
         Vector2 randomOffset = Random.insideUnitCircle * cleanRadius;
         Vector2 spawnPosition = (Vector2)transform.position + randomOffset;
         
-        // If using ground-based cleaning, spawn particles at ground level
         float targetY = useGroundBasedCleaning && hasGroundHeight ? groundY : transform.position.y;
         
         RaycastHit2D hit = Physics2D.Raycast(
@@ -353,9 +416,28 @@ public class PlayerScript : MonoBehaviour, IDamageable
             Vector3 toleranceSize = new Vector3(cleanRadius * 2, verticalTolerance * 2, 0);
             Gizmos.DrawCube(new Vector3(transform.position.x, groundY, 0), toleranceSize);
             
-            // Draw raycast to ground
-            Gizmos.color = Color.yellow;
-            Gizmos.DrawLine(transform.position, new Vector2(transform.position.x, groundY));
+            // Draw multi-raycast positions
+            if (useMultiRaycast && raycastPositions != null)
+            {
+                for (int i = 0; i < raycastPositions.Length; i++)
+                {
+                    Vector2 rayStart = raycastPositions[i];
+                    Vector2 rayEnd = new Vector2(rayStart.x, groundY);
+                    
+                    // Color based on whether this ray hit ground
+                    bool hitGround = Mathf.Abs(rayEnd.y - groundY) < 0.1f;
+                    Gizmos.color = hitGround ? Color.yellow : Color.red;
+                    
+                    Gizmos.DrawLine(rayStart, rayEnd);
+                    Gizmos.DrawWireSphere(rayStart, 0.1f);
+                }
+            }
+            else
+            {
+                // Draw single raycast
+                Gizmos.color = Color.yellow;
+                Gizmos.DrawLine(transform.position, new Vector2(transform.position.x, groundY));
+            }
         }
     
         // Draw attack range
