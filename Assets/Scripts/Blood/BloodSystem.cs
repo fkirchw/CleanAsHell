@@ -479,6 +479,70 @@ public class BloodSystem : MonoBehaviour
         needsVisualUpdate = true;
     }
 
+    public void CleanBloodOnGround(Vector2 worldPosition, float groundY, float verticalTolerance,
+        float horizontalRadius, float cleanAmount)
+    {
+        // Convert horizontal radius to grid cells
+        int radiusCells = Mathf.CeilToInt(horizontalRadius / grid.cellSize.x);
+
+        // Convert vertical tolerance to grid cells
+        int verticalCells = Mathf.Max(1, Mathf.CeilToInt(verticalTolerance / grid.cellSize.y));
+
+        // Find the center cell based on player position
+        Vector3Int centerCell = grid.WorldToCell(worldPosition);
+
+        // Find the ground cell Y coordinate
+        Vector3Int groundCell = grid.WorldToCell(new Vector2(worldPosition.x, groundY));
+        int targetY = groundCell.y;
+
+        int cleanedCount = 0;
+
+        // Only iterate horizontally around the player
+        for (int x = -radiusCells; x <= radiusCells; x++)
+        {
+            // Only check cells near the ground height (with tolerance)
+            for (int yOffset = -verticalCells; yOffset <= verticalCells; yOffset++)
+            {
+                Vector3Int cellPos = new Vector3Int(
+                    centerCell.x + x,
+                    targetY + yOffset, // Use ground Y, not player Y
+                    0
+                );
+
+                int arrayX = cellPos.x - gridOffset.x;
+                int arrayY = cellPos.y - gridOffset.y;
+
+                if (arrayX < 0 || arrayX >= gridWidth || arrayY < 0 || arrayY >= gridHeight)
+                    continue;
+
+                // Check if this cell is within horizontal radius
+                Vector2 cellCenter = grid.CellToWorld(cellPos);
+                float horizontalDist = Mathf.Abs(cellCenter.x - worldPosition.x);
+
+                if (horizontalDist > horizontalRadius)
+                    continue;
+
+                // Check if cell is within vertical tolerance of ground
+                float verticalDist = Mathf.Abs(cellCenter.y - groundY);
+                if (verticalDist > verticalTolerance)
+                    continue;
+
+                // Clean this cell
+                float before = bloodData[arrayX, arrayY];
+                bloodData[arrayX, arrayY] = Mathf.Max(0, bloodData[arrayX, arrayY] - cleanAmount);
+
+                if (before > 0.001f)
+                    cleanedCount++;
+            }
+        }
+
+        if (cleanedCount > 0)
+        {
+            needsVisualUpdate = true;
+        }
+    }
+
+
     /// <summary>
     /// Get total blood amount in the level
     /// </summary>

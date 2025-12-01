@@ -184,6 +184,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   cleanRadius: 1
   cleanRate: 0.5
+  useGroundBasedCleaning: 1
+  maxCleaningHeight: 1
+  verticalTolerance: 2
   foamParticles: {fileID: 6918102650768965082}
   groundLayer:
     serializedVersion: 2

@@ -1355,7 +1355,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8887320234082179659, guid: 795d13b5168cc3ed5adc61375ac83f05, type: 3}
       propertyPath: enableSpreading
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8887320234082179659, guid: 795d13b5168cc3ed5adc61375ac83f05, type: 3}
       propertyPath: bloodSplatTexture
@@ -1421,6 +1421,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1418720925}
   - component: {fileID: 1418720924}
+  - component: {fileID: 1418720926}
   m_Layer: 0
   m_Name: DebugUiAnchor
   m_TagString: Untagged
@@ -1461,6 +1462,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1418720926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1418720923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2a61991ea634b35a350d5f6c1e3539a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Blood.UI.BloodSystemTester
+  testBloodAmount: 0.5
+  testCleanAmount: 0.3
+  testRadius: 2
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  showMouseGizmo: 1
+  gizmoColor: {r: 0, g: 1, b: 1, a: 1}
 --- !u!1001 &1373154740350362925
 PrefabInstance:
   m_ObjectHideFlags: 0
