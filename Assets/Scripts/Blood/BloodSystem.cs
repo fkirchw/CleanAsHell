@@ -136,6 +136,15 @@ public class BloodSystem : MonoBehaviour
         bloodMaterial.SetColor("_BloodColor", bloodColor);
         bloodMaterial.SetFloat("_BloodTiling", bloodTiling);
 
+        // Set up the blood mask tiling/offset to match grid bounds
+        Vector4 maskST = new Vector4(
+            1f / (gridWidth * grid.cellSize.x), // Scale X
+            1f / (gridHeight * grid.cellSize.y), // Scale Y
+            -gridOffset.x / (float)gridWidth, // Offset X
+            -gridOffset.y / (float)gridHeight // Offset Y
+        );
+        bloodMaterial.SetVector("_BloodMask_ST", maskST);
+
         renderer.material = bloodMaterial;
 
         Debug.Log($"Blood system initialized: {gridWidth}x{gridHeight} grid");
@@ -151,6 +160,7 @@ public class BloodSystem : MonoBehaviour
         Vector2 stainCenter = CalculateStainCenter(hitPosition, strikeDirection, isAirborne);
         StainArea(stainCenter, strikeDirection, bloodAmount);
     }
+
     void SpawnParticles(Vector2 position, Vector2 direction, float bloodAmount)
     {
         if (!bloodParticles) return;
@@ -160,7 +170,7 @@ public class BloodSystem : MonoBehaviour
         main.startSpeed = 0f;
 
         int particleCount = Mathf.RoundToInt(Random.Range(5, 15) * bloodAmount);
-    
+
         for (int i = 0; i < particleCount; i++)
         {
             // Create cone spread
@@ -171,13 +181,13 @@ public class BloodSystem : MonoBehaviour
                 Mathf.Sin(baseAngle + coneSpread),
                 0f
             ) * Random.Range(3f, 7f);
-        
+
             ParticleSystem.EmitParams emitParams = new ParticleSystem.EmitParams();
             emitParams.position = position;
             emitParams.velocity = particleVelocity;
             emitParams.startSize = Random.Range(0.1f, 0.3f);
             emitParams.startLifetime = Random.Range(0.5f, 1.5f);
-        
+
             bloodParticles.Emit(emitParams, 1);
         }
     }
@@ -208,22 +218,45 @@ public class BloodSystem : MonoBehaviour
     {
         Vector3Int centerCell = grid.WorldToCell(centerPosition);
 
-        int width = 2;
-        int length = 3;
+        // Normalize direction for calculations
+        Vector2 normalizedDir = direction.normalized;
 
-        Vector2Int dirVector = GetDirectionalVector(direction);
+        // Create a more focused blood pattern behind the hit point
+        int stainRadius = 2; // How far blood spreads
+        int cellsProcessed = 0;
+        int maxCells = 8; // Limit total cells affected
 
-        for (int x = 0; x < width; x++)
+        for (int x = -stainRadius; x <= stainRadius; x++)
         {
-            for (int y = 0; y < length; y++)
+            for (int y = -stainRadius; y <= stainRadius; y++)
             {
-                Vector3Int cellPos = centerCell + new Vector3Int(
-                    x - width / 2 + dirVector.x * y,
-                    y - length / 2 + dirVector.y * y,
-                    0
-                );
+                if (cellsProcessed >= maxCells) break;
 
-                AddBloodAtCell(cellPos, bloodAmount / (width * length));
+                Vector3Int cellPos = centerCell + new Vector3Int(x, y, 0);
+
+                // Convert cell back to world space to check if it's behind the origin
+                Vector2 cellWorld = grid.CellToWorld(cellPos);
+                Vector2 toCell = cellWorld - centerPosition;
+
+                // Check if cell is in the direction of the strike (behind the hit point)
+                float dotProduct = Vector2.Dot(toCell.normalized, normalizedDir);
+
+                // Only stain cells that are in the forward direction of the strike
+                // (positive dot product means same direction)
+                if (dotProduct > 0.3f) // Threshold to create a cone shape
+                {
+                    float distance = toCell.magnitude;
+
+                    // Reduce blood amount based on distance
+                    float distanceFalloff = Mathf.Max(0, 1f - (distance / (stainRadius * grid.cellSize.x)));
+                    float cellBloodAmount = bloodAmount * distanceFalloff * 0.3f;
+
+                    if (cellBloodAmount > 0.01f)
+                    {
+                        AddBloodAtCell(cellPos, cellBloodAmount);
+                        cellsProcessed++;
+                    }
+                }
             }
         }
 
@@ -261,7 +294,8 @@ public class BloodSystem : MonoBehaviour
                 float spreadAmount = currentBlood * spreadRate;
 
                 // Check 4 neighbors
-                Vector2Int[] neighbors = {
+                Vector2Int[] neighbors =
+                {
                     new Vector2Int(x - 1, y),
                     new Vector2Int(x + 1, y),
                     new Vector2Int(x, y - 1),

@@ -45,6 +45,7 @@ Shader "Custom/TilemapBlood"
             float4 _BloodColor;
             float _BloodTiling;
             float4 _MainTex_ST;
+            float4 _BloodMask_ST;
 
             struct appdata
             {
@@ -58,6 +59,7 @@ Shader "Custom/TilemapBlood"
                 float4 vertex : SV_POSITION;
                 fixed4 color : COLOR;
                 float2 texcoord : TEXCOORD0;
+                float2 worldPos : TEXCOORD1;  // Add world position
             };
 
             v2f vert(appdata v)
@@ -67,6 +69,9 @@ Shader "Custom/TilemapBlood"
                 o.vertex = UnityObjectToClipPos(v.vertex);
                 o.texcoord = TRANSFORM_TEX(v.texcoord, _MainTex);
                 o.color = v.color;
+                
+                // Calculate world position for blood mask sampling
+                o.worldPos = mul(unity_ObjectToWorld, v.vertex).xy;
                 
                 #ifdef PIXELSNAP_ON
                 o.vertex = UnityPixelSnap(o.vertex);
@@ -80,8 +85,10 @@ Shader "Custom/TilemapBlood"
                 // Sample the base tile texture
                 fixed4 baseColor = tex2D(_MainTex, i.texcoord);
                 
-                // Sample the blood mask (how much blood is at this location)
-                fixed bloodAmount = tex2D(_BloodMask, i.texcoord).r;
+                // Sample the blood mask using WORLD POSITION, not sprite UVs
+                // This ensures each tile samples its corresponding position in the mask
+                float2 bloodMaskUV = i.worldPos * _BloodMask_ST.xy + _BloodMask_ST.zw;
+                fixed bloodAmount = tex2D(_BloodMask, bloodMaskUV).r;
                 
                 // Early exit if no blood
                 if (bloodAmount < 0.001)
@@ -93,7 +100,6 @@ Shader "Custom/TilemapBlood"
                 fixed4 bloodPattern = tex2D(_BloodTexture, i.texcoord * _BloodTiling);
                 
                 // Darken the base tile where blood is (blood soaks in)
-                // This creates a more realistic effect than just overlaying
                 fixed4 darkenedBase = baseColor * (1.0 - bloodAmount * 0.3);
                 
                 // Create blood overlay color
@@ -102,7 +108,7 @@ Shader "Custom/TilemapBlood"
                 // Combine: darkened base + blood on top
                 fixed4 finalColor = darkenedBase + (bloodOverlay * bloodAmount);
                 
-                // Apply vertex color (for Unity's sprite tinting)
+                // Apply vertex color
                 finalColor *= i.color;
                 
                 // Preserve original alpha
