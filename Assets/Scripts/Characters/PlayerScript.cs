@@ -29,15 +29,15 @@ public class PlayerScript : MonoBehaviour, IDamageable
 
     [Header("Movement Settings")] [SerializeField]
     private float moveSpeed = 5f;
-    
-    [Header("Jump Settings")]
-    [SerializeField] private float jumpForce = 10f;
+
+    [Header("Jump Settings")] [SerializeField]
+    private float jumpForce = 10f;
     [SerializeField] private float jumpCutMultiplier = 0.5f; // How much to cut velocity by (0.5 = cut to 50%)
     [SerializeField] private float minJumpVelocity = 2f; // Minimum upward velocity before we allow cutting
 
 
-    [Header("Combat Settings")] 
-    [SerializeField] private Animator animator;
+    [Header("Combat Settings")] [SerializeField]
+    private Animator animator;
     [SerializeField] private int health = 10;
     [SerializeField] private float attackDistance = 1;
     private int damage = 5;
@@ -148,9 +148,43 @@ public class PlayerScript : MonoBehaviour, IDamageable
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Ground"))
+        if (!collision.gameObject.CompareTag("Ground"))
+        {
+            return;
+        }
+
+        // When leaving any ground collision, verify if we're still on ground
+        // Use a small raycast downward from the bottom of our collider
+        float checkDistance = 0.2f;
+        Vector2 rayOrigin = new Vector2(transform.position.x, collider2D.bounds.min.y);
+
+        RaycastHit2D hit = Physics2D.Raycast(
+            rayOrigin,
+            Vector2.down,
+            checkDistance,
+            groundLayer
+        );
+
+        // Only unground if we're not touching ground below us
+        if (hit.collider == null)
         {
             isGrounded = false;
+        }
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (!collision.gameObject.CompareTag("Ground"))
+        {
+            return;
+        }
+
+        // Continuously check if we're landing/standing on ground
+        if (IsLandingCollision(collision))
+        {
+            isGrounded = true;
+            animator.speed = 1f;
+            isKnockback = false;
         }
     }
 
@@ -210,7 +244,7 @@ public class PlayerScript : MonoBehaviour, IDamageable
             if (rigidbody2D.linearVelocity.y > minJumpVelocity)
             {
                 rigidbody2D.linearVelocity = new Vector2(
-                    rigidbody2D.linearVelocity.x, 
+                    rigidbody2D.linearVelocity.x,
                     rigidbody2D.linearVelocity.y * jumpCutMultiplier
                 );
             }
@@ -258,9 +292,9 @@ public class PlayerScript : MonoBehaviour, IDamageable
             damageable.TakeDamage(damage, facingDirection, 0f);
         }
     }
-    
+
     //endregion
-    
+
     // region cleaning
     // subregion mechanics
     void StartCleaning()
@@ -437,7 +471,7 @@ public class PlayerScript : MonoBehaviour, IDamageable
             EmitFoamParticle();
         }
     }
-    
+
     //endsubregion
     //subregion cosmetic
 
@@ -470,10 +504,10 @@ public class PlayerScript : MonoBehaviour, IDamageable
             foamParticles.Emit(emitParams, 1);
         }
     }
-    
+
     //endsubregion
     //endregion
-    
+
     //region debug
 
     void OnDrawGizmosSelected()
@@ -536,14 +570,14 @@ public class PlayerScript : MonoBehaviour, IDamageable
     {
         // TODO
     }
-    
+
     //endregion
-    
+
     //region properties
 
     public bool IsCleaning() => isCleaning;
     public float GetGroundY() => groundY;
     public bool HasGroundHeight() => hasGroundHeight;
-    
+
     //endregion
 }
