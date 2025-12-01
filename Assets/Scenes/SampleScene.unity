@@ -586,6 +586,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &882796101 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7165403001124680223, guid: 2c634abe36fa3a1c7b7a09f9ea4ad2e7, type: 3}
+  m_PrefabInstance: {fileID: 1373154740350362925}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee096f1f91aa99a42803b5b769e35a44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1 &1041884311
 GameObject:
   m_ObjectHideFlags: 0
@@ -1340,7 +1351,7 @@ PrefabInstance:
       objectReference: {fileID: 1041884314}
     - target: {fileID: 8887320234082179659, guid: 795d13b5168cc3ed5adc61375ac83f05, type: 3}
       propertyPath: enableDripping
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8887320234082179659, guid: 795d13b5168cc3ed5adc61375ac83f05, type: 3}
       propertyPath: enableSpreading
@@ -1398,6 +1409,56 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1041884312}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1418720923
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1418720925}
+  - component: {fileID: 1418720924}
+  m_Layer: 0
+  m_Name: DebugUiAnchor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1418720924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1418720923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98e59a08c08e4383bc08c725e68e433b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Blood.UI.BloodDebugDisplaySimple
+  player: {fileID: 882796101}
+  showOnStart: 1
+  toggleKey: 284
+  fontSize: 14
+  textColor: {r: 1, g: 1, b: 1, a: 1}
+  backgroundColor: {r: 0, g: 0, b: 0, a: 0.5}
+--- !u!4 &1418720925
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1418720923}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.98272, y: -4.22804, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1373154740350362925
@@ -1553,3 +1614,4 @@ SceneRoots:
   - {fileID: 1373154740350362925}
   - {fileID: 1083705515}
   - {fileID: 170008834}
+  - {fileID: 1418720925}
