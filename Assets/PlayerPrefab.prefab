@@ -182,7 +182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee096f1f91aa99a42803b5b769e35a44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  cleanRadius: 0.5
+  cleanRadius: 1
   cleanRate: 0.5
   foamParticles: {fileID: 6918102650768965082}
   groundLayer:

@@ -26,10 +26,9 @@ public class PlayerScript : MonoBehaviour, IDamageable
     [SerializeField] private float attackDistance = 1;
     private int damage = 5;
 
-    private new Rigidbody2D rigidbody2D; // rigidbody2D was a property in MonoBehaviour but is deprecated as of now.
-                                         // Since it is useful here we reinitialize (replace) it with our own prop.
-    private new Collider2D collider2D; // same as above.
-    private bool isGrounded = true; // Check if player is grounded
+    private new Rigidbody2D rigidbody2D;
+    private new Collider2D collider2D;
+    private bool isGrounded = true;
     private bool isKnockback;
     private bool isDead;
     private bool isCleaning;
@@ -37,9 +36,23 @@ public class PlayerScript : MonoBehaviour, IDamageable
     private float foamParticleTimer;
     private Vector2 facingDirection = Vector2.right;
 
+    // Debugging
+    private float bloodCleanedThisFrame;
+    private int cleaningFrames;
+
     private void Start()
     {
-        collider2D =  GetComponent<Collider2D>();
+        collider2D = GetComponent<Collider2D>();
+        
+        // Verify BloodSystem exists
+        if (BloodSystem.Instance == null)
+        {
+            Debug.LogError("BloodSystem.Instance is null! Make sure BloodSystem is in the scene and initialized.");
+        }
+        else
+        {
+            Debug.Log("BloodSystem found and ready.");
+        }
     }
 
     private void Awake()
@@ -55,29 +68,22 @@ public class PlayerScript : MonoBehaviour, IDamageable
             return;
         }
 
-
         if (isKnockback)
         {
             return;
         }
 
-        // TODO: Sweeping;
-        // TODO: Broom should only listen to collisions during hit animation -> should probably be script of broom
         HandleMovement();
     }
 
-    // Check if player has touched down
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        // TODO: only count collisions from below
-
-        // check if ground 
         if (!collision.gameObject.CompareTag("Ground"))
         {
             return;
         }
 
-        isGrounded = true; // player has landed and can jump again
+        isGrounded = true;
         animator.speed = 1f;
         isKnockback = false;
     }
@@ -85,14 +91,8 @@ public class PlayerScript : MonoBehaviour, IDamageable
     public void TakeDamage(int damage, Vector2 knockbackDir, float knockbackForce)
     {
         health -= damage;
-
-        // stop animation
         animator.speed = 0f;
-
-        // apply knockback
         rigidbody2D.linearVelocity = knockbackDir * knockbackForce;
-
-        // activate knockback timer
         isKnockback = true;
 
         if (health <= 0)
@@ -113,8 +113,7 @@ public class PlayerScript : MonoBehaviour, IDamageable
         // horizontal movement
         rigidbody2D.linearVelocity = new Vector2(horizontalPressed * moveSpeed, rigidbody2D.linearVelocity.y);
 
-
-        // Filp direction
+        // Flip direction
         if (horizontalPressed < 0)
         {
             transform.rotation = Quaternion.Euler(0, 180, 0);
@@ -127,7 +126,6 @@ public class PlayerScript : MonoBehaviour, IDamageable
         }
 
         // set animation
-
         animator.SetBool("isRunning", horizontalPressed != 0);
 
         if (fire1Pressed && !isHitting)
@@ -136,7 +134,7 @@ public class PlayerScript : MonoBehaviour, IDamageable
             DealDamage(attackDistance);
         }
 
-        // Check if player is holding clean button
+        // Check if player is holding clean button (Fire2)
         if (fire2Down && !isHitting)
         {
             if (!isCleaning)
@@ -156,7 +154,7 @@ public class PlayerScript : MonoBehaviour, IDamageable
         if (Input.GetButton("Jump") && isGrounded)
         {
             rigidbody2D.linearVelocity = new Vector2(rigidbody2D.linearVelocity.x, jumpForce);
-            isGrounded = false; // prevent double jumps
+            isGrounded = false;
             animator.speed = 0f;
         }
     }
@@ -164,9 +162,7 @@ public class PlayerScript : MonoBehaviour, IDamageable
     public void DealDamage(float attackDistance)
     {
         Vector2 dir = facingDirection;
-        
-        Vector2 origin = (Vector2)transform.position +
-                         (dir) * 0.5f;
+        Vector2 origin = (Vector2)transform.position + (dir) * 0.5f;
 
         RaycastHit2D hit = Physics2D.Raycast(
             origin,
@@ -189,27 +185,46 @@ public class PlayerScript : MonoBehaviour, IDamageable
     void StartCleaning()
     {
         isCleaning = true;
-        foamParticleTimer = 0f; // Reset timer when starting
+        foamParticleTimer = 0f;
+        cleaningFrames = 0;
+        Debug.Log("Started cleaning!");
     }
 
     void StopCleaning()
     {
         isCleaning = false;
+        Debug.Log($"Stopped cleaning. Cleaned for {cleaningFrames} frames.");
     }
 
     void PerformCleaning()
     {
-        if (!BloodSystem.Instance)
+        if (BloodSystem.Instance == null)
         {
+            Debug.LogWarning("Cannot clean - BloodSystem.Instance is null!");
             return;
         }
+
+        // Store blood before cleaning for debug
+        float bloodBefore = BloodSystem.Instance.GetBloodInRadius(transform.position, cleanRadius);
         
         // Clean blood around player position
+        float cleanAmount = cleanRate * Time.deltaTime;
         BloodSystem.Instance.CleanBlood(
             transform.position,
             cleanRadius,
-            cleanRate * Time.deltaTime
+            cleanAmount
         );
+
+        // Calculate how much was actually cleaned
+        float bloodAfter = BloodSystem.Instance.GetBloodInRadius(transform.position, cleanRadius);
+        bloodCleanedThisFrame = bloodBefore - bloodAfter;
+        cleaningFrames++;
+
+        // Debug every 30 frames
+        if (cleaningFrames % 30 == 0)
+        {
+            Debug.Log($"Cleaning: {bloodBefore:F3} -> {bloodAfter:F3} (cleaned {bloodCleanedThisFrame:F4} this frame, rate: {cleanAmount:F4})");
+        }
     }
 
     void SpawnGroundFoam()
@@ -236,7 +251,6 @@ public class PlayerScript : MonoBehaviour, IDamageable
         Vector2 randomOffset = Random.insideUnitCircle * cleanRadius;
         Vector2 spawnPosition = (Vector2)transform.position + randomOffset;
         
-        
         // Raycast down from above to find ground
         RaycastHit2D hit = Physics2D.Raycast(
             spawnPosition + Vector2.up * groundCheckDistance,
@@ -249,7 +263,7 @@ public class PlayerScript : MonoBehaviour, IDamageable
         {
             // Spawn particle at ground level
             ParticleSystem.EmitParams emitParams = new ParticleSystem.EmitParams();
-            emitParams.position = hit.point + Vector2.up * 0.1f; // Slightly above ground
+            emitParams.position = hit.point + Vector2.up * 0.1f;
             
             // Random horizontal velocity for spreading effect
             Vector2 horizontalVel = Random.insideUnitCircle * 0.5f;
@@ -283,13 +297,14 @@ public class PlayerScript : MonoBehaviour, IDamageable
 
         Gizmos.color = Color.green;
         Gizmos.DrawLine(origin, origin + direction * attackDistance);
-    
-        // Optional: Draw a sphere at the attack endpoint for clarity
         Gizmos.DrawWireSphere(origin + direction * attackDistance, 0.2f);
     }
     
     private void OnFinishedDeathAniEvent()
     {
-        //To Do 
+        // TODO
     }
+
+    // Public getter for debug display
+    public bool IsCleaning() => isCleaning;
 }
