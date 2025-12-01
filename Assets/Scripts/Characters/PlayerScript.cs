@@ -1,18 +1,23 @@
 using UnityEngine;
 using Interfaces;
+using UnityEngine.InputSystem.Processors;
+
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class PlayerScript : MonoBehaviour
+public class PlayerScript : MonoBehaviour, IDamageable
 {
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float jumpForce = 8f;
     [SerializeField] private Animator animator;
     [SerializeField] private int health = 10;
-    private int demage = 5;
+    private int damage = 5;
 
     private Rigidbody2D rb;
     private bool isGrounded = true; // Check if player is grounded
     private bool isKnockback = false;
+    private bool isDead = false;
+    private float horizontalPressed;
+
 
     private void Awake()
     {
@@ -22,7 +27,14 @@ public class PlayerScript : MonoBehaviour
 
     private void Update()
     {
-        if(isKnockback)
+        if (isDead)
+        {
+            GetComponent<Collider2D>().enabled = false;
+            return;
+        }
+
+
+        if (isKnockback)
         {
             return;
         }
@@ -30,11 +42,6 @@ public class PlayerScript : MonoBehaviour
         // TODO: Sweeping;
         // TODO: Broom should only listen to collisions during hit animation -> should probably be script of broom
         HandleMovement();
-
-        if(health <= 0)
-        {
-            GetComponent<Collider2D>().enabled = false;
-        }
 
     }
 
@@ -65,21 +72,25 @@ public class PlayerScript : MonoBehaviour
 
         // Knockback Timer setzen
         isKnockback = true;
-        
-        // Nach Knockback Animation wieder starten
+
+        if(health <= 0)
+        {
+            isDead = true;
+            animator.Play("Die");
+            animator.SetBool("isDead", true);
+        }
+
     }
 
     private void HandleMovement()
     {
         bool fire1Pressed = Input.GetButtonDown("Fire1");
         bool isHitting = animator.GetCurrentAnimatorStateInfo(0).IsName("Hit");
-        float horizontalPressed = Input.GetAxisRaw("Horizontal");
+        horizontalPressed = Input.GetAxisRaw("Horizontal");
 
         // horizontal movement
         rb.linearVelocity = new Vector2(horizontalPressed * moveSpeed, rb.linearVelocity.y);
 
-
-       
 
         // Filp direction
         if (horizontalPressed < 0)
@@ -94,14 +105,9 @@ public class PlayerScript : MonoBehaviour
 
         if (fire1Pressed && !isHitting)
         {
-
-
-
             animator.Play("Hit");
 
-            IsDemageDelt(horizontalPressed > 0, 3f);
-
-
+            DealDamage(3f);
         }
 
         // jump
@@ -113,17 +119,19 @@ public class PlayerScript : MonoBehaviour
         }
     }
 
-    private void IsDemageDelt(bool looksRight, float demageDistance)
+    public void DealDamage(float attackDistance)
     {
+        bool looksRight = horizontalPressed > 0;
+
         Vector2 origin = (Vector2)transform.position +
-                         (looksRight ? Vector2.right : Vector2.left) * 0.5f;
+                         (looksRight? Vector2.right : Vector2.left) * 0.5f;
 
         Vector2 dir = looksRight ? Vector2.right : Vector2.left;
 
         RaycastHit2D hit = Physics2D.Raycast(
             origin,
             dir,
-            demageDistance,
+            attackDistance,
             LayerMask.GetMask("Enemy")
         );
 
@@ -132,11 +140,16 @@ public class PlayerScript : MonoBehaviour
 
         float distance = Vector2.Distance(transform.position, hit.transform.position);
 
-        IDemageable demageable = hit.collider.GetComponent<IDemageable>();
-        if (demageable != null && distance <= demageDistance)
+        IDamageable damageable = hit.collider.GetComponent<IDamageable>();
+        if (distance <= attackDistance)
         {
-            demageable.TakeDemage(demage);
+            damageable.TakeDamage(damage, Vector2.zero, 0f);
         }
+    }
+
+   private void OnFinishedDeathAniEvent()
+    {
+        //To Do 
     }
 
 }
