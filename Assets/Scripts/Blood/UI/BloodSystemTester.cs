@@ -48,7 +48,7 @@ namespace Blood.UI
         void Update()
         {
             // Update mouse position
-            if (mainCamera != null)
+            if (mainCamera)
             {
                 mouseWorldPos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
             }
@@ -86,7 +86,7 @@ namespace Blood.UI
 
         void TestAddBlood()
         {
-            if (BloodSystem.Instance == null)
+            if (!BloodSystem.Instance)
             {
                 Debug.LogError("Cannot test - BloodSystem.Instance is null!");
                 return;
@@ -101,7 +101,7 @@ namespace Blood.UI
 
         void TestCleanBlood()
         {
-            if (BloodSystem.Instance == null)
+            if (!BloodSystem.Instance)
             {
                 Debug.LogError("Cannot test - BloodSystem.Instance is null!");
                 return;
@@ -119,7 +119,7 @@ namespace Blood.UI
 
         void TestResetBlood()
         {
-            if (BloodSystem.Instance == null)
+            if (!BloodSystem.Instance)
             {
                 Debug.LogError("Cannot test - BloodSystem.Instance is null!");
                 return;
@@ -140,7 +140,7 @@ namespace Blood.UI
 
         void PrintBloodStats()
         {
-            if (BloodSystem.Instance == null)
+            if (!BloodSystem.Instance)
             {
                 Debug.LogError("Cannot print stats - BloodSystem.Instance is null!");
                 return;
@@ -162,7 +162,7 @@ namespace Blood.UI
 
         void OnDrawGizmos()
         {
-            if (!showMouseGizmo || mainCamera == null) return;
+            if (!showMouseGizmo || !mainCamera) return;
 
             // Draw circle at mouse position
             Gizmos.color = gizmoColor;
