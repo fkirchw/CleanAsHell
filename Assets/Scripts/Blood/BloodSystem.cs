@@ -634,4 +634,37 @@ public class BloodSystem : MonoBehaviour
 
         return count;
     }
+
+    void OnDrawGizmos()
+    {
+        if (!Application.isPlaying || bloodData == null || grid == null)
+            return;
+
+        for (int x = 0; x < gridWidth; x++)
+        {
+            for (int y = 0; y < gridHeight; y++)
+            {
+                float bloodAmount = bloodData[x, y];
+                
+                if (bloodAmount > 0.01f)
+                {
+                    Vector3Int cellPos = new Vector3Int(x + gridOffset.x, y + gridOffset.y, 0);
+                    Vector3 worldPos = grid.CellToWorld(cellPos);
+                    Vector3 cellCenter = worldPos + grid.cellSize * 0.5f;
+                    
+                    // Color intensity based on blood amount
+                    Color gizmoColor = new Color(1f, 0f, 0f, bloodAmount);
+                    Gizmos.color = gizmoColor;
+                    
+                    // Draw cube at cell position
+                    Vector3 cubeSize = new Vector3(grid.cellSize.x * 0.9f, grid.cellSize.y * 0.9f, 0.1f);
+                    Gizmos.DrawCube(cellCenter, cubeSize);
+                    
+                    // Draw wire cube outline
+                    Gizmos.color = new Color(0.8f, 0f, 0f, 1f);
+                    Gizmos.DrawWireCube(cellCenter, cubeSize);
+                }
+            }
+        }
+    }
 }
