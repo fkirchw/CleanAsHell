@@ -32,9 +32,8 @@ public class PlayerScript : MonoBehaviour, IDamageable
 
     [SerializeField] private float jumpForce = 8f;
 
-    [Header("Combat Settings")] [SerializeField]
-    private Animator animator;
-
+    [Header("Combat Settings")] 
+    [SerializeField] private Animator animator;
     [SerializeField] private int health = 10;
     [SerializeField] private float attackDistance = 1;
     private int damage = 5;
