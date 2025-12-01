@@ -9,6 +9,11 @@ using Random = UnityEngine.Random;
 /// </summary>
 public class BloodSystem : MonoBehaviour
 {
+    private static readonly int BloodMask = Shader.PropertyToID("_BloodMask");
+    private static readonly int BloodTexture = Shader.PropertyToID("_BloodTexture");
+    private static readonly int BloodColor = Shader.PropertyToID("_BloodColor");
+    private static readonly int BloodTiling = Shader.PropertyToID("_BloodTiling");
+    private static readonly int BloodMaskSt = Shader.PropertyToID("_BloodMask_ST");
     public static BloodSystem Instance { get; private set; }
 
     [Header("References")] [SerializeField]
@@ -131,23 +136,29 @@ public class BloodSystem : MonoBehaviour
         }
 
         bloodMaterial = new Material(bloodShader);
-        bloodMaterial.SetTexture("_BloodMask", bloodMask);
-        bloodMaterial.SetTexture("_BloodTexture", bloodSplatTexture);
-        bloodMaterial.SetColor("_BloodColor", bloodColor);
-        bloodMaterial.SetFloat("_BloodTiling", bloodTiling);
+        bloodMaterial.SetTexture(BloodMask, bloodMask);
+        bloodMaterial.SetTexture(BloodTexture, bloodSplatTexture);
+        bloodMaterial.SetColor(BloodColor, bloodColor);
+        bloodMaterial.SetFloat(BloodTiling, bloodTiling);
 
-        // Set up the blood mask tiling/offset to match grid bounds
+        // Calculate world space bounds of the grid
+        Vector2 worldMin = grid.CellToWorld(new Vector3Int(gridOffset.x, gridOffset.y, 0));
+        Vector2 worldMax = grid.CellToWorld(new Vector3Int(gridOffset.x + gridWidth, gridOffset.y + gridHeight, 0));
+
+        // Set up the blood mask tiling/offset
+        // ST.xy = scale (inverse of world size)
+        // ST.zw = offset (world min position)
         Vector4 maskST = new Vector4(
-            1f / (gridWidth * grid.cellSize.x), // Scale X
-            1f / (gridHeight * grid.cellSize.y), // Scale Y
-            -gridOffset.x / (float)gridWidth, // Offset X
-            -gridOffset.y / (float)gridHeight // Offset Y
+            1f / (worldMax.x - worldMin.x), // Scale X
+            1f / (worldMax.y - worldMin.y), // Scale Y
+            worldMin.x, // Offset X (world space min)
+            worldMin.y // Offset Y (world space min)
         );
-        bloodMaterial.SetVector("_BloodMask_ST", maskST);
+        bloodMaterial.SetVector(BloodMaskSt, maskST);
 
         renderer.material = bloodMaterial;
 
-        Debug.Log($"Blood system initialized: {gridWidth}x{gridHeight} grid");
+        Debug.Log($"Blood system initialized: {gridWidth}x{gridHeight} grid at world bounds {worldMin} to {worldMax}");
     }
 
     /// <summary>
@@ -422,14 +433,17 @@ public class BloodSystem : MonoBehaviour
     {
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
-        if (angle > -22.5f && angle <= 22.5f) return new Vector2Int(1, 0);
-        if (angle > 22.5f && angle <= 67.5f) return new Vector2Int(1, 1);
-        if (angle > 67.5f && angle <= 112.5f) return new Vector2Int(0, 1);
-        if (angle > 112.5f && angle <= 157.5f) return new Vector2Int(-1, 1);
-        if (angle > 157.5f || angle <= -157.5f) return new Vector2Int(-1, 0);
-        if (angle > -157.5f && angle <= -112.5f) return new Vector2Int(-1, -1);
-        if (angle > -112.5f && angle <= -67.5f) return new Vector2Int(0, -1);
-        return new Vector2Int(1, -1);
+        return angle switch
+        {
+            > -22.5f and <= 22.5f => new Vector2Int(1, 0),
+            > 22.5f and <= 67.5f => new Vector2Int(1, 1),
+            > 67.5f and <= 112.5f => new Vector2Int(0, 1),
+            > 112.5f and <= 157.5f => new Vector2Int(-1, 1),
+            > 157.5f or <= -157.5f => new Vector2Int(-1, 0),
+            > -157.5f and <= -112.5f => new Vector2Int(-1, -1),
+            > -112.5f and <= -67.5f => new Vector2Int(0, -1),
+            _ => new Vector2Int(1, -1)
+        };
     }
 
     // PUBLIC API FOR QUERYING AND CLEANING
