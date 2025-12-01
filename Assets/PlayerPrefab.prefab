@@ -187,6 +187,9 @@ MonoBehaviour:
   useGroundBasedCleaning: 1
   maxCleaningHeight: 1
   verticalTolerance: 1
+  useMultiRaycast: 1
+  raycastCount: 5
+  raycastSpread: 1
   foamParticles: {fileID: 6918102650768965082}
   groundLayer:
     serializedVersion: 2
@@ -195,6 +198,8 @@ MonoBehaviour:
   foamParticlesPerSecond: 50
   moveSpeed: 5
   jumpForce: 8
+  jumpCutMultiplier: 0.5
+  minJumpVelocity: 2
   animator: {fileID: 3276520232718924349}
   health: 10
   attackDistance: 1.6
