@@ -17,18 +17,20 @@ public class IntroScript : MonoBehaviour
     void Start()
     {
         comicImage.sprite = panels[0];
-        nextImgIdx++;
+
+            nextImgIdx++;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+       
 
         if (Input.anyKeyDown || Input.GetMouseButtonDown(0))
         {
-            StartCoroutine(SwitchPanelWithFade(panels[nextImgIdx]));
             timer = 0f;
-
+            ShowNextPanel();
         }
 
         // Automatisch weiterschalten
@@ -37,15 +39,7 @@ public class IntroScript : MonoBehaviour
             timer += Time.deltaTime;
             if (timer >= autoDelay)
             {
-                if (panels.Length <= nextImgIdx)
-                {
-
-                    SceneManager.LoadScene("SampleScene");
-
-                } else
-                {
-                    StartCoroutine(SwitchPanelWithFade(panels[nextImgIdx]));
-                }
+                ShowNextPanel();
                 timer = 0f;
             }
             
@@ -78,7 +72,22 @@ public class IntroScript : MonoBehaviour
 
         cg.alpha = 1;
 
-        nextImgIdx++;
+        
+         nextImgIdx++;
+
+
+    }
+
+    private void ShowNextPanel()
+    {
+        if (nextImgIdx < panels.Length)
+        {
+            StartCoroutine(SwitchPanelWithFade(panels[nextImgIdx]));
+        }
+        else
+        {
+            SceneManager.LoadScene("Level01");
+        }
     }
 
 }

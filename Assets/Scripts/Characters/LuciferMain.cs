@@ -17,7 +17,6 @@ public class LuciferMain : MonoBehaviour, IDamageable
 
     private bool playerDetected;
 
-
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -61,7 +60,6 @@ public class LuciferMain : MonoBehaviour, IDamageable
         }
     }
 
-   
     //Called by Animation Event
     public void OnDamageDeltAniEvent()
     {
