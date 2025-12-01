@@ -202,7 +202,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PunchingBag
   spriteRenderer: {fileID: 170008833}
-  isAirbourne: 1
+  isAirbourne: 0
 --- !u!212 &170008833
 SpriteRenderer:
   m_ObjectHideFlags: 0

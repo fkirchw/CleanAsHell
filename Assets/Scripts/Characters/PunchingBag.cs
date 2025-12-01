@@ -5,6 +5,7 @@ using System.Collections;
 public class PunchingBag : MonoBehaviour, IDamageable
 {
     [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private bool isAirbourne;
     private float health = 100;
     private Material spriteMaterial;
     private Coroutine flashCoroutine;
@@ -17,7 +18,7 @@ public class PunchingBag : MonoBehaviour, IDamageable
 
     public void TakeDamage(int damage, Vector2 knockbackDir, float knockbackForce)
     {
-        BloodSystem.Instance.OnEnemyHit(this.transform.position, knockbackDir, false, damage);
+        BloodSystem.Instance.OnEnemyHit(this.transform.position, knockbackDir, isAirbourne, damage);
         
         // Stop any existing flash and start a new one
         if (flashCoroutine != null)
