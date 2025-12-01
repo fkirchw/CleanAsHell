@@ -52,7 +52,6 @@ public class IntroScript : MonoBehaviour
         }
 
     }
-
     IEnumerator SwitchPanelWithFade(Sprite nextSprite)
     {
         CanvasGroup cg = comicImage.GetComponent<CanvasGroup>();
