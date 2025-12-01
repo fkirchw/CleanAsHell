@@ -6,30 +6,35 @@ using Random = UnityEngine.Random;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerScript : MonoBehaviour, IDamageable
 {
-    [Header("Cleaning Settings")] 
-    [SerializeField] private float cleanRadius = 2f;
+    [Header("Cleaning Settings")] [SerializeField]
+    private float cleanRadius = 2f;
+
     [SerializeField] private float cleanRate = 0.5f;
-    
-    [Header("Ground-Based Cleaning")]
-    [SerializeField] private bool useGroundBasedCleaning = true;
+
+    [Header("Ground-Based Cleaning")] [SerializeField]
+    private bool useGroundBasedCleaning = true;
+
     [SerializeField] private float maxCleaningHeight = 2f;
     [SerializeField] private float verticalTolerance = 0.3f;
     [SerializeField] private bool useMultiRaycast = true; // NEW: Use multiple raycasts
     [SerializeField] private int raycastCount = 5; // NEW: Number of raycasts to use
     [SerializeField] private float raycastSpread = 1f; // NEW: How far apart the raycasts are
 
-    [Header("Foam Visual Feedback")] 
-    [SerializeField] private ParticleSystem foamParticles;
+    [Header("Foam Visual Feedback")] [SerializeField]
+    private ParticleSystem foamParticles;
+
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private float groundCheckDistance = 5f;
     [SerializeField] private int foamParticlesPerSecond = 20;
 
-    [Header("Movement Settings")]
-    [SerializeField] private float moveSpeed = 5f;
+    [Header("Movement Settings")] [SerializeField]
+    private float moveSpeed = 5f;
+
     [SerializeField] private float jumpForce = 8f;
-    
-    [Header("Combat Settings")]
-    [SerializeField] private Animator animator;
+
+    [Header("Combat Settings")] [SerializeField]
+    private Animator animator;
+
     [SerializeField] private int health = 10;
     [SerializeField] private float attackDistance = 1;
     private int damage = 5;
@@ -53,10 +58,11 @@ public class PlayerScript : MonoBehaviour, IDamageable
     private int cleaningFrames;
     private Vector2[] raycastPositions; // For debug visualization
 
+    // region basic
     private void Start()
     {
         collider2D = GetComponent<Collider2D>();
-        
+
         if (BloodSystem.Instance == null)
         {
             Debug.LogError("BloodSystem.Instance is null! Make sure BloodSystem is in the scene.");
@@ -88,6 +94,10 @@ public class PlayerScript : MonoBehaviour, IDamageable
         HandleMovement();
     }
 
+    // endregion
+
+    // region movement
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (!collision.gameObject.CompareTag("Ground"))
@@ -95,26 +105,52 @@ public class PlayerScript : MonoBehaviour, IDamageable
             return;
         }
 
-        isGrounded = true;
-        animator.speed = 1f;
-        isKnockback = false;
+        // Check if collision is from below (landing on ground)
+        bool landedOnGround = IsLandingCollision(collision);
+
+        if (landedOnGround)
+        {
+            isGrounded = true;
+            animator.speed = 1f;
+            isKnockback = false;
+        }
+        // If hitting from side or below, don't set grounded
     }
 
-    public void TakeDamage(int damage, Vector2 knockbackDir, float knockbackForce)
+    private bool IsLandingCollision(Collision2D collision)
     {
-        health -= damage;
-        animator.speed = 0f;
-        rigidbody2D.linearVelocity = knockbackDir * knockbackForce;
-        isKnockback = true;
+        // Get the player's collider bounds
+        Bounds playerBounds = GetComponent<Collider2D>().bounds;
 
-        if (health <= 0)
+        // Check each contact point
+        foreach (ContactPoint2D contact in collision.contacts)
         {
-            isDead = true;
-            animator.Play("Die");
-            animator.SetBool("isDead", true);
+            // Calculate how far the contact point is from the bottom of the player
+            // contact.point.y will be at or near playerBounds.min.y if landing on top
+            float distanceFromBottom = contact.point.y - playerBounds.min.y;
+
+            // Also check the normal - if pointing up, we hit from above (landed on it)
+            // Normal points away from the surface we hit
+            bool normalPointsUp = contact.normal.y > 0.5f; // Allow some tolerance
+
+            // If contact is near bottom AND normal points up, it's a landing
+            if (distanceFromBottom < 0.1f && normalPointsUp)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = false;
         }
     }
-    
+
     private void HandleMovement()
     {
         bool fire1Pressed = Input.GetButtonDown("Fire1");
@@ -161,8 +197,26 @@ public class PlayerScript : MonoBehaviour, IDamageable
         if (Input.GetButton("Jump") && isGrounded)
         {
             rigidbody2D.linearVelocity = new Vector2(rigidbody2D.linearVelocity.x, jumpForce);
-            isGrounded = false;
             animator.speed = 0f;
+        }
+    }
+
+    // endregion
+
+    // region combat
+
+    public void TakeDamage(int damage, Vector2 knockbackDir, float knockbackForce)
+    {
+        health -= damage;
+        animator.speed = 0f;
+        rigidbody2D.linearVelocity = knockbackDir * knockbackForce;
+        isKnockback = true;
+
+        if (health <= 0)
+        {
+            isDead = true;
+            animator.Play("Die");
+            animator.SetBool("isDead", true);
         }
     }
 
@@ -188,19 +242,23 @@ public class PlayerScript : MonoBehaviour, IDamageable
             damageable.TakeDamage(damage, facingDirection, 0f);
         }
     }
-
+    
+    //endregion
+    
+    // region cleaning
+    // subregion mechanics
     void StartCleaning()
     {
         isCleaning = true;
         foamParticleTimer = 0f;
         cleaningFrames = 0;
         hasGroundHeight = false;
-        
+
         if (useGroundBasedCleaning)
         {
             FindGroundHeight();
         }
-        
+
         Debug.Log($"Started cleaning! Ground-based: {useGroundBasedCleaning}, Ground Y: {groundY:F2}");
     }
 
@@ -251,7 +309,7 @@ public class PlayerScript : MonoBehaviour, IDamageable
     {
         // Cast multiple rays in a line to catch platform edges
         // This helps when player is at edge of platform with pit below
-        
+
         raycastPositions = new Vector2[raycastCount];
         float closestGroundY = float.NegativeInfinity;
         bool foundAnyGround = false;
@@ -314,9 +372,9 @@ public class PlayerScript : MonoBehaviour, IDamageable
         }
 
         float bloodBefore = BloodSystem.Instance.GetBloodInRadius(transform.position, cleanRadius);
-        
+
         float cleanAmount = cleanRate * Time.deltaTime;
-        
+
         if (useGroundBasedCleaning && hasGroundHeight)
         {
             BloodSystem.Instance.CleanBloodOnGround(
@@ -342,7 +400,8 @@ public class PlayerScript : MonoBehaviour, IDamageable
 
         if (cleaningFrames % 30 == 0)
         {
-            Debug.Log($"Cleaning: {bloodBefore:F3} -> {bloodAfter:F3} (cleaned {bloodCleanedThisFrame:F4}, rate: {cleanAmount:F4})");
+            Debug.Log(
+                $"Cleaning: {bloodBefore:F3} -> {bloodAfter:F3} (cleaned {bloodCleanedThisFrame:F4}, rate: {cleanAmount:F4})");
         }
     }
 
@@ -352,47 +411,55 @@ public class PlayerScript : MonoBehaviour, IDamageable
         {
             return;
         }
-        
+
         foamParticleTimer += Time.deltaTime;
         float interval = 1f / foamParticlesPerSecond;
-        
+
         while (foamParticleTimer >= interval)
         {
             foamParticleTimer -= interval;
             EmitFoamParticle();
         }
     }
+    
+    //endsubregion
+    //subregion cosmetic
 
     void EmitFoamParticle()
     {
         Vector2 randomOffset = Random.insideUnitCircle * cleanRadius;
         Vector2 spawnPosition = (Vector2)transform.position + randomOffset;
-        
+
         float targetY = useGroundBasedCleaning && hasGroundHeight ? groundY : transform.position.y;
-        
+
         RaycastHit2D hit = Physics2D.Raycast(
             new Vector2(spawnPosition.x, targetY + groundCheckDistance),
             Vector2.down,
             groundCheckDistance * 2f,
             groundLayer
         );
-        
+
         if (hit.collider)
         {
             ParticleSystem.EmitParams emitParams = new ParticleSystem.EmitParams();
             emitParams.position = hit.point + Vector2.up * 0.1f;
-            
+
             Vector2 horizontalVel = Random.insideUnitCircle * 0.5f;
             emitParams.velocity = new Vector3(horizontalVel.x, 0, 0);
-            
+
             emitParams.startSize = Random.Range(0.2f, 0.5f);
             emitParams.rotation = Random.Range(0f, 360f);
             emitParams.startLifetime = Random.Range(1.5f, 2.5f);
-            
+
             foamParticles.Emit(emitParams, 1);
         }
     }
     
+    //endsubregion
+    //endregion
+    
+    //region debug
+
     void OnDrawGizmosSelected()
     {
         // Draw cleaning radius
@@ -401,7 +468,7 @@ public class PlayerScript : MonoBehaviour, IDamageable
 
         Gizmos.color = Color.cyan;
         Gizmos.DrawWireSphere(transform.position, cleanRadius);
-        
+
         // Draw ground-based cleaning visualization
         if (Application.isPlaying && useGroundBasedCleaning && hasGroundHeight)
         {
@@ -410,12 +477,12 @@ public class PlayerScript : MonoBehaviour, IDamageable
             Vector2 left = new Vector2(transform.position.x - cleanRadius, groundY);
             Vector2 right = new Vector2(transform.position.x + cleanRadius, groundY);
             Gizmos.DrawLine(left, right);
-            
+
             // Draw vertical tolerance
             Gizmos.color = new Color(0, 1, 0, 0.2f);
             Vector3 toleranceSize = new Vector3(cleanRadius * 2, verticalTolerance * 2, 0);
             Gizmos.DrawCube(new Vector3(transform.position.x, groundY, 0), toleranceSize);
-            
+
             // Draw multi-raycast positions
             if (useMultiRaycast && raycastPositions != null)
             {
@@ -423,11 +490,11 @@ public class PlayerScript : MonoBehaviour, IDamageable
                 {
                     Vector2 rayStart = raycastPositions[i];
                     Vector2 rayEnd = new Vector2(rayStart.x, groundY);
-                    
+
                     // Color based on whether this ray hit ground
                     bool hitGround = Mathf.Abs(rayEnd.y - groundY) < 0.1f;
                     Gizmos.color = hitGround ? Color.yellow : Color.red;
-                    
+
                     Gizmos.DrawLine(rayStart, rayEnd);
                     Gizmos.DrawWireSphere(rayStart, 0.1f);
                 }
@@ -439,7 +506,7 @@ public class PlayerScript : MonoBehaviour, IDamageable
                 Gizmos.DrawLine(transform.position, new Vector2(transform.position.x, groundY));
             }
         }
-    
+
         // Draw attack range
         Vector2 direction = facingDirection;
         Vector2 origin = (Vector2)transform.position + direction * 0.5f;
@@ -448,13 +515,19 @@ public class PlayerScript : MonoBehaviour, IDamageable
         Gizmos.DrawLine(origin, origin + direction * attackDistance);
         Gizmos.DrawWireSphere(origin + direction * attackDistance, 0.2f);
     }
-    
+
     private void OnFinishedDeathAniEvent()
     {
         // TODO
     }
+    
+    //endregion
+    
+    //region properties
 
     public bool IsCleaning() => isCleaning;
     public float GetGroundY() => groundY;
     public bool HasGroundHeight() => hasGroundHeight;
+    
+    //endregion
 }
