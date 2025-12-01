@@ -29,8 +29,12 @@ public class PlayerScript : MonoBehaviour, IDamageable
 
     [Header("Movement Settings")] [SerializeField]
     private float moveSpeed = 5f;
+    
+    [Header("Jump Settings")]
+    [SerializeField] private float jumpForce = 10f;
+    [SerializeField] private float jumpCutMultiplier = 0.5f; // How much to cut velocity by (0.5 = cut to 50%)
+    [SerializeField] private float minJumpVelocity = 2f; // Minimum upward velocity before we allow cutting
 
-    [SerializeField] private float jumpForce = 8f;
 
     [Header("Combat Settings")] 
     [SerializeField] private Animator animator;
@@ -193,10 +197,23 @@ public class PlayerScript : MonoBehaviour, IDamageable
             StopCleaning();
         }
 
-        if (Input.GetButton("Jump") && isGrounded)
+        // Jump pressed
+        if (Input.GetButtonDown("Jump") && isGrounded)
         {
             rigidbody2D.linearVelocity = new Vector2(rigidbody2D.linearVelocity.x, jumpForce);
             animator.speed = 0f;
+        }
+
+        // Jump released - cut jump if we're still moving upward fast enough
+        if (Input.GetButtonUp("Jump"))
+        {
+            if (rigidbody2D.linearVelocity.y > minJumpVelocity)
+            {
+                rigidbody2D.linearVelocity = new Vector2(
+                    rigidbody2D.linearVelocity.x, 
+                    rigidbody2D.linearVelocity.y * jumpCutMultiplier
+                );
+            }
         }
     }
 
