@@ -1,7 +1,5 @@
-using UnityEngine;
 using Interfaces;
-using UnityEngine.InputSystem.Processors;
-
+using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerScript : MonoBehaviour, IDamageable
@@ -14,8 +12,8 @@ public class PlayerScript : MonoBehaviour, IDamageable
 
     private Rigidbody2D rb;
     private bool isGrounded = true; // Check if player is grounded
-    private bool isKnockback = false;
-    private bool isDead = false;
+    private bool isKnockback;
+    private bool isDead;
     private float horizontalPressed;
 
 
@@ -135,13 +133,12 @@ public class PlayerScript : MonoBehaviour, IDamageable
             LayerMask.GetMask("Enemy")
         );
 
-        if (hit.collider == null)
+        if (!hit.collider)
             return;
 
         float distance = Vector2.Distance(transform.position, hit.transform.position);
 
-        IDamageable damageable = hit.collider.GetComponent<IDamageable>();
-        if (distance <= attackDistance)
+        if (distance <= attackDistance && hit.collider.TryGetComponent(out IDamageable damageable))
         {
             damageable.TakeDamage(damage, Vector2.zero, 0f);
         }
