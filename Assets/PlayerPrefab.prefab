@@ -189,7 +189,7 @@ MonoBehaviour:
   verticalTolerance: 1
   useMultiRaycast: 1
   raycastCount: 5
-  raycastSpread: 1
+  raycastSpread: 0.5
   foamParticles: {fileID: 6918102650768965082}
   groundLayer:
     serializedVersion: 2
