@@ -101,6 +101,7 @@ public class PlayerScript : MonoBehaviour, IDamageable
 
     // region movement
 
+    // Check if player has touched down
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (!collision.gameObject.CompareTag("Ground"))
@@ -194,7 +195,7 @@ public class PlayerScript : MonoBehaviour, IDamageable
         bool fire2Down = Input.GetButton("Fire2");
         bool isHitting = animator.GetCurrentAnimatorStateInfo(0).IsName("Hit");
         horizontalPressed = Input.GetAxisRaw("Horizontal");
-
+        
         rigidbody2D.linearVelocity = new Vector2(horizontalPressed * moveSpeed, rigidbody2D.linearVelocity.y);
 
         if (horizontalPressed < 0)
@@ -568,7 +569,12 @@ public class PlayerScript : MonoBehaviour, IDamageable
 
     private void OnFinishedDeathAniEvent()
     {
-        // TODO
+       Destroy(gameObject);
+    }
+
+    public bool DeathStatus()
+    {
+        return isDead;
     }
 
     //endregion
