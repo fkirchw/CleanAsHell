@@ -215,6 +215,7 @@ public class PlayerScript : MonoBehaviour, IDamageable
         {
             animator.Play("Hit");
             DealDamage(attackDistance);
+            isHitting = true;
         }
 
         if (fire2Down && !isHitting)
@@ -250,6 +251,33 @@ public class PlayerScript : MonoBehaviour, IDamageable
                 );
             }
         }
+        
+        UpdateJumpAnimation(isHitting);
+    }
+    
+    private void UpdateJumpAnimation(bool isHitting)
+    {
+        if (!isGrounded)
+        {
+            if(isHitting)
+            {
+                animator.speed = 1f;
+            }
+            else
+            {
+                animator.speed = 0f;
+                if (rigidbody2D.linearVelocity.y > 0.1f)
+                {
+                    // Rising
+                    animator.Play("Run", 0, 0.5f);
+                }
+                else if (rigidbody2D.linearVelocity.y < -0.1f)
+                {
+                    // Falling - use different animation or later frame
+                    animator.Play("Run", 0, 0.625f);
+                }
+            }
+        }
     }
 
     // endregion
@@ -274,7 +302,7 @@ public class PlayerScript : MonoBehaviour, IDamageable
     public void DealDamage(float attackDistance)
     {
         Vector2 dir = facingDirection;
-        Vector2 origin = (Vector2)transform.position + (dir) * 0.5f;
+        Vector2 origin = (Vector2)transform.position + (dir * 0.5f);
 
         RaycastHit2D hit = Physics2D.Raycast(
             origin,
