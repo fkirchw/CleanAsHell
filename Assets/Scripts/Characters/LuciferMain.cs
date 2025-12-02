@@ -1,7 +1,5 @@
-using UnityEngine;
 using Interfaces;
-using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.Processors;
+using UnityEngine;
 
 public class LuciferMain : MonoBehaviour, IDamageable
 {
@@ -15,10 +13,9 @@ public class LuciferMain : MonoBehaviour, IDamageable
     private Rigidbody2D rb;
     private Vector2 direction;
 
-    private bool isDead = false;
+    private bool isDead;
 
-    private bool playerDetected = false;
-
+    private bool playerDetected;
 
     void Start()
     {
@@ -33,7 +30,7 @@ public class LuciferMain : MonoBehaviour, IDamageable
             return;
         }
 
-        if (playerDetected && playerPosition != null)
+        if (playerDetected && playerPosition)
         {
             HandleMovement();
         }
@@ -63,7 +60,6 @@ public class LuciferMain : MonoBehaviour, IDamageable
         }
     }
 
-   
     //Called by Animation Event
     public void OnDamageDeltAniEvent()
     {
@@ -121,6 +117,17 @@ public class LuciferMain : MonoBehaviour, IDamageable
     {
         health -= damage;
 
+        // Add blood
+        if (BloodSystem.Instance)
+        {
+            BloodSystem.Instance.OnEnemyHit(
+                transform.position,
+                knockbackDir,
+                false,
+                0.3f // Blood amount
+            );
+        }
+        
         if (health <= 0)
         {
             isDead = true;
