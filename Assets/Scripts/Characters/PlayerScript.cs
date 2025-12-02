@@ -10,6 +10,7 @@ public class PlayerScript : MonoBehaviour, IDamageable
     [SerializeField] private float jumpForce = 8f;
     [SerializeField] private Animator animator;
     [SerializeField] private int health = 10;
+    [SerializeField] private int playerRange;
     private int damage = 5;
 
     private Rigidbody2D rb;
@@ -17,7 +18,6 @@ public class PlayerScript : MonoBehaviour, IDamageable
     private bool isKnockback = false;
     private bool isDead = false;
     private float horizontalPressed;
-
 
     private void Awake()
     {
@@ -107,7 +107,7 @@ public class PlayerScript : MonoBehaviour, IDamageable
         {
             animator.Play("Hit");
 
-            DealDamage(3f);
+            DealDamage(playerRange);
         }
 
         // jump
@@ -149,7 +149,12 @@ public class PlayerScript : MonoBehaviour, IDamageable
 
    private void OnFinishedDeathAniEvent()
     {
-        //To Do 
+       Destroy(gameObject);
+    }
+
+    public bool DeathStatus()
+    {
+        return isDead;
     }
 
 }
