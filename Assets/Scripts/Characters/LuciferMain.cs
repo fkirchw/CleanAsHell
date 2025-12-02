@@ -118,7 +118,7 @@ public class LuciferMain : MonoBehaviour, IDamageable
         // Add blood
         if (BloodSystem.Instance)
         {
-            BloodSystem.Instance.OnEnemyHit(this.transform.position, knockbackDir, true, damage);
+            BloodSystem.Instance.OnEnemyHit(this.transform.position, knockbackDir, false, damage);
         }
 
         if (health <= 0)
