@@ -612,6 +612,8 @@ public class PlayerScript : MonoBehaviour, IDamageable
     public bool IsCleaning() => isCleaning;
     public float GetGroundY() => groundY;
     public bool HasGroundHeight() => hasGroundHeight;
+    
+    public float GetHealthPercent() => health/10f;
 
     //endregion
 }

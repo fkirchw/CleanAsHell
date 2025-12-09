@@ -25,7 +25,7 @@ public class LuciferMain : MonoBehaviour, IDamageable
 
     void Update()
     {
-        if(isDead)
+        if (isDead)
         {
             return;
         }
@@ -34,7 +34,6 @@ public class LuciferMain : MonoBehaviour, IDamageable
         {
             HandleMovement();
         }
-
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -55,8 +54,6 @@ public class LuciferMain : MonoBehaviour, IDamageable
             rb.linearVelocity = Vector2.zero;
             animator.SetBool("isWalking", false);
             animator.SetBool("isAttacking", false);
-
-
         }
     }
 
@@ -72,19 +69,19 @@ public class LuciferMain : MonoBehaviour, IDamageable
         {
             return;
         }
-         
+
         float damageRange = attackDistance;
-        float distanceToPlayer = Vector2.Distance(new Vector2(rb.position.x, rb.position.y), new Vector2(playerPosition.position.x, playerPosition.position.y));
+        float distanceToPlayer = Vector2.Distance(new Vector2(rb.position.x, rb.position.y),
+            new Vector2(playerPosition.position.x, playerPosition.position.y));
 
         if (distanceToPlayer < damageRange)
         {
             IDamageable playerScript = playerPosition.GetComponent<PlayerScript>();
             if (playerScript != null)
             {
-
                 Vector2 knockbackDir = new Vector2(1, 1).normalized;
 
-                if(direction.x < 0)
+                if (direction.x < 0)
                 {
                     knockbackDir.x *= -1;
                 }
@@ -108,7 +105,8 @@ public class LuciferMain : MonoBehaviour, IDamageable
         // Rigidbody bewegen
         rb.linearVelocity = new Vector2(moveX, 0);
 
-        float distanceToPlayer = Vector2.Distance(new Vector2(transform.position.x, transform.position.y), new Vector2(playerPosition.position.x, playerPosition.position.y));
+        float distanceToPlayer = Vector2.Distance(new Vector2(transform.position.x, transform.position.y),
+            new Vector2(playerPosition.position.x, playerPosition.position.y));
 
         animator.SetBool("isAttacking", distanceToPlayer < attackDistance);
     }
@@ -120,22 +118,16 @@ public class LuciferMain : MonoBehaviour, IDamageable
         // Add blood
         if (BloodSystem.Instance)
         {
-            BloodSystem.Instance.OnEnemyHit(
-                transform.position,
-                knockbackDir,
-                false,
-                0.3f // Blood amount
-            );
+            BloodSystem.Instance.OnEnemyHit(this.transform.position, knockbackDir, false, damage);
         }
-        
+
         if (health <= 0)
         {
             isDead = true;
             animator.SetBool("isDead", true);
-
         }
-
     }
+
     private void OnFinishedDeathAniEvent()
     {
         Destroy(gameObject);
