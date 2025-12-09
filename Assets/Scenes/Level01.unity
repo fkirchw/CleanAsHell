@@ -331,6 +331,7 @@ MonoBehaviour:
   attackDistance: 2
   health: 10
   damage: 5
+  knockbackForce: 15
 --- !u!70 &240382088
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -21505,6 +21506,7 @@ MonoBehaviour:
   attackDistance: 2
   health: 10
   damage: 5
+  knockbackForce: 15
 --- !u!50 &1214264434
 Rigidbody2D:
   serializedVersion: 5
@@ -21839,6 +21841,7 @@ MonoBehaviour:
   attackDistance: 2
   health: 10
   damage: 5
+  knockbackForce: 15
 --- !u!50 &1530514273
 Rigidbody2D:
   serializedVersion: 5
@@ -22188,6 +22191,10 @@ PrefabInstance:
       propertyPath: _boneHandR
       value: 
       objectReference: {fileID: 2113122}
+    - target: {fileID: 3519682308273206148, guid: 2c634abe36fa3a1c7b7a09f9ea4ad2e7, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5238352174512194233, guid: 2c634abe36fa3a1c7b7a09f9ea4ad2e7, type: 3}
       propertyPath: m_Name
       value: Player
