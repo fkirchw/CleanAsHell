@@ -12,11 +12,11 @@ GameObject:
   - component: {fileID: 1870786313136268208}
   - component: {fileID: 3747346810575666902}
   - component: {fileID: 5594195919131595371}
-  - component: {fileID: 7165403001124680223}
   - component: {fileID: 3276520232718924349}
+  - component: {fileID: 3519682308273206148}
   m_Layer: 0
   m_Name: PlayerPrefab
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -170,39 +170,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &7165403001124680223
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5238352174512194233}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee096f1f91aa99a42803b5b769e35a44, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  cleanRadius: 1
-  cleanRate: 0.5
-  useGroundBasedCleaning: 1
-  maxCleaningHeight: 1
-  verticalTolerance: 1
-  useMultiRaycast: 1
-  raycastCount: 5
-  raycastSpread: 0.5
-  foamParticles: {fileID: 6918102650768965082}
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  groundCheckDistance: 1
-  foamParticlesPerSecond: 50
-  moveSpeed: 5
-  jumpForce: 8
-  jumpCutMultiplier: 0.5
-  minJumpVelocity: 2
-  animator: {fileID: 3276520232718924349}
-  health: 10
-  attackDistance: 1.6
 --- !u!95 &3276520232718924349
 Animator:
   serializedVersion: 7
@@ -225,6 +192,39 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3519682308273206148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5238352174512194233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c22716a483526c8ee9d98c8c3c306f42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerScript
+  cleanRadius: 1
+  cleanRate: 0.5
+  useGroundBasedCleaning: 1
+  maxCleaningHeight: 1
+  verticalTolerance: 1
+  useMultiRaycast: 1
+  raycastCount: 5
+  raycastSpread: 0.5
+  foamParticles: {fileID: 6918102650768965082}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  groundCheckDistance: 1
+  foamParticlesPerSecond: 50
+  moveSpeed: 5
+  jumpForce: 8
+  jumpCutMultiplier: 0.5
+  minJumpVelocity: 2
+  animator: {fileID: 3276520232718924349}
+  health: 10
+  attackDistance: 1.6
 --- !u!1 &7196836783778714653
 GameObject:
   m_ObjectHideFlags: 0

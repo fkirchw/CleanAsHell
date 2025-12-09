@@ -71,6 +71,8 @@ public class FlyingDemonScript : MonoBehaviour, IDamageable
         health -= damage;
 
         animator.SetBool("isHurt", true);
+        
+        BloodSystem.Instance.OnEnemyHit(this.transform.position, knockbackDir, true, damage);
 
         rb.linearVelocity = knockbackDir * knockbackForce;
 
