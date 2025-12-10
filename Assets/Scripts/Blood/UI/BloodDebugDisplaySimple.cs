@@ -10,7 +10,7 @@ namespace Blood.UI
     public class BloodDebugDisplaySimple : MonoBehaviour
     {
         [Header("References")]
-        [SerializeField] private PlayerScript player;
+        [SerializeField] private PlayerData player;
     
         [Header("Display Settings")]
         [SerializeField] private bool showOnStart = false;
@@ -37,7 +37,12 @@ namespace Blood.UI
         
             if (player == null)
             {
-                player = FindFirstObjectByType<PlayerScript>();
+                if (PlayerData.Instance != null)
+                {
+                    player = PlayerData.Instance;
+                }
+
+              
                 if (player == null)
                 {
                     Debug.LogWarning("BloodDebugDisplay: No PlayerScript found in scene!");

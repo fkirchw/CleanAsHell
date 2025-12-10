@@ -10,9 +10,10 @@ public class FlyingDemonScript : MonoBehaviour, IDamageable
     private Rigidbody2D rb;
     private Vector2 direction;
     [SerializeField] private float moveSpeed = 4f;
-    [SerializeField] private float attackDistance = 3f;
+    [SerializeField] private float attackDistance = 4f;
     [SerializeField] private int health = 10;
     [SerializeField] private int damage = 10;
+    [SerializeField] private float knockbackForce = 15f;
 
     private bool isDead = false;
 
@@ -50,18 +51,18 @@ public class FlyingDemonScript : MonoBehaviour, IDamageable
         }
 
 
-        IDamageable playerScript = playerPosition.GetComponent<PlayerScript>();
+        IDamageable playerScript = playerPosition.GetComponent<IDamageable>();
         if (playerScript != null)
         {
 
-            Vector2 knockbackDir = new Vector2(2, 1).normalized;
+            Vector2 knockbackDir = new Vector2(3, 1).normalized;
 
             if (direction.x < 0)
             {
                 knockbackDir.x *= -1;
             }
 
-            playerScript.TakeDamage(damage, knockbackDir, 6f);
+            playerScript.TakeDamage(damage, knockbackDir, knockbackForce);
         }
 
     }

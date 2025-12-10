@@ -587,6 +587,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!198 &1025719380 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 6918102650768965082, guid: 2c634abe36fa3a1c7b7a09f9ea4ad2e7, type: 3}
+  m_PrefabInstance: {fileID: 1373154740350362925}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1041884311
 GameObject:
   m_ObjectHideFlags: 0
@@ -1692,6 +1697,10 @@ PrefabInstance:
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3519682308273206148, guid: 2c634abe36fa3a1c7b7a09f9ea4ad2e7, type: 3}
+      propertyPath: hasGroundHeight
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3519682308273206148, guid: 2c634abe36fa3a1c7b7a09f9ea4ad2e7, type: 3}
       propertyPath: groundLayer.m_Bits
       value: 64
       objectReference: {fileID: 0}
@@ -1723,6 +1732,14 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5531153764640836551, guid: 2c634abe36fa3a1c7b7a09f9ea4ad2e7, type: 3}
+      propertyPath: jumpForce
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5531153764640836551, guid: 2c634abe36fa3a1c7b7a09f9ea4ad2e7, type: 3}
+      propertyPath: attackDistance
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6918102650768965082, guid: 2c634abe36fa3a1c7b7a09f9ea4ad2e7, type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
       value: 0
@@ -1746,6 +1763,18 @@ PrefabInstance:
     - target: {fileID: 7763774301392214900, guid: 2c634abe36fa3a1c7b7a09f9ea4ad2e7, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7888525575863758627, guid: 2c634abe36fa3a1c7b7a09f9ea4ad2e7, type: 3}
+      propertyPath: foamParticles
+      value: 
+      objectReference: {fileID: 1025719380}
+    - target: {fileID: 7888525575863758627, guid: 2c634abe36fa3a1c7b7a09f9ea4ad2e7, type: 3}
+      propertyPath: raycastSpread
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7888525575863758627, guid: 2c634abe36fa3a1c7b7a09f9ea4ad2e7, type: 3}
+      propertyPath: verticalTolerance
+      value: 1.6
       objectReference: {fileID: 0}
     - target: {fileID: 8087258515362108122, guid: 2c634abe36fa3a1c7b7a09f9ea4ad2e7, type: 3}
       propertyPath: m_IsActive

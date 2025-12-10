@@ -70,13 +70,12 @@ public class LuciferMain : MonoBehaviour, IDamageable
             return;
         }
 
-        float damageRange = attackDistance;
         float distanceToPlayer = Vector2.Distance(new Vector2(rb.position.x, rb.position.y),
             new Vector2(playerPosition.position.x, playerPosition.position.y));
 
-        if (distanceToPlayer < damageRange)
+        if (distanceToPlayer < attackDistance)
         {
-            IDamageable playerScript = playerPosition.GetComponent<PlayerScript>();
+            IDamageable playerScript = playerPosition.GetComponent<IDamageable>();
             if (playerScript != null)
             {
                 Vector2 knockbackDir = new Vector2(1, 1).normalized;
