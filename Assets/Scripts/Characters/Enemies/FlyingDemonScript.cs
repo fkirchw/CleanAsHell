@@ -51,11 +51,11 @@ public class FlyingDemonScript : MonoBehaviour, IDamageable
         }
 
 
-        IDamageable playerScript = playerPosition.GetComponent<PlayerScript>();
+        IDamageable playerScript = playerPosition.GetComponent<IDamageable>();
         if (playerScript != null)
         {
 
-            Vector2 knockbackDir = new Vector2(5, 1).normalized;
+            Vector2 knockbackDir = new Vector2(3, 1).normalized;
 
             if (direction.x < 0)
             {

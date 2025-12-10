@@ -518,6 +518,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!198 &692342367 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 6918102650768965082, guid: 2c634abe36fa3a1c7b7a09f9ea4ad2e7, type: 3}
+  m_PrefabInstance: {fileID: 1373154740350362925}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &979639415
 GameObject:
   m_ObjectHideFlags: 0
@@ -22195,6 +22200,74 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3519682308273206148, guid: 2c634abe36fa3a1c7b7a09f9ea4ad2e7, type: 3}
+      propertyPath: hasGroundHeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3519682308273206148, guid: 2c634abe36fa3a1c7b7a09f9ea4ad2e7, type: 3}
+      propertyPath: playerController.damage
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3519682308273206148, guid: 2c634abe36fa3a1c7b7a09f9ea4ad2e7, type: 3}
+      propertyPath: playerController.jumpForce
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3519682308273206148, guid: 2c634abe36fa3a1c7b7a09f9ea4ad2e7, type: 3}
+      propertyPath: playerController.moveSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3519682308273206148, guid: 2c634abe36fa3a1c7b7a09f9ea4ad2e7, type: 3}
+      propertyPath: playerCleaningSystem.player
+      value: 
+      objectReference: {fileID: 1373154740350362926}
+    - target: {fileID: 3519682308273206148, guid: 2c634abe36fa3a1c7b7a09f9ea4ad2e7, type: 3}
+      propertyPath: playerCleaning.foamParticles
+      value: 
+      objectReference: {fileID: 692342367}
+    - target: {fileID: 3519682308273206148, guid: 2c634abe36fa3a1c7b7a09f9ea4ad2e7, type: 3}
+      propertyPath: playerCleaningSystem.cleanRate
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3519682308273206148, guid: 2c634abe36fa3a1c7b7a09f9ea4ad2e7, type: 3}
+      propertyPath: playerController.attackDistance
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3519682308273206148, guid: 2c634abe36fa3a1c7b7a09f9ea4ad2e7, type: 3}
+      propertyPath: playerCleaningSystem.cleanRadius
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3519682308273206148, guid: 2c634abe36fa3a1c7b7a09f9ea4ad2e7, type: 3}
+      propertyPath: playerController.minJumpVelocity
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3519682308273206148, guid: 2c634abe36fa3a1c7b7a09f9ea4ad2e7, type: 3}
+      propertyPath: playerCleaningSystem.raycastCount
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3519682308273206148, guid: 2c634abe36fa3a1c7b7a09f9ea4ad2e7, type: 3}
+      propertyPath: playerCleaningSystem.raycastSpread
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3519682308273206148, guid: 2c634abe36fa3a1c7b7a09f9ea4ad2e7, type: 3}
+      propertyPath: playerController.jumpCutMultiplier
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3519682308273206148, guid: 2c634abe36fa3a1c7b7a09f9ea4ad2e7, type: 3}
+      propertyPath: playerCleaningSystem.maxCleaningHeight
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3519682308273206148, guid: 2c634abe36fa3a1c7b7a09f9ea4ad2e7, type: 3}
+      propertyPath: playerCleaningSystem.verticalTolerance
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3519682308273206148, guid: 2c634abe36fa3a1c7b7a09f9ea4ad2e7, type: 3}
+      propertyPath: playerCleaningSystem.groundCheckDistance
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3519682308273206148, guid: 2c634abe36fa3a1c7b7a09f9ea4ad2e7, type: 3}
+      propertyPath: playerCleaningSystem.foamParticlesPerSecond
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5238352174512194233, guid: 2c634abe36fa3a1c7b7a09f9ea4ad2e7, type: 3}
       propertyPath: m_Name
       value: Player
@@ -22222,6 +22295,14 @@ PrefabInstance:
     - target: {fileID: 5259447387750317610, guid: 2c634abe36fa3a1c7b7a09f9ea4ad2e7, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5531153764640836551, guid: 2c634abe36fa3a1c7b7a09f9ea4ad2e7, type: 3}
+      propertyPath: jumpForce
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5531153764640836551, guid: 2c634abe36fa3a1c7b7a09f9ea4ad2e7, type: 3}
+      propertyPath: attackDistance
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7165403001124680223, guid: 2c634abe36fa3a1c7b7a09f9ea4ad2e7, type: 3}
       propertyPath: playerRange

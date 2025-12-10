@@ -5,7 +5,7 @@ public class CameraController : MonoBehaviour
 {
     public float smoothSpeed = 3f; // Glättung
     public Vector3 offset = new Vector3(0, 4f, -10); // Kamera-Offset
-    public PlayerScript player;
+    public PlayerData player;
     public float cameraYThreshold;
     
     private float worldXMin = 0;
@@ -14,13 +14,22 @@ public class CameraController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerScript>();
+        if(PlayerData.Instance != null)
+        {
+            player = PlayerData.Instance;
+        } else
+        {
+            Debug.Log("Player Instance not set");
+            return;
+        }
+
+        
     }
 
     // Update is called once per frame
     void LateUpdate()
     {   
-        if(player.DeathStatus())
+        if(player.IsDead())
         {
             return;
         }

@@ -75,7 +75,7 @@ public class LuciferMain : MonoBehaviour, IDamageable
 
         if (distanceToPlayer < attackDistance)
         {
-            IDamageable playerScript = playerPosition.GetComponent<PlayerScript>();
+            IDamageable playerScript = playerPosition.GetComponent<IDamageable>();
             if (playerScript != null)
             {
                 Vector2 knockbackDir = new Vector2(1, 1).normalized;

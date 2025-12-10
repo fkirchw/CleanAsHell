@@ -1,44 +1,50 @@
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-public class PlayerCleaning
+[System.Serializable]
+public class PlayerCleaningSystem: MonoBehaviour
 {
+    [Header("Cleaning Settings")]
+    [SerializeField] private float cleanRadius = 2f;
+    [SerializeField] private float cleanRate = 0.5f;
+
+    [Header("Ground-Based Cleaning")]
+    private bool useGroundBasedCleaning = true;
+    [SerializeField] private float maxCleaningHeight = 2f;
+    [SerializeField] private float verticalTolerance = 0.3f;
+    [SerializeField] private bool useMultiRaycast = true;
+    [SerializeField] private int raycastCount = 5;
+    [SerializeField] private float raycastSpread = 1f;
+
+    [Header("Foam Visual Feedback")]
+    [SerializeField] private ParticleSystem foamParticles;
+    [SerializeField] private float groundCheckDistance = 5f;
+    [SerializeField] private int foamParticlesPerSecond = 20;
+
+    // -----------------------------
+    // NON-serialized internal fields
+    // -----------------------------
+
     private float foamParticleTimer;
     private int cleaningFrames;
     private Vector2[] raycastPositions;
     private float groundY;
     private float bloodCleanedThisFrame;
-    private readonly PlayerScript player;
-    private readonly Animator animator;
-    private readonly ParticleSystem foamParticles;
-    private readonly bool useGroundBasedCleaning;
-    private readonly bool useMultiRaycast;
-    private readonly float maxCleaningHeight;
-    private readonly LayerMask groundLayer;
-    private readonly int raycastCount;
-    private readonly float raycastSpread;
-    private readonly float cleanRadius;
-    private readonly float cleanRate;
-    private readonly float verticalTolerance;
-    private readonly float foamParticlesPerSecond;
-    private readonly float groundCheckDistance;
 
-    public PlayerCleaning(PlayerScript player)
+    private PlayerData player;
+    private Animator animator;
+
+    public void Start()
     {
-        this.player = player;
+        if (PlayerData.Instance != null)
+        {
+            player = PlayerData.Instance;
+        } else
+        {
+            Debug.Log("Instanz nicht gesetzt");
+            return;
+        }
         animator = player.GetPlayerAnimator();
-        
-        foamParticles = player.GetFoamParticles();
-        useGroundBasedCleaning = player.GetUseGroundBasedCleaining();
-        useMultiRaycast = player.GetUseMultiRayCast();
-        maxCleaningHeight = player.GetMaxCleaningHeight();
-        groundLayer = player.GetGroundLayer();
-        raycastCount = player.GetRayCastCount();
-        raycastSpread = player.GetRayCastSpread();
-        cleanRadius = player.GetCleanRadius();
-        cleanRate = player.GetCleanRate();
-        verticalTolerance = player.GetVerticalTolerance();
-        foamParticlesPerSecond = player.GetFoamParitclesPerSeconde();
     }
 
     public void Update()
@@ -49,7 +55,7 @@ public class PlayerCleaning
 
         if (fire2Down && !isHitting)
         {
-            if (!player.isCleaning)
+            if (!player.IsCleaning())
             {
                 StartCleaning();
             }
@@ -57,7 +63,7 @@ public class PlayerCleaning
             PerformCleaning();
             SpawnGroundFoam();
         }
-        else if (player.isCleaning)
+        else if (player.IsCleaning())
         {
             StopCleaning();
         }
@@ -65,7 +71,7 @@ public class PlayerCleaning
 
     void StartCleaning()
     {
-        player.isCleaning = true;
+        player.SetIsCleaning(true);
         foamParticleTimer = 0f;
         cleaningFrames = 0;
         player.hasGroundHeight = false;
@@ -80,7 +86,7 @@ public class PlayerCleaning
 
     void StopCleaning()
     {
-        player.isCleaning = false;
+        player.SetIsCleaning(false);
         player.hasGroundHeight = false;
         raycastPositions = null;
         Debug.Log($"Stopped cleaning. Cleaned for {cleaningFrames} frames.");
@@ -105,7 +111,7 @@ public class PlayerCleaning
             player.transform.position,
             Vector2.down,
             maxCleaningHeight,
-            groundLayer
+            player.groundLayer
         );
 
         if (hit.collider != null)
@@ -144,7 +150,7 @@ public class PlayerCleaning
                 rayOrigin,
                 Vector2.down,
                 maxCleaningHeight,
-                groundLayer
+                player.groundLayer
             );
 
             if (hit.collider != null)
@@ -252,7 +258,7 @@ public class PlayerCleaning
             new Vector2(spawnPosition.x, targetY + groundCheckDistance),
             Vector2.down,
             groundCheckDistance * 2f,
-            groundLayer
+            player.groundLayer
         );
 
         if (hit.collider)
@@ -273,7 +279,9 @@ public class PlayerCleaning
 
 
     public void DebugCleaning()
-    {
+    {   
+        if(player == null) return;
+
         // Draw cleaning radius
         Gizmos.color = new Color(0, 1, 1, 0.3f);
         Gizmos.DrawSphere(player.transform.position, cleanRadius);
@@ -318,5 +326,10 @@ public class PlayerCleaning
                 Gizmos.DrawLine(player.transform.position, new Vector2(player.transform.position.x, groundY));
             }
         }
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        DebugCleaning();
     }
 }
