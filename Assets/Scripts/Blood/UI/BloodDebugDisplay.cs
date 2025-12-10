@@ -10,7 +10,7 @@ namespace Blood.UI
     public class BloodDebugDisplay : MonoBehaviour
     {
         [Header("References")]
-        [SerializeField] private PlayerData player;
+        private PlayerData player;
     
         [Header("Display Settings")]
         [SerializeField] private bool showOnStart = false;
@@ -34,6 +34,14 @@ namespace Blood.UI
 
         void Awake()
         {
+            player = FindFirstObjectByType<PlayerData>();
+
+            if (player == null)
+            {
+                Debug.LogError("PlayerData fehlt auf " + gameObject.name);
+                return;
+            }
+
             // Create input action for F3 toggle
             toggleDebugAction = new InputAction(
                 name: "ToggleDebug",
@@ -62,22 +70,7 @@ namespace Blood.UI
 
         void Start()
         {
-            InitializeStyles();
-        
-            if (player == null)
-            {
-
-                if (PlayerData.Instance != null)
-                {
-                    player = PlayerData.Instance;
-                }
-
-                
-                if (player == null)
-                {
-                    Debug.LogWarning("BloodDebugDisplay: No PlayerScript found in scene!");
-                }
-            }
+            InitializeStyles();            
         
             UpdateDebugText();
         }

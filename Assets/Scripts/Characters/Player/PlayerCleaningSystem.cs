@@ -20,7 +20,7 @@ public class PlayerCleaningSystem: MonoBehaviour
     [SerializeField] private ParticleSystem foamParticles;
     [SerializeField] private float groundCheckDistance = 5f;
     [SerializeField] private int foamParticlesPerSecond = 20;
-
+    [SerializeField] private bool hasGroundHeight = true;
     // -----------------------------
     // NON-serialized internal fields
     // -----------------------------
@@ -34,14 +34,16 @@ public class PlayerCleaningSystem: MonoBehaviour
     private PlayerData player;
     private Animator animator;
 
+    public void Awake()
+    {
+        player = GetComponent<PlayerData>();
+    }
+
     public void Start()
     {
-        if (PlayerData.Instance != null)
+        if(player == null)
         {
-            player = PlayerData.Instance;
-        } else
-        {
-            Debug.Log("Instanz nicht gesetzt");
+            Debug.Log("Instanz nicht gefunden");
             return;
         }
         animator = player.GetPlayerAnimator();
@@ -74,7 +76,7 @@ public class PlayerCleaningSystem: MonoBehaviour
         player.SetIsCleaning(true);
         foamParticleTimer = 0f;
         cleaningFrames = 0;
-        player.hasGroundHeight = false;
+        hasGroundHeight = false;
 
         if (useGroundBasedCleaning)
         {
@@ -87,7 +89,7 @@ public class PlayerCleaningSystem: MonoBehaviour
     void StopCleaning()
     {
         player.SetIsCleaning(false);
-        player.hasGroundHeight = false;
+        hasGroundHeight = false;
         raycastPositions = null;
         Debug.Log($"Stopped cleaning. Cleaned for {cleaningFrames} frames.");
     }
@@ -117,12 +119,12 @@ public class PlayerCleaningSystem: MonoBehaviour
         if (hit.collider != null)
         {
             groundY = hit.point.y;
-            player.hasGroundHeight = true;
+            hasGroundHeight = true;
         }
         else
         {
             groundY = player.transform.position.y;
-            player.hasGroundHeight = true;
+            hasGroundHeight = true;
             Debug.LogWarning($"No ground found below player, using player Y={groundY:F2}");
         }
     }
@@ -167,14 +169,14 @@ public class PlayerCleaningSystem: MonoBehaviour
         if (foundAnyGround)
         {
             groundY = closestGroundY;
-            player.hasGroundHeight = true;
+            hasGroundHeight = true;
             Debug.Log($"Multi-raycast found ground at Y={groundY:F2}");
         }
         else
         {
             // No ground found by any raycast - fallback to player height
             groundY = player.transform.position.y;
-            player.hasGroundHeight = true;
+            hasGroundHeight = true;
             Debug.LogWarning($"Multi-raycast found no ground, using player Y={groundY:F2}");
         }
     }
@@ -197,7 +199,7 @@ public class PlayerCleaningSystem: MonoBehaviour
 
         float cleanAmount = cleanRate * Time.deltaTime;
 
-        if (useGroundBasedCleaning && player.hasGroundHeight)
+        if (useGroundBasedCleaning && hasGroundHeight)
         {
             BloodSystem.Instance.CleanBloodOnGround(
                 player.transform.position,
@@ -252,7 +254,7 @@ public class PlayerCleaningSystem: MonoBehaviour
         Vector2 randomOffset = Random.insideUnitCircle * cleanRadius;
         Vector2 spawnPosition = (Vector2)player.transform.position + randomOffset;
 
-        float targetY = useGroundBasedCleaning && player.hasGroundHeight ? groundY : player.transform.position.y;
+        float targetY = useGroundBasedCleaning && hasGroundHeight ? groundY : player.transform.position.y;
 
         RaycastHit2D hit = Physics2D.Raycast(
             new Vector2(spawnPosition.x, targetY + groundCheckDistance),
@@ -290,7 +292,7 @@ public class PlayerCleaningSystem: MonoBehaviour
         Gizmos.DrawWireSphere(player.transform.position, cleanRadius);
 
         // Draw ground-based cleaning visualization
-        if (Application.isPlaying && useGroundBasedCleaning && player.hasGroundHeight)
+        if (Application.isPlaying && useGroundBasedCleaning && hasGroundHeight)
         {
             // Draw the ground line
             Gizmos.color = Color.green;

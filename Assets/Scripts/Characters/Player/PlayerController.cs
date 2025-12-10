@@ -24,12 +24,16 @@ public class PlayerController:MonoBehaviour, IDamageable
 
     private Vector2 facingDirection;
 
+    public void Awake()
+    {
+        player = GetComponent<PlayerData>();
+    }
+
     public void Start()
     {
-        if (PlayerData.Instance != null)
-        {
-            player = PlayerData.Instance;
-        } else
+        
+
+        if (player == null)
         {
             Debug.Log("Instanz nicht gesetzt");
             return;

@@ -30,25 +30,24 @@ namespace Blood.UI
         private float lastUpdateTime;
         private string cachedDebugText;
 
+        public void Awake()
+        {
+            player = GetComponent<PlayerData>();
+        }
+
+
         void Start()
         {
-            InitializeStyles();
-            isVisible = showOnStart;
-        
+            
             if (player == null)
             {
-                if (PlayerData.Instance != null)
-                {
-                    player = PlayerData.Instance;
-                }
-
-              
-                if (player == null)
-                {
-                    Debug.LogWarning("BloodDebugDisplay: No PlayerScript found in scene!");
-                }
+                Debug.LogWarning("BloodDebugDisplay: No PlayerScript found in scene!");
+                return;
             }
-        
+
+            InitializeStyles();
+            isVisible = showOnStart;
+
             UpdateDebugText();
         }
 

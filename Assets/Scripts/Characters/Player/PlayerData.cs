@@ -4,7 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerData : MonoBehaviour
 {
-    [Header("Player")]
+    [Header("Player Data")]
     [SerializeField] private Animator animator;
     [SerializeField] private int health = 10;
     [SerializeField] public LayerMask groundLayer;
@@ -19,13 +19,9 @@ public class PlayerData : MonoBehaviour
     
     // Ground-based cleaning cache
     //private float groundY;
-    public bool hasGroundHeight;
-
     // Debugging
     
     private Vector2[] raycastPositions; // For debug visualization
-
-    public static PlayerData Instance;
 
     // region basic
     private void Start()
@@ -42,14 +38,6 @@ public class PlayerData : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance != null && Instance != this)
-        {
-            Destroy(this);
-            return;
-        }
-
-        Instance = this;
-
         playerCollider = GetComponent<Collider2D>();
         playerRigidBody = GetComponent<Rigidbody2D>();
     }
@@ -73,9 +61,7 @@ public class PlayerData : MonoBehaviour
 
     public bool IsDead() => isDead;
     public bool IsCleaning() => isCleaning;
-    //public float GetGroundY() => groundY;
-    public bool HasGroundHeight() => hasGroundHeight;
-    
+    //public float GetGroundY() => groundY;    
     public float GetHealthPercent() => health/10f;
 
     public Rigidbody2D GetRb() => playerRigidBody;
