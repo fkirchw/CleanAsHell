@@ -6,7 +6,7 @@ public class CameraController : MonoBehaviour
 {
     public float smoothSpeed = 3f; // Gl�ttung
     public Vector3 offset = new Vector3(0, 4f, -10); // Kamera-Offset
-    private PlayerData player;
+    private PlayerData playerData;
     public float cameraYThreshold;
     
     private float worldXMin = 0;
@@ -17,28 +17,26 @@ public class CameraController : MonoBehaviour
     
     public void Awake()
     {
-        player = FindFirstObjectByType<PlayerData>();
-        if (player == null)
+        playerData = FindFirstObjectByType<PlayerData>();
+        if (!playerData)
         {
-            Debug.LogError("PlayerData fehlt auf " + gameObject.name);
-            return;
+            throw new UnityException("PlayerData access object not found");
         }
-            
     }
    
 
     // Update is called once per frame
     void LateUpdate()
     {   
-        if(player.IsDead())
+        if(playerData.IsDead)
         {
             return;
         }
 
-        Vector3 desiredPosition = player.transform.position + offset;
+        Vector3 desiredPosition = playerData.Position + offset;
         //camera if player.y > 0 moves 
       
-        desiredPosition.y = Mathf.Max(player.transform.position.y-cameraYThreshold, 0);
+        desiredPosition.y = Mathf.Max(playerData.Position.y-cameraYThreshold, 0);
 
         desiredPosition.x = Mathf.Max(desiredPosition.x, worldXMin);
 

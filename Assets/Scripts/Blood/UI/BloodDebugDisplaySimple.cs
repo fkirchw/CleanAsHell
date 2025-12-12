@@ -94,7 +94,7 @@ namespace Blood.UI
 
         void UpdateDebugText()
         {
-            if (BloodSystem.Instance == null)
+            if (!BloodSystem.Instance)
             {
                 cachedDebugText = "=== BLOOD DEBUG ===\n\n" +
                                   "BloodSystem: <color=red>NOT FOUND</color>\n\n" +
@@ -103,14 +103,14 @@ namespace Blood.UI
             }
 
             // Get player position
-            Vector3 playerPos = player != null ? player.transform.position : Vector3.zero;
+            Vector3 playerPos = player ? player.transform.position : Vector3.zero;
         
             // Gather blood statistics
             float totalBlood = BloodSystem.Instance.GetTotalBlood();
             float bloodPercentage = BloodSystem.Instance.GetBloodPercentage();
             int bloodyCells = BloodSystem.Instance.GetBloodyCellCount();
             float bloodAtPlayer = BloodSystem.Instance.GetBloodAtPosition(playerPos);
-            float bloodInCleanRadius = player != null ? 
+            float bloodInCleanRadius = player ? 
                 BloodSystem.Instance.GetBloodInRadius(playerPos, 2f) : 0f;
 
             // Build debug string with rich text
@@ -132,12 +132,12 @@ namespace Blood.UI
             cachedDebugText += $"  Blood in Clean Radius: <color=yellow>{bloodInCleanRadius:F3}</color>\n\n";
         
             // Player info
-            if (player != null)
+            if (player)
             {
                 cachedDebugText += "<b>Player Info:</b>\n";
                 cachedDebugText += $"  Position: <color=cyan>({playerPos.x:F2}, {playerPos.y:F2})</color>\n";
             
-                bool cleaning = player.IsCleaning();
+                bool cleaning = player.IsCleaning;
                 string cleaningColor = cleaning ? "lime" : "gray";
                 cachedDebugText += $"  Cleaning: <color={cleaningColor}>{(cleaning ? "YES" : "NO")}</color>\n";
                 cachedDebugText += $"  Clean Radius: <color=cyan>2.0</color>\n\n";

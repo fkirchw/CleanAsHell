@@ -4,19 +4,18 @@ using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
-    private PlayerData player;
+    private PlayerData playerData;
     private Slider slider;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     private void Awake()
     { 
 
-        player = FindFirstObjectByType<PlayerData>();
+        playerData = FindFirstObjectByType<PlayerData>();
 
-        if (player == null)
+        if (!playerData)
         {
-            Debug.LogError("PlayerData fehlt auf " + gameObject.name);
-            return;
+            throw new UnityException("PlayerData not found");
         }
 
     }
@@ -30,6 +29,6 @@ public class HealthBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        slider.value = player.GetHealthPercent();
+        slider.value = playerData.HealthPercent;
     }
 }

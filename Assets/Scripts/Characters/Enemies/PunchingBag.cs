@@ -49,11 +49,5 @@ namespace Characters.Enemies
             spriteRenderer.color = Color.white;
             flashCoroutine = null;
         }
-
-        public void DealDamage(float attackDistance)
-        {
-            //Unused here, only for testing stuff
-            return;
-        }
     }
 }

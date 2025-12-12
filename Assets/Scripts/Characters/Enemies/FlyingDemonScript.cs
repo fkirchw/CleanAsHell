@@ -41,8 +41,10 @@ namespace Characters.Enemies
                 HandleMovement();
             }
         }
-
-        public void DealDamage(float attackDistance)
+        
+        //TODO: (kfe) Am I thinking wrong or does this a radial check? So would it hit a player *behind* the attacker?
+        // and if so, should we keep it? its a valid behaviour for a flying guy.
+        private void DealDamage()
         {
             float distanceToPlayer = Vector2.Distance(new Vector2(transform.position.x, transform.position.y),
                 new Vector2(playerPosition.position.x, playerPosition.position.y));
@@ -136,7 +138,7 @@ namespace Characters.Enemies
         public void OnDamageDeltAniEvent()
         {
             animator.SetBool("isAttacking", false);
-            DealDamage(attackDistance);
+            DealDamage();
         }
     }
 }

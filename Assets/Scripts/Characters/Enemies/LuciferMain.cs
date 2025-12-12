@@ -63,10 +63,10 @@ namespace Characters.Enemies
         //Called by Animation Event
         public void OnDamageDeltAniEvent()
         {
-            DealDamage(attackDistance);
+            DealDamage();
         }
 
-        public void DealDamage(float attackDistance)
+        private void DealDamage()
         {
             if (!playerDetected)
             {
