@@ -1,9 +1,10 @@
+using Characters.Player;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    public float smoothSpeed = 3f; // Glättung
+    public float smoothSpeed = 3f; // Glï¿½ttung
     public Vector3 offset = new Vector3(0, 4f, -10); // Kamera-Offset
     private PlayerData player;
     public float cameraYThreshold;
