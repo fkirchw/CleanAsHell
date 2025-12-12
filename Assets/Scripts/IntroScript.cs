@@ -3,8 +3,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-
-
 public class IntroScript : MonoBehaviour
 {
     public Image comicImage = null;         // Das UI-Image im Canvas

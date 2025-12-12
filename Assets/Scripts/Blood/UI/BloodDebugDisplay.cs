@@ -1,3 +1,4 @@
+using Characters.Player;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -10,10 +11,10 @@ namespace Blood.UI
     public class BloodDebugDisplay : MonoBehaviour
     {
         [Header("References")]
-        [SerializeField] private PlayerScript player;
+        private PlayerData player;
     
         [Header("Display Settings")]
-        [SerializeField] private bool showOnStart = false;
+        [SerializeField] private bool showOnStart;
         [SerializeField] private int fontSize = 14;
         [SerializeField] private Color textColor = Color.white;
         [SerializeField] private Color backgroundColor = new Color(0, 0, 0, 0.5f);
@@ -22,7 +23,7 @@ namespace Blood.UI
         private InputAction toggleDebugAction;
     
         // State
-        private bool isVisible = false;
+        private bool isVisible;
         private GUIStyle textStyle;
         private GUIStyle backgroundStyle;
         private Texture2D backgroundTexture;
@@ -34,6 +35,14 @@ namespace Blood.UI
 
         void Awake()
         {
+            player = FindFirstObjectByType<PlayerData>();
+
+            if (player == null)
+            {
+                Debug.LogError("PlayerData fehlt auf " + gameObject.name);
+                return;
+            }
+
             // Create input action for F3 toggle
             toggleDebugAction = new InputAction(
                 name: "ToggleDebug",
@@ -62,16 +71,7 @@ namespace Blood.UI
 
         void Start()
         {
-            InitializeStyles();
-        
-            if (player == null)
-            {
-                player = FindFirstObjectByType<PlayerScript>();
-                if (player == null)
-                {
-                    Debug.LogWarning("BloodDebugDisplay: No PlayerScript found in scene!");
-                }
-            }
+            InitializeStyles();            
         
             UpdateDebugText();
         }
@@ -130,7 +130,7 @@ namespace Blood.UI
             float bloodPercentage = BloodSystem.Instance.GetBloodPercentage();
             int bloodyCells = BloodSystem.Instance.GetBloodyCellCount();
             float bloodAtPlayer = BloodSystem.Instance.GetBloodAtPosition(playerPos);
-            float bloodInCleanRadius = player != null ? 
+            float bloodInCleanRadius = player ? 
                 BloodSystem.Instance.GetBloodInRadius(playerPos, 2f) : 0f;
 
             // Build debug string
@@ -151,11 +151,11 @@ namespace Blood.UI
             cachedDebugText += $"  Blood in Clean Radius: {bloodInCleanRadius:F3}\n\n";
         
             // Player info
-            if (player != null)
+            if (player)
             {
                 cachedDebugText += $"<b>Player Info:</b>\n";
                 cachedDebugText += $"  Position: ({playerPos.x:F2}, {playerPos.y:F2})\n";
-                cachedDebugText += $"  Cleaning: {(player.IsCleaning() ? "YES" : "NO")}\n";
+                cachedDebugText += $"  Cleaning: {(player.IsCleaning ? "YES" : "NO")}\n";
                 cachedDebugText += $"  Clean Radius: 2.0\n\n";
             }
         

@@ -1,34 +1,42 @@
+using Characters.Player;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    public float smoothSpeed = 3f; // Glättung
+    public float smoothSpeed = 3f; // Glï¿½ttung
     public Vector3 offset = new Vector3(0, 4f, -10); // Kamera-Offset
-    public PlayerScript player;
+    private PlayerData playerData;
     public float cameraYThreshold;
     
     private float worldXMin = 0;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+
+    
+    public void Awake()
     {
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerScript>();
+        playerData = FindFirstObjectByType<PlayerData>();
+        if (!playerData)
+        {
+            throw new UnityException("PlayerData access object not found");
+        }
     }
+   
 
     // Update is called once per frame
     void LateUpdate()
     {   
-        if(player.DeathStatus())
+        if(playerData.IsDead)
         {
             return;
         }
 
-        Vector3 desiredPosition = player.transform.position + offset;
+        Vector3 desiredPosition = playerData.Position + offset;
         //camera if player.y > 0 moves 
       
-        desiredPosition.y = Mathf.Max(player.transform.position.y-cameraYThreshold, 0);
+        desiredPosition.y = Mathf.Max(playerData.Position.y-cameraYThreshold, 0);
 
         desiredPosition.x = Mathf.Max(desiredPosition.x, worldXMin);
 
