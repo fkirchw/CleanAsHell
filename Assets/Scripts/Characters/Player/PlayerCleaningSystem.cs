@@ -25,6 +25,7 @@ namespace Characters.Player
         [SerializeField] private int foamParticlesPerSecond = 20;
 
         private PlayerMovement movement;
+        private Animator animator;
         private bool isCleaning;
         private float groundY;
         private bool hasGroundHeight;
@@ -37,12 +38,14 @@ namespace Characters.Player
         private void Awake()
         {
             movement = GetComponent<PlayerMovement>();
+            animator = GetComponent<Animator>();
+            
         }
 
         private void Update()
         {
             bool fire2Down = Input.GetButton("Fire2");
-            bool isInHitAnimation = GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Hit");
+            bool isInHitAnimation = animator.GetCurrentAnimatorStateInfo(0).IsName("Hit");
 
             if (fire2Down && !isInHitAnimation)
             {
