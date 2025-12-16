@@ -16,6 +16,7 @@ namespace Characters.Player
         [SerializeField] private float attackDistance = 1f;
 
         private PlayerMovement movement;
+        private Collider2D playerCollider;
 
         public bool IsDead { get; private set; }
         public bool IsAttacking { get; private set; }
@@ -24,13 +25,14 @@ namespace Characters.Player
         private void Awake()
         {
             movement = GetComponent<PlayerMovement>();
+            playerCollider = GetComponent<Collider2D>();
         }
 
         private void Update()
         {
             if (IsDead)
             {
-                GetComponent<Collider2D>().enabled = false;
+                playerCollider.enabled = false;
                 return;
             }
 
@@ -90,11 +92,13 @@ namespace Characters.Player
             Vector2 dir = movement.FacingDirection;
             Vector2 origin = (Vector2)transform.position + (dir * 0.5f);
 
-            RaycastHit2D hit = Physics2D.Raycast(origin, dir, attackDistance, LayerMask.GetMask("Enemy"));
-
-            if (hit.collider && hit.collider.TryGetComponent(out IDamageable damageable))
+            RaycastHit2D[] hits = Physics2D.RaycastAll(origin, dir, attackDistance, LayerMask.GetMask("Enemy"));
+            foreach (RaycastHit2D hit in hits)
             {
-                damageable.TakeDamage(attackPower, dir, 0f);
+                if (hit.collider && !hit.collider.isTrigger && hit.collider.TryGetComponent(out IDamageable damageable))
+                {
+                    damageable.TakeDamage(attackPower, dir, 0f);
+                }
             }
         }
 
