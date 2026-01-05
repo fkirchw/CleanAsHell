@@ -1522,12 +1522,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e59a08c08e4383bc08c725e68e433b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Blood.UI.BloodDebugDisplaySimple
-  player: {fileID: 0}
-  showOnStart: 1
-  toggleKey: 284
-  fontSize: 14
-  textColor: {r: 1, g: 1, b: 1, a: 1}
-  backgroundColor: {r: 0, g: 0, b: 0, a: 0.5}
 --- !u!4 &1418720925
 Transform:
   m_ObjectHideFlags: 0
