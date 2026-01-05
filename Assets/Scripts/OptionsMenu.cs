@@ -1,42 +1,49 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class OptionsMenu : MonoBehaviour
 {
-    [Header("Referințe")]
-    [SerializeField] private GameObject visualPanel; 
+    [Header("References")]
+    [SerializeField] private GameObject visualPanel;
+
+    private InputAction pauseAction;
 
     void Start()
     {
-        // La start, ne asigurăm că totul curge normal
+        // At start, ensure everything flows normally
         Time.timeScale = 1f;
+
+        // Set up pause action at runtime
+        pauseAction = new InputAction("Pause", binding: "<Keyboard>/escape");
+        pauseAction.Enable();
     }
 
     void Update()
     {
-        // Ignorăm ESC în meniul principal
+        // Ignore ESC in the main menu
         if (SceneManager.GetActiveScene().buildIndex == 0) return;
 
-        // --- LOGICA DE BUTON ESC ---
-        if (Input.GetKeyDown(KeyCode.Escape))
+        // --- ESC BUTTON LOGIC ---
+        if (pauseAction.triggered)
         {
             if (visualPanel == null) return;
 
-            // Dacă se vede -> îl închidem
+            // If visible -> close it
             if (visualPanel.activeSelf) 
             {
                 Resume();
             }
-            // Dacă NU se vede -> îl deschidem
+            // If NOT visible -> open it
             else
             {
                 Pause();
             }
         }
 
-        // --- SOLUȚIA "NUCLEARĂ" (FORȚARE) ---
-        // Dacă panoul este deschis, ne asigurăm în FIECARE cadru că timpul e 0.
-        // Asta repară bug-ul în care timpul "scapă" de sub control.
+        // --- "NUCLEAR" SOLUTION (FORCING) ---
+        // If the panel is open, ensure EVERY frame that time is 0.
+        // This fixes the bug where time "escapes" control.
         if (visualPanel != null && visualPanel.activeSelf)
         {
             if (Time.timeScale != 0f)
@@ -51,7 +58,7 @@ public class OptionsMenu : MonoBehaviour
         if (visualPanel != null) visualPanel.SetActive(true);
         Time.timeScale = 0f; 
         
-        // Opțional: Deblochează mouse-ul ca să poți da click
+        // Optional: Unlock the mouse so you can click
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
@@ -61,7 +68,7 @@ public class OptionsMenu : MonoBehaviour
         if (visualPanel != null) visualPanel.SetActive(false);
         Time.timeScale = 1f; 
 
-        // Opțional: Blochează mouse-ul la loc pentru joc
+        // Optional: Lock the mouse back for gameplay
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
@@ -70,5 +77,11 @@ public class OptionsMenu : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadSceneAsync(0);
+    }
+
+    private void OnDestroy()
+    {
+        pauseAction?.Disable();
+        pauseAction?.Dispose();
     }
 }

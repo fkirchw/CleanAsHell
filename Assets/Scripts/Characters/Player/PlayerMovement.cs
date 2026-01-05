@@ -1,15 +1,20 @@
+using System;
 using Characters.Interfaces;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace Characters.Player
 {
     public class PlayerMovement : MonoBehaviour
     {
+        [Header("Jumping")]
         [SerializeField] private float moveSpeed = 5f;
         [SerializeField] private float jumpForce = 10f;
+        
 
         private Rigidbody2D rb;
         private Collider2D col;
+        private PlayerInputHandler input;
         private bool isKnockback;
 
         // PUBLIC STATE - read by others
@@ -17,6 +22,7 @@ namespace Characters.Player
         public Vector2 FacingDirection { get; private set; } = Vector2.right;
         public float HorizontalInput { get; private set; }
         public Vector2 Velocity => rb.linearVelocity;
+        
 
         // PUBLIC CONTROL - called by combat
         public void ApplyKnockback(Vector2 dir, float force)
@@ -46,32 +52,39 @@ namespace Characters.Player
         {
             rb = GetComponent<Rigidbody2D>();
             col = GetComponent<Collider2D>();
+            
+
+            input = GetComponent<PlayerInputHandler>();
         }
 
         private void Update()
         {
             if (isKnockback) return;
-
-            HandleMovementInput();
             HandleJump();
             UpdateFacingDirection();
         }
 
+        private void FixedUpdate()
+        {
+            if (isKnockback) return;
+            HandleMovementInput();
+        }
+
         private void HandleMovementInput()
         {
-            HorizontalInput = Input.GetAxisRaw("Horizontal");
+            HorizontalInput = input.MoveInput;
             rb.linearVelocity = new Vector2(HorizontalInput * moveSpeed, rb.linearVelocity.y);
         }
 
         private void HandleJump()
         {
-            if (Input.GetButtonDown("Jump") && IsGrounded)
+            if (input.JumpPressed && IsGrounded)
             {
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
             }
 
             // Jump cut
-            if (Input.GetButtonUp("Jump") && rb.linearVelocity.y > 2f)
+            if (input.JumpReleased && rb.linearVelocity.y > 2f)
             {
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * 0.5f);
             }

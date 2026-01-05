@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace Blood.UI
 {
@@ -26,10 +27,20 @@ namespace Blood.UI
 
         private Camera mainCamera;
         private Vector2 mouseWorldPos;
+        
+        // Input actions created at runtime
+        private InputAction addBloodAction;
+        private InputAction cleanBloodAction;
+        private InputAction cleanContinuousAction;
+        private InputAction resetBloodAction;
+        private InputAction printStatsAction;
+        private InputAction mousePositionAction;
 
         void Start()
         {
             mainCamera = Camera.main;
+        
+            SetupInputActions();
         
             if (BloodSystem.Instance == null)
             {
@@ -45,37 +56,57 @@ namespace Blood.UI
             }
         }
 
+        private void SetupInputActions()
+        {
+            // Create actions programmatically
+            addBloodAction = new InputAction("AddBlood", binding: "<Keyboard>/t");
+            cleanBloodAction = new InputAction("CleanBlood", binding: "<Keyboard>/c", type: InputActionType.Button);
+            cleanContinuousAction = new InputAction("CleanContinuous", binding: "<Keyboard>/c", type: InputActionType.Button);
+            resetBloodAction = new InputAction("ResetBlood", binding: "<Keyboard>/r");
+            printStatsAction = new InputAction("PrintStats", binding: "<Keyboard>/b");
+            mousePositionAction = new InputAction("MousePosition", binding: "<Mouse>/position");
+            
+            // Enable all actions
+            addBloodAction.Enable();
+            cleanBloodAction.Enable();
+            cleanContinuousAction.Enable();
+            resetBloodAction.Enable();
+            printStatsAction.Enable();
+            mousePositionAction.Enable();
+        }
+
         void Update()
         {
             // Update mouse position
             if (mainCamera)
             {
-                mouseWorldPos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+                Vector2 mouseScreenPos = mousePositionAction.ReadValue<Vector2>();
+                mouseWorldPos = mainCamera.ScreenToWorldPoint(mouseScreenPos);
             }
 
             // Test controls
-            if (Input.GetKeyDown(KeyCode.T))
+            if (addBloodAction.triggered)
             {
                 TestAddBlood();
             }
 
-            if (Input.GetKeyDown(KeyCode.C))
+            if (cleanBloodAction.triggered)
             {
                 TestCleanBlood();
             }
 
-            if (Input.GetKeyDown(KeyCode.R))
+            if (resetBloodAction.triggered)
             {
                 TestResetBlood();
             }
 
-            if (Input.GetKeyDown(KeyCode.B))
+            if (printStatsAction.triggered)
             {
                 PrintBloodStats();
             }
 
             // Hold C for continuous cleaning
-            if (Input.GetKey(KeyCode.C))
+            if (cleanContinuousAction.IsPressed())
             {
                 if (BloodSystem.Instance != null)
                 {
@@ -125,7 +156,6 @@ namespace Blood.UI
                 return;
             }
 
-            // This will need a public method in BloodSystem or we can clean everything
             float totalBefore = BloodSystem.Instance.GetTotalBlood();
         
             // Clean the entire map by cleaning a huge area
@@ -171,6 +201,24 @@ namespace Blood.UI
             // Draw crosshair at exact mouse position
             Gizmos.DrawLine(mouseWorldPos + Vector2.left * 0.2f, mouseWorldPos + Vector2.right * 0.2f);
             Gizmos.DrawLine(mouseWorldPos + Vector2.down * 0.2f, mouseWorldPos + Vector2.up * 0.2f);
+        }
+
+        private void OnDestroy()
+        {
+            // Clean up actions
+            addBloodAction?.Disable();
+            cleanBloodAction?.Disable();
+            cleanContinuousAction?.Disable();
+            resetBloodAction?.Disable();
+            printStatsAction?.Disable();
+            mousePositionAction?.Disable();
+            
+            addBloodAction?.Dispose();
+            cleanBloodAction?.Dispose();
+            cleanContinuousAction?.Dispose();
+            resetBloodAction?.Dispose();
+            printStatsAction?.Dispose();
+            mousePositionAction?.Dispose();
         }
     }
 }
