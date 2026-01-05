@@ -1,13 +1,22 @@
 fileFormatVersion: 2
-guid: edf15cfcb4f440b4fa986304e78822f5
+guid: 49440f45d14f60b488bb96613608d4f6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7093583863091927124
-    second: Value_icon_0
+      213: 8608014274811872374
+    second: GameOverText_0
   - first:
-      213: -1629548685289461101
-    second: Value_icon_1
+      213: 4804937645701649236
+    second: GameOverText_1
+  - first:
+      213: -3908361711769381027
+    second: GameOverText_2
+  - first:
+      213: -7777654898048757238
+    second: GameOverText_3
+  - first:
+      213: 5576576047418435022
+    second: GameOverText_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -103,45 +112,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Value_icon_0
+      name: GameOverText_0
       rect:
         serializedVersion: 2
-        x: 89
-        y: 109
-        width: 372
-        height: 472
+        x: 199
+        y: 201
+        width: 600
+        height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ca766f75f078e8d90800000000000000
-      internalID: -7093583863091927124
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Value_icon_1
-      rect:
-        serializedVersion: 2
-        x: 409
-        y: 439
-        width: 62
-        height: 62
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 39aed1dba1ea269e0800000000000000
-      internalID: -1629548685289461101
+      spriteID: 67447af206fc57770800000000000000
+      internalID: 8608014274811872374
       vertices: []
       indices: 
       edges: []
@@ -150,7 +137,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 60e500593cf8ea14b87f794c0a0046d5
     internalID: 0
     vertices: []
     indices: 
@@ -160,8 +147,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Value_icon_0: -7093583863091927124
-      Value_icon_1: -1629548685289461101
+      GameOverText_0: 8608014274811872374
+      GameOverText_1: 4804937645701649236
+      GameOverText_2: -3908361711769381027
+      GameOverText_3: -7777654898048757238
+      GameOverText_4: 5576576047418435022
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
