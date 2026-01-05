@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 7888525575863758627}
   - component: {fileID: 2706030488599201284}
   - component: {fileID: 6081579016755929047}
+  - component: {fileID: 3578430122980634713}
   m_Layer: 0
   m_Name: PlayerPrefab
   m_TagString: Player
@@ -158,10 +159,10 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 2.2
+  m_Mass: 3
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 2.5
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -245,8 +246,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 015c68b4b989ce440a4e411f03ae3c5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
-  moveSpeed: 5
-  jumpForce: 8
+  moveSpeed: 7
+  jumpForce: 12
+  jumpBufferTime: 0.1
+  knockbackDuration: 0.3
 --- !u!114 &6081579016755929047
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -263,6 +266,18 @@ MonoBehaviour:
   health: 10
   attackPower: 5
   attackDistance: 1
+--- !u!114 &3578430122980634713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5238352174512194233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0df5476c40e94eeaaf94a539a580d998, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Characters.Player.PlayerInputHandler
 --- !u!1 &7196836783778714653
 GameObject:
   m_ObjectHideFlags: 0

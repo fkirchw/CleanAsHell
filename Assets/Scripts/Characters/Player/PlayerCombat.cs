@@ -1,6 +1,7 @@
 using System;
 using Characters.Interfaces;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
 
 namespace Characters.Player
@@ -17,6 +18,7 @@ namespace Characters.Player
 
         private PlayerMovement movement;
         private Collider2D playerCollider;
+        private PlayerInputHandler input;
 
         public bool IsDead { get; private set; }
         public bool IsAttacking { get; private set; }
@@ -26,6 +28,7 @@ namespace Characters.Player
         {
             movement = GetComponent<PlayerMovement>();
             playerCollider = GetComponent<Collider2D>();
+            input =  GetComponent<PlayerInputHandler>();
         }
 
         private void Update()
@@ -44,7 +47,7 @@ namespace Characters.Player
         {
             bool isInHitAnimation = animator.GetCurrentAnimatorStateInfo(0).IsName("Hit");
 
-            if (Input.GetButtonDown("Fire1") && !isInHitAnimation)
+            if (input.AttackPressed && !isInHitAnimation)
             {
                 animator.Play("Hit");
                 DealDamage();
