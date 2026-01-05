@@ -1,39 +1,39 @@
-using System;
-using Characters.Interfaces;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 namespace Characters.Player
 {
     public class PlayerMovement : MonoBehaviour
     {
-        [Header("Jumping")]
+        [Header("Movement")]
         [SerializeField] private float moveSpeed = 5f;
-        [SerializeField] private float jumpForce = 10f;
         
+        [Header("Jumping")]
+        [SerializeField] private float jumpForce = 10f;
+        [SerializeField] private float jumpBufferTime = 0.1f;
+        
+        [Header("Knockback")]
+        [SerializeField] private float knockbackDuration = 0.3f;
 
         private Rigidbody2D rb;
         private Collider2D col;
         private PlayerInputHandler input;
+        
         private bool isKnockback;
+        private float knockbackTimer;
+        private float jumpBufferCounter;
 
         // PUBLIC STATE - read by others
         public bool IsGrounded { get; private set; }
         public Vector2 FacingDirection { get; private set; } = Vector2.right;
         public float HorizontalInput { get; private set; }
         public Vector2 Velocity => rb.linearVelocity;
-        
 
         // PUBLIC CONTROL - called by combat
         public void ApplyKnockback(Vector2 dir, float force)
         {
             rb.linearVelocity = dir * force;
+            knockbackTimer = knockbackDuration;
             isKnockback = true;
-        }
-
-        public void SetKnockbackState(bool state)
-        {
-            isKnockback = state;
         }
 
         // Ground detection for cleaning
@@ -52,14 +52,23 @@ namespace Characters.Player
         {
             rb = GetComponent<Rigidbody2D>();
             col = GetComponent<Collider2D>();
-            
-
             input = GetComponent<PlayerInputHandler>();
         }
 
         private void Update()
         {
-            if (isKnockback) return;
+            // Update knockback timer
+            if (knockbackTimer > 0f)
+            {
+                knockbackTimer -= Time.deltaTime;
+                if (knockbackTimer <= 0f)
+                {
+                    isKnockback = false;
+                }
+                return; // Don't process input during knockback
+            }
+
+            UpdateJumpBuffer();
             HandleJump();
             UpdateFacingDirection();
         }
@@ -70,6 +79,14 @@ namespace Characters.Player
             HandleMovementInput();
         }
 
+        private void UpdateJumpBuffer()
+        {
+            if (input.JumpPressed)
+                jumpBufferCounter = jumpBufferTime;
+            else
+                jumpBufferCounter = Mathf.Max(0f, jumpBufferCounter - Time.deltaTime);
+        }
+
         private void HandleMovementInput()
         {
             HorizontalInput = input.MoveInput;
@@ -78,9 +95,11 @@ namespace Characters.Player
 
         private void HandleJump()
         {
-            if (input.JumpPressed && IsGrounded)
+            // Execute jump if we have buffered input and are grounded
+            if (jumpBufferCounter > 0f && IsGrounded)
             {
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+                jumpBufferCounter = 0f;
             }
 
             // Jump cut
@@ -111,6 +130,7 @@ namespace Characters.Player
             {
                 IsGrounded = true;
                 isKnockback = false;
+                knockbackTimer = 0f;
             }
         }
 
@@ -131,7 +151,6 @@ namespace Characters.Player
             if (collision.gameObject.CompareTag("Ground") && IsLandingCollision(collision))
             {
                 IsGrounded = true;
-                isKnockback = false;
             }
         }
 
