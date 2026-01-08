@@ -1,20 +1,21 @@
 using Characters.Player;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    public float smoothSpeed = 3f; // Gl�ttung
-    public Vector3 offset = new Vector3(0, 4f, -10); // Kamera-Offset
+    [Header("Smooth Settings")]
+    public float smoothSpeed = 0.1f;
+    
+    [Header("Camera Position")]
+    public Vector3 offset = new Vector3(0, 5f, -10);
+    [Tooltip("Negativ = camera mai sus, Pozitiv = camera mai jos")]
+    public float cameraYThreshold = -3f;
+    
+    [Header("Limits")]
+    public float worldXMin = 0;
+
     private PlayerData playerData;
-    public float cameraYThreshold;
-    
-    private float worldXMin = 0;
 
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-
-    
     public void Awake()
     {
         playerData = FindFirstObjectByType<PlayerData>();
@@ -23,9 +24,7 @@ public class CameraController : MonoBehaviour
             throw new UnityException("PlayerData access object not found");
         }
     }
-   
 
-    // Update is called once per frame
     void LateUpdate()
     {   
         if(playerData.IsDead)
@@ -34,17 +33,15 @@ public class CameraController : MonoBehaviour
         }
 
         Vector3 desiredPosition = playerData.Position + offset;
-        //camera if player.y > 0 moves 
-      
-        desiredPosition.y = Mathf.Max(playerData.Position.y-cameraYThreshold, 0);
-
+        desiredPosition.y = playerData.Position.y - cameraYThreshold;
         desiredPosition.x = Mathf.Max(desiredPosition.x, worldXMin);
-
-        //float cameraYPos = Mathf.Max(player.transform.position.y, cameraYThreshold);
         
-        Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
+        Vector3 smoothedPosition = Vector3.Lerp(
+            transform.position, 
+            desiredPosition, 
+            smoothSpeed * Time.deltaTime * 50f
+        );
+        
         transform.position = smoothedPosition;
     }
-
-   
 }
