@@ -326,7 +326,7 @@ MonoBehaviour:
   attackDistance: 2
   health: 10
   damage: 5
-  knockbackForce: 15
+  knockbackForce: 10
 --- !u!70 &240382088
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -21495,7 +21495,7 @@ MonoBehaviour:
   attackDistance: 2
   health: 10
   damage: 5
-  knockbackForce: 15
+  knockbackForce: 10
 --- !u!50 &1214264434
 Rigidbody2D:
   serializedVersion: 5
@@ -21830,7 +21830,7 @@ MonoBehaviour:
   attackDistance: 2
   health: 10
   damage: 5
-  knockbackForce: 15
+  knockbackForce: 10
 --- !u!50 &1530514273
 Rigidbody2D:
   serializedVersion: 5
