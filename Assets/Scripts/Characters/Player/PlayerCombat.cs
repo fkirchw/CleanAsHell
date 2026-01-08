@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Characters.Interfaces;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -19,6 +20,7 @@ namespace Characters.Player
         private PlayerMovement movement;
         private Collider2D playerCollider;
         private PlayerInputHandler input;
+        private HashSet<IDamageable> hitThisAttack = new HashSet<IDamageable>();
 
         public bool IsDead { get; private set; }
         public bool IsAttacking { get; private set; }
@@ -49,8 +51,8 @@ namespace Characters.Player
 
             if (input.AttackPressed && !isInHitAnimation)
             {
+                hitThisAttack.Clear();
                 animator.Play("Hit");
-                DealDamage();
             }
         }
 
@@ -89,18 +91,27 @@ namespace Characters.Player
                 animator.SetBool("isDead", true);
             }
         }
-
+        
+        // Important: Now called by event in the hit animation, not by direct invocation in this file.
+        // To change timing, adjust animation event marker in the hit animation.
+        // See https://docs.unity3d.com/6000.3/Documentation/Manual/script-AnimationWindowEvent.html
         private void DealDamage()
         {
             Vector2 dir = movement.FacingDirection;
-            Vector2 origin = (Vector2)transform.position + (dir * 0.5f);
-
-            RaycastHit2D[] hits = Physics2D.RaycastAll(origin, dir, attackDistance, LayerMask.GetMask("Enemy"));
-            foreach (RaycastHit2D hit in hits)
+            Vector2 attackCenter = (Vector2)transform.position + (dir * attackDistance * 0.5f);
+            Collider2D[] hits = Physics2D.OverlapCircleAll(attackCenter, 0.7f, LayerMask.GetMask("Enemy"));
+            foreach (Collider2D hit in hits)
             {
-                if (hit.collider && !hit.collider.isTrigger && hit.collider.TryGetComponent(out IDamageable damageable))
+                Vector2 toEnemy = hit.transform.position - transform.position;
+                if (Vector2.Dot(toEnemy.normalized, dir) > 0.3f) // ~70° cone
                 {
-                    damageable.TakeDamage(attackPower, dir, 0f);
+                    if (!hit.isTrigger && hit.TryGetComponent(out IDamageable damageable))
+                    {
+                        if (hitThisAttack.Add(damageable))
+                        {
+                            damageable.TakeDamage(attackPower, dir, 5f);
+                        }
+                    }
                 }
             }
         }
@@ -113,11 +124,10 @@ namespace Characters.Player
         void OnDrawGizmosSelected()
         {
             Vector2 direction = movement ? movement.FacingDirection : Vector2.right;
-            Vector2 origin = (Vector2)transform.position + direction * 0.5f;
-
-            Gizmos.color = Color.red;
-            Gizmos.DrawLine(origin, origin + direction * attackDistance);
-            Gizmos.DrawWireSphere(origin + direction * attackDistance, 0.2f);
+            Vector2 attackCenter = (Vector2)transform.position + direction * attackDistance * 0.5f;
+    
+            Gizmos.color = new Color(1, 0, 0, 0.3f);
+            Gizmos.DrawSphere(attackCenter, 0.7f);
         }
     }
 }
