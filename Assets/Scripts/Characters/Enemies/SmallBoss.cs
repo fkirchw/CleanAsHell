@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Characters.Enemies
 {
-    public class LuciferMain : MonoBehaviour, IDamageable
+    public class SmallBoss : MonoBehaviour, IDamageable
     {
         [SerializeField] private Animator animator;
         [SerializeField] private float moveSpeed = 2f;

@@ -46,15 +46,6 @@ namespace Characters.Enemies
         // and if so, should we keep it? its a valid behaviour for a flying guy.
         private void DealDamage()
         {
-            float distanceToPlayer = Vector2.Distance(new Vector2(transform.position.x, transform.position.y),
-                new Vector2(playerPosition.position.x, playerPosition.position.y));
-
-            if (distanceToPlayer > attackDistance)
-            {
-                return;
-            }
-
-
             IDamageable playerScript = playerPosition.GetComponent<IDamageable>();
             if (playerScript != null)
             {
@@ -138,7 +129,15 @@ namespace Characters.Enemies
         public void OnDamageDeltAniEvent()
         {
             animator.SetBool("isAttacking", false);
-            DealDamage();
+
+            float distanceToPlayer = Vector2.Distance(new Vector2(transform.position.x, transform.position.y),
+                new Vector2(playerPosition.position.x, playerPosition.position.y));
+
+            if (distanceToPlayer <= attackDistance)
+            {
+                DealDamage();
+            }
+            
         }
     }
 }
