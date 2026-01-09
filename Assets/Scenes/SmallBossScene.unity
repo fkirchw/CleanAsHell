@@ -248,7 +248,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 100
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 1
@@ -323,8 +323,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LuciferMain
   animator: {fileID: 217199779}
   moveSpeed: 2
-  attackDistance: 3
-  health: 10
+  attackDistance: 4
+  health: 20
 --- !u!70 &217199784
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -588,6 +588,22 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 440457526}
+    - target: {fileID: 1363144870090559661, guid: fc737416cf1ff934386de5a82392d3a6, type: 3}
+      propertyPath: m_text
+      value: Big D
+      objectReference: {fileID: 0}
+    - target: {fileID: 3357094656893850821, guid: fc737416cf1ff934386de5a82392d3a6, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -102
+      objectReference: {fileID: 0}
+    - target: {fileID: 4933057299279334383, guid: fc737416cf1ff934386de5a82392d3a6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5347085478121936180, guid: fc737416cf1ff934386de5a82392d3a6, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 292
+      objectReference: {fileID: 0}
     - target: {fileID: 5374148408322872418, guid: fc737416cf1ff934386de5a82392d3a6, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -668,6 +684,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6892671390326516003, guid: fc737416cf1ff934386de5a82392d3a6, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6892671390326516003, guid: fc737416cf1ff934386de5a82392d3a6, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7063582141899225752, guid: fc737416cf1ff934386de5a82392d3a6, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -676,11 +700,32 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3325204655439082088, guid: fc737416cf1ff934386de5a82392d3a6, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4065512263068614303, guid: fc737416cf1ff934386de5a82392d3a6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 822644898}
   m_SourcePrefab: {fileID: 100100000, guid: fc737416cf1ff934386de5a82392d3a6, type: 3}
+--- !u!1 &822644896 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4065512263068614303, guid: fc737416cf1ff934386de5a82392d3a6, type: 3}
+  m_PrefabInstance: {fileID: 664931503}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &822644898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 822644896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb2cc5c0f6dff7043b031d99538db791, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SmallBossBar
 --- !u!1 &1037512033
 GameObject:
   m_ObjectHideFlags: 0

@@ -20,10 +20,13 @@ namespace Characters.Enemies
 
         private bool playerDetected;
 
+        private float MAX_HEALTH;
+
         void Start()
         {
             spriteRenderer = GetComponent<SpriteRenderer>();
             rb = GetComponent<Rigidbody2D>();
+            MAX_HEALTH = health;
         }
 
         void Update()
@@ -134,5 +137,7 @@ namespace Characters.Enemies
         {
             Destroy(gameObject);
         }
+
+        public float GetHealthPercent() => health/ MAX_HEALTH;
     }
 }

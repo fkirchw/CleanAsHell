@@ -20,7 +20,6 @@ namespace Characters.Enemies
         private Rigidbody2D rb;
         private Vector2 direction;
 
-
         private float attackCooldown;
 
         private bool isDead;
@@ -84,19 +83,8 @@ namespace Characters.Enemies
             if (playerDetected && !isInAttack)
             {
                 HandleMovement();
-            }
-
-            if (playerDetected && !isInAttack)
-            {
                 HandleAttack();
-
             }
-        }
-
-        private IEnumerator HandleAttackkRoutine()
-        {
-            yield return new WaitForSeconds(0.8f); 
-            
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
@@ -261,8 +249,6 @@ namespace Characters.Enemies
                 
                 yield return null; // Warte 1 Frame
             }
-
-
 
             // Hier Angriff ausführen (Collider aktivieren, IK bewegen etc.)
             attack.Attack(); // optional kurze Attacke
