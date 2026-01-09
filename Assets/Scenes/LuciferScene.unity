@@ -4688,7 +4688,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SweepAttack
   attackCooldown: 8
   attackDistance: 2
-  knockbackDir: {x: 3.5, y: 3}
+  knockbackDir: {x: 3, y: 3}
   damageRange: {x: 2, y: 2}
   knockbackForce: 3
   damage: 2
