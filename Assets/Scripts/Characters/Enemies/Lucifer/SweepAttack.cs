@@ -23,14 +23,7 @@ public class AttackSweep : MonoBehaviour, IAttack
         animator = GetComponent<Animator>();
         controller = GetComponent<LuciferController>();
     }
-    // Update is called once per frame
-    void Update()
-    {
-        if (!canAttack)
-        {
-            return;
-        }
-    }
+    
     public void Attack()
     {
         StartCoroutine(AttackRoutine());
@@ -39,12 +32,6 @@ public class AttackSweep : MonoBehaviour, IAttack
     public IEnumerator AttackCooldown()
     {
         canAttack = false;
-
-        // Hier kommt dein Angriffscode
-
-        // Zunge abfeuern, Animation triggern, Collider aktivieren, etc.
-
-        // Cooldown abwarten
         yield return new WaitForSeconds(attackCooldown);
 
         canAttack = true;
