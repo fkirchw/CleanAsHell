@@ -145,11 +145,6 @@ public class AttackTongue : MonoBehaviour, IAttack
     {
         canAttack = false;
 
-        // Hier kommt dein Angriffscode
-
-        // Zunge abfeuern, Animation triggern, Collider aktivieren, etc.
-
-        // Cooldown abwarten
         yield return new WaitForSeconds(attackCooldown);
 
         canAttack = true;
