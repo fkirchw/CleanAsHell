@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using Random = UnityEngine.Random;
@@ -38,12 +40,10 @@ namespace Blood
         [SerializeField] private float spreadThreshold = 0.3f;
         [SerializeField] private float spreadUpdateInterval = 0.1f;
 
-        [Header("Dripping Settings")] [SerializeField]
-        private bool enableDripping = true;
 
-        [SerializeField] private float dripRate = 0.02f;
-        [SerializeField] private float dripThreshold = 0.5f;
-        [SerializeField] private float dripGravity = 1.0f;
+        [Header("Surface Detection")] [SerializeField]
+        private float maxBloodCapacity = 10f; // High cap, no overflow drain
+
         [SerializeField] private LayerMask groundLayer;
 
         // Internal state
@@ -56,6 +56,9 @@ namespace Blood
         private int gridHeight;
         private float spreadTimer;
         private bool needsVisualUpdate;
+        private HashSet<Vector2Int> surfaceTiles;
+        private HashSet<Vector2Int> validFloorTiles;
+        private float totalBloodGenerated;
 
         void Awake()
         {
@@ -71,6 +74,84 @@ namespace Blood
         void Start()
         {
             InitializeBloodSystem();
+            CacheSurfaceAndFloorTiles();
+        }
+
+        void CacheSurfaceAndFloorTiles()
+        {
+            surfaceTiles = new HashSet<Vector2Int>();
+            validFloorTiles = new HashSet<Vector2Int>();
+
+            BoundsInt bounds = floorTilemap.cellBounds;
+
+            for (int x = bounds.xMin; x < bounds.xMax; x++)
+            {
+                for (int y = bounds.yMin; y < bounds.yMax; y++)
+                {
+                    Vector3Int cellPos = new Vector3Int(x, y, 0);
+
+                    if (!floorTilemap.HasTile(cellPos))
+                        continue;
+
+                    // FIXED: Store in array coordinates directly
+                    int arrayX = x - gridOffset.x;
+                    int arrayY = y - gridOffset.y;
+
+                    if (arrayX < 0 || arrayX >= gridWidth || arrayY < 0 || arrayY >= gridHeight)
+                        continue;
+
+                    Vector2Int arrayPos = new Vector2Int(arrayX, arrayY);
+
+                    if (IsFloorNotWall(cellPos))
+                    {
+                        validFloorTiles.Add(arrayPos);
+
+                        if (IsSurfaceTile(cellPos))
+                        {
+                            surfaceTiles.Add(arrayPos);
+                        }
+                    }
+                }
+            }
+
+            Debug.Log($"Found {validFloorTiles.Count} floor tiles, {surfaceTiles.Count} are on surface");
+        }
+
+        bool IsFloorNotWall(Vector3Int cellPos)
+        {
+            // Check if there's empty space above (not a wall)
+            for (int i = 1; i <= 3; i++)
+            {
+                Vector3Int above = cellPos + new Vector3Int(0, i, 0);
+                if (floorTilemap.HasTile(above))
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        bool IsSurfaceTile(Vector3Int cellPos)
+        {
+            // Check if there's empty space above
+            for (int i = 1; i <= 2; i++)
+            {
+                Vector3Int above = cellPos + new Vector3Int(0, i, 0);
+                if (!floorTilemap.HasTile(above))
+                {
+                    // At least one empty space above = it's a surface
+                    return true;
+                }
+            }
+
+            return false; // Completely buried
+        }
+
+        bool IsValidBloodTile(int x, int y)
+        {
+            Vector2Int pos = new Vector2Int(x, y);
+            return surfaceTiles.Contains(pos);
         }
 
         void Update()
@@ -85,12 +166,6 @@ namespace Blood
                     UpdateSpreading();
                     needsVisualUpdate = true;
                 }
-            }
-
-            if (enableDripping)
-            {
-                UpdateDripping();
-                needsVisualUpdate = true;
             }
 
             if (needsVisualUpdate)
@@ -127,7 +202,7 @@ namespace Blood
             bloodMask.Apply();
 
             // Setup material with shader
-            TilemapRenderer renderer = floorTilemap.GetComponent<TilemapRenderer>();
+            TilemapRenderer tilemapRenderer = floorTilemap.GetComponent<TilemapRenderer>();
 
             // Create new material instance from the shader
             Shader bloodShader = Shader.Find("Custom/TilemapBlood");
@@ -158,9 +233,10 @@ namespace Blood
             );
             bloodMaterial.SetVector(BloodMaskSt, maskST);
 
-            renderer.material = bloodMaterial;
+            tilemapRenderer.material = bloodMaterial;
 
-            Debug.Log($"Blood system initialized: {gridWidth}x{gridHeight} grid at world bounds {worldMin} to {worldMax}");
+            Debug.Log(
+                $"Blood system initialized: {gridWidth}x{gridHeight} grid at world bounds {worldMin} to {worldMax}");
         }
 
         /// <summary>
@@ -168,6 +244,8 @@ namespace Blood
         /// </summary>
         public void OnEnemyHit(Vector2 hitPosition, Vector2 strikeDirection, bool isAirborne, float bloodAmount)
         {
+            totalBloodGenerated += bloodAmount;
+
             SpawnParticles(hitPosition, strikeDirection, bloodAmount);
 
             Vector2 stainCenter = CalculateStainCenter(hitPosition, strikeDirection, isAirborne);
@@ -287,125 +365,64 @@ namespace Blood
             if (arrayX < 0 || arrayX >= gridWidth || arrayY < 0 || arrayY >= gridHeight)
                 return;
 
-            bloodData[arrayX, arrayY] = Mathf.Min(1f, bloodData[arrayX, arrayY] + amount);
+            if (!IsValidBloodTile(arrayX, arrayY))
+                return;
+
+            bloodData[arrayX, arrayY] = Mathf.Min(maxBloodCapacity, bloodData[arrayX, arrayY] + amount);
         }
 
         void UpdateSpreading()
         {
-            // Copy current state to buffer (double buffering)
             Array.Copy(bloodData, bloodDataBuffer, bloodData.Length);
 
-            for (int x = 1; x < gridWidth - 1; x++)
+            BoundsInt bounds = new BoundsInt(0, 0, 0, gridWidth, gridHeight, 1);
+
+            foreach (var cellPos in bounds.allPositionsWithin)
             {
-                for (int y = 1; y < gridHeight - 1; y++)
+                int x = cellPos.x;
+                int y = cellPos.y;
+
+                float currentBlood = bloodDataBuffer[x, y];
+
+                if (currentBlood < spreadThreshold)
+                    continue;
+
+                if (!IsValidBloodTile(x, y))
+                    continue;
+
+                float spreadAmount = currentBlood * spreadRate;
+
+                Vector2Int[] neighbors =
                 {
-                    float currentBlood = bloodDataBuffer[x, y];
+                    new Vector2Int(x - 1, y),
+                    new Vector2Int(x + 1, y),
+                    new Vector2Int(x, y - 1),
+                    new Vector2Int(x, y + 1)
+                };
 
-                    if (currentBlood < spreadThreshold)
-                        continue;
-
-                    if (!HasFloorTile(x, y))
-                        continue;
-
-                    float spreadAmount = currentBlood * spreadRate;
-
-                    // Check 4 neighbors
-                    Vector2Int[] neighbors =
-                    {
-                        new Vector2Int(x - 1, y),
-                        new Vector2Int(x + 1, y),
-                        new Vector2Int(x, y - 1),
-                        new Vector2Int(x, y + 1)
-                    };
-
-                    int validNeighbors = 0;
-                    foreach (Vector2Int neighbor in neighbors)
-                    {
-                        if (HasFloorTile(neighbor.x, neighbor.y))
-                            validNeighbors++;
-                    }
-
-                    if (validNeighbors == 0)
-                        continue;
-
-                    float spreadPerNeighbor = spreadAmount / validNeighbors;
-
-                    foreach (Vector2Int neighbor in neighbors)
-                    {
-                        if (HasFloorTile(neighbor.x, neighbor.y))
-                        {
-                            bloodData[neighbor.x, neighbor.y] = Mathf.Min(1f,
-                                bloodData[neighbor.x, neighbor.y] + spreadPerNeighbor);
-                        }
-                    }
-
-                    bloodData[x, y] = Mathf.Max(0, bloodData[x, y] - spreadAmount);
-                }
-            }
-        }
-
-        void UpdateDripping()
-        {
-            // Process top to bottom for cascading drips
-            for (int y = gridHeight - 2; y >= 1; y--)
-            {
-                for (int x = 1; x < gridWidth - 1; x++)
+                int validNeighbors = 0;
+                foreach (Vector2Int neighbor in neighbors)
                 {
-                    float currentBlood = bloodData[x, y];
-
-                    if (currentBlood < dripThreshold)
-                        continue;
-
-                    if (!HasFloorTile(x, y))
-                        continue;
-
-                    float dripAmount = (currentBlood - dripThreshold) * dripRate * Time.deltaTime;
-
-                    if (dripAmount <= 0.001f)
-                        continue;
-
-                    // Try to drip downward
-                    TryDripToCell(x, y, x, y - 1, dripAmount, dripGravity);
-                    TryDripToCell(x, y, x - 1, y - 1, dripAmount, dripGravity * 0.5f);
-                    TryDripToCell(x, y, x + 1, y - 1, dripAmount, dripGravity * 0.5f);
+                    if (IsValidBloodTile(neighbor.x, neighbor.y))
+                        validNeighbors++;
                 }
+
+                if (validNeighbors == 0)
+                    continue;
+
+                float spreadPerNeighbor = spreadAmount / validNeighbors;
+
+                foreach (Vector2Int neighbor in neighbors)
+                {
+                    if (IsValidBloodTile(neighbor.x, neighbor.y))
+                    {
+                        bloodData[neighbor.x, neighbor.y] = Mathf.Min(maxBloodCapacity,
+                            bloodData[neighbor.x, neighbor.y] + spreadPerNeighbor);
+                    }
+                }
+
+                bloodData[x, y] = Mathf.Max(0, bloodData[x, y] - spreadAmount);
             }
-        }
-
-        bool TryDripToCell(int fromX, int fromY, int toX, int toY, float amount, float probability)
-        {
-            if (toX < 0 || toX >= gridWidth || toY < 0 || toY >= gridHeight)
-                return false;
-
-            if (!HasFloorTile(toX, toY))
-                return false;
-
-            // Check for walls blocking drip
-            Vector3Int fromCell = new Vector3Int(fromX + gridOffset.x, fromY + gridOffset.y, 0);
-            Vector3Int toCell = new Vector3Int(toX + gridOffset.x, toY + gridOffset.y, 0);
-
-            Vector2 fromWorld = grid.CellToWorld(fromCell);
-            Vector2 toWorld = grid.CellToWorld(toCell);
-
-            RaycastHit2D hit = Physics2D.Linecast(fromWorld, toWorld, groundLayer);
-            if (hit.collider != null)
-                return false;
-
-            if (Random.value > probability)
-                return false;
-
-            // Transfer blood
-            float actualDrip = Mathf.Min(amount, bloodData[fromX, fromY]);
-            bloodData[fromX, fromY] -= actualDrip;
-            bloodData[toX, toY] = Mathf.Min(1f, bloodData[toX, toY] + actualDrip);
-
-            return true;
-        }
-
-        bool HasFloorTile(int x, int y)
-        {
-            Vector3Int cellPos = new Vector3Int(x + gridOffset.x, y + gridOffset.y, 0);
-            return floorTilemap.HasTile(cellPos);
         }
 
         void UpdateAllVisualsOptimized()
@@ -430,27 +447,9 @@ namespace Blood
         {
             if (linearBlood <= 0) return 0;
 
-            // Logarithmic mapping for better visibility of small amounts
-            return Mathf.Log(1f + linearBlood * (logarithmicBase - 1f), logarithmicBase);
+            float clampedBlood = Mathf.Min(1f, linearBlood);
+            return Mathf.Log(1f + clampedBlood * (logarithmicBase - 1f), logarithmicBase);
         }
-
-        Vector2Int GetDirectionalVector(Vector2 direction)
-        {
-            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-
-            return angle switch
-            {
-                > -22.5f and <= 22.5f => new Vector2Int(1, 0),
-                > 22.5f and <= 67.5f => new Vector2Int(1, 1),
-                > 67.5f and <= 112.5f => new Vector2Int(0, 1),
-                > 112.5f and <= 157.5f => new Vector2Int(-1, 1),
-                > 157.5f or <= -157.5f => new Vector2Int(-1, 0),
-                > -157.5f and <= -112.5f => new Vector2Int(-1, -1),
-                > -112.5f and <= -67.5f => new Vector2Int(0, -1),
-                _ => new Vector2Int(1, -1)
-            };
-        }
-
         // PUBLIC API FOR QUERYING AND CLEANING
 
         /// <summary>
@@ -547,24 +546,6 @@ namespace Blood
             }
         }
 
-
-        /// <summary>
-        /// Get total blood amount in the level
-        /// </summary>
-        public float GetTotalBlood()
-        {
-            float total = 0f;
-            for (int x = 0; x < gridWidth; x++)
-            {
-                for (int y = 0; y < gridHeight; y++)
-                {
-                    total += bloodData[x, y];
-                }
-            }
-
-            return total;
-        }
-
         /// <summary>
         /// Get blood amount at a specific world position
         /// </summary>
@@ -614,15 +595,6 @@ namespace Blood
         }
 
         /// <summary>
-        /// Get percentage of level that is bloody (0-100)
-        /// </summary>
-        public float GetBloodPercentage()
-        {
-            float maxPossible = gridWidth * gridHeight;
-            return (GetTotalBlood() / maxPossible) * 100f;
-        }
-
-        /// <summary>
         /// Get count of cells with blood
         /// </summary>
         public int GetBloodyCellCount()
@@ -638,6 +610,53 @@ namespace Blood
             }
 
             return count;
+        }
+
+        /// <summary>
+        /// Get total blood currently in the level
+        /// </summary>
+        public float GetCurrentBloodInLevel()
+        {
+            float total = 0f;
+            for (int x = 0; x < gridWidth; x++)
+            {
+                for (int y = 0; y < gridHeight; y++)
+                {
+                    total += bloodData[x, y];
+                }
+            }
+
+            return total;
+        }
+
+        /// <summary>
+        /// Get total blood generated since level start
+        /// </summary>
+        public float GetTotalBloodGenerated()
+        {
+            return totalBloodGenerated;
+        }
+
+        /// <summary>
+        /// Get percentage of blood cleaned (0-100)
+        /// </summary>
+        public float GetPercentageCleaned()
+        {
+            if (totalBloodGenerated <= 0)
+                return 100f; // No blood generated = 100% clean
+
+            float currentBlood = GetCurrentBloodInLevel();
+            float bloodCleaned = totalBloodGenerated - currentBlood;
+
+            return (bloodCleaned / totalBloodGenerated) * 100f;
+        }
+
+        /// <summary>
+        /// Get percentage of blood remaining (0-100)
+        /// </summary>
+        public float GetPercentageRemaining()
+        {
+            return 100f - GetPercentageCleaned();
         }
 
         void OnDrawGizmos()
@@ -671,6 +690,14 @@ namespace Blood
                     }
                 }
             }
+#if UNITY_EDITOR //Only compile this into editor builds, not prod deployment.
+            // Draw stats in corner
+            Vector3 statsPos = Camera.main.ViewportToWorldPoint(new Vector3(0.05f, 0.95f, 10f));
+            Handles.Label(statsPos,
+                $"Blood: {GetCurrentBloodInLevel():F2}\n" +
+                $"Generated: {GetTotalBloodGenerated():F2}\n" +
+                $"Cleaned: {GetPercentageCleaned():F1}%");
+#endif
         }
     }
 }
