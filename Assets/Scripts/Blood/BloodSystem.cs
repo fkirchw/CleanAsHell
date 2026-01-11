@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using Random = UnityEngine.Random;
@@ -57,7 +58,7 @@ namespace Blood
         private bool needsVisualUpdate;
         private HashSet<Vector2Int> surfaceTiles;
         private HashSet<Vector2Int> validFloorTiles;
-        
+        private float totalBloodGenerated;
 
         void Awake()
         {
@@ -201,7 +202,7 @@ namespace Blood
             bloodMask.Apply();
 
             // Setup material with shader
-            TilemapRenderer renderer = floorTilemap.GetComponent<TilemapRenderer>();
+            TilemapRenderer tilemapRenderer = floorTilemap.GetComponent<TilemapRenderer>();
 
             // Create new material instance from the shader
             Shader bloodShader = Shader.Find("Custom/TilemapBlood");
@@ -232,7 +233,7 @@ namespace Blood
             );
             bloodMaterial.SetVector(BloodMaskSt, maskST);
 
-            renderer.material = bloodMaterial;
+            tilemapRenderer.material = bloodMaterial;
 
             Debug.Log(
                 $"Blood system initialized: {gridWidth}x{gridHeight} grid at world bounds {worldMin} to {worldMax}");
@@ -243,6 +244,8 @@ namespace Blood
         /// </summary>
         public void OnEnemyHit(Vector2 hitPosition, Vector2 strikeDirection, bool isAirborne, float bloodAmount)
         {
+            totalBloodGenerated += bloodAmount;
+
             SpawnParticles(hitPosition, strikeDirection, bloodAmount);
 
             Vector2 stainCenter = CalculateStainCenter(hitPosition, strikeDirection, isAirborne);
@@ -372,9 +375,6 @@ namespace Blood
         {
             Array.Copy(bloodData, bloodDataBuffer, bloodData.Length);
 
-            int spreadAttempts = 0;
-            int actualSpreads = 0;
-
             BoundsInt bounds = new BoundsInt(0, 0, 0, gridWidth, gridHeight, 1);
 
             foreach (var cellPos in bounds.allPositionsWithin)
@@ -450,24 +450,6 @@ namespace Blood
             float clampedBlood = Mathf.Min(1f, linearBlood);
             return Mathf.Log(1f + clampedBlood * (logarithmicBase - 1f), logarithmicBase);
         }
-
-        Vector2Int GetDirectionalVector(Vector2 direction)
-        {
-            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-
-            return angle switch
-            {
-                > -22.5f and <= 22.5f => new Vector2Int(1, 0),
-                > 22.5f and <= 67.5f => new Vector2Int(1, 1),
-                > 67.5f and <= 112.5f => new Vector2Int(0, 1),
-                > 112.5f and <= 157.5f => new Vector2Int(-1, 1),
-                > 157.5f or <= -157.5f => new Vector2Int(-1, 0),
-                > -157.5f and <= -112.5f => new Vector2Int(-1, -1),
-                > -112.5f and <= -67.5f => new Vector2Int(0, -1),
-                _ => new Vector2Int(1, -1)
-            };
-        }
-
         // PUBLIC API FOR QUERYING AND CLEANING
 
         /// <summary>
@@ -564,24 +546,6 @@ namespace Blood
             }
         }
 
-
-        /// <summary>
-        /// Get total blood amount in the level
-        /// </summary>
-        public float GetTotalBlood()
-        {
-            float total = 0f;
-            for (int x = 0; x < gridWidth; x++)
-            {
-                for (int y = 0; y < gridHeight; y++)
-                {
-                    total += bloodData[x, y];
-                }
-            }
-
-            return total;
-        }
-
         /// <summary>
         /// Get blood amount at a specific world position
         /// </summary>
@@ -631,15 +595,6 @@ namespace Blood
         }
 
         /// <summary>
-        /// Get percentage of level that is bloody (0-100)
-        /// </summary>
-        public float GetBloodPercentage()
-        {
-            float maxPossible = gridWidth * gridHeight;
-            return (GetTotalBlood() / maxPossible) * 100f;
-        }
-
-        /// <summary>
         /// Get count of cells with blood
         /// </summary>
         public int GetBloodyCellCount()
@@ -655,6 +610,53 @@ namespace Blood
             }
 
             return count;
+        }
+
+        /// <summary>
+        /// Get total blood currently in the level
+        /// </summary>
+        public float GetCurrentBloodInLevel()
+        {
+            float total = 0f;
+            for (int x = 0; x < gridWidth; x++)
+            {
+                for (int y = 0; y < gridHeight; y++)
+                {
+                    total += bloodData[x, y];
+                }
+            }
+
+            return total;
+        }
+
+        /// <summary>
+        /// Get total blood generated since level start
+        /// </summary>
+        public float GetTotalBloodGenerated()
+        {
+            return totalBloodGenerated;
+        }
+
+        /// <summary>
+        /// Get percentage of blood cleaned (0-100)
+        /// </summary>
+        public float GetPercentageCleaned()
+        {
+            if (totalBloodGenerated <= 0)
+                return 100f; // No blood generated = 100% clean
+
+            float currentBlood = GetCurrentBloodInLevel();
+            float bloodCleaned = totalBloodGenerated - currentBlood;
+
+            return (bloodCleaned / totalBloodGenerated) * 100f;
+        }
+
+        /// <summary>
+        /// Get percentage of blood remaining (0-100)
+        /// </summary>
+        public float GetPercentageRemaining()
+        {
+            return 100f - GetPercentageCleaned();
         }
 
         void OnDrawGizmos()
@@ -688,6 +690,14 @@ namespace Blood
                     }
                 }
             }
+#if UNITY_EDITOR //Only compile this into editor builds, not prod deployment.
+            // Draw stats in corner
+            Vector3 statsPos = Camera.main.ViewportToWorldPoint(new Vector3(0.05f, 0.95f, 10f));
+            Handles.Label(statsPos,
+                $"Blood: {GetCurrentBloodInLevel():F2}\n" +
+                $"Generated: {GetTotalBloodGenerated():F2}\n" +
+                $"Cleaned: {GetPercentageCleaned():F1}%");
+#endif
         }
     }
 }

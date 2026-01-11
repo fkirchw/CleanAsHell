@@ -1,6 +1,5 @@
 using System.Collections;
 using Characters.Enemies;
-using Characters.Enemies;
 using UnityEngine;
 
 public class AttackTrident : MonoBehaviour, IAttack

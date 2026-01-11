@@ -1389,8 +1389,16 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8887320234082179659, guid: 795d13b5168cc3ed5adc61375ac83f05, type: 3}
+      propertyPath: logarithmicBase
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8887320234082179659, guid: 795d13b5168cc3ed5adc61375ac83f05, type: 3}
       propertyPath: spreadThreshold
-      value: 0.05
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8887320234082179659, guid: 795d13b5168cc3ed5adc61375ac83f05, type: 3}
+      propertyPath: maxBloodCapacity
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8887320234082179659, guid: 795d13b5168cc3ed5adc61375ac83f05, type: 3}
       propertyPath: bloodSplatTexture
@@ -1616,10 +1624,69 @@ MonoBehaviour:
   testCleanAmount: 0.3
   testRadius: 2
   groundLayer:
-    serializedVersion: 2
     m_Bits: 0
   showMouseGizmo: 1
-  gizmoColor: {r: 0, g: 1, b: 1, a: 1}
+  gizmoColor:
+    r: 0
+    g: 1
+    b: 1
+    a: 1
+  mainCamera: {fileID: 0}
+  mouseWorldPos: {x: 0, y: 0}
+  addBloodAction:
+    m_Name: 
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 5621081f-5a63-4e5a-ab11-5f604af6b356
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  cleanBloodAction:
+    m_Name: 
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: fdb8237a-29a7-47c8-9700-e92f16ad5381
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  cleanContinuousAction:
+    m_Name: 
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 7e5200f5-5698-45df-911b-cfd822e642b2
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  resetBloodAction:
+    m_Name: 
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: f5f5c6f7-1299-4356-8d42-4e5ff6c33922
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  printStatsAction:
+    m_Name: 
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: b9b9dc6d-0db0-4ab7-acb2-4e61720f7c4e
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  mousePositionAction:
+    m_Name: 
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: ae1e11dc-2979-4d66-8482-1cadfb9e1cf1
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
 --- !u!1001 &1373154740350362925
 PrefabInstance:
   m_ObjectHideFlags: 0
