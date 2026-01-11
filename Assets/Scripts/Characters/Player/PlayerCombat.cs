@@ -6,6 +6,9 @@ namespace Characters.Player
 {
     public class PlayerCombat : MonoBehaviour, IDamageable
     {
+        private static readonly int IsRunning = Animator.StringToHash("isRunning");
+        private static readonly int Dead = Animator.StringToHash("isDead");
+
         [Header("Components")]
         [SerializeField] private Animator animator;
         
@@ -37,7 +40,7 @@ namespace Characters.Player
         {
             movement = GetComponent<PlayerMovement>();
             playerCollider = GetComponent<Collider2D>();
-            input =  GetComponent<PlayerInputHandler>();
+            input = GetComponent<PlayerInputHandler>();
         }
 
         private void Update()
@@ -52,23 +55,27 @@ namespace Characters.Player
             UpdateAnimations();
         }
 
+        private bool attackRequested = false;
+
         private void HandleCombatInput()
         {
             bool isInHitAnimation = animator.GetCurrentAnimatorStateInfo(0).IsName("Hit");
-            bool isInHeavySweepAnimation = animator.GetCurrentAnimatorStateInfo(0).IsName("HeavySweep");
+            bool isInHeavySwipeAnimation = animator.GetCurrentAnimatorStateInfo(0).IsName("HeavySwipe");
 
             // Prevent new attacks while already attacking
-            if (isInHitAnimation || isInHeavySweepAnimation)
+            if (isInHitAnimation || isInHeavySwipeAnimation)
                 return;
 
             if (input.HeavySweepPressed)
             {
                 hitThisAttack.Clear();
+                attackRequested = true; // SET FLAG
                 animator.Play("HeavySwipe");
             }
             else if (input.AttackPressed)
             {
                 hitThisAttack.Clear();
+                attackRequested = true; // SET FLAG
                 animator.Play("Hit");
             }
         }
@@ -78,10 +85,21 @@ namespace Characters.Player
             // Combat priority animations
             if (IsDead) return;
 
-            // Otherwise update movement animations
-            animator.SetBool("isRunning", movement.HorizontalInput != 0);
+            // Update IsAttacking based on current animation state
+            bool isInHitAnimation = animator.GetCurrentAnimatorStateInfo(0).IsName("Hit");
+            bool isInHeavySwipeAnimation = animator.GetCurrentAnimatorStateInfo(0).IsName("HeavySwipe");
+            IsAttacking = isInHitAnimation || isInHeavySwipeAnimation || attackRequested; // CHECK FLAG TOO
 
-            if (!movement.IsGrounded)
+            // Clear flag once we're actually in the animation
+            if ((isInHitAnimation || isInHeavySwipeAnimation) && attackRequested)
+            {
+                attackRequested = false;
+            }
+
+            // Otherwise update movement animations
+            animator.SetBool(IsRunning, movement.HorizontalInput != 0);
+
+            if (!movement.IsGrounded && !IsAttacking)
             {
                 animator.speed = 0f;
                 if (movement.Velocity.y > 0.1f)
@@ -105,7 +123,7 @@ namespace Characters.Player
             {
                 IsDead = true;
                 animator.Play("Die");
-                animator.SetBool("isDead", true);
+                animator.SetBool(Dead, true);
             }
         }
         
