@@ -1,21 +1,28 @@
-using System;
 using System.Collections.Generic;
 using Characters.Interfaces;
 using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEngine.Serialization;
 
 namespace Characters.Player
 {
     public class PlayerCombat : MonoBehaviour, IDamageable
     {
+        [Header("Components")]
         [SerializeField] private Animator animator;
+        
+        [Header("Health")]
         [SerializeField] private int health = 10;
 
-        [FormerlySerializedAs("damage")] [SerializeField]
-        private int attackPower = 5;
+        [Header("Light Attack")]
+        [SerializeField] private int lightAttackPower = 5;
+        [SerializeField] private float lightAttackDistance = 1f;
+        [SerializeField] private float lightAttackRadius = 0.7f;
+        [SerializeField] private float lightAttackKnockback = 5f;
 
-        [SerializeField] private float attackDistance = 1f;
+        [Header("Heavy Attack")]
+        [SerializeField] private int heavyAttackPower = 10;
+        [SerializeField] private float heavyAttackDistance = 1.5f;
+        [SerializeField] private float heavyAttackRadius = 1.0f;
+        [SerializeField] private float heavyAttackKnockback = 8f;
 
         private PlayerMovement movement;
         private Collider2D playerCollider;
@@ -48,8 +55,18 @@ namespace Characters.Player
         private void HandleCombatInput()
         {
             bool isInHitAnimation = animator.GetCurrentAnimatorStateInfo(0).IsName("Hit");
+            bool isInHeavySweepAnimation = animator.GetCurrentAnimatorStateInfo(0).IsName("HeavySweep");
 
-            if (input.AttackPressed && !isInHitAnimation)
+            // Prevent new attacks while already attacking
+            if (isInHitAnimation || isInHeavySweepAnimation)
+                return;
+
+            if (input.HeavySweepPressed)
+            {
+                hitThisAttack.Clear();
+                animator.Play("HeavySwipe");
+            }
+            else if (input.AttackPressed)
             {
                 hitThisAttack.Clear();
                 animator.Play("Hit");
@@ -97,9 +114,21 @@ namespace Characters.Player
         // See https://docs.unity3d.com/6000.3/Documentation/Manual/script-AnimationWindowEvent.html
         private void DealDamage()
         {
+            PerformAttack(lightAttackPower, lightAttackDistance, lightAttackRadius, lightAttackKnockback);
+        }
+
+        // Called by animation event in the HeavySweep animation
+        private void DealHeavyDamage()
+        {
+            PerformAttack(heavyAttackPower, heavyAttackDistance, heavyAttackRadius, heavyAttackKnockback);
+        }
+
+        private void PerformAttack(int attackPower, float attackDistance, float attackRadius, float knockbackForce)
+        {
             Vector2 dir = movement.FacingDirection;
             Vector2 attackCenter = (Vector2)transform.position + (dir * attackDistance * 0.5f);
-            Collider2D[] hits = Physics2D.OverlapCircleAll(attackCenter, 0.7f, LayerMask.GetMask("Enemy"));
+            Collider2D[] hits = Physics2D.OverlapCircleAll(attackCenter, attackRadius, LayerMask.GetMask("Enemy"));
+            
             foreach (Collider2D hit in hits)
             {
                 Vector2 toEnemy = hit.transform.position - transform.position;
@@ -109,7 +138,7 @@ namespace Characters.Player
                     {
                         if (hitThisAttack.Add(damageable))
                         {
-                            damageable.TakeDamage(attackPower, dir, 5f);
+                            damageable.TakeDamage(attackPower, dir, knockbackForce);
                         }
                     }
                 }
@@ -124,10 +153,16 @@ namespace Characters.Player
         void OnDrawGizmosSelected()
         {
             Vector2 direction = movement ? movement.FacingDirection : Vector2.right;
-            Vector2 attackCenter = (Vector2)transform.position + direction * attackDistance * 0.5f;
-    
+            
+            // Light attack gizmo (red)
+            Vector2 lightAttackCenter = (Vector2)transform.position + direction * lightAttackDistance * 0.5f;
             Gizmos.color = new Color(1, 0, 0, 0.3f);
-            Gizmos.DrawSphere(attackCenter, 0.7f);
+            Gizmos.DrawSphere(lightAttackCenter, lightAttackRadius);
+            
+            // Heavy attack gizmo (orange)
+            Vector2 heavyAttackCenter = (Vector2)transform.position + direction * heavyAttackDistance * 0.5f;
+            Gizmos.color = new Color(1, 0.5f, 0, 0.3f);
+            Gizmos.DrawSphere(heavyAttackCenter, heavyAttackRadius);
         }
     }
 }

@@ -17,6 +17,7 @@ namespace Characters.Player
         public bool JumpHeld => inputActions.Player.Jump.IsPressed();
         public bool JumpReleased => inputActions.Player.Jump.WasReleasedThisFrame();
         public bool AttackPressed => inputActions.Player.Attack.triggered;
+        public bool HeavySweepPressed => inputActions.Player.HeavyAttack.triggered;
         public bool CleanHeld => inputActions.Player.Clean.IsPressed();
 
         private void Awake()
@@ -44,6 +45,9 @@ namespace Characters.Player
             
                 if (inputActions.Player.Attack.triggered)
                     Debug.Log("Attack action TRIGGERED");
+                    
+                if (inputActions.Player.HeavyAttack.triggered)
+                    Debug.Log("HeavySweep action TRIGGERED");
             }
         }
 

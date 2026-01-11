@@ -1369,6 +1369,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1093966860}
     - target: {fileID: 8887320234082179659, guid: 795d13b5168cc3ed5adc61375ac83f05, type: 3}
+      propertyPath: spreadRate
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 8887320234082179659, guid: 795d13b5168cc3ed5adc61375ac83f05, type: 3}
       propertyPath: bloodTiling
       value: 1
       objectReference: {fileID: 0}
@@ -1382,12 +1386,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8887320234082179659, guid: 795d13b5168cc3ed5adc61375ac83f05, type: 3}
       propertyPath: enableSpreading
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8887320234082179659, guid: 795d13b5168cc3ed5adc61375ac83f05, type: 3}
+      propertyPath: spreadThreshold
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 8887320234082179659, guid: 795d13b5168cc3ed5adc61375ac83f05, type: 3}
       propertyPath: bloodSplatTexture
       value: 
       objectReference: {fileID: 2800000, guid: 17c64cc824c54337bf8cfd60bdc8b6de, type: 3}
+    - target: {fileID: 8887320234082179659, guid: 795d13b5168cc3ed5adc61375ac83f05, type: 3}
+      propertyPath: spreadUpdateInterval
+      value: 0.05
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
