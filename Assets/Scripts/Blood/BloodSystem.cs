@@ -40,6 +40,9 @@ namespace Blood
         [SerializeField] private float spreadThreshold = 0.3f;
         [SerializeField] private float spreadUpdateInterval = 0.1f;
 
+        [SerializeField] [Range(0.1f, 1f)]
+        private float bloodRetentionFactor = 1f; // How much blood actually lands vs. is "lost"
+
 
         [Header("Surface Detection")] [SerializeField]
         private float maxBloodCapacity = 10f; // High cap, no overflow drain
@@ -244,12 +247,13 @@ namespace Blood
         /// </summary>
         public void OnEnemyHit(Vector2 hitPosition, Vector2 strikeDirection, bool isAirborne, float bloodAmount)
         {
-            totalBloodGenerated += bloodAmount;
-
             SpawnParticles(hitPosition, strikeDirection, bloodAmount);
 
             Vector2 stainCenter = CalculateStainCenter(hitPosition, strikeDirection, isAirborne);
-            StainArea(stainCenter, strikeDirection, bloodAmount);
+            float actuallyStained = StainArea(stainCenter, strikeDirection, bloodAmount);
+
+            // Only count blood that actually landed on valid surfaces
+            totalBloodGenerated += actuallyStained;
         }
 
         void SpawnParticles(Vector2 position, Vector2 direction, float bloodAmount)
@@ -305,56 +309,67 @@ namespace Blood
             return hitPosition + direction.normalized * 0.5f;
         }
 
-        void StainArea(Vector2 centerPosition, Vector2 direction, float bloodAmount)
+        float StainArea(Vector2 centerPosition, Vector2 direction, float bloodAmount)
         {
             Vector3Int centerCell = grid.WorldToCell(centerPosition);
-
-            // Normalize direction for calculations
             Vector2 normalizedDir = direction.normalized;
 
-            // Create a more focused blood pattern behind the hit point
-            int stainRadius = 2; // How far blood spreads
-            int cellsProcessed = 0;
-            int maxCells = 8; // Limit total cells affected
+            int stainRadius = 2;
+
+            // First pass: find all valid cells and calculate weights
+            List<(Vector3Int cell, float weight)> validCells = new List<(Vector3Int, float)>();
 
             for (int x = -stainRadius; x <= stainRadius; x++)
             {
                 for (int y = -stainRadius; y <= stainRadius; y++)
                 {
-                    if (cellsProcessed >= maxCells) break;
-
                     Vector3Int cellPos = centerCell + new Vector3Int(x, y, 0);
 
-                    // Check if this cell actually has a floor tile
                     if (!floorTilemap.HasTile(cellPos))
                         continue;
 
-                    // Convert cell to CENTER of cell in world space
                     Vector2 cellWorld = grid.GetCellCenterWorld(cellPos);
                     Vector2 toCell = cellWorld - centerPosition;
 
-                    // Check if cell is in the direction of the strike (behind the hit point)
                     float dotProduct = Vector2.Dot(toCell.normalized, normalizedDir);
 
-                    // Only stain cells that are in the forward direction of the strike
-                    if (dotProduct > 0.3f) // Threshold to create a cone shape
+                    if (dotProduct > 0.3f)
                     {
                         float distance = toCell.magnitude;
+                        float weight = Mathf.Max(0, 1f - (distance / (stainRadius * grid.cellSize.x)));
 
-                        // Reduce blood amount based on distance
-                        float distanceFalloff = Mathf.Max(0, 1f - (distance / (stainRadius * grid.cellSize.x)));
-                        float cellBloodAmount = bloodAmount * distanceFalloff * 0.3f;
-
-                        if (cellBloodAmount > 0.01f)
+                        if (weight > 0.01f)
                         {
-                            AddBloodAtCell(cellPos, cellBloodAmount);
-                            cellsProcessed++;
+                            validCells.Add((cellPos, weight));
                         }
                     }
                 }
             }
 
+            if (validCells.Count == 0)
+            {
+                return 0f; // Blood fell off the level - doesn't count
+            }
+
+            // Calculate total weight
+            float totalWeight = 0f;
+            foreach (var (_, weight) in validCells)
+            {
+                totalWeight += weight;
+            }
+
+            // Apply retention factor - simulate blood "loss" (splatter, absorption, etc.)
+            float effectiveBloodAmount = bloodAmount * bloodRetentionFactor;
+
+            // Distribute blood proportionally - effective amount gets distributed
+            foreach (var (cell, weight) in validCells)
+            {
+                float cellBloodAmount = effectiveBloodAmount * (weight / totalWeight);
+                AddBloodAtCell(cell, cellBloodAmount);
+            }
+
             needsVisualUpdate = true;
+            return effectiveBloodAmount; // Return what actually landed
         }
 
         void AddBloodAtCell(Vector3Int cellPosition, float amount)
@@ -447,8 +462,8 @@ namespace Blood
         {
             if (linearBlood <= 0) return 0;
 
-            float clampedBlood = Mathf.Min(1f, linearBlood);
-            return Mathf.Log(1f + clampedBlood * (logarithmicBase - 1f), logarithmicBase);
+            float normalizedBlood = Mathf.Clamp01(linearBlood / maxBloodCapacity);
+            return Mathf.Log(1f + normalizedBlood * (logarithmicBase - 1f), logarithmicBase);
         }
         // PUBLIC API FOR QUERYING AND CLEANING
 
