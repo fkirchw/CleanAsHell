@@ -209,7 +209,7 @@ namespace Characters.Enemies
 
         private IEnumerator AttackRoutine()
         {
-            yield return new WaitForSeconds(0.7f);
+            yield return new WaitForSeconds(0.4f);
             OnDamageDelt();
         }
 
