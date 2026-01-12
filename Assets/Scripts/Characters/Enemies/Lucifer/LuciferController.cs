@@ -5,6 +5,7 @@ using System.Collections;
 using Characters.Player;
 using System.Collections.Generic;
 using System;
+using UnityEngine.SceneManagement;
 namespace Characters.Enemies
 {
     public class LuciferController : MonoBehaviour, IDamageable
@@ -38,7 +39,6 @@ namespace Characters.Enemies
 
         void Start()
         {
-            Debug.Log("Health " + health);
             MAX_HEALTH = health;
 
             spriteRenderer = GetComponent<SpriteRenderer>();
@@ -71,9 +71,20 @@ namespace Characters.Enemies
 
             if(playerData.IsDead) {
                 ResetAllParameters();
+                rb.constraints = RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionX;
                 animator.SetBool("isIdle", true);
                 return; 
             }
+
+            if (isInAttack)
+            {
+                rb.constraints = RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionX;
+            }
+            else
+            {
+                rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+            }
+
 
             if (isDead)
             {
@@ -214,7 +225,8 @@ namespace Characters.Enemies
             }
 
             if (health <= 0)
-            {   
+            {
+                rb.constraints = RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionX;
                 isDead = true;
                 animator.SetTrigger("DieTrigger");
             }
@@ -223,6 +235,7 @@ namespace Characters.Enemies
         private void OnFinishedDeathAniEvent()
         {
             Destroy(gameObject);
+            SceneManager.LoadScene("Outro");
         }
 
         void ResetAllParameters()

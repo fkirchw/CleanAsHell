@@ -883,6 +883,56 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Intro",
+            "id": "e8484979-d4fb-467b-93d8-af553f4920ee",
+            "actions": [
+                {
+                    "name": "Next",
+                    "type": "Button",
+                    "id": "1f4867cb-5268-40ef-bb0f-c91dbf959bb7",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "cf694283-e29c-4617-81ec-a62375a4740d",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "Next",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "cc1c7208-1197-4aa0-8961-22884da4ec49",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad",
+                    "action": "Next",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ab7c5148-9662-4e0f-88e1-12a7d8f04307",
+                    "path": "<Keyboard>/anyKey",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "Next",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [

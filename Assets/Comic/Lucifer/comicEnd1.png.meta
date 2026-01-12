@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 89cc3ecaaecb3204aa34b28b6d9b8abd
+guid: baa6e26f01af32947a3d76bf7383d8ac
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5570279865545307261
-    second: cleanAsHellIntro_0
+      213: 8182238999312028150
+    second: comicEnd1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cleanAsHellIntro_0
+      name: comicEnd1_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1536
-        height: 1024
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 38b49a299f362b2b0800000000000000
-      internalID: -5570279865545307261
+      spriteID: 6f1575db4072d8170800000000000000
+      internalID: 8182238999312028150
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      cleanAsHellIntro_0: -5570279865545307261
+      comicEnd1_0: 8182238999312028150
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
