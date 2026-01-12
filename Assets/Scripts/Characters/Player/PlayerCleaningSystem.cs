@@ -26,6 +26,7 @@ namespace Characters.Player
 
         private PlayerMovement movement;
         private Animator animator;
+        private PlayerInputHandler input;
         private bool isCleaning;
         private float groundY;
         private bool hasGroundHeight;
@@ -39,15 +40,14 @@ namespace Characters.Player
         {
             movement = GetComponent<PlayerMovement>();
             animator = GetComponent<Animator>();
-            
+            input = GetComponent<PlayerInputHandler>();
         }
 
         private void Update()
         {
-            bool fire2Down = Input.GetButton("Fire2");
             bool isInHitAnimation = animator.GetCurrentAnimatorStateInfo(0).IsName("Hit");
 
-            if (fire2Down && !isInHitAnimation)
+            if (input.CleanHeld && !isInHitAnimation)
             {
                 if (!isCleaning)
                     StartCleaning();

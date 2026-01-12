@@ -695,7 +695,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::IntroScript
   comicImage: {fileID: 389561463}
   panels:
-  - {fileID: -5570279865545307261, guid: 89cc3ecaaecb3204aa34b28b6d9b8abd, type: 3}
+  - {fileID: -6660019623762981092, guid: 9ddaf4673069e3142b0c067a3a6a6c38, type: 3}
   - {fileID: 7815001112539468408, guid: bec6409f1a8483143b729c915dea0d86, type: 3}
   - {fileID: -8897720839574978224, guid: 89c9e4ca6f9779647b22fc731415dbb8, type: 3}
   - {fileID: 5265264562914028347, guid: 6ae4ed201a3fe294d92f8389abd33151, type: 3}

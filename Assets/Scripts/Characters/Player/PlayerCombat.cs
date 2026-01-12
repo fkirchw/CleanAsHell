@@ -1,22 +1,36 @@
-using System;
+using System.Collections.Generic;
 using Characters.Interfaces;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Characters.Player
 {
     public class PlayerCombat : MonoBehaviour, IDamageable
     {
+        private static readonly int IsRunning = Animator.StringToHash("isRunning");
+        private static readonly int Dead = Animator.StringToHash("isDead");
+
+        [Header("Components")]
         [SerializeField] private Animator animator;
+        
+        [Header("Health")]
         [SerializeField] private int health = 10;
 
-        [FormerlySerializedAs("damage")] [SerializeField]
-        private int attackPower = 5;
+        [Header("Light Attack")]
+        [SerializeField] private int lightAttackPower = 5;
+        [SerializeField] private float lightAttackDistance = 1f;
+        [SerializeField] private float lightAttackRadius = 0.7f;
+        [SerializeField] private float lightAttackKnockback = 5f;
 
-        [SerializeField] private float attackDistance = 1f;
+        [Header("Heavy Attack")]
+        [SerializeField] private int heavyAttackPower = 10;
+        [SerializeField] private float heavyAttackDistance = 1.5f;
+        [SerializeField] private float heavyAttackRadius = 1.0f;
+        [SerializeField] private float heavyAttackKnockback = 8f;
 
         private PlayerMovement movement;
         private Collider2D playerCollider;
+        private PlayerInputHandler input;
+        private HashSet<IDamageable> hitThisAttack = new HashSet<IDamageable>();
 
         public bool IsDead { get; private set; }
         public bool IsAttacking { get; private set; }
@@ -26,6 +40,7 @@ namespace Characters.Player
         {
             movement = GetComponent<PlayerMovement>();
             playerCollider = GetComponent<Collider2D>();
+            input = GetComponent<PlayerInputHandler>();
         }
 
         private void Update()
@@ -40,14 +55,28 @@ namespace Characters.Player
             UpdateAnimations();
         }
 
+        private bool attackRequested = false;
+
         private void HandleCombatInput()
         {
             bool isInHitAnimation = animator.GetCurrentAnimatorStateInfo(0).IsName("Hit");
+            bool isInHeavySwipeAnimation = animator.GetCurrentAnimatorStateInfo(0).IsName("HeavySwipe");
 
-            if (Input.GetButtonDown("Fire1") && !isInHitAnimation)
+            // Prevent new attacks while already attacking
+            if (isInHitAnimation || isInHeavySwipeAnimation)
+                return;
+
+            if (input.HeavySweepPressed)
             {
+                hitThisAttack.Clear();
+                attackRequested = true; // SET FLAG
+                animator.Play("HeavySwipe");
+            }
+            else if (input.AttackPressed)
+            {
+                hitThisAttack.Clear();
+                attackRequested = true; // SET FLAG
                 animator.Play("Hit");
-                DealDamage();
             }
         }
 
@@ -56,10 +85,21 @@ namespace Characters.Player
             // Combat priority animations
             if (IsDead) return;
 
-            // Otherwise update movement animations
-            animator.SetBool("isRunning", movement.HorizontalInput != 0);
+            // Update IsAttacking based on current animation state
+            bool isInHitAnimation = animator.GetCurrentAnimatorStateInfo(0).IsName("Hit");
+            bool isInHeavySwipeAnimation = animator.GetCurrentAnimatorStateInfo(0).IsName("HeavySwipe");
+            IsAttacking = isInHitAnimation || isInHeavySwipeAnimation || attackRequested; // CHECK FLAG TOO
 
-            if (!movement.IsGrounded)
+            // Clear flag once we're actually in the animation
+            if ((isInHitAnimation || isInHeavySwipeAnimation) && attackRequested)
+            {
+                attackRequested = false;
+            }
+
+            // Otherwise update movement animations
+            animator.SetBool(IsRunning, movement.HorizontalInput != 0);
+
+            if (!movement.IsGrounded && !IsAttacking)
             {
                 animator.speed = 0f;
                 if (movement.Velocity.y > 0.1f)
@@ -83,21 +123,42 @@ namespace Characters.Player
             {
                 IsDead = true;
                 animator.Play("Die");
-                animator.SetBool("isDead", true);
+                animator.SetBool(Dead, true);
             }
         }
-
+        
+        // Important: Now called by event in the hit animation, not by direct invocation in this file.
+        // To change timing, adjust animation event marker in the hit animation.
+        // See https://docs.unity3d.com/6000.3/Documentation/Manual/script-AnimationWindowEvent.html
         private void DealDamage()
         {
-            Vector2 dir = movement.FacingDirection;
-            Vector2 origin = (Vector2)transform.position + (dir * 0.5f);
+            PerformAttack(lightAttackPower, lightAttackDistance, lightAttackRadius, lightAttackKnockback);
+        }
 
-            RaycastHit2D[] hits = Physics2D.RaycastAll(origin, dir, attackDistance, LayerMask.GetMask("Enemy"));
-            foreach (RaycastHit2D hit in hits)
+        // Called by animation event in the HeavySweep animation
+        private void DealHeavyDamage()
+        {
+            PerformAttack(heavyAttackPower, heavyAttackDistance, heavyAttackRadius, heavyAttackKnockback);
+        }
+
+        private void PerformAttack(int attackPower, float attackDistance, float attackRadius, float knockbackForce)
+        {
+            Vector2 dir = movement.FacingDirection;
+            Vector2 attackCenter = (Vector2)transform.position + (dir * attackDistance * 0.5f);
+            Collider2D[] hits = Physics2D.OverlapCircleAll(attackCenter, attackRadius, LayerMask.GetMask("Enemy"));
+            
+            foreach (Collider2D hit in hits)
             {
-                if (hit.collider && !hit.collider.isTrigger && hit.collider.TryGetComponent(out IDamageable damageable))
+                Vector2 toEnemy = hit.transform.position - transform.position;
+                if (Vector2.Dot(toEnemy.normalized, dir) > 0.3f) // ~70° cone
                 {
-                    damageable.TakeDamage(attackPower, dir, 0f);
+                    if (!hit.isTrigger && hit.TryGetComponent(out IDamageable damageable))
+                    {
+                        if (hitThisAttack.Add(damageable))
+                        {
+                            damageable.TakeDamage(attackPower, dir, knockbackForce);
+                        }
+                    }
                 }
             }
         }
@@ -110,11 +171,16 @@ namespace Characters.Player
         void OnDrawGizmosSelected()
         {
             Vector2 direction = movement ? movement.FacingDirection : Vector2.right;
-            Vector2 origin = (Vector2)transform.position + direction * 0.5f;
-
-            Gizmos.color = Color.red;
-            Gizmos.DrawLine(origin, origin + direction * attackDistance);
-            Gizmos.DrawWireSphere(origin + direction * attackDistance, 0.2f);
+            
+            // Light attack gizmo (red)
+            Vector2 lightAttackCenter = (Vector2)transform.position + direction * lightAttackDistance * 0.5f;
+            Gizmos.color = new Color(1, 0, 0, 0.3f);
+            Gizmos.DrawSphere(lightAttackCenter, lightAttackRadius);
+            
+            // Heavy attack gizmo (orange)
+            Vector2 heavyAttackCenter = (Vector2)transform.position + direction * heavyAttackDistance * 0.5f;
+            Gizmos.color = new Color(1, 0.5f, 0, 0.3f);
+            Gizmos.DrawSphere(heavyAttackCenter, heavyAttackRadius);
         }
     }
 }
