@@ -310,8 +310,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec0d805596a89c743851aad849273517, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerCleaningSystem
-  cleanRadius: 0.5
-  cleanRate: 0.5
+  cleanRadius: 1
+  cleanRate: 5
   useGroundBasedCleaning: 1
   maxCleaningHeight: 1
   verticalTolerance: 1
@@ -354,8 +354,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Characters.Player.PlayerCombat
   animator: {fileID: 3276520232718924349}
   health: 10
-  attackPower: 5
-  attackDistance: 1
+  lightAttackPower: 5
+  lightAttackDistance: 1
+  lightAttackRadius: 0.7
+  lightAttackKnockback: 5
+  heavyAttackPower: 10
+  heavyAttackDistance: 1.2
+  heavyAttackRadius: 1
+  heavyAttackKnockback: 8
 --- !u!114 &3578430122980634713
 MonoBehaviour:
   m_ObjectHideFlags: 0

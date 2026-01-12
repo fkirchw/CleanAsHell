@@ -605,6 +605,7 @@ GameObject:
   - component: {fileID: 1041884314}
   - component: {fileID: 1041884313}
   - component: {fileID: 1041884315}
+  - component: {fileID: 1041884318}
   - component: {fileID: 1041884317}
   m_Layer: 6
   m_Name: Tilemap
@@ -1271,7 +1272,7 @@ TilemapCollider2D:
     m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_CompositeOperation: 0
+  m_CompositeOperation: 1
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
@@ -1304,6 +1305,116 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!66 &1041884318
+CompositeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1041884311}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_GeometryType: 0
+  m_GenerationType: 0
+  m_EdgeRadius: 0
+  m_ColliderPaths:
+  - m_Collider: {fileID: 1041884315}
+    m_ColliderPaths:
+    - - X: 45700000
+        Y: -19300000
+      - X: 4400000
+        Y: -19300000
+      - X: 4300000
+        Y: -19350000
+      - X: 4300000
+        Y: -25450000
+      - X: 4450000
+        Y: -25700000
+      - X: 45700000
+        Y: -25700000
+    - - X: 90700000
+        Y: -50200000
+      - X: 90700000
+        Y: -44750000
+      - X: 90500000
+        Y: -44600000
+      - X: 90050000
+        Y: -44300000
+      - X: -9300000
+        Y: -44300000
+      - X: -9300000
+        Y: -29750000
+      - X: -9500000
+        Y: -29600000
+      - X: -9950000
+        Y: -29300000
+      - X: -15500000
+        Y: -29300000
+      - X: -15699999
+        Y: -29500000
+      - X: -15699999
+        Y: -44300000
+      - X: -90500000
+        Y: -44300000
+      - X: -90700000
+        Y: -44500000
+      - X: -90700000
+        Y: -50700000
+      - X: 90500000
+        Y: -50700000
+  m_CompositePaths:
+    m_Paths:
+    - - {x: 4.569971, y: -2.57}
+      - {x: 4.569971, y: -1.9300001}
+      - {x: 0.4399945, y: -1.9300028}
+      - {x: 0.43, y: -1.9350166}
+      - {x: 0.4300036, y: -2.5450063}
+      - {x: 0.445015, y: -2.57}
+    - - {x: 9.049982, y: -5.07}
+      - {x: 9.07, y: -5.019995}
+      - {x: 9.06999, y: -4.4749923}
+      - {x: 9.049999, y: -4.4599996}
+      - {x: 9.0049925, y: -4.43}
+      - {x: -0.93, y: -4.4299703}
+      - {x: -0.9300106, y: -2.9749923}
+      - {x: -0.9500007, y: -2.9599996}
+      - {x: -0.9950078, y: -2.93}
+      - {x: -1.5500076, y: -2.9300077}
+      - {x: -1.5699999, y: -2.9500108}
+      - {x: -1.5700294, y: -4.43}
+      - {x: -9.050008, y: -4.4300075}
+      - {x: -9.07, y: -4.450011}
+      - {x: -9.06997, y: -5.07}
+  m_VertexDistance: 0.0005
+  m_OffsetDistance: 0.00005
+  m_UseDelaunayMesh: 0
+  m_CompositeGameObject: {fileID: 1041884311}
 --- !u!1001 &1083705515
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1369,45 +1480,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1093966860}
     - target: {fileID: 8887320234082179659, guid: 795d13b5168cc3ed5adc61375ac83f05, type: 3}
-      propertyPath: spreadRate
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 8887320234082179659, guid: 795d13b5168cc3ed5adc61375ac83f05, type: 3}
-      propertyPath: bloodTiling
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8887320234082179659, guid: 795d13b5168cc3ed5adc61375ac83f05, type: 3}
       propertyPath: floorTilemap
       value: 
       objectReference: {fileID: 1041884314}
-    - target: {fileID: 8887320234082179659, guid: 795d13b5168cc3ed5adc61375ac83f05, type: 3}
-      propertyPath: enableDripping
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8887320234082179659, guid: 795d13b5168cc3ed5adc61375ac83f05, type: 3}
-      propertyPath: enableSpreading
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8887320234082179659, guid: 795d13b5168cc3ed5adc61375ac83f05, type: 3}
-      propertyPath: logarithmicBase
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8887320234082179659, guid: 795d13b5168cc3ed5adc61375ac83f05, type: 3}
-      propertyPath: spreadThreshold
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8887320234082179659, guid: 795d13b5168cc3ed5adc61375ac83f05, type: 3}
-      propertyPath: maxBloodCapacity
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8887320234082179659, guid: 795d13b5168cc3ed5adc61375ac83f05, type: 3}
-      propertyPath: bloodSplatTexture
-      value: 
-      objectReference: {fileID: 2800000, guid: 17c64cc824c54337bf8cfd60bdc8b6de, type: 3}
-    - target: {fileID: 8887320234082179659, guid: 795d13b5168cc3ed5adc61375ac83f05, type: 3}
-      propertyPath: spreadUpdateInterval
-      value: 0.05
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1620,73 +1695,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2a61991ea634b35a350d5f6c1e3539a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Blood.UI.BloodSystemTester
-  testBloodAmount: 0.5
-  testCleanAmount: 0.3
-  testRadius: 2
-  groundLayer:
-    m_Bits: 0
-  showMouseGizmo: 1
-  gizmoColor:
-    r: 0
-    g: 1
-    b: 1
-    a: 1
-  mainCamera: {fileID: 0}
-  mouseWorldPos: {x: 0, y: 0}
-  addBloodAction:
-    m_Name: 
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 5621081f-5a63-4e5a-ab11-5f604af6b356
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
-  cleanBloodAction:
-    m_Name: 
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: fdb8237a-29a7-47c8-9700-e92f16ad5381
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
-  cleanContinuousAction:
-    m_Name: 
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 7e5200f5-5698-45df-911b-cfd822e642b2
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
-  resetBloodAction:
-    m_Name: 
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: f5f5c6f7-1299-4356-8d42-4e5ff6c33922
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
-  printStatsAction:
-    m_Name: 
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: b9b9dc6d-0db0-4ab7-acb2-4e61720f7c4e
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
-  mousePositionAction:
-    m_Name: 
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: ae1e11dc-2979-4d66-8482-1cadfb9e1cf1
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
 --- !u!1001 &1373154740350362925
 PrefabInstance:
   m_ObjectHideFlags: 0
