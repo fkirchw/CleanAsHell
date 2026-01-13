@@ -10,6 +10,7 @@ namespace Characters.Enemies
         [SerializeField] private float moveSpeed = 2f;
         [SerializeField] private float attackDistance = 3f;
         [SerializeField] private int health = 10;
+        [SerializeField] private GameObject wallToDestroy; // ACEASTA ESTE MODIFICAREA: Obiectul care dispare la moarte
 
         private Transform playerPosition;
         private SpriteRenderer spriteRenderer;
@@ -130,6 +131,12 @@ namespace Characters.Enemies
             {
                 isDead = true;
                 animator.SetBool("isDead", true);
+
+                // ACEASTA ESTE MODIFICAREA: Distrugem zona de tile-uri
+                if (wallToDestroy != null)
+                {
+                    Destroy(wallToDestroy);
+                }
             }
         }
 
@@ -138,6 +145,6 @@ namespace Characters.Enemies
             Destroy(gameObject);
         }
 
-        public float GetHealthPercent() => health/ MAX_HEALTH;
+        public float GetHealthPercent() => (float)health / MAX_HEALTH;
     }
 }
