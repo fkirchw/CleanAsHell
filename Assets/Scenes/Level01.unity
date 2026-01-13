@@ -281,7 +281,7 @@ MonoBehaviour:
   activateDelay: 1
   activeTime: 5
   damage: 1
-  damageInterval: 0.5
+  damageInterval: 2
 --- !u!1839735485 &2467932
 Tilemap:
   m_ObjectHideFlags: 0
@@ -635,7 +635,7 @@ MonoBehaviour:
   activateDelay: 1
   activeTime: 5
   damage: 1
-  damageInterval: 0.5
+  damageInterval: 2
 --- !u!1839735485 &21597571
 Tilemap:
   m_ObjectHideFlags: 0
@@ -1004,7 +1004,7 @@ MonoBehaviour:
   activateDelay: 1
   activeTime: 5
   damage: 1
-  damageInterval: 0.5
+  damageInterval: 2
 --- !u!1839735485 &86167183
 Tilemap:
   m_ObjectHideFlags: 0
@@ -1358,7 +1358,7 @@ MonoBehaviour:
   activateDelay: 1
   activeTime: 5
   damage: 1
-  damageInterval: 0.5
+  damageInterval: 2
 --- !u!1839735485 &118130331
 Tilemap:
   m_ObjectHideFlags: 0
@@ -2047,7 +2047,7 @@ MonoBehaviour:
   activateDelay: 1
   activeTime: 5
   damage: 1
-  damageInterval: 0.5
+  damageInterval: 2
 --- !u!1839735485 &165319869
 Tilemap:
   m_ObjectHideFlags: 0
@@ -2236,6 +2236,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CleaningDemonMob (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 1432492815232760568, guid: f60f8bb0fb71b2f4caa58b04e110e0d9, type: 3}
+      propertyPath: playerData
+      value: 
+      objectReference: {fileID: 1373154740350362926}
     - target: {fileID: 4871515085518878109, guid: f60f8bb0fb71b2f4caa58b04e110e0d9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 131.32
@@ -2443,7 +2447,7 @@ MonoBehaviour:
   activateDelay: 1
   activeTime: 5
   damage: 1
-  damageInterval: 0.5
+  damageInterval: 2
 --- !u!1839735485 &189180579
 Tilemap:
   m_ObjectHideFlags: 0
@@ -2797,7 +2801,7 @@ MonoBehaviour:
   activateDelay: 1
   activeTime: 5
   damage: 1
-  damageInterval: 0.5
+  damageInterval: 2
 --- !u!1839735485 &205725643
 Tilemap:
   m_ObjectHideFlags: 0
@@ -3411,7 +3415,7 @@ MonoBehaviour:
   activateDelay: 1
   activeTime: 5
   damage: 1
-  damageInterval: 0.5
+  damageInterval: 2
 --- !u!1839735485 &252940200
 Tilemap:
   m_ObjectHideFlags: 0
@@ -3765,7 +3769,7 @@ MonoBehaviour:
   activateDelay: 1
   activeTime: 5
   damage: 1
-  damageInterval: 0.5
+  damageInterval: 2
 --- !u!1839735485 &261736766
 Tilemap:
   m_ObjectHideFlags: 0
@@ -4408,7 +4412,7 @@ MonoBehaviour:
   activateDelay: 1
   activeTime: 5
   damage: 1
-  damageInterval: 0.5
+  damageInterval: 2
 --- !u!1839735485 &446645641
 Tilemap:
   m_ObjectHideFlags: 0
@@ -4662,6 +4666,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CleaningDemonMob (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 1432492815232760568, guid: f60f8bb0fb71b2f4caa58b04e110e0d9, type: 3}
+      propertyPath: playerData
+      value: 
+      objectReference: {fileID: 1373154740350362926}
     - target: {fileID: 4871515085518878109, guid: f60f8bb0fb71b2f4caa58b04e110e0d9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 162.35597
@@ -5022,7 +5030,7 @@ MonoBehaviour:
   activateDelay: 1
   activeTime: 5
   damage: 1
-  damageInterval: 0.5
+  damageInterval: 2
 --- !u!1839735485 &605766501
 Tilemap:
   m_ObjectHideFlags: 0
@@ -5376,7 +5384,7 @@ MonoBehaviour:
   activateDelay: 1
   activeTime: 5
   damage: 1
-  damageInterval: 0.5
+  damageInterval: 2
 --- !u!1839735485 &619294509
 Tilemap:
   m_ObjectHideFlags: 0
@@ -5664,6 +5672,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CleaningDemonMob (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1432492815232760568, guid: f60f8bb0fb71b2f4caa58b04e110e0d9, type: 3}
+      propertyPath: playerData
+      value: 
+      objectReference: {fileID: 1373154740350362926}
     - target: {fileID: 4871515085518878109, guid: f60f8bb0fb71b2f4caa58b04e110e0d9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 160.95
@@ -5871,7 +5883,7 @@ MonoBehaviour:
   activateDelay: 1
   activeTime: 5
   damage: 1
-  damageInterval: 0.5
+  damageInterval: 2
 --- !u!1839735485 &663773511
 Tilemap:
   m_ObjectHideFlags: 0
@@ -6225,7 +6237,7 @@ MonoBehaviour:
   activateDelay: 1
   activeTime: 5
   damage: 1
-  damageInterval: 0.5
+  damageInterval: 2
 --- !u!1839735485 &671262603
 Tilemap:
   m_ObjectHideFlags: 0
@@ -6579,7 +6591,7 @@ MonoBehaviour:
   activateDelay: 1
   activeTime: 5
   damage: 1
-  damageInterval: 0.5
+  damageInterval: 2
 --- !u!1839735485 &690193830
 Tilemap:
   m_ObjectHideFlags: 0
@@ -10178,7 +10190,7 @@ MonoBehaviour:
   activateDelay: 1
   activeTime: 5
   damage: 1
-  damageInterval: 0.5
+  damageInterval: 2
 --- !u!1839735485 &735582935
 Tilemap:
   m_ObjectHideFlags: 0
@@ -10532,7 +10544,7 @@ MonoBehaviour:
   activateDelay: 1
   activeTime: 5
   damage: 1
-  damageInterval: 0.5
+  damageInterval: 2
 --- !u!1839735485 &736995609
 Tilemap:
   m_ObjectHideFlags: 0
@@ -10886,7 +10898,7 @@ MonoBehaviour:
   activateDelay: 1
   activeTime: 5
   damage: 1
-  damageInterval: 0.5
+  damageInterval: 2
 --- !u!1839735485 &778994869
 Tilemap:
   m_ObjectHideFlags: 0
@@ -11240,7 +11252,7 @@ MonoBehaviour:
   activateDelay: 1
   activeTime: 5
   damage: 1
-  damageInterval: 0.5
+  damageInterval: 2
 --- !u!1839735485 &802199418
 Tilemap:
   m_ObjectHideFlags: 0
@@ -11444,6 +11456,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CleaningDemonMob (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1432492815232760568, guid: f60f8bb0fb71b2f4caa58b04e110e0d9, type: 3}
+      propertyPath: playerData
+      value: 
+      objectReference: {fileID: 1373154740350362926}
     - target: {fileID: 4871515085518878109, guid: f60f8bb0fb71b2f4caa58b04e110e0d9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 142.9913
@@ -11651,7 +11667,7 @@ MonoBehaviour:
   activateDelay: 1
   activeTime: 5
   damage: 1
-  damageInterval: 0.5
+  damageInterval: 2
 --- !u!1839735485 &902645589
 Tilemap:
   m_ObjectHideFlags: 0
@@ -12005,7 +12021,7 @@ MonoBehaviour:
   activateDelay: 1
   activeTime: 5
   damage: 1
-  damageInterval: 0.5
+  damageInterval: 2
 --- !u!1839735485 &935833829
 Tilemap:
   m_ObjectHideFlags: 0
@@ -12424,7 +12440,7 @@ MonoBehaviour:
   activateDelay: 1
   activeTime: 5
   damage: 1
-  damageInterval: 0.5
+  damageInterval: 2
 --- !u!1839735485 &964201831
 Tilemap:
   m_ObjectHideFlags: 0
@@ -14063,7 +14079,7 @@ MonoBehaviour:
   activateDelay: 1
   activeTime: 5
   damage: 1
-  damageInterval: 0.5
+  damageInterval: 2
 --- !u!1839735485 &1015970782
 Tilemap:
   m_ObjectHideFlags: 0
@@ -35078,7 +35094,7 @@ MonoBehaviour:
   activateDelay: 1
   activeTime: 5
   damage: 1
-  damageInterval: 0.5
+  damageInterval: 2
 --- !u!1839735485 &1044294187
 Tilemap:
   m_ObjectHideFlags: 0
@@ -35477,7 +35493,7 @@ MonoBehaviour:
   activateDelay: 1
   activeTime: 5
   damage: 1
-  damageInterval: 0.5
+  damageInterval: 2
 --- !u!1839735485 &1109983358
 Tilemap:
   m_ObjectHideFlags: 0
@@ -35681,6 +35697,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CleaningDemonMob (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1432492815232760568, guid: f60f8bb0fb71b2f4caa58b04e110e0d9, type: 3}
+      propertyPath: playerData
+      value: 
+      objectReference: {fileID: 1373154740350362926}
     - target: {fileID: 4871515085518878109, guid: f60f8bb0fb71b2f4caa58b04e110e0d9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 82.38
@@ -35888,7 +35908,7 @@ MonoBehaviour:
   activateDelay: 1
   activeTime: 5
   damage: 1
-  damageInterval: 0.5
+  damageInterval: 2
 --- !u!1839735485 &1178999943
 Tilemap:
   m_ObjectHideFlags: 0
@@ -36242,7 +36262,7 @@ MonoBehaviour:
   activateDelay: 1
   activeTime: 5
   damage: 1
-  damageInterval: 0.5
+  damageInterval: 2
 --- !u!1839735485 &1185541453
 Tilemap:
   m_ObjectHideFlags: 0
@@ -36596,7 +36616,7 @@ MonoBehaviour:
   activateDelay: 1
   activeTime: 5
   damage: 1
-  damageInterval: 0.5
+  damageInterval: 2
 --- !u!1839735485 &1193904680
 Tilemap:
   m_ObjectHideFlags: 0
@@ -37076,6 +37096,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CleaningDemonMob (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 1432492815232760568, guid: f60f8bb0fb71b2f4caa58b04e110e0d9, type: 3}
+      propertyPath: playerData
+      value: 
+      objectReference: {fileID: 1373154740350362926}
     - target: {fileID: 4871515085518878109, guid: f60f8bb0fb71b2f4caa58b04e110e0d9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 162.66548
@@ -37543,7 +37567,7 @@ MonoBehaviour:
   activateDelay: 1
   activeTime: 5
   damage: 1
-  damageInterval: 0.5
+  damageInterval: 2
 --- !u!1839735485 &1247969314
 Tilemap:
   m_ObjectHideFlags: 0
@@ -37732,6 +37756,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CleaningDemonMob
       objectReference: {fileID: 0}
+    - target: {fileID: 1432492815232760568, guid: f60f8bb0fb71b2f4caa58b04e110e0d9, type: 3}
+      propertyPath: playerData
+      value: 
+      objectReference: {fileID: 1373154740350362926}
     - target: {fileID: 4871515085518878109, guid: f60f8bb0fb71b2f4caa58b04e110e0d9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 70.19
@@ -83498,7 +83526,7 @@ MonoBehaviour:
   activateDelay: 1
   activeTime: 5
   damage: 1
-  damageInterval: 0.5
+  damageInterval: 2
 --- !u!1839735485 &1264805877
 Tilemap:
   m_ObjectHideFlags: 0
@@ -83867,7 +83895,7 @@ MonoBehaviour:
   activateDelay: 1
   activeTime: 5
   damage: 1
-  damageInterval: 0.5
+  damageInterval: 2
 --- !u!1839735485 &1271853510
 Tilemap:
   m_ObjectHideFlags: 0
@@ -84466,7 +84494,7 @@ MonoBehaviour:
   activateDelay: 1
   activeTime: 5
   damage: 1
-  damageInterval: 0.5
+  damageInterval: 2
 --- !u!1839735485 &1303139286
 Tilemap:
   m_ObjectHideFlags: 0
@@ -84655,6 +84683,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CleaningDemonMob (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 1432492815232760568, guid: f60f8bb0fb71b2f4caa58b04e110e0d9, type: 3}
+      propertyPath: playerData
+      value: 
+      objectReference: {fileID: 1373154740350362926}
     - target: {fileID: 4871515085518878109, guid: f60f8bb0fb71b2f4caa58b04e110e0d9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 150.25862
@@ -84952,7 +84984,7 @@ MonoBehaviour:
   activateDelay: 1
   activeTime: 5
   damage: 1
-  damageInterval: 0.5
+  damageInterval: 2
 --- !u!1839735485 &1392508980
 Tilemap:
   m_ObjectHideFlags: 0
@@ -85566,7 +85598,7 @@ MonoBehaviour:
   activateDelay: 1
   activeTime: 5
   damage: 1
-  damageInterval: 0.5
+  damageInterval: 2
 --- !u!1839735485 &1429108032
 Tilemap:
   m_ObjectHideFlags: 0
@@ -85905,7 +85937,7 @@ MonoBehaviour:
   activateDelay: 1
   activeTime: 5
   damage: 1
-  damageInterval: 0.5
+  damageInterval: 2
 --- !u!1839735485 &1444836221
 Tilemap:
   m_ObjectHideFlags: 0
@@ -86259,7 +86291,7 @@ MonoBehaviour:
   activateDelay: 1
   activeTime: 5
   damage: 1
-  damageInterval: 0.5
+  damageInterval: 2
 --- !u!1839735485 &1510897080
 Tilemap:
   m_ObjectHideFlags: 0
@@ -86858,7 +86890,7 @@ MonoBehaviour:
   activateDelay: 1
   activeTime: 5
   damage: 1
-  damageInterval: 0.5
+  damageInterval: 2
 --- !u!1839735485 &1537119929
 Tilemap:
   m_ObjectHideFlags: 0
@@ -119442,7 +119474,7 @@ MonoBehaviour:
   activateDelay: 1
   activeTime: 5
   damage: 1
-  damageInterval: 0.5
+  damageInterval: 2
 --- !u!1839735485 &1595534133
 Tilemap:
   m_ObjectHideFlags: 0
@@ -119796,7 +119828,7 @@ MonoBehaviour:
   activateDelay: 1
   activeTime: 5
   damage: 1
-  damageInterval: 0.5
+  damageInterval: 2
 --- !u!1839735485 &1601646096
 Tilemap:
   m_ObjectHideFlags: 0
@@ -120165,7 +120197,7 @@ MonoBehaviour:
   activateDelay: 1
   activeTime: 5
   damage: 1
-  damageInterval: 0.5
+  damageInterval: 2
 --- !u!1839735485 &1603181876
 Tilemap:
   m_ObjectHideFlags: 0
@@ -120569,7 +120601,7 @@ MonoBehaviour:
   activateDelay: 1
   activeTime: 5
   damage: 1
-  damageInterval: 0.5
+  damageInterval: 2
 --- !u!1839735485 &1621307315
 Tilemap:
   m_ObjectHideFlags: 0
@@ -121168,7 +121200,7 @@ MonoBehaviour:
   activateDelay: 1
   activeTime: 5
   damage: 1
-  damageInterval: 0.5
+  damageInterval: 2
 --- !u!1839735485 &1713190107
 Tilemap:
   m_ObjectHideFlags: 0
@@ -121522,7 +121554,7 @@ MonoBehaviour:
   activateDelay: 1
   activeTime: 5
   damage: 1
-  damageInterval: 0.5
+  damageInterval: 2
 --- !u!1839735485 &1721706691
 Tilemap:
   m_ObjectHideFlags: 0
@@ -121876,7 +121908,7 @@ MonoBehaviour:
   activateDelay: 1
   activeTime: 5
   damage: 1
-  damageInterval: 0.5
+  damageInterval: 2
 --- !u!1839735485 &1738925616
 Tilemap:
   m_ObjectHideFlags: 0
@@ -122384,7 +122416,7 @@ MonoBehaviour:
   activateDelay: 1
   activeTime: 5
   damage: 1
-  damageInterval: 0.5
+  damageInterval: 2
 --- !u!1839735485 &1826084938
 Tilemap:
   m_ObjectHideFlags: 0
@@ -122588,6 +122620,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CleaningDemonMob (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1432492815232760568, guid: f60f8bb0fb71b2f4caa58b04e110e0d9, type: 3}
+      propertyPath: playerData
+      value: 
+      objectReference: {fileID: 1373154740350362926}
     - target: {fileID: 4871515085518878109, guid: f60f8bb0fb71b2f4caa58b04e110e0d9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 128.66655
@@ -122795,7 +122831,7 @@ MonoBehaviour:
   activateDelay: 1
   activeTime: 5
   damage: 1
-  damageInterval: 0.5
+  damageInterval: 2
 --- !u!1839735485 &1875660586
 Tilemap:
   m_ObjectHideFlags: 0
@@ -123149,7 +123185,7 @@ MonoBehaviour:
   activateDelay: 1
   activeTime: 5
   damage: 1
-  damageInterval: 0.5
+  damageInterval: 2
 --- !u!1839735485 &1916617383
 Tilemap:
   m_ObjectHideFlags: 0
@@ -123414,7 +123450,7 @@ MonoBehaviour:
   activateDelay: 1
   activeTime: 5
   damage: 1
-  damageInterval: 0.5
+  damageInterval: 2
 --- !u!1839735485 &1954872382
 Tilemap:
   m_ObjectHideFlags: 0
@@ -123857,7 +123893,7 @@ MonoBehaviour:
   activateDelay: 1
   activeTime: 5
   damage: 1
-  damageInterval: 0.5
+  damageInterval: 2
 --- !u!1839735485 &1982743645
 Tilemap:
   m_ObjectHideFlags: 0
@@ -124226,7 +124262,7 @@ MonoBehaviour:
   activateDelay: 1
   activeTime: 5
   damage: 1
-  damageInterval: 0.5
+  damageInterval: 2
 --- !u!1839735485 &1990078468
 Tilemap:
   m_ObjectHideFlags: 0
@@ -124565,7 +124601,7 @@ MonoBehaviour:
   activateDelay: 1
   activeTime: 5
   damage: 1
-  damageInterval: 0.5
+  damageInterval: 2
 --- !u!1839735485 &1999280633
 Tilemap:
   m_ObjectHideFlags: 0
@@ -124919,7 +124955,7 @@ MonoBehaviour:
   activateDelay: 1
   activeTime: 5
   damage: 1
-  damageInterval: 0.5
+  damageInterval: 2
 --- !u!1839735485 &2019050871
 Tilemap:
   m_ObjectHideFlags: 0
@@ -125606,7 +125642,7 @@ MonoBehaviour:
   activateDelay: 1
   activeTime: 5
   damage: 1
-  damageInterval: 0.5
+  damageInterval: 2
 --- !u!1839735485 &2040165438
 Tilemap:
   m_ObjectHideFlags: 0
@@ -125975,7 +126011,7 @@ MonoBehaviour:
   activateDelay: 1
   activeTime: 5
   damage: 1
-  damageInterval: 0.5
+  damageInterval: 2
 --- !u!1839735485 &2080723198
 Tilemap:
   m_ObjectHideFlags: 0
@@ -126329,7 +126365,7 @@ MonoBehaviour:
   activateDelay: 1
   activeTime: 5
   damage: 1
-  damageInterval: 0.5
+  damageInterval: 2
 --- !u!1839735485 &2121479349
 Tilemap:
   m_ObjectHideFlags: 0
@@ -126773,6 +126809,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c634abe36fa3a1c7b7a09f9ea4ad2e7, type: 3}
+--- !u!114 &1373154740350362926 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3519682308273206148, guid: 2c634abe36fa3a1c7b7a09f9ea4ad2e7, type: 3}
+  m_PrefabInstance: {fileID: 1373154740350362925}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c22716a483526c8ee9d98c8c3c306f42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerScript
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
