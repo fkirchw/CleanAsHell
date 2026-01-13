@@ -100,8 +100,8 @@ Shader "Custom/TilemapBlood"
                     return baseColor * i.color;
                 }
 
-                // Sample blood splatter pattern with tiling
-                fixed4 bloodPattern = tex2D(_BloodTexture, i.texcoord * _BloodTiling);
+                // Sample blood splatter pattern based on world position (consistent across tilesets)
+                fixed4 bloodPattern = tex2D(_BloodTexture, i.worldPos * _BloodTiling);
 
                 // Darken the base tile where blood is (blood soaks in)
                 fixed4 darkenedBase = baseColor * (1.0 - bloodAmount * 0.15);

@@ -226,20 +226,22 @@ namespace Blood
             Vector2 worldMax = grid.CellToWorld(new Vector3Int(gridOffset.x + gridWidth, gridOffset.y + gridHeight, 0));
 
             // Set up the blood mask tiling/offset
-            // ST.xy = scale (inverse of world size)
-            // ST.zw = offset (world min position)
+            Vector2 cellHalfSize = grid.cellSize * 0.5f;
+
             Vector4 maskST = new Vector4(
                 1f / (worldMax.x - worldMin.x), // Scale X
                 1f / (worldMax.y - worldMin.y), // Scale Y
-                worldMin.x, // Offset X (world space min)
-                worldMin.y // Offset Y (world space min)
+                worldMin.x + cellHalfSize.x,    // Offset X - centered on cell
+                worldMin.y + cellHalfSize.y     // Offset Y - centered on cell
             );
+            
             bloodMaterial.SetVector(BloodMaskSt, maskST);
 
             tilemapRenderer.material = bloodMaterial;
 
-            Debug.Log(
-                $"Blood system initialized: {gridWidth}x{gridHeight} grid at world bounds {worldMin} to {worldMax}");
+            Debug.Log($"worldMin: {worldMin}, worldMax: {worldMax}");
+            Debug.Log($"maskST: {maskST}");
+            Debug.Log($"Grid bounds: {bounds}");
         }
 
         /// <summary>
