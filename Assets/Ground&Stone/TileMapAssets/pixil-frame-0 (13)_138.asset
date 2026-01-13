@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: pixil-frame-0 (13)_138
   m_EditorClassIdentifier: UnityEngine.dll::UnityEngine.Tilemaps.Tile
-  m_Sprite: {fileID: 1062885375, guid: 3bf46a6ac60bd9c48b0b88c3b97d938f, type: 3}
+  m_Sprite: {fileID: 1593301243, guid: 3bf46a6ac60bd9c48b0b88c3b97d938f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1

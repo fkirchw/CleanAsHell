@@ -8,7 +8,7 @@ public class PortalScript : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            SceneManager.LoadScene("SmallBossScene");
+            SceneManager.LoadScene("LuciferScene");
 
         }
     }
