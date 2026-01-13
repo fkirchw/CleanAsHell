@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Blood;
 using Characters.Interfaces;
 using UnityEngine;
 
@@ -9,20 +10,21 @@ namespace Characters.Player
         private static readonly int IsRunning = Animator.StringToHash("isRunning");
         private static readonly int Dead = Animator.StringToHash("isDead");
 
-        [Header("Components")]
-        [SerializeField] private Animator animator;
-        
-        [Header("Health")]
-        [SerializeField] private int health = 10;
+        [Header("Components")] [SerializeField]
+        private Animator animator;
 
-        [Header("Light Attack")]
-        [SerializeField] private int lightAttackPower = 5;
+        [Header("Health")] [SerializeField] private int health = 10;
+
+        [Header("Light Attack")] [SerializeField]
+        private int lightAttackPower = 5;
+
         [SerializeField] private float lightAttackDistance = 1f;
         [SerializeField] private float lightAttackRadius = 0.7f;
         [SerializeField] private float lightAttackKnockback = 5f;
 
-        [Header("Heavy Attack")]
-        [SerializeField] private int heavyAttackPower = 10;
+        [Header("Heavy Attack")] [SerializeField]
+        private int heavyAttackPower = 10;
+
         [SerializeField] private float heavyAttackDistance = 1.5f;
         [SerializeField] private float heavyAttackRadius = 1.0f;
         [SerializeField] private float heavyAttackKnockback = 8f;
@@ -119,6 +121,8 @@ namespace Characters.Player
             animator.speed = 0f;
             movement.ApplyKnockback(knockbackDir, knockbackForce);
 
+            BloodSystem.Instance.OnEnemyHit(this.transform.position, knockbackDir, false, damage);
+
             if (health <= 0)
             {
                 IsDead = true;
@@ -126,7 +130,7 @@ namespace Characters.Player
                 animator.SetBool(Dead, true);
             }
         }
-        
+
         // Important: Now called by event in the hit animation, not by direct invocation in this file.
         // To change timing, adjust animation event marker in the hit animation.
         // See https://docs.unity3d.com/6000.3/Documentation/Manual/script-AnimationWindowEvent.html
@@ -146,7 +150,7 @@ namespace Characters.Player
             Vector2 dir = movement.FacingDirection;
             Vector2 attackCenter = (Vector2)transform.position + (dir * attackDistance * 0.5f);
             Collider2D[] hits = Physics2D.OverlapCircleAll(attackCenter, attackRadius, LayerMask.GetMask("Enemy"));
-            
+
             foreach (Collider2D hit in hits)
             {
                 Vector2 toEnemy = hit.transform.position - transform.position;
@@ -171,12 +175,12 @@ namespace Characters.Player
         void OnDrawGizmosSelected()
         {
             Vector2 direction = movement ? movement.FacingDirection : Vector2.right;
-            
+
             // Light attack gizmo (red)
             Vector2 lightAttackCenter = (Vector2)transform.position + direction * lightAttackDistance * 0.5f;
             Gizmos.color = new Color(1, 0, 0, 0.3f);
             Gizmos.DrawSphere(lightAttackCenter, lightAttackRadius);
-            
+
             // Heavy attack gizmo (orange)
             Vector2 heavyAttackCenter = (Vector2)transform.position + direction * heavyAttackDistance * 0.5f;
             Gizmos.color = new Color(1, 0.5f, 0, 0.3f);

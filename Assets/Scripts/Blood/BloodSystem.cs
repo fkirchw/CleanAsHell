@@ -238,8 +238,9 @@ namespace Blood
 
             tilemapRenderer.material = bloodMaterial;
 
-            Debug.Log(
-                $"Blood system initialized: {gridWidth}x{gridHeight} grid at world bounds {worldMin} to {worldMax}");
+            Debug.Log($"worldMin: {worldMin}, worldMax: {worldMax}");
+            Debug.Log($"maskST: {maskST}");
+            Debug.Log($"Grid bounds: {bounds}");
         }
 
         /// <summary>
