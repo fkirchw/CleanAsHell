@@ -423,6 +423,17 @@ namespace Inputs
                 },
                 {
                     ""name"": """",
+                    ""id"": ""c3c9f1aa-b9f3-450f-bb01-faf8ad80d8a9"",
+                    ""path"": ""<Keyboard>/leftShift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""Clean"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""c8ba315c-8dd1-4480-bb2d-45b72b5bcff4"",
                     ""path"": ""<Mouse>/rightButton"",
                     ""interactions"": """",
