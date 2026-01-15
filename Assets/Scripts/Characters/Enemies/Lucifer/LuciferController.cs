@@ -6,43 +6,38 @@ using Characters.Player;
 using System.Collections.Generic;
 using System;
 using UnityEngine.SceneManagement;
+
 namespace Characters.Enemies
 {
     public class LuciferController : MonoBehaviour, IDamageable
     {
-
         [SerializeField] private Animator animator;
         [SerializeField] private float moveSpeed = 2f;
         [SerializeField] private int health = 10;
         [SerializeField] private PlayerData playerData;
+        [SerializeField] private int contactDamage = 1;
+        [SerializeField] private float contactDamageCooldown = 0.5f;
+        [SerializeField] private Vector2 contactKnockbackDir = new Vector2(3, 1);
+        [SerializeField] private float contactKnockbackForce = 3f;
 
         private Transform playerPosition;
         private SpriteRenderer spriteRenderer;
         private Rigidbody2D rb;
         private Vector2 direction;
-
         private float attackCooldown;
-
         private bool isDead;
-
         private bool playerDetected;
-
         private float selectedAttackDistance;
-
         private bool isInAttack = false;
-
         private List<IAttack> attacks;
-
         private float playerOffset = -1.05f;
-
         private float MAX_HEALTH;
+        private float lastContactDamageTime;
 
         void Start()
         {
             MAX_HEALTH = health;
-
             spriteRenderer = GetComponent<SpriteRenderer>();
-           
             rb = GetComponent<Rigidbody2D>();
 
             if (playerData == null)
@@ -58,18 +53,17 @@ namespace Characters.Enemies
             attacks.Add(tongueAttack);
             attacks.Add(attackTrident);
             attacks.Add(attackSweep);
-            //Sort ASC
+
             attacks.Sort((a, b) =>
             {
                 return a.GetAttackDistance().CompareTo(b.GetAttackDistance());
             });
-
         }
 
         void Update()
         {
-
-            if(playerData.IsDead) {
+            if(playerData.IsDead) 
+            {
                 ResetAllParameters();
                 rb.constraints = RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionX;
                 animator.SetBool("isIdle", true);
@@ -84,7 +78,6 @@ namespace Characters.Enemies
             {
                 rb.constraints = RigidbodyConstraints2D.FreezeRotation;
             }
-
 
             if (isDead)
             {
@@ -117,29 +110,46 @@ namespace Characters.Enemies
             }
         }
 
-        //Called by Animation Event
+        private void OnCollisionStay2D(Collision2D collision)
+        {
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                if (Time.time >= lastContactDamageTime + contactDamageCooldown)
+                {
+                    IDamageable playerScript = collision.gameObject.GetComponent<IDamageable>();
+                    if (playerScript != null)
+                    {
+                        Vector2 knockbackDir = contactKnockbackDir;
+                        
+                        if (direction.x < 0)
+                        {
+                            knockbackDir.x *= -1;
+                        }
+                        
+                        playerScript.TakeDamage(contactDamage, knockbackDir, contactKnockbackForce);
+                        lastContactDamageTime = Time.time;
+                    }
+                }
+            }
+        }
+
         public void OnDamageDelt(IAttack attack)
         {
-
             DealDamage(attack);
         }
 
         public void OnAttackAnimationOver()
         {
             isInAttack = false;
-            
         }
 
         private void DealDamage(IAttack attack)
         {
-
             float deltaX = Mathf.Abs(playerPosition.position.x - transform.position.x);
             float deltaY = Mathf.Abs(transform.position.y + playerOffset - playerPosition.position.y);
 
-
             if (attack.GetDamageRange().x >= deltaX && attack.GetDamageRange().y >= deltaY)
             {
-
                 IDamageable playerScript = playerPosition.GetComponent<IDamageable>();
                 if (playerScript != null)
                 {
@@ -159,7 +169,6 @@ namespace Characters.Enemies
         {
             animator.SetBool("isWalking", true);
 
-
             direction = (playerPosition.position - transform.position).normalized;
 
             if (direction.x < 0)
@@ -168,10 +177,7 @@ namespace Characters.Enemies
                 spriteRenderer.flipX = false;
 
             float moveX = moveSpeed * direction.x;
-
-            // Rigidbody bewegen
             rb.linearVelocity = new Vector2(moveX, 0);
-
         }
 
         private void HandleAttack()
@@ -183,13 +189,10 @@ namespace Characters.Enemies
                 return;
             }
 
-
             ResetAllParameters();
             isInAttack = true;
             StartCoroutine(myNextAttack.AttackCooldown());
             StartCoroutine(BringInAttackState(myNextAttack));
-            
-            //isWalking = false;
         }
 
         private IAttack ChooseAttack()
@@ -197,28 +200,21 @@ namespace Characters.Enemies
             float distanceToPlayer = Vector2.Distance(new Vector2(transform.position.x, transform.position.y),
                 new Vector2(playerPosition.position.x, playerPosition.position.y));
 
-
             foreach (IAttack possibleAttack in attacks)
             {
-
                if(distanceToPlayer < possibleAttack.GetAttackDistance() && possibleAttack.GetCanAttack() )
                 {
                     return possibleAttack;
-                    
                 }
-
             }
 
             return null;
-
         }
 
         public void TakeDamage(int damage, Vector2 knockbackDir, float knockbackForce)
         {
             health -= damage;
 
-
-            // Add blood
             if (BloodSystem.Instance)
             {
                 BloodSystem.Instance.OnEnemyHit(this.transform.position, knockbackDir, false, damage);
@@ -249,28 +245,17 @@ namespace Characters.Enemies
         
         IEnumerator BringInAttackState(IAttack attack)
         {
-            
             string triggerName = attack.GetAttackName() + "Trigger";
-
-
             animator.SetTrigger(triggerName);
-           
 
-            // Warten bis Animator im State "TongueShoot" ist
             while (!animator.GetCurrentAnimatorStateInfo(0).IsName(attack.GetAttackName()))
             {
-                
-                yield return null; // Warte 1 Frame
+                yield return null;
             }
 
-            // Hier Angriff ausführen (Collider aktivieren, IK bewegen etc.)
-            attack.Attack(); // optional kurze Attacke
-            
+            attack.Attack();
         }
 
         public float GetHealthPercent() =>(float)health / MAX_HEALTH;
-
-
     }
 }
-

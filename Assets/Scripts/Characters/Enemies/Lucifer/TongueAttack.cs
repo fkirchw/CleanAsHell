@@ -12,6 +12,7 @@ public class AttackTongue : MonoBehaviour, IAttack
     [SerializeField] private float tongueSpeed = 10f;    
     [SerializeField] public float retractSpeed = 15f;   
     [SerializeField] private float attackDistance = 7f;
+    [SerializeField] private float attackDuration = 1.5f;
 
     [SerializeField] private float attackCooldown = 5f;
 
@@ -34,10 +35,9 @@ public class AttackTongue : MonoBehaviour, IAttack
     private Vector3 initialTonguePos;
     private bool isShooting = false;
     private bool isRetracting = false;
+    private float attackTimer = 0f;
 
     SpriteRenderer spriteRenderer;
-    // Sprite verschwindet
-    // wieder sichtbar
 
     void Start()
     {
@@ -48,41 +48,43 @@ public class AttackTongue : MonoBehaviour, IAttack
         if (player == null) return;
 
         if (tongue != null)
-            spriteRenderer.enabled = false;  //tongue is disabled
+            spriteRenderer.enabled = false;
 
         controller = GetComponent<LuciferController>();
     }
 
     void Update()
     {
-
         if (isShooting)
         {
-            // tongue move towards player
-
             ShootTongue();
+            attackTimer += Time.deltaTime;
+            
+            if (attackTimer >= attackDuration)
+            {
+                isShooting = false;
+                isRetracting = true;
+                attackTimer = 0f;
+            }
         }
-         if (isRetracting && !isShooting)
+        else if (isRetracting && !isShooting)
         {
            RetractTongue();
         }
     }
 
-    // Call from LuciferController
     public void Attack()
     {
         if (tongue == null || player == null) return;
 
-        spriteRenderer.enabled = true;        // Make tongue visible
+        spriteRenderer.enabled = true;
         isShooting = true;
         isRetracting = false;
-
-       
+        attackTimer = 0f;
     }
 
     private void ShootTongue()
     {
-
         tongueIKTarget.position = Vector3.MoveTowards(
                tongueIKTarget.position,
                player.transform.position,
@@ -99,21 +101,18 @@ public class AttackTongue : MonoBehaviour, IAttack
 
         tongueIKTarget.rotation = Quaternion.Euler(0, 0, anglePlayer);
 
-
-        // is player reached
         if (Vector3.Distance(tongueIKTarget.position, player.transform.position) < 1f)
         {
             isShooting = false;
             isRetracting = true;
+            attackTimer = 0f;
 
             controller.OnDamageDelt(this);
-
         }
     }
 
     private void RetractTongue()
     {        
-        // retract tongue
         tongueIKTarget.position = Vector3.MoveTowards(
             tongueIKTarget.position,
             new Vector3(controller.transform.position.x, controller.transform.position.y + 0.527f),
@@ -127,9 +126,7 @@ public class AttackTongue : MonoBehaviour, IAttack
         if (Vector3.Distance(tongueIKTarget.position, new Vector3(controller.transform.position.x, controller.transform.position.y + 0.527f)) < 1f)
         {
             isRetracting = false;
-            spriteRenderer.enabled = false; // tongue dissapear
-
-            // Start Cooldown after attack is finished!!!!
+            spriteRenderer.enabled = false;
 
             controller.OnAttackAnimationOver();
         }
@@ -137,8 +134,7 @@ public class AttackTongue : MonoBehaviour, IAttack
 
     public string GetAttackName()
     {
-        return GetType().Name
-;
+        return GetType().Name;
     }
 
     public IEnumerator AttackCooldown()
@@ -149,7 +145,6 @@ public class AttackTongue : MonoBehaviour, IAttack
 
         canAttack = true;
     }
-
 
     public float GetAttackCooldown() => attackCooldown;
 
@@ -164,6 +159,4 @@ public class AttackTongue : MonoBehaviour, IAttack
     public float GetKnockbackForce() => knockBackForce;
 
     public Vector2 GetDamageRange() => damageRange;
-
 }
-
