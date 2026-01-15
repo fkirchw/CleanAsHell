@@ -17,18 +17,17 @@ namespace Characters.Player
         private Rigidbody2D rb;
         private Collider2D col;
         private PlayerInputHandler input;
+        private PlayerData playerData;
         
         private bool isKnockback;
         private float knockbackTimer;
         private float jumpBufferCounter;
 
-        // PUBLIC STATE - read by others
         public bool IsGrounded { get; private set; }
         public Vector2 FacingDirection { get; private set; } = Vector2.right;
         public float HorizontalInput { get; private set; }
         public Vector2 Velocity => rb.linearVelocity;
 
-        // PUBLIC CONTROL - called by combat
         public void ApplyKnockback(Vector2 dir, float force)
         {
             rb.linearVelocity = dir * force;
@@ -36,7 +35,6 @@ namespace Characters.Player
             isKnockback = true;
         }
 
-        // Ground detection for cleaning
         public float? GetGroundHeightBelow(float maxDistance, LayerMask groundLayer)
         {
             RaycastHit2D hit = Physics2D.Raycast(
@@ -53,11 +51,11 @@ namespace Characters.Player
             rb = GetComponent<Rigidbody2D>();
             col = GetComponent<Collider2D>();
             input = GetComponent<PlayerInputHandler>();
+            playerData = GetComponent<PlayerData>();
         }
 
         private void Update()
         {
-            // Update knockback timer
             if (knockbackTimer > 0f)
             {
                 knockbackTimer -= Time.deltaTime;
@@ -65,12 +63,13 @@ namespace Characters.Player
                 {
                     isKnockback = false;
                 }
-                return; // Don't process input during knockback
+                return;
             }
 
             UpdateJumpBuffer();
             HandleJump();
             UpdateFacingDirection();
+            UpdateLookDown();
         }
 
         private void FixedUpdate()
@@ -95,14 +94,12 @@ namespace Characters.Player
 
         private void HandleJump()
         {
-            // Execute jump if we have buffered input and are grounded
             if (jumpBufferCounter > 0f && IsGrounded)
             {
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
                 jumpBufferCounter = 0f;
             }
 
-            // Jump cut
             if (input.JumpReleased && rb.linearVelocity.y > 2f)
             {
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * 0.5f);
@@ -123,7 +120,11 @@ namespace Characters.Player
             }
         }
 
-        // Collision detection
+        private void UpdateLookDown()
+        {
+            playerData.IsLookingDown = input.VerticalInput < -0.5f;
+        }
+
         private void OnCollisionEnter2D(Collision2D collision)
         {
             if (collision.gameObject.CompareTag("Ground") && IsLandingCollision(collision))

@@ -4,15 +4,12 @@ using UnityEngine.InputSystem;
 
 namespace Characters.Player
 {
-    /// <summary>
-    /// Central hub for all player input. Other player scripts query this for input state.
-    /// </summary>
     public class PlayerInputHandler : MonoBehaviour
     {
         private InputSystemActions inputActions;
 
-        // Public properties - other scripts read these
         public float MoveInput { get; private set; }
+        public float VerticalInput { get; private set; }
         public bool JumpPressed => inputActions.Player.Jump.triggered;
         public bool JumpHeld => inputActions.Player.Jump.IsPressed();
         public bool JumpReleased => inputActions.Player.Jump.WasReleasedThisFrame();
@@ -28,10 +25,9 @@ namespace Characters.Player
 
         private void Update()
         {
-            // Update continuous input each frame
             MoveInput = inputActions.Player.Move.ReadValue<Vector2>().x;
+            VerticalInput = inputActions.Player.Move.ReadValue<Vector2>().y;
             
-            // Temporary debug - remove after fixing
             if (Gamepad.current != null)
             {
                 if (Gamepad.current.leftShoulder.wasPressedThisFrame)

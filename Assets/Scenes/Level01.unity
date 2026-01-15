@@ -15497,9 +15497,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11d7031c09e7bdf4e86f74ba937ed19d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraController
-  smoothTime: 0.2
-  cameraHeightAbovePlayer: 3
+  smoothTimeMin: 0.15
+  smoothTimeMax: 0
+  cameraHeightAbovePlayer: 2.5
   worldXMin: 0
+  velocityThreshold: 30
+  lookDownOffset: 2
 --- !u!114 &1031078247
 MonoBehaviour:
   m_ObjectHideFlags: 0
