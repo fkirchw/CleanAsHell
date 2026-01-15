@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AttackTrident : MonoBehaviour, IAttack
 {
-    [SerializeField] private float attackCooldown = 3f;
+    [SerializeField] private float attackCooldown = 4f;
     [SerializeField] private float attackDistance = 3f;
     [SerializeField] private Vector2 knockbackDir = new Vector2(3,1);
     [SerializeField] private float knockbackForce = 3f;
