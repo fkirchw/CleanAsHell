@@ -1,16 +1,25 @@
 fileFormatVersion: 2
-guid: c2741fdc65e8d9548b6f7feffaded43e
+guid: eaeef89b1b2616b4f8735a84fc66607d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2749261331969839478
-    second: Adobe Express - file (2)_0
+      213: 8460401497469694435
+    second: pixil-frame-0 (18)_0
   - first:
-      213: 1700019746565893228
-    second: Adobe Express - file (2)_1
+      213: -1204969690082118672
+    second: pixil-frame-0 (18)_1
   - first:
-      213: -7583683772013152437
-    second: Adobe Express - file (2)_2
+      213: 5574432806605773869
+    second: pixil-frame-0 (18)_2
+  - first:
+      213: 3398595889715324144
+    second: pixil-frame-0 (18)_3
+  - first:
+      213: 3154371872743503336
+    second: pixil-frame-0 (18)_4
+  - first:
+      213: 7439428624794348404
+    second: pixil-frame-0 (18)_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -57,7 +66,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -106,67 +115,133 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Adobe Express - file (2)_0
+      name: pixil-frame-0 (18)_0
       rect:
         serializedVersion: 2
-        x: 974
-        y: 239
-        width: 1127
-        height: 869
+        x: 0
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a8e68318269a8d9d0800000000000000
-      internalID: -2749261331969839478
+      spriteID: 3e13dd93652696570800000000000000
+      internalID: 8460401497469694435
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Adobe Express - file (2)_1
+      name: pixil-frame-0 (18)_1
       rect:
         serializedVersion: 2
-        x: 1472
-        y: 1094
-        width: 41
-        height: 17
+        x: 32
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c6ca531d3fea79710800000000000000
-      internalID: 1700019746565893228
+      spriteID: 0f3fa897376174fe0800000000000000
+      internalID: -1204969690082118672
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Adobe Express - file (2)_2
+      name: pixil-frame-0 (18)_2
       rect:
         serializedVersion: 2
-        x: 1577
-        y: 1106
-        width: 14
-        height: 8
+        x: 64
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b47f2481ac751c690800000000000000
-      internalID: -7583683772013152437
+      spriteID: d2c550e5a1d5c5d40800000000000000
+      internalID: 5574432806605773869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixil-frame-0 (18)_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f4a59584fc3a2f20800000000000000
+      internalID: 3398595889715324144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixil-frame-0 (18)_4
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e53c54718496cb20800000000000000
+      internalID: 3154371872743503336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixil-frame-0 (18)_5
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47b6db02be82e3760800000000000000
+      internalID: 7439428624794348404
       vertices: []
       indices: 
       edges: []
@@ -175,7 +250,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: f5da1429015f14a4c868c9f39c1c87f6
     internalID: 0
     vertices: []
     indices: 
@@ -183,11 +258,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Adobe Express - file (2)_0: -2749261331969839478
-      Adobe Express - file (2)_1: 1700019746565893228
-      Adobe Express - file (2)_2: -7583683772013152437
+      pixil-frame-0 (18)_0: 8460401497469694435
+      pixil-frame-0 (18)_1: -1204969690082118672
+      pixil-frame-0 (18)_2: 5574432806605773869
+      pixil-frame-0 (18)_3: 3398595889715324144
+      pixil-frame-0 (18)_4: 3154371872743503336
+      pixil-frame-0 (18)_5: 7439428624794348404
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

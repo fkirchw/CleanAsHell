@@ -68,9 +68,6 @@ public class OptionsMenu : MonoBehaviour
         if (visualPanel != null) visualPanel.SetActive(false);
         Time.timeScale = 1f; 
 
-        // Optional: Lock the mouse back for gameplay
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
     }
 
     public void GoToMainMenu()

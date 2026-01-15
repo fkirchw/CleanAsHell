@@ -559,6 +559,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3623827404257585769, guid: 164ebeba500a4a8489b0a1575ce65abf, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.025
+      objectReference: {fileID: 0}
+    - target: {fileID: 3623827404257585769, guid: 164ebeba500a4a8489b0a1575ce65abf, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 627
       objectReference: {fileID: 0}
@@ -775,4 +779,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7937c004c740823498d98c2196f79e31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealthBar
-  player: {fileID: 0}
