@@ -9,11 +9,14 @@ public class CameraController : MonoBehaviour
     public float worldXMin = 0;
     public float velocityThreshold = 30f;
     public float lookDownOffset = 2f;
+    public float lookDownTransitionTime = 0.2f;
 
     private PlayerData playerData;
     private Rigidbody2D playerRigidbody;
     private Vector3 offset;
     private Vector3 velocity = Vector3.zero;
+    private bool wasLookingDown;
+    private float lookDownTransitionTimer;
 
     void Awake()
     {
@@ -47,6 +50,18 @@ public class CameraController : MonoBehaviour
         if (playerData.IsLookingDown && playerCurrentSpeed > 10f && Mathf.Abs(playerRigidbody.linearVelocity.y) < 20f)
         {
             currentSmoothTime = Mathf.Max(currentSmoothTime, smoothTimeMin * 0.7f);
+        }
+
+        if (wasLookingDown != playerData.IsLookingDown)
+        {
+            lookDownTransitionTimer = lookDownTransitionTime;
+            wasLookingDown = playerData.IsLookingDown;
+        }
+
+        if (lookDownTransitionTimer > 0)
+        {
+            currentSmoothTime = Mathf.Max(currentSmoothTime, smoothTimeMin);
+            lookDownTransitionTimer -= Time.fixedDeltaTime;
         }
 
         transform.position = Vector3.SmoothDamp(
