@@ -75,6 +75,9 @@ namespace Characters.Enemies
                 isDead = true;
                 animator.Play("Death");
                 animator.SetBool("isDead", true);
+
+                //increase Mobs killed
+                LevelStateManager.Instance.IncreaseEnemiesKilled();
             }
         }
 

@@ -24,6 +24,10 @@ namespace Characters.Player
         [SerializeField] private float groundCheckDistance = 5f;
         [SerializeField] private int foamParticlesPerSecond = 20;
 
+
+        [Header("Cleaning before regenerating health")]
+        [SerializeField] private int regenerationThreshold = 2;
+
         private PlayerMovement movement;
         private Animator animator;
         private PlayerInputHandler input;
@@ -33,6 +37,8 @@ namespace Characters.Player
         private float foamParticleTimer;
         private int cleaningFrames;
         private Vector2[] raycastPositions;
+
+        
 
         public bool IsCleaning => isCleaning;
 
@@ -49,6 +55,8 @@ namespace Characters.Player
 
             if (input.CleanHeld && !isInHitAnimation)
             {
+                CalculateBloodCleaned();
+
                 if (!isCleaning)
                     StartCleaning();
 
@@ -59,6 +67,30 @@ namespace Characters.Player
             {
                 StopCleaning();
             }
+        }
+
+        private int oldBloodCleaned = 0;
+        private void CalculateBloodCleaned()
+        {
+            float currentBlood = BloodSystem.Instance.GetCurrentBloodInLevel();
+            float totalBlood = BloodSystem.Instance.GetTotalBloodGenerated();
+            int bloodCleaned = (int)(totalBlood - currentBlood);
+
+            //Is the old bloodCleaned
+
+            if (bloodCleaned - oldBloodCleaned > 0)
+            {
+                GameEvents.OnBloodScoreChanged?.Invoke(bloodCleaned);
+            }
+
+            if (bloodCleaned - oldBloodCleaned > 0 && bloodCleaned % regenerationThreshold == 0)
+            {
+                GameEvents.OnRegenerationEvent?.Invoke(1);
+            }
+
+            LevelStateManager.Instance.SetBloodCounter(bloodCleaned);
+            LevelStateManager.Instance.SetLevelCleaned(BloodSystem.Instance.GetPercentageCleaned());
+            oldBloodCleaned = bloodCleaned;
         }
 
         private void StartCleaning()
