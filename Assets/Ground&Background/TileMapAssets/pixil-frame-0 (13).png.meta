@@ -1382,7 +1382,17 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: 2, y: -6}
+        - {x: 4.0259857, y: -5.9999695}
+        - {x: 4, y: -5}
+        - {x: 5, y: -5}
+        - {x: 5, y: -4}
+        - {x: 8, y: -4}
+        - {x: 8, y: 8}
+        - {x: -8, y: 8}
+        - {x: -8, y: -8}
+        - {x: 2, y: -8}
       tessellationDetail: 0
       bones: []
       spriteID: cc3da447dd63d39438a5ea92ea926fe4
@@ -1405,7 +1415,8 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape:
-      - - {x: -8, y: -7}
+      - - {x: -8, y: -6}
+        - {x: -6.0599747, y: -6.0299377}
         - {x: -4, y: -5}
         - {x: -2.6010284, y: -7}
         - {x: -1, y: -7}
@@ -1435,7 +1446,17 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: 8, y: 8}
+        - {x: -8, y: 8}
+        - {x: -8, y: -4}
+        - {x: -5, y: -4}
+        - {x: -5, y: -5}
+        - {x: -4, y: -5}
+        - {x: -4, y: -6}
+        - {x: -2, y: -6}
+        - {x: -2, y: -8}
+        - {x: 8, y: -8}
       tessellationDetail: 0
       bones: []
       spriteID: 22c35d7d31543a441926dd839e2f4ccb
@@ -1800,8 +1821,12 @@ TextureImporter:
         - {x: 7, y: -8}
         - {x: 7, y: -7}
         - {x: 7, y: -6}
-        - {x: 7, y: -5}
-        - {x: 4, y: -3}
+        - {x: 6, y: -6}
+        - {x: 6, y: -5}
+        - {x: 6, y: -5}
+        - {x: 5, y: -5}
+        - {x: 5, y: -4}
+        - {x: 3, y: -4}
         - {x: 3, y: 8}
         - {x: -8, y: 8}
       tessellationDetail: 0
@@ -1826,8 +1851,13 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape:
-      - - {x: -3, y: -2}
+      - - {x: -3, y: -3}
         - {x: -4, y: -3}
+        - {x: -4, y: -4}
+        - {x: -5, y: -4}
+        - {x: -5, y: -5}
+        - {x: -6, y: -5}
+        - {x: -6, y: -6}
         - {x: -7, y: -6}
         - {x: -7, y: -8}
         - {x: 8, y: -8}
