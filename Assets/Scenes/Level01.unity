@@ -896,7 +896,6 @@ GameObject:
   - component: {fileID: 130880541}
   - component: {fileID: 130880540}
   - component: {fileID: 130880542}
-  - component: {fileID: 130880543}
   m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
@@ -989,20 +988,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb2cc5c0f6dff7043b031d99538db791, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SmallBossBar
---- !u!114 &130880543
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 130880539}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6168557f8f3ce7e4eb619c05f366311b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ParalaxBackground
-  cam: {fileID: 1031078250}
-  parallaxFactor: 0.1
 --- !u!1 &252940194
 GameObject:
   m_ObjectHideFlags: 0
@@ -16394,6 +16379,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1207362096}
+  - component: {fileID: 1207362097}
   m_Layer: 0
   m_Name: LevelStateManager
   m_TagString: Untagged
@@ -16416,6 +16402,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1207362097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1207362095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b62c0fe4190d434d8451312fd362dba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LevelStateManager
 --- !u!1 &1247969308
 GameObject:
   m_ObjectHideFlags: 0
@@ -112117,6 +112115,10 @@ PrefabInstance:
     - target: {fileID: 7888525575863758627, guid: 2c634abe36fa3a1c7b7a09f9ea4ad2e7, type: 3}
       propertyPath: verticalTolerance
       value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7888525575863758627, guid: 2c634abe36fa3a1c7b7a09f9ea4ad2e7, type: 3}
+      propertyPath: regenerationThreshold
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

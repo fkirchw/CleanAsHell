@@ -13,7 +13,7 @@ namespace Characters.Player
         [Header("Components")] [SerializeField]
         private Animator animator;
 
-        [Header("Health")] [SerializeField] private int health = 10;
+        [SerializeField] private int health = 10;
 
         [Header("Light Attack")] [SerializeField]
         private int lightAttackPower = 5;
@@ -37,14 +37,32 @@ namespace Characters.Player
         public bool IsDead { get; private set; }
         public bool IsAttacking { get; private set; }
         public float HealthPercent => health / 10f;
+        public int Health => health;
+
+        private int MAX_HEALTH;
+
+        private int regenerationCount = 0;
+
+     
 
         private void Awake()
         {
             movement = GetComponent<PlayerMovement>();
             playerCollider = GetComponent<Collider2D>();
             input = GetComponent<PlayerInputHandler>();
+            MAX_HEALTH = health;
         }
 
+
+        // ** Query Helath of player from levelStateManager to work throughout levels
+        private void Start()
+        {
+            //Get the health of the LevelStateManager
+            health = LevelStateManager.Instance.GetPlayerHealth();
+            
+        }
+
+        
         private void Update()
         {
             if (IsDead)
@@ -55,6 +73,14 @@ namespace Characters.Player
 
             HandleCombatInput();
             UpdateAnimations();
+        }
+
+        private void OnRegenerationHandler(int regeneratedHealth)
+        {
+
+            regenerationCount++;
+            //Debug.Log("Regeneration Count " + regenerationCount);
+            IncreaseHealth(regeneratedHealth);
         }
 
         private bool attackRequested = false;
@@ -117,19 +143,29 @@ namespace Characters.Player
 
         public void TakeDamage(int damage, Vector2 knockbackDir, float knockbackForce)
         {
-            health -= damage;
+            DecreaseHealth(damage);
+
             animator.speed = 0f;
             movement.ApplyKnockback(knockbackDir, knockbackForce);
 
             BloodSystem.Instance.OnEnemyHit(this.transform.position, knockbackDir, false, damage);
+
+            //Set health for the LevelStateManager
+            
 
             if (health <= 0)
             {
                 IsDead = true;
                 animator.Play("Die");
                 animator.SetBool(Dead, true);
+
+                //LevelState Manager Operations
+
+                LevelStateManager.Instance.ResetStats();
+                LevelStateManager.Instance.IncreaseDeathCounter();
             }
         }
+
 
         // Important: Now called by event in the hit animation, not by direct invocation in this file.
         // To change timing, adjust animation event marker in the hit animation.
@@ -167,6 +203,19 @@ namespace Characters.Player
             }
         }
 
+        private void DecreaseHealth(int damage)
+        {
+            health -= damage;
+            LevelStateManager.Instance.SetPlayerHealth(health);
+        }
+
+        private void IncreaseHealth(int healthPoints)
+        {
+            health += healthPoints;
+            health = Mathf.Min(health, MAX_HEALTH);
+            LevelStateManager.Instance.SetPlayerHealth(health);
+        }
+
         private void OnFinishedDeathAniEvent()
         {
             Destroy(gameObject);
@@ -186,5 +235,17 @@ namespace Characters.Player
             Gizmos.color = new Color(1, 0.5f, 0, 0.3f);
             Gizmos.DrawSphere(heavyAttackCenter, heavyAttackRadius);
         }
+
+        private void OnEnable()
+        {
+            GameEvents.OnRegenerationEvent += OnRegenerationHandler;
+        }
+
+        //Called when scene is changed and Obj Destroyed
+        private void OnDisable()
+        {
+            GameEvents.OnRegenerationEvent -= OnRegenerationHandler;
+        }
+
     }
 }

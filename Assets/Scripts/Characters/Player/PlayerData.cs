@@ -6,14 +6,17 @@ namespace Characters.Player
     {
         private PlayerCombat combat;
         private PlayerCleaningSystem cleaning;
+
     
         private void Awake()
         {
             combat = GetComponent<PlayerCombat>();
             cleaning = GetComponent<PlayerCleaningSystem>();
         }
-    
+
         public float HealthPercent => combat.HealthPercent;
+
+        public int Health => combat.Health;
         public bool IsCleaning => cleaning.IsCleaning;
         public bool IsDead => combat.IsDead;
         public Vector3 Position => this.transform.position;
