@@ -17,5 +17,6 @@ namespace Characters.Player
         public bool IsCleaning => cleaning.IsCleaning;
         public bool IsDead => combat.IsDead;
         public Vector3 Position => this.transform.position;
+        public bool IsLookingDown { get; set; }
     }
 }

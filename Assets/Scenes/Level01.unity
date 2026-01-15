@@ -15497,9 +15497,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11d7031c09e7bdf4e86f74ba937ed19d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraController
-  smoothTime: 0.2
-  cameraHeightAbovePlayer: 3
+  smoothTimeMin: 0.1
+  smoothTimeMax: 0
+  cameraHeightAbovePlayer: 2.5
   worldXMin: 0
+  velocityThreshold: 30
+  lookDownOffset: 2
+  lookDownTransitionTime: 0.1
 --- !u!114 &1031078247
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112105,6 +112109,18 @@ PrefabInstance:
     - target: {fileID: 1889392903192716786, guid: 2c634abe36fa3a1c7b7a09f9ea4ad2e7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2706030488599201284, guid: 2c634abe36fa3a1c7b7a09f9ea4ad2e7, type: 3}
+      propertyPath: fastFallForce
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2706030488599201284, guid: 2c634abe36fa3a1c7b7a09f9ea4ad2e7, type: 3}
+      propertyPath: lookDownDelay
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2706030488599201284, guid: 2c634abe36fa3a1c7b7a09f9ea4ad2e7, type: 3}
+      propertyPath: lookDownDelayAfterFastFall
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5238352174512194233, guid: 2c634abe36fa3a1c7b7a09f9ea4ad2e7, type: 3}
       propertyPath: m_Name

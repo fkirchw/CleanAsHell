@@ -14,21 +14,31 @@ namespace Characters.Player
         [Header("Knockback")]
         [SerializeField] private float knockbackDuration = 0.3f;
 
+        [Header("Fast Fall")]
+        [SerializeField] private float fastFallForce = 10f;
+
+        [Header("Look Down")]
+        [SerializeField] private float lookDownDelay = 1f;
+        [SerializeField] private float lookDownDelayAfterFastFall = 0.5f;
+
         private Rigidbody2D rb;
         private Collider2D col;
         private PlayerInputHandler input;
+        private PlayerData playerData;
         
         private bool isKnockback;
         private float knockbackTimer;
         private float jumpBufferCounter;
+        private bool canFastFall = true;
+        private float lookDownDelayTimer = 0f;
+        private bool didFastFall = false;
+        private float fastFallGroundTimer = 0f;
 
-        // PUBLIC STATE - read by others
         public bool IsGrounded { get; private set; }
         public Vector2 FacingDirection { get; private set; } = Vector2.right;
         public float HorizontalInput { get; private set; }
         public Vector2 Velocity => rb.linearVelocity;
 
-        // PUBLIC CONTROL - called by combat
         public void ApplyKnockback(Vector2 dir, float force)
         {
             rb.linearVelocity = dir * force;
@@ -36,7 +46,6 @@ namespace Characters.Player
             isKnockback = true;
         }
 
-        // Ground detection for cleaning
         public float? GetGroundHeightBelow(float maxDistance, LayerMask groundLayer)
         {
             RaycastHit2D hit = Physics2D.Raycast(
@@ -53,11 +62,11 @@ namespace Characters.Player
             rb = GetComponent<Rigidbody2D>();
             col = GetComponent<Collider2D>();
             input = GetComponent<PlayerInputHandler>();
+            playerData = GetComponent<PlayerData>();
         }
 
         private void Update()
         {
-            // Update knockback timer
             if (knockbackTimer > 0f)
             {
                 knockbackTimer -= Time.deltaTime;
@@ -65,12 +74,15 @@ namespace Characters.Player
                 {
                     isKnockback = false;
                 }
-                return; // Don't process input during knockback
+                return;
             }
 
             UpdateJumpBuffer();
             HandleJump();
             UpdateFacingDirection();
+            UpdateLookDown();
+            HandleFastFall();
+            UpdateFastFallGroundTimer();
         }
 
         private void FixedUpdate()
@@ -95,14 +107,14 @@ namespace Characters.Player
 
         private void HandleJump()
         {
-            // Execute jump if we have buffered input and are grounded
             if (jumpBufferCounter > 0f && IsGrounded)
             {
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
                 jumpBufferCounter = 0f;
+                canFastFall = true;
+                didFastFall = false;
             }
 
-            // Jump cut
             if (input.JumpReleased && rb.linearVelocity.y > 2f)
             {
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * 0.5f);
@@ -123,7 +135,65 @@ namespace Characters.Player
             }
         }
 
-        // Collision detection
+        private void UpdateLookDown()
+        {
+            if (input.VerticalInput < -0.5f)
+            {
+                if (IsGrounded)
+                {
+                    if (didFastFall && fastFallGroundTimer > 0f)
+                    {
+                        lookDownDelayTimer += Time.deltaTime;
+                        if (lookDownDelayTimer >= lookDownDelayAfterFastFall)
+                        {
+                            playerData.IsLookingDown = true;
+                        }
+                    }
+                    else
+                    {
+                        playerData.IsLookingDown = true;
+                        lookDownDelayTimer = 0f;
+                    }
+                }
+                else
+                {
+                    lookDownDelayTimer += Time.deltaTime;
+                    if (lookDownDelayTimer >= lookDownDelay)
+                    {
+                        playerData.IsLookingDown = true;
+                    }
+                }
+            }
+            else
+            {
+                playerData.IsLookingDown = false;
+                lookDownDelayTimer = 0f;
+            }
+        }
+
+        private void HandleFastFall()
+        {
+            if (input.VerticalInput < -0.5f && !IsGrounded && canFastFall && rb.linearVelocity.y < 0)
+            {
+                rb.linearVelocity = new Vector2(rb.linearVelocity.x, -fastFallForce);
+                canFastFall = false;
+                didFastFall = true;
+            }
+        }
+
+        private void UpdateFastFallGroundTimer()
+        {
+            if (didFastFall && IsGrounded)
+            {
+                fastFallGroundTimer += Time.deltaTime;
+                if (fastFallGroundTimer >= 0.5f)
+                {
+                    didFastFall = false;
+                    fastFallGroundTimer = 0f;
+                }
+            }
+        }
+
         private void OnCollisionEnter2D(Collision2D collision)
         {
             if (collision.gameObject.CompareTag("Ground") && IsLandingCollision(collision))
@@ -131,6 +201,7 @@ namespace Characters.Player
                 IsGrounded = true;
                 isKnockback = false;
                 knockbackTimer = 0f;
+                canFastFall = true;
             }
         }
 

@@ -6241,9 +6241,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11d7031c09e7bdf4e86f74ba937ed19d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraController
-  smoothTime: 0.2
+  smoothTimeMin: 0.15
+  smoothTimeMax: 0.001
   cameraHeightAbovePlayer: 3
   worldXMin: 0
+  velocityThreshold: 30
+  lookDownOffset: 2
+  lookDownTransitionTime: 0.2
 --- !u!114 &1158118096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6605,9 +6609,10 @@ MonoBehaviour:
   tongue: {fileID: 375614499}
   tongueIKTarget: {fileID: 827595447}
   tongueIKBase: {fileID: 2078791549}
-  tongueSpeed: 8
-  retractSpeed: 12
-  attackDistance: 8
+  tongueSpeed: 7
+  retractSpeed: 10
+  attackDistance: 3
+  attackDuration: 1.5
   attackCooldown: 6
   damage: 1
   knockbackDir: {x: -2, y: 1.5}
@@ -6694,8 +6699,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.0059898137, y: -0.021110965}
-  m_Size: {x: 0.3115935, y: 0.5596011}
+  m_Offset: {x: -0.0056718946, y: -0.043305922}
+  m_Size: {x: 0.19949149, y: 0.51521206}
   m_Direction: 0
 --- !u!50 &1305216817
 Rigidbody2D:
@@ -6737,9 +6742,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LuciferController
   animator: {fileID: 1305216813}
-  moveSpeed: 2
-  health: 50
+  moveSpeed: 3
+  health: 70
   playerData: {fileID: 1221570152}
+  contactDamage: 1
+  contactDamageCooldown: 2
+  contactKnockbackDir: {x: 3, y: 1}
+  contactKnockbackForce: 3
 --- !u!114 &1305216819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6758,6 +6767,8 @@ MonoBehaviour:
   knockbackForce: 1
   damage: 3
   damageRange: {x: 3, y: 2}
+  dashSpeed: 10
+  dashDuration: 1
 --- !u!114 &1305216820
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6770,12 +6781,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0708255fb5a21964b9d5e1e9cbe5ad07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SweepAttack
-  attackCooldown: 5
+  attackCooldown: 3
   attackDistance: 2
   knockbackDir: {x: 3, y: 2}
   damageRange: {x: 2, y: 2}
   knockbackForce: 2
-  damage: 4
+  damage: 3
 --- !u!1 &1695455591
 GameObject:
   m_ObjectHideFlags: 0
