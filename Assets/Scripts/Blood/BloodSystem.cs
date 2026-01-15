@@ -117,7 +117,7 @@ namespace Blood
                 }
             }
 
-            Debug.Log($"Found {validFloorTiles.Count} floor tiles, {surfaceTiles.Count} are on surface");
+            //Debug.Log($"Found {validFloorTiles.Count} floor tiles, {surfaceTiles.Count} are on surface");
         }
 
         bool IsFloorNotWall(Vector3Int cellPos)
@@ -239,9 +239,9 @@ namespace Blood
 
             tilemapRenderer.material = bloodMaterial;
 
-            Debug.Log($"worldMin: {worldMin}, worldMax: {worldMax}");
-            Debug.Log($"maskST: {maskST}");
-            Debug.Log($"Grid bounds: {bounds}");
+            //Debug.Log($"worldMin: {worldMin}, worldMax: {worldMax}");
+            //Debug.Log($"maskST: {maskST}");
+            //Debug.Log($"Grid bounds: {bounds}");
         }
 
         /// <summary>
