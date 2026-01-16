@@ -544,6 +544,50 @@ Transform:
   - {fileID: 827595447}
   m_Father: {fileID: 1305216812}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &650033720
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 650033722}
+  - component: {fileID: 650033721}
+  m_Layer: 0
+  m_Name: LevelStateManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &650033721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 650033720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b62c0fe4190d434d8451312fd362dba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LevelStateManager
+--- !u!4 &650033722
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 650033720}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.93584, y: 0.19488, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &757520501
 GameObject:
   m_ObjectHideFlags: 0
@@ -6304,17 +6348,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5238352174512194233, guid: 2c634abe36fa3a1c7b7a09f9ea4ad2e7, type: 3}
   m_PrefabInstance: {fileID: 1071919454}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1221570152 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3519682308273206148, guid: 2c634abe36fa3a1c7b7a09f9ea4ad2e7, type: 3}
-  m_PrefabInstance: {fileID: 1071919454}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1221570147}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c22716a483526c8ee9d98c8c3c306f42, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerScript
 --- !u!1 &1305216810
 GameObject:
   m_ObjectHideFlags: 0
@@ -6586,11 +6619,11 @@ MonoBehaviour:
   animator: {fileID: 1305216813}
   moveSpeed: 3
   health: 70
-  playerData: {fileID: 1221570152}
   contactDamage: 1
   contactDamageCooldown: 2
   contactKnockbackDir: {x: 3, y: 1}
   contactKnockbackForce: 3
+  bossHealthBarPanel: {fileID: 0}
 --- !u!114 &1305216819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13601,3 +13634,4 @@ SceneRoots:
   - {fileID: 364003115}
   - {fileID: 1071919454}
   - {fileID: 1969413156}
+  - {fileID: 650033722}
