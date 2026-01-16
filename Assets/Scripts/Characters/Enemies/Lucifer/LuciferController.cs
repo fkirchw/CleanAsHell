@@ -14,11 +14,12 @@ namespace Characters.Enemies
         [SerializeField] private Animator animator;
         [SerializeField] private float moveSpeed = 2f;
         [SerializeField] private int health = 10;
-        [SerializeField] private PlayerData playerData;
+        private PlayerData playerData;
         [SerializeField] private int contactDamage = 1;
         [SerializeField] private float contactDamageCooldown = 0.5f;
         [SerializeField] private Vector2 contactKnockbackDir = new Vector2(3, 1);
         [SerializeField] private float contactKnockbackForce = 3f;
+        [SerializeField] private GameObject bossHealthBarPanel;
 
         private Transform playerPosition;
         private SpriteRenderer spriteRenderer;
@@ -39,9 +40,12 @@ namespace Characters.Enemies
             MAX_HEALTH = health;
             spriteRenderer = GetComponent<SpriteRenderer>();
             rb = GetComponent<Rigidbody2D>();
+            
+            playerData = FindFirstObjectByType<PlayerData>();
 
             if (playerData == null)
             {
+                Debug.LogError("PlayerData not found in scene!");
                 return;
             }
 
@@ -62,6 +66,8 @@ namespace Characters.Enemies
 
         void Update()
         {
+            if (playerData == null) return;
+            
             if(playerData.IsDead) 
             {
                 ResetAllParameters();
@@ -97,6 +103,11 @@ namespace Characters.Enemies
             {
                 playerDetected = true;
                 playerPosition = collision.transform;
+                
+                if (bossHealthBarPanel != null)
+                {
+                    bossHealthBarPanel.SetActive(true);
+                }
             }
         }
 
@@ -112,6 +123,8 @@ namespace Characters.Enemies
 
         private void OnCollisionStay2D(Collision2D collision)
         {
+            if (isDead) return;
+            
             if (collision.gameObject.CompareTag("Player"))
             {
                 if (Time.time >= lastContactDamageTime + contactDamageCooldown)
@@ -145,6 +158,8 @@ namespace Characters.Enemies
 
         private void DealDamage(IAttack attack)
         {
+            if (playerPosition == null) return;
+            
             float deltaX = Mathf.Abs(playerPosition.position.x - transform.position.x);
             float deltaY = Mathf.Abs(transform.position.y + playerOffset - playerPosition.position.y);
 
@@ -167,6 +182,8 @@ namespace Characters.Enemies
 
         private void HandleMovement()
         {
+            if (playerPosition == null) return;
+            
             animator.SetBool("isWalking", true);
 
             direction = (playerPosition.position - transform.position).normalized;
@@ -182,6 +199,8 @@ namespace Characters.Enemies
 
         private void HandleAttack()
         {
+            if (playerPosition == null) return;
+            
             IAttack myNextAttack = ChooseAttack();
 
             if (myNextAttack==null)
@@ -197,6 +216,8 @@ namespace Characters.Enemies
 
         private IAttack ChooseAttack()
         {
+            if (playerPosition == null) return null;
+            
             float distanceToPlayer = Vector2.Distance(new Vector2(transform.position.x, transform.position.y),
                 new Vector2(playerPosition.position.x, playerPosition.position.y));
 
@@ -225,6 +246,11 @@ namespace Characters.Enemies
                 rb.constraints = RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionX;
                 isDead = true;
                 animator.SetTrigger("DieTrigger");
+                
+                if (bossHealthBarPanel != null)
+                {
+                    bossHealthBarPanel.SetActive(false);
+                }
             }
         }
 
@@ -256,6 +282,8 @@ namespace Characters.Enemies
             attack.Attack();
         }
 
-        public float GetHealthPercent() =>(float)health / MAX_HEALTH;
+        public float GetHealthPercent() => (float)health / MAX_HEALTH;
+        
+        public string GetBossName() => "Lucifer";
     }
 }

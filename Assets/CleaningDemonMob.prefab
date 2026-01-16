@@ -134,7 +134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CleaningDemonScript
   animator: {fileID: 5289278934856465478}
   moveSpeed: 3
-  attackDistance: 2
+  attackDistance: 1.5
   health: 10
   damage: 5
   knockbackDir: {x: 1, y: 1}
