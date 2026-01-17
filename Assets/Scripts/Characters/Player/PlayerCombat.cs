@@ -181,28 +181,53 @@ namespace Characters.Player
             PerformAttack(heavyAttackPower, heavyAttackDistance, heavyAttackRadius, heavyAttackKnockback);
         }
 
-        private void PerformAttack(int attackPower, float attackDistance, float attackRadius, float knockbackForce)
-        {
-            Vector2 dir = movement.FacingDirection;
-            Vector2 attackCenter = (Vector2)transform.position + (dir * attackDistance * 0.5f);
-            Collider2D[] hits = Physics2D.OverlapCircleAll(attackCenter, attackRadius, LayerMask.GetMask("Enemy"));
+        // private void PerformAttack(int attackPower, float attackDistance, float attackRadius, float knockbackForce)
+        // {
+        //     Vector2 dir = movement.FacingDirection;
+        //     Vector2 attackCenter = (Vector2)transform.position + (dir * attackDistance * 0.5f);
+        //     Collider2D[] hits = Physics2D.OverlapCircleAll(attackCenter, attackRadius, LayerMask.GetMask("Enemy"));
 
-            foreach (Collider2D hit in hits)
+        //     foreach (Collider2D hit in hits)
+        //     {
+        //         Vector2 toEnemy = hit.transform.position - transform.position;
+        //         if (Vector2.Dot(toEnemy.normalized, dir) > 0.3f) // ~70° cone
+        //         {
+        //             if (!hit.isTrigger && hit.TryGetComponent(out IDamageable damageable))
+        //             {
+        //                 if (hitThisAttack.Add(damageable))
+        //                 {
+        //                     damageable.TakeDamage(attackPower, dir, knockbackForce);
+        //                 }
+        //             }
+        //         }
+        //     }
+        // }
+
+private void PerformAttack(int attackPower, float attackDistance, float attackRadius, float knockbackForce)
+{
+    Vector2 dir = movement.FacingDirection;
+    Vector2 attackCenter = (Vector2)transform.position + (dir * attackDistance * 0.5f);
+    Collider2D[] hits = Physics2D.OverlapCircleAll(attackCenter, attackRadius, LayerMask.GetMask("Enemy"));
+
+    foreach (Collider2D hit in hits)
+    {
+
+        Vector2 closestPoint = hit.ClosestPoint(transform.position);
+        
+        Vector2 toEnemy = closestPoint - (Vector2)transform.position;
+
+        if (Vector2.Dot(toEnemy.normalized, dir) > 0.3f) // ~70° cone
+        {
+            if (!hit.isTrigger && hit.TryGetComponent(out IDamageable damageable))
             {
-                Vector2 toEnemy = hit.transform.position - transform.position;
-                if (Vector2.Dot(toEnemy.normalized, dir) > 0.3f) // ~70° cone
+                if (hitThisAttack.Add(damageable))
                 {
-                    if (!hit.isTrigger && hit.TryGetComponent(out IDamageable damageable))
-                    {
-                        if (hitThisAttack.Add(damageable))
-                        {
-                            damageable.TakeDamage(attackPower, dir, knockbackForce);
-                        }
-                    }
+                    damageable.TakeDamage(attackPower, dir, knockbackForce);
                 }
             }
         }
-
+    }
+}
         private void DecreaseHealth(int damage)
         {
             health -= damage;

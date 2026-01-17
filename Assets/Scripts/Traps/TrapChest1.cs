@@ -1,68 +1,118 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+using Characters.Interfaces;
+using Blood;
 
-public class TrapChest1 : MonoBehaviour
+public class TrapChest1 : MonoBehaviour, IDamageable
 {
-    [Header("Settings")]
-    [SerializeField] private string uniqueID; // ID unic pentru salvare
-    [SerializeField] private GameObject floorTile; // Obiectul FloorChest care dispare
-    [SerializeField] private GameObject destroyEffect; // Opțional: particule/explozie
-
+    [SerializeField] private GameObject floorTile;
+    [SerializeField] private GameObject destroyEffect;
+    [SerializeField] private List<TrapChest1> linkedTraps = new List<TrapChest1>();
+    
+    private BoxCollider2D boxCollider;
+    private SpriteRenderer spriteRenderer;
+    private bool isDestroyed = false;
+    
     private void Awake()
     {
-        // Generăm un ID automat dacă este gol
-        if (string.IsNullOrEmpty(uniqueID))
+        boxCollider = GetComponent<BoxCollider2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        
+        int enemyLayer = LayerMask.NameToLayer("Enemy");
+        if (enemyLayer != -1)
         {
-            uniqueID = "FloorTrap_" + transform.position.x + "_" + transform.position.y;
-        }
-
-        // Dacă a fost deja activată în trecut, o ștergem direct
-        if (PlayerPrefs.GetInt(uniqueID, 0) == 1)
-        {
-            RemoveTrapDirectly();
+            gameObject.layer = enemyLayer;
         }
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    
+    public void LinkTrap(TrapChest1 trapToLink)
     {
-        // Verificăm dacă jucătorul a intrat în trigger
-        if (collision.CompareTag("Player"))
+        if (!linkedTraps.Contains(trapToLink))
         {
-            TriggerFloorDisappear();
+            linkedTraps.Add(trapToLink);
         }
     }
-
+    
+    public void AutoLinkNeighbors(float maxDistance = 1.5f)
+    {
+        TrapChest1[] allTraps = FindObjectsOfType<TrapChest1>();
+        
+        foreach (TrapChest1 trap in allTraps)
+        {
+            if (trap != this && Vector2.Distance(transform.position, trap.transform.position) <= maxDistance)
+            {
+                LinkTrap(trap);
+                trap.LinkTrap(this);
+            }
+        }
+    }
+    
+    public void TakeDamage(int damage, Vector2 knockbackDir, float knockbackForce)
+    {
+        if (isDestroyed) return;
+        
+        TriggerFloorDisappear();
+    }
+    
     private void TriggerFloorDisappear()
     {
-        // Salvăm starea în cache
-        PlayerPrefs.SetInt(uniqueID, 1);
-        PlayerPrefs.Save();
-
-        // Spawn efect vizual dacă există
+        isDestroyed = true;
+        
         if (destroyEffect != null)
         {
             Instantiate(destroyEffect, transform.position, Quaternion.identity);
         }
 
-        // Dezactivăm podeaua și obiectul curent
         if (floorTile != null)
         {
-            Destroy(floorTile); // Sau floorTile.SetActive(false);
+            Destroy(floorTile);
         }
 
-        Debug.Log("<color=orange>Podeaua a dispărut!</color>");
+        if (boxCollider != null)
+            boxCollider.enabled = false;
+            
+        StartCoroutine(DestroyTrapAndLinked());
+    }
+    
+    private IEnumerator DestroyTrapAndLinked()
+    {
+        yield return StartCoroutine(FadeOut());
+        
+        foreach (TrapChest1 linkedTrap in linkedTraps)
+        {
+            if (linkedTrap != null && !linkedTrap.isDestroyed)
+            {
+                linkedTrap.isDestroyed = true;
+                linkedTrap.TriggerFloorDisappear();
+            }
+        }
+        
         Destroy(gameObject);
     }
-
-    private void RemoveTrapDirectly()
+    
+    private IEnumerator FadeOut()
     {
-        if (floorTile != null) Destroy(floorTile);
-        Destroy(gameObject);
+        if (spriteRenderer == null)
+        {
+            Destroy(gameObject);
+            yield break;
+        }
+        
+        float duration = 0.5f;
+        float elapsed = 0f;
+        Color startColor = spriteRenderer.color;
+        Color endColor = new Color(startColor.r, startColor.g, startColor.b, 0f);
+        
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            spriteRenderer.color = Color.Lerp(startColor, endColor, elapsed / duration);
+            yield return null;
+        }
     }
-
-    [ContextMenu("Reset This Trap")]
-    public void ResetTrap()
-    {
-        PlayerPrefs.DeleteKey(uniqueID);
-        Debug.Log("Trap resetată.");
-    }
+    
+    public void OnFinishedDeathAniEvent() { }
+    public void OnFinishedHurtAniEvent() { }
+    public void OnDamageDeltAniEvent() { }
 }
