@@ -1,25 +1,37 @@
 using Blood;
 using Characters.Interfaces;
+using System.Collections;
 using UnityEngine;
 
 namespace Characters.Enemies
 {
     public class SmallBoss : MonoBehaviour, IDamageable
     {
-        [SerializeField] private Animator animator;
+        [Header("Movement Settings")]
         [SerializeField] private float moveSpeed = 2f;
         [SerializeField] private float attackDistance = 3f;
+        
+        [Header("Combat Settings")]
         [SerializeField] private int health = 10;
+        [SerializeField] private int attackDamage = 5;
+        [SerializeField] private Vector2 attackKnockbackDir = new Vector2(3, 1).normalized;
+        [SerializeField] private float attackKnockbackForce = 15f;
+        [SerializeField] private float attackCooldown = 2f; 
+        
+        [Header("Environment Settings")]
         [SerializeField] private GameObject wallToDestroy;
         [SerializeField] private GameObject GateToBoss;
-        [SerializeField] private float attackCooldown = 2f; 
-        [SerializeField] private float attackDuration = 1f;
+        
+        [Header("Contact Damage Settings")]
         [SerializeField] private int contactDamage = 1;
         [SerializeField] private float contactDamageCooldown = 0.5f;
         [SerializeField] private Vector2 contactKnockbackDir = new Vector2(1, 1);
         [SerializeField] private float contactKnockbackForce = 3f;
+        
+        [Header("References")]
+        [SerializeField] private Animator animator;
         [SerializeField] private BossManager bossManager;
-
+        
         private Transform playerPosition;
         private SpriteRenderer spriteRenderer;
         private Rigidbody2D rb;
@@ -27,9 +39,7 @@ namespace Characters.Enemies
         private bool isDead;
         private bool playerDetected;
         private bool gateActivated = false;
-        private bool isAttacking = false; 
-        private float attackTimer = 0f;
-        private float attackDurationTimer = 0f;
+        private bool canAttack = true;
         private float lastContactDamageTime;
         private float MAX_HEALTH;
 
@@ -52,29 +62,9 @@ namespace Characters.Enemies
                 return;
             }
 
-            if (attackTimer > 0)
-            {
-                attackTimer -= Time.deltaTime;
-            }
-
-            if (isAttacking)
-            {
-                attackDurationTimer -= Time.deltaTime;
-                
-                rb.linearVelocity = Vector2.zero;
-                
-                if (attackDurationTimer <= 0)
-                {
-                    EndAttack();
-                }
-                
-                return;
-            }
-
-            if (playerDetected && playerPosition)
+            if (playerDetected && playerPosition != null)
             {
                 HandleMovement();
-                CheckForAttack();
             }
         }
 
@@ -107,11 +97,6 @@ namespace Characters.Enemies
                 rb.linearVelocity = Vector2.zero;
                 animator.SetBool("isWalking", false);
                 animator.SetBool("isAttacking", false);
-
-                if (isAttacking)
-                {
-                    EndAttack();
-                }
             }
         }
 
@@ -140,79 +125,9 @@ namespace Characters.Enemies
             }
         }
 
-        public void OnDamageDeltAniEvent()
-        {
-            if (isDead) return;
-            DealDamage();
-        }
-
-        private void DealDamage()
-        {
-            if (!playerDetected || isDead)
-            {
-                return;
-            }
-
-            float distanceToPlayer = Vector2.Distance(new Vector2(rb.position.x, rb.position.y),
-                new Vector2(playerPosition.position.x, playerPosition.position.y));
-
-            if (distanceToPlayer < attackDistance)
-            {
-                IDamageable playerScript = playerPosition.GetComponent<IDamageable>();
-                if (playerScript != null)
-                {
-                    Vector2 knockbackDir = new Vector2(1, 1).normalized;
-
-                    if (direction.x < 0)
-                    {
-                        knockbackDir.x *= -1;
-                    }
-
-                    playerScript.TakeDamage(5, knockbackDir, 6f);
-                }
-            }
-        }
-
-        private void CheckForAttack()
-        {
-            if (isAttacking || attackTimer > 0 || !playerDetected || isDead)
-                return;
-
-            float distanceToPlayer = Vector2.Distance(new Vector2(transform.position.x, transform.position.y),
-                new Vector2(playerPosition.position.x, playerPosition.position.y));
-
-            if (distanceToPlayer < attackDistance)
-            {
-                StartAttack();
-            }
-        }
-
-        private void StartAttack()
-        {
-            isAttacking = true;
-            attackDurationTimer = attackDuration;
-            
-            rb.linearVelocity = Vector2.zero;
-            animator.SetBool("isWalking", false);
-            animator.SetBool("isAttacking", true);
-        }
-
-        private void EndAttack()
-        {
-            isAttacking = false;
-            attackTimer = attackCooldown;
-            animator.SetBool("isAttacking", false);
-            
-            if (playerDetected && !isDead)
-            {
-                animator.SetBool("isWalking", true);
-            }
-        }
-
         private void HandleMovement()
         {
-            if (isAttacking || isDead)
-                return;
+            if (isDead || playerPosition == null) return;
 
             direction = (playerPosition.position - transform.position).normalized;
 
@@ -221,9 +136,65 @@ namespace Characters.Enemies
             else if (direction.x > 0)
                 spriteRenderer.flipX = true;
 
-            float moveX = moveSpeed * direction.x;
+            float distanceToPlayer = Vector2.Distance(
+                new Vector2(transform.position.x, transform.position.y),
+                new Vector2(playerPosition.position.x, playerPosition.position.y));
 
-            rb.linearVelocity = new Vector2(moveX, 0);
+            // Controlăm animația de atac bazată pe distanță
+            animator.SetBool("isAttacking", distanceToPlayer < attackDistance);
+
+            // Opțional: putem opri mișcarea când atacă
+            if (distanceToPlayer < attackDistance)
+            {
+                // Oprim mișcarea când suntem suficient de aproape pentru atac
+                rb.linearVelocity = Vector2.zero;
+            }
+            else
+            {
+                // Ne mișcăm către jucător
+                float moveX = moveSpeed * direction.x;
+                float moveY = moveSpeed * direction.y;
+                rb.linearVelocity = new Vector2(moveX, moveY);
+            }
+        }
+
+        public void OnDamageDeltAniEvent()
+        {
+            if (isDead) return;
+            
+            // Resetează animația de atac
+            animator.SetBool("isAttacking", false);
+            
+            // Verifică distanța și aplică daune
+            float distanceToPlayer = Vector2.Distance(
+                new Vector2(transform.position.x, transform.position.y),
+                new Vector2(playerPosition.position.x, playerPosition.position.y));
+
+            if (distanceToPlayer <= attackDistance)
+            {
+                DealDamage();
+            }
+        }
+
+        private void DealDamage()
+        {
+            if (!playerDetected || isDead || playerPosition == null)
+            {
+                return;
+            }
+
+            IDamageable playerScript = playerPosition.GetComponent<IDamageable>();
+            if (playerScript != null)
+            {
+                Vector2 knockbackDir = attackKnockbackDir.normalized;
+
+                if (direction.x < 0)
+                {
+                    knockbackDir.x *= -1;
+                }
+
+                playerScript.TakeDamage(attackDamage, knockbackDir, attackKnockbackForce);
+            }
         }
 
         public void TakeDamage(int damage, Vector2 knockbackDir, float knockbackForce)
@@ -233,10 +204,16 @@ namespace Characters.Enemies
 
             health -= damage;
 
-            if (BloodSystem.Instance)
+            // Animație de hurt
+            animator.SetBool("isHurt", true);
+
+            if (BloodSystem.Instance != null)
             {
-                BloodSystem.Instance.OnEnemyHit(this.transform.position, knockbackDir, false, damage);
+                BloodSystem.Instance.OnEnemyHit(this.transform.position, knockbackDir, true, damage);
             }
+
+            // Aplică knockback
+            rb.linearVelocity = knockbackDir * knockbackForce;
 
             if (health <= 0)
             {
@@ -245,7 +222,6 @@ namespace Characters.Enemies
                 
                 rb.linearVelocity = Vector2.zero;
                 rb.constraints = RigidbodyConstraints2D.FreezeAll;
-                isAttacking = false;
                 animator.SetBool("isWalking", false);
                 animator.SetBool("isAttacking", false);
                 
@@ -286,6 +262,11 @@ namespace Characters.Enemies
         private void OnFinishedDeathAniEvent()
         {
             Destroy(gameObject);
+        }
+
+        public void OnFinishedHurtAniEvent()
+        {
+            animator.SetBool("isHurt", false);
         }
 
         public float GetHealthPercent() => (float)health / MAX_HEALTH;

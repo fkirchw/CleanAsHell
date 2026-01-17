@@ -284,22 +284,39 @@ public class LevelCompletedScript : MonoBehaviour
     {
         Time.timeScale = 1f;
         
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("LuciferIntro");
+        // Obținem index-ul scenei curente
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         
-        asyncLoad.allowSceneActivation = false;
+        // Calculăm index-ul următoarei scene
+        int nextSceneIndex = currentSceneIndex + 1;
         
-        while (!asyncLoad.isDone)
+        // Verificăm dacă există o scenă la index-ul următor
+        if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
         {
-            if (asyncLoad.progress >= 0.9f)
+            // Încărcăm următoarea scenă
+            AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(nextSceneIndex);
+            
+            asyncLoad.allowSceneActivation = false;
+            
+            while (!asyncLoad.isDone)
             {
-                break;
+                if (asyncLoad.progress >= 0.9f)
+                {
+                    break;
+                }
+                
+                yield return null;
             }
             
-            yield return null;
+            yield return new WaitForSecondsRealtime(0.5f);
+            
+            asyncLoad.allowSceneActivation = true;
         }
-        
-        yield return new WaitForSecondsRealtime(0.5f);
-        
-        asyncLoad.allowSceneActivation = true;
+        else
+        {
+            // Dacă nu mai există niveluri, mergem la meniul principal sau la scena de final
+            Debug.Log("No more levels! Loading main menu...");
+            SceneManager.LoadScene(0); // Încarcă meniul principal
+        }
     }
 }
