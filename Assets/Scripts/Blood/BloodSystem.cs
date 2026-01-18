@@ -96,7 +96,7 @@ namespace Blood
                     if (!floorTilemap.HasTile(cellPos))
                         continue;
 
-                    // FIXED: Store in array coordinates directly
+                    // Store in array coordinates directly
                     int arrayX = x - gridOffset.x;
                     int arrayY = y - gridOffset.y;
 
@@ -117,7 +117,7 @@ namespace Blood
                 }
             }
 
-            //Debug.Log($"Found {validFloorTiles.Count} floor tiles, {surfaceTiles.Count} are on surface");
+            Debug.Log($"Found {validFloorTiles.Count} floor tiles, {surfaceTiles.Count} are on surface");
         }
 
         bool IsFloorNotWall(Vector3Int cellPos)
@@ -151,9 +151,12 @@ namespace Blood
             return false; // Completely buried
         }
 
-        bool IsValidBloodTile(int x, int y)
+        bool IsValidBloodTile(int arrayX, int arrayY)
         {
-            Vector2Int pos = new Vector2Int(x, y);
+            if (arrayX < 0 || arrayX >= gridWidth || arrayY < 0 || arrayY >= gridHeight)
+                return false;
+
+            Vector2Int pos = new Vector2Int(arrayX, arrayY);
             return surfaceTiles.Contains(pos);
         }
 
@@ -185,6 +188,11 @@ namespace Blood
             gridWidth = bounds.size.x;
             gridHeight = bounds.size.y;
             gridOffset = new Vector2Int(bounds.xMin, bounds.yMin);
+
+            Debug.Log(
+                $"[Init] Bounds: {bounds}, gridWidth: {gridWidth}, gridHeight: {gridHeight}, gridOffset: {gridOffset}");
+            Debug.Log($"[Init] Max cell should be: ({bounds.xMax}, {bounds.yMax})");
+            Debug.Log($"[Init] Max array index should be: ({gridWidth - 1}, {gridHeight - 1})");
 
             // Initialize data arrays
             bloodData = new float[gridWidth, gridHeight];
@@ -222,26 +230,26 @@ namespace Blood
             bloodMaterial.SetFloat(BloodTiling, bloodTiling);
 
             // Calculate world space bounds of the grid
-            Vector2 worldMin = grid.CellToWorld(new Vector3Int(gridOffset.x, gridOffset.y, 0));
-            Vector2 worldMax = grid.CellToWorld(new Vector3Int(gridOffset.x + gridWidth, gridOffset.y + gridHeight, 0));
+            Vector2 worldMin = floorTilemap.CellToWorld(new Vector3Int(gridOffset.x, gridOffset.y, 0));
+            Vector2 worldMax = floorTilemap.CellToWorld(new Vector3Int(gridOffset.x + gridWidth, gridOffset.y + gridHeight, 0));
 
             // Set up the blood mask tiling/offset
-            Vector2 cellHalfSize = grid.cellSize * 0.5f;
+            Vector2 cellHalfSize = floorTilemap.cellSize * 0.5f;
 
             Vector4 maskST = new Vector4(
                 1f / (worldMax.x - worldMin.x), // Scale X
                 1f / (worldMax.y - worldMin.y), // Scale Y
-                worldMin.x + cellHalfSize.x,    // Offset X - centered on cell
-                worldMin.y + cellHalfSize.y     // Offset Y - centered on cell
+                worldMin.x + cellHalfSize.x, // Offset X - centered on cell
+                worldMin.y + cellHalfSize.y // Offset Y - centered on cell
             );
-            
+
             bloodMaterial.SetVector(BloodMaskSt, maskST);
 
             tilemapRenderer.material = bloodMaterial;
 
-            //Debug.Log($"worldMin: {worldMin}, worldMax: {worldMax}");
-            //Debug.Log($"maskST: {maskST}");
-            //Debug.Log($"Grid bounds: {bounds}");
+            Debug.Log($"worldMin: {worldMin}, worldMax: {worldMax}");
+            Debug.Log($"maskST: {maskST}");
+            Debug.Log($"Grid bounds: {bounds}");
         }
 
         /// <summary>
@@ -252,8 +260,9 @@ namespace Blood
             SpawnParticles(hitPosition, strikeDirection, bloodAmount);
 
             Vector2 stainCenter = CalculateStainCenter(hitPosition, strikeDirection, isAirborne);
+            Debug.Log($"Stain center: {stainCenter}");
             float actuallyStained = StainArea(stainCenter, strikeDirection, bloodAmount);
-
+            Debug.Log($"Actually stained: {actuallyStained}");
             // Only count blood that actually landed on valid surfaces
             totalBloodGenerated += actuallyStained;
         }
@@ -313,12 +322,13 @@ namespace Blood
 
         float StainArea(Vector2 centerPosition, Vector2 direction, float bloodAmount)
         {
-            Vector3Int centerCell = grid.WorldToCell(centerPosition);
+            Vector3Int centerCell = floorTilemap.WorldToCell(centerPosition);
             Vector2 normalizedDir = direction.normalized;
+
+            Debug.Log($"[StainArea] World pos: {centerPosition}, Tilemap cell: {centerCell}, GridOffset: {gridOffset}");
 
             int stainRadius = 2;
 
-            // First pass: find all valid cells and calculate weights
             List<(Vector3Int cell, float weight)> validCells = new List<(Vector3Int, float)>();
 
             for (int x = -stainRadius; x <= stainRadius; x++)
@@ -327,10 +337,22 @@ namespace Blood
                 {
                     Vector3Int cellPos = centerCell + new Vector3Int(x, y, 0);
 
+                    // Convert to array coordinates
+                    int arrayX = cellPos.x - gridOffset.x;
+                    int arrayY = cellPos.y - gridOffset.y;
+
+                    // Check bounds first
+                    if (arrayX < 0 || arrayX >= gridWidth || arrayY < 0 || arrayY >= gridHeight)
+                        continue;
+
                     if (!floorTilemap.HasTile(cellPos))
                         continue;
 
-                    Vector2 cellWorld = grid.GetCellCenterWorld(cellPos);
+                    // Check if it's a valid blood surface using array coordinates
+                    if (!IsValidBloodTile(arrayX, arrayY))
+                        continue;
+
+                    Vector2 cellWorld = floorTilemap.GetCellCenterWorld(cellPos);
                     Vector2 toCell = cellWorld - centerPosition;
 
                     float dotProduct = Vector2.Dot(toCell.normalized, normalizedDir);
@@ -338,7 +360,7 @@ namespace Blood
                     if (dotProduct > 0.3f)
                     {
                         float distance = toCell.magnitude;
-                        float weight = Mathf.Max(0, 1f - (distance / (stainRadius * grid.cellSize.x)));
+                        float weight = Mathf.Max(0, 1f - (distance / (stainRadius * floorTilemap.cellSize.x)));
 
                         if (weight > 0.01f)
                         {
@@ -347,6 +369,8 @@ namespace Blood
                     }
                 }
             }
+
+            Debug.Log($"[StainArea] Found {validCells.Count} valid cells");
 
             if (validCells.Count == 0)
             {
@@ -474,8 +498,8 @@ namespace Blood
         /// </summary>
         public void CleanBlood(Vector2 worldPosition, float radius, float cleanAmount)
         {
-            Vector3Int centerCell = grid.WorldToCell(worldPosition);
-            int radiusCells = Mathf.CeilToInt(radius / grid.cellSize.x);
+            Vector3Int centerCell = floorTilemap.WorldToCell(worldPosition);
+            int radiusCells = Mathf.CeilToInt(radius / floorTilemap.cellSize.x);
 
             for (int x = -radiusCells; x <= radiusCells; x++)
             {
@@ -489,7 +513,7 @@ namespace Blood
                     if (arrayX < 0 || arrayX >= gridWidth || arrayY < 0 || arrayY >= gridHeight)
                         continue;
 
-                    Vector2 cellCenter = grid.CellToWorld(cellPos);
+                    Vector2 cellCenter = floorTilemap.CellToWorld(cellPos);
                     if (Vector2.Distance(worldPosition, cellCenter) > radius)
                         continue;
 
@@ -504,16 +528,16 @@ namespace Blood
             float horizontalRadius, float cleanAmount)
         {
             // Convert horizontal radius to grid cells
-            int radiusCells = Mathf.CeilToInt(horizontalRadius / grid.cellSize.x);
+            int radiusCells = Mathf.CeilToInt(horizontalRadius / floorTilemap.cellSize.x);
 
             // Convert vertical tolerance to grid cells
-            int verticalCells = Mathf.Max(1, Mathf.CeilToInt(verticalTolerance / grid.cellSize.y));
+            int verticalCells = Mathf.Max(1, Mathf.CeilToInt(verticalTolerance / floorTilemap.cellSize.y));
 
             // Find the center cell based on player position
-            Vector3Int centerCell = grid.WorldToCell(worldPosition);
+            Vector3Int centerCell = floorTilemap.WorldToCell(worldPosition);
 
             // Find the ground cell Y coordinate
-            Vector3Int groundCell = grid.WorldToCell(new Vector2(worldPosition.x, groundY));
+            Vector3Int groundCell = floorTilemap.WorldToCell(new Vector2(worldPosition.x, groundY));
             int targetY = groundCell.y;
 
             int cleanedCount = 0;
@@ -537,7 +561,7 @@ namespace Blood
                         continue;
 
                     // Check if this cell is within horizontal radius
-                    Vector2 cellCenter = grid.CellToWorld(cellPos);
+                    Vector2 cellCenter = floorTilemap.CellToWorld(cellPos);
                     float horizontalDist = Mathf.Abs(cellCenter.x - worldPosition.x);
 
                     if (horizontalDist > horizontalRadius)
@@ -568,7 +592,7 @@ namespace Blood
         /// </summary>
         public float GetBloodAtPosition(Vector2 worldPosition)
         {
-            Vector3Int cellPos = grid.WorldToCell(worldPosition);
+            Vector3Int cellPos = floorTilemap.WorldToCell(worldPosition);
             int arrayX = cellPos.x - gridOffset.x;
             int arrayY = cellPos.y - gridOffset.y;
 
@@ -583,8 +607,8 @@ namespace Blood
         /// </summary>
         public float GetBloodInRadius(Vector2 worldPosition, float radius)
         {
-            Vector3Int centerCell = grid.WorldToCell(worldPosition);
-            int radiusCells = Mathf.CeilToInt(radius / grid.cellSize.x);
+            Vector3Int centerCell = floorTilemap.WorldToCell(worldPosition);
+            int radiusCells = Mathf.CeilToInt(radius / floorTilemap.cellSize.x);
 
             float total = 0f;
 
@@ -600,7 +624,7 @@ namespace Blood
                     if (arrayX < 0 || arrayX >= gridWidth || arrayY < 0 || arrayY >= gridHeight)
                         continue;
 
-                    Vector2 cellCenter = grid.CellToWorld(cellPos);
+                    Vector2 cellCenter = floorTilemap.CellToWorld(cellPos);
                     if (Vector2.Distance(worldPosition, cellCenter) <= radius)
                     {
                         total += bloodData[arrayX, arrayY];
@@ -690,15 +714,15 @@ namespace Blood
                     if (bloodAmount > 0.01f)
                     {
                         Vector3Int cellPos = new Vector3Int(x + gridOffset.x, y + gridOffset.y, 0);
-                        Vector3 worldPos = grid.CellToWorld(cellPos);
-                        Vector3 cellCenter = worldPos + grid.cellSize * 0.5f;
+                        Vector3 worldPos = floorTilemap.CellToWorld(cellPos);
+                        Vector3 cellCenter = worldPos + floorTilemap.cellSize * 0.5f;
 
                         // Color intensity based on blood amount
                         Color gizmoColor = new Color(1f, 0f, 0f, bloodAmount);
                         Gizmos.color = gizmoColor;
 
                         // Draw cube at cell position
-                        Vector3 cubeSize = new Vector3(grid.cellSize.x * 0.9f, grid.cellSize.y * 0.9f, 0.1f);
+                        Vector3 cubeSize = new Vector3(floorTilemap.cellSize.x * 0.9f, floorTilemap.cellSize.y * 0.9f, 0.1f);
                         Gizmos.DrawCube(cellCenter, cubeSize);
 
                         // Draw wire cube outline

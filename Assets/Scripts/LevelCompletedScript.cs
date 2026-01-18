@@ -141,7 +141,7 @@ public class LevelCompletedScript : MonoBehaviour
         if (visualPanel == null || LevelStateManager.Instance == null) return;
 
         string timeFormatted = GetFormattedTime();
-        float bloodScore = LevelStateManager.Instance.GetBloodCounter();
+        float bloodScore = LevelStateManager.Instance.GetCurrentLevelBloodCounter(); // Schimbat aici
         float cleanedScore = LevelStateManager.Instance.GetLevelCleaned();
         int enemiesKilled = LevelStateManager.Instance.GetEnemiesKilled();
         string enemiesFormatted = $"{enemiesKilled}/{totalEnemiesInLevel}";
@@ -280,43 +280,28 @@ public class LevelCompletedScript : MonoBehaviour
         StartCoroutine(LoadNextLevelAsync());
     }
     
+
     private IEnumerator LoadNextLevelAsync()
     {
         Time.timeScale = 1f;
-        
-        // Obținem index-ul scenei curente
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        
-        // Calculăm index-ul următoarei scene
-        int nextSceneIndex = currentSceneIndex + 1;
-        
-        // Verificăm dacă există o scenă la index-ul următor
-        if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
+
+        int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(nextSceneIndex);
+        asyncLoad.allowSceneActivation = false;
+
+        while (!asyncLoad.isDone)
         {
-            // Încărcăm următoarea scenă
-            AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(nextSceneIndex);
-            
-            asyncLoad.allowSceneActivation = false;
-            
-            while (!asyncLoad.isDone)
+            if (asyncLoad.progress >= 0.9f)
             {
-                if (asyncLoad.progress >= 0.9f)
-                {
-                    break;
-                }
-                
-                yield return null;
+                break;
             }
-            
-            yield return new WaitForSecondsRealtime(0.5f);
-            
-            asyncLoad.allowSceneActivation = true;
+
+            yield return null;
         }
-        else
-        {
-            // Dacă nu mai există niveluri, mergem la meniul principal sau la scena de final
-            Debug.Log("No more levels! Loading main menu...");
-            SceneManager.LoadScene(0); // Încarcă meniul principal
-        }
+
+        yield return new WaitForSecondsRealtime(0.5f);
+
+        asyncLoad.allowSceneActivation = true;
     }
 }

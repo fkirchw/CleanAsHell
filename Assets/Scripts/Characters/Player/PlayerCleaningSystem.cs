@@ -38,8 +38,6 @@ namespace Characters.Player
         private int cleaningFrames;
         private Vector2[] raycastPositions;
 
-        
-
         public bool IsCleaning => isCleaning;
 
         private void Awake()
@@ -70,28 +68,30 @@ namespace Characters.Player
         }
 
         private int oldBloodCleaned = 0;
-        private void CalculateBloodCleaned()
-        {
-            float currentBlood = BloodSystem.Instance.GetCurrentBloodInLevel();
-            float totalBlood = BloodSystem.Instance.GetTotalBloodGenerated();
-            int bloodCleaned = (int)(totalBlood - currentBlood);
+private void CalculateBloodCleaned()
+{
+    float currentBlood = BloodSystem.Instance.GetCurrentBloodInLevel();
+    float totalBlood = BloodSystem.Instance.GetTotalBloodGenerated();
+    int bloodCleaned = (int)(totalBlood - currentBlood);
 
-            //Is the old bloodCleaned
+    if (bloodCleaned - oldBloodCleaned > 0)
+    {
+        GameEvents.OnBloodScoreChanged?.Invoke(bloodCleaned);
+    }
 
-            if (bloodCleaned - oldBloodCleaned > 0)
-            {
-                GameEvents.OnBloodScoreChanged?.Invoke(bloodCleaned);
-            }
+    float regenerationBonus = LevelStateManager.Instance.GetCleaningRegenerationBonus();
+    float baseRegeneration = 1f; 
 
-            if (bloodCleaned - oldBloodCleaned > 0 && bloodCleaned % regenerationThreshold == 0)
-            {
-                GameEvents.OnRegenerationEvent?.Invoke(1);
-            }
+    if (bloodCleaned - oldBloodCleaned > 0 && bloodCleaned % regenerationThreshold == 0)
+    {
+        float regenerationAmount = baseRegeneration + regenerationBonus;
+        GameEvents.OnRegenerationEvent?.Invoke(regenerationAmount);
+    }
 
-            LevelStateManager.Instance.SetBloodCounter(bloodCleaned);
-            LevelStateManager.Instance.SetLevelCleaned(BloodSystem.Instance.GetPercentageCleaned());
-            oldBloodCleaned = bloodCleaned;
-        }
+    LevelStateManager.Instance.SetBloodCounter(bloodCleaned);
+    LevelStateManager.Instance.SetLevelCleaned(BloodSystem.Instance.GetPercentageCleaned());
+    oldBloodCleaned = bloodCleaned;
+}
 
         private void StartCleaning()
         {
@@ -170,15 +170,16 @@ namespace Characters.Player
                 FindGroundHeight();
 
             float cleanAmount = cleanRate * Time.deltaTime;
+            float actualRadius = cleanRadius * LevelStateManager.Instance.GetCleaningRangeMultiplier();
 
             if (useGroundBasedCleaning && hasGroundHeight)
             {
                 BloodSystem.Instance.CleanBloodOnGround(
-                    transform.position, groundY, verticalTolerance, cleanRadius, cleanAmount);
+                    transform.position, groundY, verticalTolerance, actualRadius, cleanAmount);
             }
             else
             {
-                BloodSystem.Instance.CleanBlood(transform.position, cleanRadius, cleanAmount);
+                BloodSystem.Instance.CleanBlood(transform.position, actualRadius, cleanAmount);
             }
 
             cleaningFrames++;
