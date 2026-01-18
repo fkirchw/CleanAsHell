@@ -4,28 +4,23 @@ namespace Characters.Player
 {
     public class PlayerMovement : MonoBehaviour
     {
-        [Header("Movement")]
-        [SerializeField] private float moveSpeed = 5f;
-        
-        [Header("Jumping")]
-        [SerializeField] private float jumpForce = 10f;
+        [Header("Movement")] [SerializeField] private float moveSpeed = 5f;
+
+        [Header("Jumping")] [SerializeField] private float jumpForce = 10f;
         [SerializeField] private float jumpBufferTime = 0.1f;
-        
-        [Header("Knockback")]
-        [SerializeField] private float knockbackDuration = 0.3f;
 
-        [Header("Fast Fall")]
-        [SerializeField] private float fastFallForce = 10f;
+        [Header("Knockback")] [SerializeField] private float knockbackDuration = 0.3f;
 
-        [Header("Look Down")]
-        [SerializeField] private float lookDownDelay = 1f;
+        [Header("Fast Fall")] [SerializeField] private float fastFallForce = 10f;
+
+        [Header("Look Down")] [SerializeField] private float lookDownDelay = 1f;
         [SerializeField] private float lookDownDelayAfterFastFall = 0.5f;
 
         private Rigidbody2D rb;
         private Collider2D col;
         private PlayerInputHandler input;
         private PlayerData playerData;
-        
+
         private bool isKnockback;
         private float knockbackTimer;
         private float jumpBufferCounter;
@@ -74,6 +69,7 @@ namespace Characters.Player
                 {
                     isKnockback = false;
                 }
+
                 return;
             }
 
@@ -228,11 +224,18 @@ namespace Characters.Player
         private bool IsLandingCollision(Collision2D collision)
         {
             Bounds playerBounds = col.bounds;
+            float playerCenterY = playerBounds.center.y;
+
             foreach (ContactPoint2D contact in collision.contacts)
             {
-                float distanceFromBottom = contact.point.y - playerBounds.min.y;
                 bool normalPointsUp = contact.normal.y > 0.5f;
-                if (distanceFromBottom < 0.1f && normalPointsUp)
+
+                bool isBelowCenter = contact.point.y < playerCenterY;
+
+                float distanceFromBottom = contact.point.y - playerBounds.min.y;
+                bool isInBottomHalf = distanceFromBottom < playerBounds.size.y * 0.5f;
+
+                if (normalPointsUp && isBelowCenter && isInBottomHalf)
                     return true;
             }
 
