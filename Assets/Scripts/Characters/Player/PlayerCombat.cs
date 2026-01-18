@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using Blood;
 using Characters.Interfaces;
@@ -13,7 +15,9 @@ namespace Characters.Player
         [Header("Components")] [SerializeField]
         private Animator animator;
 
-        [SerializeField] public int health { get; private set; }  = 10;
+        [SerializeField] private SpriteRenderer spriteRenderer;
+
+        [SerializeField] public int health { get; private set; } = 10;
 
         [Header("Light Attack")] [SerializeField]
         private int lightAttackPower = 5;
@@ -29,17 +33,25 @@ namespace Characters.Player
         [SerializeField] private float heavyAttackRadius = 1.0f;
         [SerializeField] private float heavyAttackKnockback = 8f;
 
+        [Header("Invincibility")] [SerializeField]
+        private float invincibilityDuration = 2f;
+
+        [SerializeField] private bool enableFlashEffect = true;
+        [SerializeField] private float flashInterval = 0.1f;
+
         private PlayerMovement movement;
         private Collider2D playerCollider;
         private PlayerInputHandler input;
         private HashSet<IDamageable> hitThisAttack = new HashSet<IDamageable>();
+        private bool isInvincible = false;
+        private Coroutine invincibilityCoroutine;
 
         public bool IsDead { get; private set; }
         public bool IsAttacking { get; private set; }
         public float HealthPercent => health / 10f;
         public int Health => health;
 
-        private int MAX_HEALTH;
+        private int maxHealth;
 
         private int regenerationCount = 0;
 
@@ -50,13 +62,18 @@ namespace Characters.Player
             playerCollider = GetComponent<Collider2D>();
             input = GetComponent<PlayerInputHandler>();
 
+            if (TryGetComponent(out spriteRenderer))
+            {
+                Debug.LogError("No sprite renderer found on " + gameObject.name);
+            }
+
             if (LevelStateManager.Instance != null)
             {
-                MAX_HEALTH = 10 + (int)LevelStateManager.Instance.GetVitalityHealthBonus();
+                maxHealth = 10 + (int)LevelStateManager.Instance.GetVitalityHealthBonus();
             }
             else
             {
-                MAX_HEALTH = health;
+                maxHealth = health;
             }
         }
 
@@ -147,6 +164,8 @@ namespace Characters.Player
 
         public void TakeDamage(int damage, Vector2 knockbackDir, float knockbackForce)
         {
+            if (isInvincible) return;
+
             DecreaseHealth(damage);
 
             animator.speed = 0f;
@@ -154,20 +173,57 @@ namespace Characters.Player
 
             BloodSystem.Instance.OnEnemyHit(this.transform.position, knockbackDir, false, damage);
 
-            //Set health for the LevelStateManager
-
-
             if (health <= 0)
             {
                 IsDead = true;
                 animator.Play("Die");
                 animator.SetBool(Dead, true);
 
-                //LevelState Manager Operations
-
                 LevelStateManager.Instance.ResetStats();
                 LevelStateManager.Instance.IncreaseDeathCounter();
             }
+            else
+            {
+                if (invincibilityCoroutine != null)
+                {
+                    StopCoroutine(invincibilityCoroutine);
+                }
+
+                invincibilityCoroutine = StartCoroutine(InvincibilityCoroutine());
+            }
+        }
+
+        private IEnumerator InvincibilityCoroutine()
+        {
+            isInvincible = true;
+
+            if (enableFlashEffect && spriteRenderer != null)
+            {
+                float elapsed = 0f;
+                Color originalColor = spriteRenderer.color;
+
+                while (elapsed < invincibilityDuration)
+                {
+                    spriteRenderer.color = new Color(
+                        originalColor.r,
+                        originalColor.g,
+                        originalColor.b,
+                        spriteRenderer.color.a > 0.75f ? 0.3f : 1f
+                    );
+
+                    yield return new WaitForSeconds(flashInterval);
+                    elapsed += flashInterval;
+                }
+
+                spriteRenderer.color = originalColor;
+            }
+            else
+            {
+                yield return new WaitForSeconds(invincibilityDuration);
+            }
+
+            isInvincible = false;
+            invincibilityCoroutine = null;
         }
 
 
@@ -194,7 +250,7 @@ namespace Characters.Player
             Vector2 dir = movement.FacingDirection;
             Vector2 attackCenter = (Vector2)transform.position + (dir * attackDistance * 0.5f);
             Collider2D[] hits = Physics2D.OverlapCircleAll(attackCenter, attackRadius, LayerMask.GetMask("Enemy"));
-            
+
             foreach (Collider2D hit in hits)
             {
                 Vector2 closestPoint = hit.ClosestPoint(transform.position);
@@ -223,7 +279,7 @@ namespace Characters.Player
         private void IncreaseHealth(int healthPoints)
         {
             health += healthPoints;
-            health = Mathf.Min(health, MAX_HEALTH);
+            health = Mathf.Min(health, maxHealth);
             LevelStateManager.Instance.SetPlayerHealth(health);
         }
 
