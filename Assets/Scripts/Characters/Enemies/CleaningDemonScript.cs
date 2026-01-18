@@ -29,6 +29,7 @@ namespace Characters.Enemies
         private bool isInAttack = false;
 
         private bool canAttack = true;
+        private int maxHealth;
 
 
         void Start()
@@ -39,6 +40,7 @@ namespace Characters.Enemies
             {
                 return;
             }
+            maxHealth =  health;
            
         }
 
@@ -203,6 +205,11 @@ namespace Characters.Enemies
                 //increase Mobs killed
                 LevelStateManager.Instance.IncreaseEnemiesKilled();
             }
+        }
+
+        public int GetMaxHealth()
+        {
+            return maxHealth;
         }
 
         private void OnFinishedDeathAniEvent()

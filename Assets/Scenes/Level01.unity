@@ -667,6 +667,7 @@ MonoBehaviour:
   debugMode: 1
   health: 10
   linkedWalls: []
+  spawnBlood: 0
 --- !u!50 &97547434
 Rigidbody2D:
   serializedVersion: 5
@@ -1560,6 +1561,7 @@ MonoBehaviour:
   debugMode: 1
   health: 10
   linkedWalls: []
+  spawnBlood: 0
 --- !u!50 &179003387
 Rigidbody2D:
   serializedVersion: 5
@@ -11449,6 +11451,7 @@ MonoBehaviour:
   debugMode: 1
   health: 10
   linkedWalls: []
+  spawnBlood: 0
 --- !u!50 &391128544
 Rigidbody2D:
   serializedVersion: 5
@@ -22872,6 +22875,7 @@ MonoBehaviour:
   debugMode: 1
   health: 10
   linkedWalls: []
+  spawnBlood: 0
 --- !u!50 &1120155406
 Rigidbody2D:
   serializedVersion: 5
@@ -83907,6 +83911,7 @@ MonoBehaviour:
   debugMode: 1
   health: 10
   linkedWalls: []
+  spawnBlood: 0
 --- !u!50 &1378101127
 Rigidbody2D:
   serializedVersion: 5
@@ -84871,6 +84876,7 @@ MonoBehaviour:
   debugMode: 1
   health: 10
   linkedWalls: []
+  spawnBlood: 0
 --- !u!50 &1388447990
 Rigidbody2D:
   serializedVersion: 5
@@ -119092,6 +119098,7 @@ MonoBehaviour:
   debugMode: 1
   health: 10
   linkedWalls: []
+  spawnBlood: 0
 --- !u!50 &1923811415
 Rigidbody2D:
   serializedVersion: 5
@@ -120247,6 +120254,7 @@ MonoBehaviour:
   debugMode: 1
   health: 10
   linkedWalls: []
+  spawnBlood: 0
 --- !u!50 &2013361000
 Rigidbody2D:
   serializedVersion: 5

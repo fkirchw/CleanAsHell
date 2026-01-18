@@ -1,0 +1,5396 @@
+fileFormatVersion: 2
+guid: fb51026b8a5e4710a3eed0f6fc98d7c1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4271056875871504606
+    second: playstation-series_sheet_default_0
+  - first:
+      213: -8352052963242126151
+    second: playstation-series_sheet_default_1
+  - first:
+      213: 7446773136118889594
+    second: playstation-series_sheet_default_2
+  - first:
+      213: -2576712857246768628
+    second: playstation-series_sheet_default_3
+  - first:
+      213: 2034294853005312972
+    second: playstation-series_sheet_default_4
+  - first:
+      213: 7449847013164184020
+    second: playstation-series_sheet_default_5
+  - first:
+      213: 2677220183191364659
+    second: playstation-series_sheet_default_6
+  - first:
+      213: -4713741050081983194
+    second: playstation-series_sheet_default_7
+  - first:
+      213: 4173645243745128598
+    second: playstation-series_sheet_default_8
+  - first:
+      213: -7785555404669400390
+    second: playstation-series_sheet_default_9
+  - first:
+      213: 7031237798025954706
+    second: playstation-series_sheet_default_10
+  - first:
+      213: -3478353295779639385
+    second: playstation-series_sheet_default_11
+  - first:
+      213: 7706946675763554846
+    second: playstation-series_sheet_default_12
+  - first:
+      213: -1355410699891984920
+    second: playstation-series_sheet_default_13
+  - first:
+      213: -457835908096513157
+    second: playstation-series_sheet_default_14
+  - first:
+      213: -1158616759730673799
+    second: playstation-series_sheet_default_15
+  - first:
+      213: -6073117756664769693
+    second: playstation-series_sheet_default_16
+  - first:
+      213: -2451196301496971478
+    second: playstation-series_sheet_default_17
+  - first:
+      213: -5455762733485576455
+    second: playstation-series_sheet_default_18
+  - first:
+      213: -1995917716398231181
+    second: playstation-series_sheet_default_19
+  - first:
+      213: 3566371335982266328
+    second: playstation-series_sheet_default_20
+  - first:
+      213: -8292939435422295331
+    second: playstation-series_sheet_default_21
+  - first:
+      213: 4688441925511024676
+    second: playstation-series_sheet_default_22
+  - first:
+      213: 3528732733571881367
+    second: playstation-series_sheet_default_23
+  - first:
+      213: 2452694527336921013
+    second: playstation-series_sheet_default_24
+  - first:
+      213: 3390605439471244937
+    second: playstation-series_sheet_default_25
+  - first:
+      213: -8281674640738324965
+    second: playstation-series_sheet_default_26
+  - first:
+      213: -38325863985284421
+    second: playstation-series_sheet_default_27
+  - first:
+      213: -5650390898426204626
+    second: playstation-series_sheet_default_28
+  - first:
+      213: 2971243781835586527
+    second: playstation-series_sheet_default_29
+  - first:
+      213: -2616487815875337838
+    second: playstation-series_sheet_default_30
+  - first:
+      213: 6918213029464230155
+    second: playstation-series_sheet_default_31
+  - first:
+      213: 5256102181641179310
+    second: playstation-series_sheet_default_32
+  - first:
+      213: -6393936395128612562
+    second: playstation-series_sheet_default_33
+  - first:
+      213: -5880053543249153318
+    second: playstation-series_sheet_default_34
+  - first:
+      213: 2660531580370353734
+    second: playstation-series_sheet_default_35
+  - first:
+      213: -8144012328782755285
+    second: playstation-series_sheet_default_36
+  - first:
+      213: -5259723719495353357
+    second: playstation-series_sheet_default_37
+  - first:
+      213: -7982500527281722671
+    second: playstation-series_sheet_default_38
+  - first:
+      213: -3019726589018001310
+    second: playstation-series_sheet_default_39
+  - first:
+      213: 389877934425719357
+    second: playstation-series_sheet_default_40
+  - first:
+      213: 2075115422312152835
+    second: playstation-series_sheet_default_41
+  - first:
+      213: -8256470061105597977
+    second: playstation-series_sheet_default_42
+  - first:
+      213: -15408152521568366
+    second: playstation-series_sheet_default_43
+  - first:
+      213: -2152030174524756852
+    second: playstation-series_sheet_default_44
+  - first:
+      213: -4627256562358218779
+    second: playstation-series_sheet_default_45
+  - first:
+      213: -7311779707391124690
+    second: playstation-series_sheet_default_46
+  - first:
+      213: -4627756556542385602
+    second: playstation-series_sheet_default_47
+  - first:
+      213: -6328798561919560486
+    second: playstation-series_sheet_default_48
+  - first:
+      213: -7809083645518872061
+    second: playstation-series_sheet_default_49
+  - first:
+      213: 4038914556568229904
+    second: playstation-series_sheet_default_50
+  - first:
+      213: -8847766150471811238
+    second: playstation-series_sheet_default_51
+  - first:
+      213: -3846677623449186907
+    second: playstation-series_sheet_default_52
+  - first:
+      213: 5655128202533595946
+    second: playstation-series_sheet_default_53
+  - first:
+      213: -1911790015251215274
+    second: playstation-series_sheet_default_54
+  - first:
+      213: 511520926657838771
+    second: playstation-series_sheet_default_55
+  - first:
+      213: 2772374827078554688
+    second: playstation-series_sheet_default_56
+  - first:
+      213: -4084144629888123813
+    second: playstation-series_sheet_default_57
+  - first:
+      213: 6191125728617527949
+    second: playstation-series_sheet_default_58
+  - first:
+      213: -4603159446992781412
+    second: playstation-series_sheet_default_59
+  - first:
+      213: -2955201838769972461
+    second: playstation-series_sheet_default_60
+  - first:
+      213: -2135973216143373305
+    second: playstation-series_sheet_default_61
+  - first:
+      213: 7467943092168620617
+    second: playstation-series_sheet_default_62
+  - first:
+      213: -930794258810094586
+    second: playstation-series_sheet_default_63
+  - first:
+      213: 1344036123502258112
+    second: playstation-series_sheet_default_64
+  - first:
+      213: -8693612253023134444
+    second: playstation-series_sheet_default_65
+  - first:
+      213: 4702251860019602642
+    second: playstation-series_sheet_default_66
+  - first:
+      213: 4503543032563986390
+    second: playstation-series_sheet_default_67
+  - first:
+      213: -981381611241811446
+    second: playstation-series_sheet_default_68
+  - first:
+      213: 7802963613123283425
+    second: playstation-series_sheet_default_69
+  - first:
+      213: 6540567061547615388
+    second: playstation-series_sheet_default_70
+  - first:
+      213: -8790008847813659597
+    second: playstation-series_sheet_default_71
+  - first:
+      213: 6702580204863664812
+    second: playstation-series_sheet_default_72
+  - first:
+      213: 2802099368734564127
+    second: playstation-series_sheet_default_73
+  - first:
+      213: 749370190661577440
+    second: playstation-series_sheet_default_74
+  - first:
+      213: -6418236923469200454
+    second: playstation-series_sheet_default_75
+  - first:
+      213: -5492717384604542960
+    second: playstation-series_sheet_default_76
+  - first:
+      213: -8339840902684588156
+    second: playstation-series_sheet_default_77
+  - first:
+      213: -2180262396505982280
+    second: playstation-series_sheet_default_78
+  - first:
+      213: -8129113853232282744
+    second: playstation-series_sheet_default_79
+  - first:
+      213: 2312543350169557049
+    second: playstation-series_sheet_default_80
+  - first:
+      213: -8636782968876622692
+    second: playstation-series_sheet_default_81
+  - first:
+      213: -8501858458777750336
+    second: playstation-series_sheet_default_82
+  - first:
+      213: -1277722842345460078
+    second: playstation-series_sheet_default_83
+  - first:
+      213: 7776099819824035580
+    second: playstation-series_sheet_default_84
+  - first:
+      213: -3366145411314146522
+    second: playstation-series_sheet_default_85
+  - first:
+      213: 4504662455302749604
+    second: playstation-series_sheet_default_86
+  - first:
+      213: -6529134339621082586
+    second: playstation-series_sheet_default_87
+  - first:
+      213: -6269564025704464817
+    second: playstation-series_sheet_default_88
+  - first:
+      213: 2461762875454799114
+    second: playstation-series_sheet_default_89
+  - first:
+      213: -8797584187405932900
+    second: playstation-series_sheet_default_90
+  - first:
+      213: -2835920545370362671
+    second: playstation-series_sheet_default_91
+  - first:
+      213: 5597981489448270008
+    second: playstation-series_sheet_default_92
+  - first:
+      213: -4760645436731845964
+    second: playstation-series_sheet_default_93
+  - first:
+      213: -6538853974916471595
+    second: playstation-series_sheet_default_94
+  - first:
+      213: 5055508029268627826
+    second: playstation-series_sheet_default_95
+  - first:
+      213: 4413908305284784115
+    second: playstation-series_sheet_default_96
+  - first:
+      213: -6186945724513873814
+    second: playstation-series_sheet_default_97
+  - first:
+      213: -3950935086769531976
+    second: playstation-series_sheet_default_98
+  - first:
+      213: -1999645773724246498
+    second: playstation-series_sheet_default_99
+  - first:
+      213: 3447302862598032721
+    second: playstation-series_sheet_default_100
+  - first:
+      213: 6559562573706014580
+    second: playstation-series_sheet_default_101
+  - first:
+      213: 3708035362396118650
+    second: playstation-series_sheet_default_102
+  - first:
+      213: -7536952429072574442
+    second: playstation-series_sheet_default_103
+  - first:
+      213: -1626651772175731436
+    second: playstation-series_sheet_default_104
+  - first:
+      213: 8800076602203406054
+    second: playstation-series_sheet_default_105
+  - first:
+      213: -2483548242103324648
+    second: playstation-series_sheet_default_106
+  - first:
+      213: 9012340411518147774
+    second: playstation-series_sheet_default_107
+  - first:
+      213: 2171614273483006151
+    second: playstation-series_sheet_default_108
+  - first:
+      213: 2667927342332650035
+    second: playstation-series_sheet_default_109
+  - first:
+      213: -3211864418365943614
+    second: playstation-series_sheet_default_110
+  - first:
+      213: 7677314610062904522
+    second: playstation-series_sheet_default_111
+  - first:
+      213: -7632586613664773181
+    second: playstation-series_sheet_default_112
+  - first:
+      213: 3747251775508635039
+    second: playstation-series_sheet_default_113
+  - first:
+      213: 5967004914559000583
+    second: playstation-series_sheet_default_114
+  - first:
+      213: 7306742957554431010
+    second: playstation-series_sheet_default_115
+  - first:
+      213: -7991656555918415650
+    second: playstation-series_sheet_default_116
+  - first:
+      213: 7973540983237281687
+    second: playstation-series_sheet_default_117
+  - first:
+      213: -6954648323748483978
+    second: playstation-series_sheet_default_118
+  - first:
+      213: 8194386293469875888
+    second: playstation-series_sheet_default_119
+  - first:
+      213: -4130715823424373276
+    second: playstation-series_sheet_default_120
+  - first:
+      213: -1666940968767632731
+    second: playstation-series_sheet_default_121
+  - first:
+      213: 5357296267697172172
+    second: playstation-series_sheet_default_122
+  - first:
+      213: -6903519636912724468
+    second: playstation-series_sheet_default_123
+  - first:
+      213: 3991923059384201113
+    second: playstation-series_sheet_default_124
+  - first:
+      213: 3313160074700766150
+    second: playstation-series_sheet_default_125
+  - first:
+      213: -9094831829623710227
+    second: playstation-series_sheet_default_126
+  - first:
+      213: 8536543323672987481
+    second: playstation-series_sheet_default_127
+  - first:
+      213: 1567496600650917274
+    second: playstation-series_sheet_default_128
+  - first:
+      213: -7976100534306678975
+    second: playstation-series_sheet_default_129
+  - first:
+      213: -5892454278259288210
+    second: playstation-series_sheet_default_130
+  - first:
+      213: -1347086249228595659
+    second: playstation-series_sheet_default_131
+  - first:
+      213: -7089750242842897555
+    second: playstation-series_sheet_default_132
+  - first:
+      213: 1903716581926402433
+    second: playstation-series_sheet_default_133
+  - first:
+      213: -452403336234654322
+    second: playstation-series_sheet_default_134
+  - first:
+      213: 1035050542067567422
+    second: playstation-series_sheet_default_135
+  - first:
+      213: 5282411078936867900
+    second: playstation-series_sheet_default_136
+  - first:
+      213: 7376022683167436531
+    second: playstation-series_sheet_default_137
+  - first:
+      213: 6374895708393491253
+    second: playstation-series_sheet_default_138
+  - first:
+      213: 381525697016320855
+    second: playstation-series_sheet_default_139
+  - first:
+      213: -2525993847420185240
+    second: playstation-series_sheet_default_140
+  - first:
+      213: 4122016863075048479
+    second: playstation-series_sheet_default_141
+  - first:
+      213: 7364188032188808150
+    second: playstation-series_sheet_default_142
+  - first:
+      213: 2758632319835066059
+    second: playstation-series_sheet_default_143
+  - first:
+      213: 1537818547994567087
+    second: playstation-series_sheet_default_144
+  - first:
+      213: -7678029737123900921
+    second: playstation-series_sheet_default_145
+  - first:
+      213: 6996864621549549510
+    second: playstation-series_sheet_default_146
+  - first:
+      213: 7867090950857190538
+    second: playstation-series_sheet_default_147
+  - first:
+      213: -5616303908457458639
+    second: playstation-series_sheet_default_148
+  - first:
+      213: -384083171285845817
+    second: playstation-series_sheet_default_149
+  - first:
+      213: 1320541821631449766
+    second: playstation-series_sheet_default_150
+  - first:
+      213: -2421042131315665375
+    second: playstation-series_sheet_default_151
+  - first:
+      213: -7083559864324020811
+    second: playstation-series_sheet_default_152
+  - first:
+      213: 8875225170923256749
+    second: playstation-series_sheet_default_153
+  - first:
+      213: -1032739040083214371
+    second: playstation-series_sheet_default_154
+  - first:
+      213: 1256527432281282930
+    second: playstation-series_sheet_default_155
+  - first:
+      213: -4098867584706467060
+    second: playstation-series_sheet_default_156
+  - first:
+      213: -7494688587468201775
+    second: playstation-series_sheet_default_157
+  - first:
+      213: -2590245343411954387
+    second: playstation-series_sheet_default_158
+  - first:
+      213: -5614826065726605943
+    second: playstation-series_sheet_default_159
+  - first:
+      213: 4593847132159817587
+    second: playstation-series_sheet_default_160
+  - first:
+      213: -6392084746877646221
+    second: playstation-series_sheet_default_161
+  - first:
+      213: 5368450128813932453
+    second: playstation-series_sheet_default_162
+  - first:
+      213: 4869339514285135234
+    second: playstation-series_sheet_default_163
+  - first:
+      213: 6843083082351268487
+    second: playstation-series_sheet_default_164
+  - first:
+      213: 2087618347071909753
+    second: playstation-series_sheet_default_165
+  - first:
+      213: 8297087800569234708
+    second: playstation-series_sheet_default_166
+  - first:
+      213: -528011235726143007
+    second: playstation-series_sheet_default_167
+  - first:
+      213: -8066592612464506508
+    second: playstation-series_sheet_default_168
+  - first:
+      213: 4529330450380085508
+    second: playstation-series_sheet_default_169
+  - first:
+      213: -7207528246676644085
+    second: playstation-series_sheet_default_170
+  - first:
+      213: 1087594842702395047
+    second: playstation-series_sheet_default_171
+  - first:
+      213: -28211016270463833
+    second: playstation-series_sheet_default_172
+  - first:
+      213: -5868835634481752098
+    second: playstation-series_sheet_default_173
+  - first:
+      213: 7483903073018975433
+    second: playstation-series_sheet_default_174
+  - first:
+      213: 4446778619373591676
+    second: playstation-series_sheet_default_175
+  - first:
+      213: -6597516792985433122
+    second: playstation-series_sheet_default_176
+  - first:
+      213: -7150101442449512501
+    second: playstation-series_sheet_default_177
+  - first:
+      213: -6660972171351517559
+    second: playstation-series_sheet_default_178
+  - first:
+      213: 4127511597080215065
+    second: playstation-series_sheet_default_179
+  - first:
+      213: -6779286390333668137
+    second: playstation-series_sheet_default_180
+  - first:
+      213: -8667912774604152698
+    second: playstation-series_sheet_default_181
+  - first:
+      213: 7176823281775348004
+    second: playstation-series_sheet_default_182
+  - first:
+      213: 4776026984073335831
+    second: playstation-series_sheet_default_183
+  - first:
+      213: -3185827535657071896
+    second: playstation-series_sheet_default_184
+  - first:
+      213: -1888374541068152418
+    second: playstation-series_sheet_default_185
+  - first:
+      213: -2983446411984969541
+    second: playstation-series_sheet_default_186
+  - first:
+      213: 5659567537638783975
+    second: playstation-series_sheet_default_187
+  - first:
+      213: 4329852132097842721
+    second: playstation-series_sheet_default_188
+  - first:
+      213: 880573600256350434
+    second: playstation-series_sheet_default_189
+  - first:
+      213: 2077341802882509038
+    second: playstation-series_sheet_default_190
+  - first:
+      213: 7878057524972962737
+    second: playstation-series_sheet_default_191
+  - first:
+      213: -4136670275562442745
+    second: playstation-series_sheet_default_192
+  - first:
+      213: 7473541989770816790
+    second: playstation-series_sheet_default_193
+  - first:
+      213: -217141626386078822
+    second: playstation-series_sheet_default_194
+  - first:
+      213: 2652561930125914608
+    second: playstation-series_sheet_default_195
+  - first:
+      213: -5949987273928949691
+    second: playstation-series_sheet_default_196
+  - first:
+      213: 2313147351109222488
+    second: playstation-series_sheet_default_197
+  - first:
+      213: 2742474657953891711
+    second: playstation-series_sheet_default_198
+  - first:
+      213: -361960037012988452
+    second: playstation-series_sheet_default_199
+  - first:
+      213: -3241015054857819745
+    second: playstation-series_sheet_default_200
+  - first:
+      213: -7001339900438693618
+    second: playstation-series_sheet_default_201
+  - first:
+      213: -2536159727524103928
+    second: playstation-series_sheet_default_202
+  - first:
+      213: 8701410779853546232
+    second: playstation-series_sheet_default_203
+  - first:
+      213: -8464142433661395384
+    second: playstation-series_sheet_default_204
+  - first:
+      213: 6257851842847137603
+    second: playstation-series_sheet_default_205
+  - first:
+      213: -7656693117380682284
+    second: playstation-series_sheet_default_206
+  - first:
+      213: -4217920759373526040
+    second: playstation-series_sheet_default_207
+  - first:
+      213: -3458789969074365745
+    second: playstation-series_sheet_default_208
+  - first:
+      213: -2911431991785146024
+    second: playstation-series_sheet_default_209
+  - first:
+      213: 5352325353312329607
+    second: playstation-series_sheet_default_210
+  - first:
+      213: 281435928295596972
+    second: playstation-series_sheet_default_211
+  - first:
+      213: -2853051418248695536
+    second: playstation-series_sheet_default_212
+  - first:
+      213: 567661158026975132
+    second: playstation-series_sheet_default_213
+  - first:
+      213: -7812181715383721200
+    second: playstation-series_sheet_default_214
+  - first:
+      213: 3531982968114045148
+    second: playstation-series_sheet_default_215
+  - first:
+      213: 638064570001551982
+    second: playstation-series_sheet_default_216
+  - first:
+      213: 5318171203607824923
+    second: playstation-series_sheet_default_217
+  - first:
+      213: 5934369139393341419
+    second: playstation-series_sheet_default_218
+  - first:
+      213: -4304040643444050620
+    second: playstation-series_sheet_default_219
+  - first:
+      213: -7214612621778900253
+    second: playstation-series_sheet_default_220
+  - first:
+      213: 9076531439329946319
+    second: playstation-series_sheet_default_221
+  - first:
+      213: 4691016239743961761
+    second: playstation-series_sheet_default_222
+  - first:
+      213: 2558740441334827302
+    second: playstation-series_sheet_default_223
+  - first:
+      213: -2904873002077409155
+    second: playstation-series_sheet_default_224
+  - first:
+      213: -2324004525305215334
+    second: playstation-series_sheet_default_225
+  - first:
+      213: 1469957677497531199
+    second: playstation-series_sheet_default_226
+  - first:
+      213: -8838525488231088588
+    second: playstation-series_sheet_default_227
+  - first:
+      213: -6262590134498833850
+    second: playstation-series_sheet_default_228
+  - first:
+      213: 3268824698873733031
+    second: playstation-series_sheet_default_229
+  - first:
+      213: -6206355036405835476
+    second: playstation-series_sheet_default_230
+  - first:
+      213: 430713561893833134
+    second: playstation-series_sheet_default_231
+  - first:
+      213: 44316729006546445
+    second: playstation-series_sheet_default_232
+  - first:
+      213: 6538585458468861483
+    second: playstation-series_sheet_default_233
+  - first:
+      213: 3683613318722166968
+    second: playstation-series_sheet_default_234
+  - first:
+      213: -8769896010127354754
+    second: playstation-series_sheet_default_235
+  - first:
+      213: 1495161135613848433
+    second: playstation-series_sheet_default_236
+  - first:
+      213: 3901886117160954723
+    second: playstation-series_sheet_default_237
+  - first:
+      213: -3605497252120998951
+    second: playstation-series_sheet_default_238
+  - first:
+      213: 4342543841092194813
+    second: playstation-series_sheet_default_239
+  - first:
+      213: -1706250111556089381
+    second: playstation-series_sheet_default_240
+  - first:
+      213: 7519577385819505824
+    second: playstation-series_sheet_default_241
+  - first:
+      213: -4490456842949394460
+    second: playstation-series_sheet_default_242
+  - first:
+      213: 493182216782247374
+    second: playstation-series_sheet_default_243
+  - first:
+      213: -7754641127973801897
+    second: playstation-series_sheet_default_244
+  - first:
+      213: 1031918322490362074
+    second: playstation-series_sheet_default_245
+  - first:
+      213: -3009311926431932307
+    second: playstation-series_sheet_default_246
+  - first:
+      213: -4934788781908482733
+    second: playstation-series_sheet_default_247
+  - first:
+      213: -878619064203280420
+    second: playstation-series_sheet_default_248
+  - first:
+      213: -4023276089962722414
+    second: playstation-series_sheet_default_249
+  - first:
+      213: 2282334566681078564
+    second: playstation-series_sheet_default_250
+  - first:
+      213: 7405983241152179381
+    second: playstation-series_sheet_default_251
+  - first:
+      213: 8530612938735823905
+    second: playstation-series_sheet_default_252
+  - first:
+      213: -7650146626958543175
+    second: playstation-series_sheet_default_253
+  - first:
+      213: 7613256164693409226
+    second: playstation-series_sheet_default_254
+  - first:
+      213: 4342714096379322210
+    second: playstation-series_sheet_default_255
+  - first:
+      213: 1274948017903686468
+    second: playstation-series_sheet_default_256
+  - first:
+      213: 8026966715983649821
+    second: playstation-series_sheet_default_257
+  - first:
+      213: -4452934286952833692
+    second: playstation-series_sheet_default_258
+  - first:
+      213: 503719954494835657
+    second: playstation-series_sheet_default_259
+  - first:
+      213: 3322880741286983978
+    second: playstation-series_sheet_default_260
+  - first:
+      213: -8341145091918696318
+    second: playstation-series_sheet_default_261
+  - first:
+      213: 6522724406739742620
+    second: playstation-series_sheet_default_262
+  - first:
+      213: -7685538317142459401
+    second: playstation-series_sheet_default_263
+  - first:
+      213: -6582311765105235555
+    second: playstation-series_sheet_default_264
+  - first:
+      213: 7057381374528912459
+    second: playstation-series_sheet_default_265
+  - first:
+      213: -7922369879888121803
+    second: playstation-series_sheet_default_266
+  - first:
+      213: -2852365270180560535
+    second: playstation-series_sheet_default_267
+  - first:
+      213: -1868038833210858128
+    second: playstation-series_sheet_default_268
+  - first:
+      213: -8024887344770887959
+    second: playstation-series_sheet_default_269
+  - first:
+      213: 1891251557024098597
+    second: playstation-series_sheet_default_270
+  - first:
+      213: -8662881225890104798
+    second: playstation-series_sheet_default_271
+  - first:
+      213: 8735423897256883782
+    second: playstation-series_sheet_default_272
+  - first:
+      213: 3033225418213507106
+    second: playstation-series_sheet_default_273
+  - first:
+      213: -8882515764374178431
+    second: playstation-series_sheet_default_274
+  - first:
+      213: -2572132563026881261
+    second: playstation-series_sheet_default_275
+  - first:
+      213: -7363965586490015812
+    second: playstation-series_sheet_default_276
+  - first:
+      213: 4520074138419239608
+    second: playstation-series_sheet_default_277
+  - first:
+      213: 3682459208493547046
+    second: playstation-series_sheet_default_278
+  - first:
+      213: -7424772547755757520
+    second: playstation-series_sheet_default_279
+  - first:
+      213: 6760868985181588497
+    second: playstation-series_sheet_default_280
+  - first:
+      213: 3589719503769591072
+    second: playstation-series_sheet_default_281
+  - first:
+      213: -6741611850571796810
+    second: playstation-series_sheet_default_282
+  - first:
+      213: -4065416664344051181
+    second: playstation-series_sheet_default_283
+  - first:
+      213: -7447659370677024209
+    second: playstation-series_sheet_default_284
+  - first:
+      213: 7300321384210339894
+    second: playstation-series_sheet_default_285
+  - first:
+      213: -4438164243157194114
+    second: playstation-series_sheet_default_286
+  - first:
+      213: -3181935437937537332
+    second: playstation-series_sheet_default_287
+  - first:
+      213: -2802128054150562838
+    second: playstation-series_sheet_default_288
+  - first:
+      213: -1330463644911257716
+    second: playstation-series_sheet_default_289
+  - first:
+      213: -7046014673933943232
+    second: playstation-series_sheet_default_290
+  - first:
+      213: 5194446382190930799
+    second: playstation-series_sheet_default_291
+  - first:
+      213: 8407245552412983274
+    second: playstation-series_sheet_default_292
+  - first:
+      213: 4795501824668673761
+    second: playstation-series_sheet_default_293
+  - first:
+      213: -1525746972281051942
+    second: playstation-series_sheet_default_294
+  - first:
+      213: 110063094613122208
+    second: sprite_0_0
+  - first:
+      213: 2057516106615078274
+    second: sprite_1_0
+  - first:
+      213: -6981641179300335697
+    second: sprite_2_0
+  - first:
+      213: 1084495889696105424
+    second: sprite_3_0
+  - first:
+      213: 2656255634667553426
+    second: sprite_4_0
+  - first:
+      213: 8953997984617710940
+    second: sprite_5_0
+  - first:
+      213: 1342954271244971394
+    second: sprite_6_0
+  - first:
+      213: 4571690783039372443
+    second: sprite_7_0
+  - first:
+      213: -3861509453359391609
+    second: sprite_8_0
+  - first:
+      213: 1830147033117497494
+    second: sprite_9_0
+  - first:
+      213: -8806758135501145626
+    second: sprite_10_0
+  - first:
+      213: -7039772475811174324
+    second: sprite_11_0
+  - first:
+      213: 8399387991679549355
+    second: sprite_0_1
+  - first:
+      213: -3990764489541251346
+    second: sprite_1_1
+  - first:
+      213: 5742541816403897934
+    second: sprite_2_1
+  - first:
+      213: 2225496213262365376
+    second: sprite_3_1
+  - first:
+      213: -4387813859171883846
+    second: sprite_4_1
+  - first:
+      213: -2165872854936334853
+    second: sprite_5_1
+  - first:
+      213: -1952839295128420913
+    second: sprite_6_1
+  - first:
+      213: -6966581239616719117
+    second: sprite_7_1
+  - first:
+      213: -6801387276256787727
+    second: sprite_8_1
+  - first:
+      213: -3858311815166785654
+    second: sprite_9_1
+  - first:
+      213: -5797769036844628390
+    second: sprite_10_1
+  - first:
+      213: 668677868148396043
+    second: sprite_11_1
+  - first:
+      213: -4644540916198862998
+    second: sprite_0_2
+  - first:
+      213: 2978055984150173501
+    second: sprite_1_2
+  - first:
+      213: -8331909182945598094
+    second: sprite_2_2
+  - first:
+      213: 6070790015296760343
+    second: sprite_3_2
+  - first:
+      213: -6328221562859427745
+    second: sprite_4_2
+  - first:
+      213: 8660193878091718147
+    second: sprite_5_2
+  - first:
+      213: -3517363695250348696
+    second: sprite_6_2
+  - first:
+      213: -2785933153741337980
+    second: sprite_7_2
+  - first:
+      213: 7395423254468366642
+    second: sprite_8_2
+  - first:
+      213: -7938828410451353080
+    second: sprite_9_2
+  - first:
+      213: -5228443798459094756
+    second: sprite_10_2
+  - first:
+      213: 2056140855703653417
+    second: sprite_11_2
+  - first:
+      213: -4795043959955871156
+    second: sprite_0_3
+  - first:
+      213: 4374436090087825753
+    second: sprite_1_3
+  - first:
+      213: 1207572534422275166
+    second: sprite_2_3
+  - first:
+      213: -5552441862961074652
+    second: sprite_3_3
+  - first:
+      213: -6764491227458556459
+    second: sprite_4_3
+  - first:
+      213: -3250759276719717477
+    second: sprite_5_3
+  - first:
+      213: 2544647057885112343
+    second: sprite_6_3
+  - first:
+      213: 815498800105216816
+    second: sprite_7_3
+  - first:
+      213: -7019313587647542253
+    second: sprite_8_3
+  - first:
+      213: -5027637434861748301
+    second: sprite_9_3
+  - first:
+      213: -2067932657631518299
+    second: sprite_10_3
+  - first:
+      213: -7670815896374528646
+    second: sprite_11_3
+  - first:
+      213: -3494256285842108209
+    second: sprite_0_4
+  - first:
+      213: -1865975103405758949
+    second: sprite_1_4
+  - first:
+      213: -1174721704435091041
+    second: sprite_2_4
+  - first:
+      213: 4126841619327464038
+    second: sprite_3_4
+  - first:
+      213: -9059321819315327527
+    second: sprite_4_4
+  - first:
+      213: 8117653193126307452
+    second: sprite_5_4
+  - first:
+      213: 8387776498321157292
+    second: sprite_6_4
+  - first:
+      213: -2289449078155842138
+    second: sprite_7_4
+  - first:
+      213: -7278835321006384102
+    second: sprite_8_4
+  - first:
+      213: -5289545989597829017
+    second: sprite_9_4
+  - first:
+      213: -2255947436022582961
+    second: sprite_10_4
+  - first:
+      213: -6446480406380705807
+    second: sprite_11_4
+  - first:
+      213: -5524089854009648592
+    second: sprite_0_5
+  - first:
+      213: 5447755235192734056
+    second: sprite_1_5
+  - first:
+      213: -831797182033384550
+    second: sprite_2_5
+  - first:
+      213: 6701578291882550839
+    second: sprite_3_5
+  - first:
+      213: -7952709348867360171
+    second: sprite_4_5
+  - first:
+      213: 6376701905813710359
+    second: sprite_5_5
+  - first:
+      213: -2009650311522802456
+    second: sprite_6_5
+  - first:
+      213: -7221745212296072410
+    second: sprite_7_5
+  - first:
+      213: 8825099625217958376
+    second: sprite_8_5
+  - first:
+      213: 7077530917396052021
+    second: sprite_9_5
+  - first:
+      213: 3011080095608812188
+    second: sprite_10_5
+  - first:
+      213: 8706746142791505154
+    second: sprite_11_5
+  - first:
+      213: -5032015725130632474
+    second: sprite_0_6
+  - first:
+      213: -3110548652233145160
+    second: sprite_1_6
+  - first:
+      213: 4201033612598326047
+    second: sprite_2_6
+  - first:
+      213: 1379774504831001170
+    second: sprite_3_6
+  - first:
+      213: -7893236458845504506
+    second: sprite_4_6
+  - first:
+      213: -5813761523256347358
+    second: sprite_5_6
+  - first:
+      213: 4027753786967920556
+    second: sprite_6_6
+  - first:
+      213: -508201043793987729
+    second: sprite_7_6
+  - first:
+      213: 2547361843558278568
+    second: sprite_8_6
+  - first:
+      213: 7503335287090482069
+    second: sprite_9_6
+  - first:
+      213: -232618856130532013
+    second: sprite_10_6
+  - first:
+      213: -8635784727295429079
+    second: sprite_11_6
+  - first:
+      213: -3762007740097770628
+    second: sprite_0_7
+  - first:
+      213: 7979798665319425048
+    second: sprite_1_7
+  - first:
+      213: -5438098755237914677
+    second: sprite_2_7
+  - first:
+      213: -353060106142312252
+    second: sprite_3_7
+  - first:
+      213: 8239836883484367612
+    second: sprite_4_7
+  - first:
+      213: 4694203381176120083
+    second: sprite_5_7
+  - first:
+      213: -6899632942315091753
+    second: sprite_6_7
+  - first:
+      213: -6803456169456466250
+    second: sprite_7_7
+  - first:
+      213: -3117219249948475067
+    second: sprite_8_7
+  - first:
+      213: 3381113449545255794
+    second: sprite_9_7
+  - first:
+      213: 5618039822078966870
+    second: sprite_10_7
+  - first:
+      213: 2804680926248203425
+    second: sprite_11_7
+  - first:
+      213: -442952854566836046
+    second: sprite_0_8
+  - first:
+      213: 3795189196210715292
+    second: sprite_1_8
+  - first:
+      213: -3430383360923295238
+    second: sprite_2_8
+  - first:
+      213: -1617550654123617344
+    second: sprite_3_8
+  - first:
+      213: -1659035041894168371
+    second: sprite_4_8
+  - first:
+      213: -1586622663987341286
+    second: sprite_5_8
+  - first:
+      213: -2394323425602237399
+    second: sprite_6_8
+  - first:
+      213: -6702668351367279553
+    second: sprite_7_8
+  - first:
+      213: 1920867639296375943
+    second: sprite_8_8
+  - first:
+      213: 2217703112298958091
+    second: sprite_9_8
+  - first:
+      213: 3729040108675229550
+    second: sprite_10_8
+  - first:
+      213: 2478471397811980118
+    second: sprite_11_8
+  - first:
+      213: 7449611078251265577
+    second: sprite_0_9
+  - first:
+      213: 6537814790955566056
+    second: sprite_1_9
+  - first:
+      213: 5693804674990935894
+    second: sprite_2_9
+  - first:
+      213: -3360491542619311557
+    second: sprite_3_9
+  - first:
+      213: -7847834464468981922
+    second: sprite_4_9
+  - first:
+      213: -2987848764911352829
+    second: sprite_5_9
+  - first:
+      213: 3010546239958388101
+    second: sprite_6_9
+  - first:
+      213: 3065536094097787862
+    second: sprite_7_9
+  - first:
+      213: -2152523833676734928
+    second: sprite_8_9
+  - first:
+      213: 8856933986315407574
+    second: sprite_9_9
+  - first:
+      213: -6748669063257076613
+    second: sprite_10_9
+  - first:
+      213: 8368996188370838489
+    second: sprite_11_9
+  - first:
+      213: -7490711298880907892
+    second: sprite_0_10
+  - first:
+      213: -3960458611283728488
+    second: sprite_1_10
+  - first:
+      213: 1660699091727894837
+    second: sprite_2_10
+  - first:
+      213: 3628538370435145474
+    second: sprite_3_10
+  - first:
+      213: -7232892291580652627
+    second: sprite_4_10
+  - first:
+      213: 622788194402815628
+    second: sprite_5_10
+  - first:
+      213: 590035961193771409
+    second: sprite_6_10
+  - first:
+      213: -1571227114132020232
+    second: sprite_7_10
+  - first:
+      213: -8989005256537931782
+    second: sprite_8_10
+  - first:
+      213: 8544313906409600615
+    second: sprite_9_10
+  - first:
+      213: -6461861319048632508
+    second: sprite_10_10
+  - first:
+      213: -6373271016019067468
+    second: sprite_11_10
+  - first:
+      213: -6604967975579919599
+    second: sprite_0_11
+  - first:
+      213: -4518150647334813922
+    second: sprite_1_11
+  - first:
+      213: 4062562897994135834
+    second: sprite_2_11
+  - first:
+      213: -6316163990447797962
+    second: sprite_3_11
+  - first:
+      213: -1336368503967620855
+    second: sprite_4_11
+  - first:
+      213: 7684535272311863398
+    second: sprite_5_11
+  - first:
+      213: -5893068194503012365
+    second: sprite_6_11
+  - first:
+      213: -2581960350400879550
+    second: sprite_7_11
+  - first:
+      213: 4622349125602735140
+    second: sprite_8_11
+  - first:
+      213: 6521614550684884517
+    second: sprite_9_11
+  - first:
+      213: -9021896214260910084
+    second: sprite_10_11
+  - first:
+      213: -5346390358839915097
+    second: sprite_11_11
+  - first:
+      213: -5046406027706573615
+    second: controller_playstation1
+  - first:
+      213: -5313542051385353539
+    second: controller_playstation2
+  - first:
+      213: 815980147803603915
+    second: controller_playstation3
+  - first:
+      213: 4369911278927105093
+    second: controller_playstation4
+  - first:
+      213: 7724738374948284164
+    second: controller_playstation5
+  - first:
+      213: 3633074395088957299
+    second: playstation_button_analog
+  - first:
+      213: -997156412459610358
+    second: playstation_button_analog_outline
+  - first:
+      213: 6976570610928302091
+    second: playstation_button_circle
+  - first:
+      213: -8256995577347253650
+    second: playstation_button_circle_outline
+  - first:
+      213: 819306911237761416
+    second: playstation_button_color_circle
+  - first:
+      213: -3387036988913059118
+    second: playstation_button_color_circle_outline
+  - first:
+      213: 4113601804530427986
+    second: playstation_button_color_cross
+  - first:
+      213: -8543109158615638249
+    second: playstation_button_color_cross_outline
+  - first:
+      213: 756335237104092329
+    second: playstation_button_color_square
+  - first:
+      213: 1274077464540313269
+    second: playstation_button_color_square_outline
+  - first:
+      213: -8815271460775223408
+    second: playstation_button_color_triangle
+  - first:
+      213: 5436304986003891643
+    second: playstation_button_color_triangle_outline
+  - first:
+      213: -3069320017417937613
+    second: playstation_button_cross
+  - first:
+      213: -7896625589028800035
+    second: playstation_button_cross_outline
+  - first:
+      213: 2126961102512764183
+    second: playstation_button_l3
+  - first:
+      213: 9098458858700281232
+    second: playstation_button_l3_outline
+  - first:
+      213: -8909400692225091332
+    second: playstation_button_r3
+  - first:
+      213: -2329601425573661770
+    second: playstation_button_r3_outline
+  - first:
+      213: 9190300301891392941
+    second: playstation_button_square
+  - first:
+      213: 7067175820449480660
+    second: playstation_button_square_outline
+  - first:
+      213: 6093227737260390690
+    second: playstation_button_triangle
+  - first:
+      213: -877848985721428502
+    second: playstation_button_triangle_outline
+  - first:
+      213: 6731106601331502756
+    second: playstation_dpad
+  - first:
+      213: -3053899454242867051
+    second: playstation_dpad_all
+  - first:
+      213: -2570817352038454380
+    second: playstation_dpad_down
+  - first:
+      213: 9102382792580712458
+    second: playstation_dpad_down_outline
+  - first:
+      213: -3133137396053866371
+    second: playstation_dpad_horizontal
+  - first:
+      213: -8998595218902410376
+    second: playstation_dpad_horizontal_outline
+  - first:
+      213: -5375390730993164424
+    second: playstation_dpad_left
+  - first:
+      213: 4129687761973207626
+    second: playstation_dpad_left_outline
+  - first:
+      213: 5418168819466140715
+    second: playstation_dpad_none
+  - first:
+      213: 3938935943974886373
+    second: playstation_dpad_right
+  - first:
+      213: 4171548507870332561
+    second: playstation_dpad_right_outline
+  - first:
+      213: 2177615877352455030
+    second: playstation_dpad_up
+  - first:
+      213: 8108611305089679262
+    second: playstation_dpad_up_outline
+  - first:
+      213: 3920514972039032804
+    second: playstation_dpad_vertical
+  - first:
+      213: 6832633632503186454
+    second: playstation_dpad_vertical_outline
+  - first:
+      213: -2023522355231823060
+    second: playstation_stick_l
+  - first:
+      213: -5316718647195358893
+    second: playstation_stick_l_down
+  - first:
+      213: -5614613723393309711
+    second: playstation_stick_l_horizontal
+  - first:
+      213: -2550225937415832444
+    second: playstation_stick_l_left
+  - first:
+      213: -3885192806711898562
+    second: playstation_stick_l_press
+  - first:
+      213: 3706498893903141705
+    second: playstation_stick_l_right
+  - first:
+      213: -9115349743740110
+    second: playstation_stick_l_up
+  - first:
+      213: 6891076249954298996
+    second: playstation_stick_l_vertical
+  - first:
+      213: -1986612506461198670
+    second: playstation_stick_r
+  - first:
+      213: -731124661340400395
+    second: playstation_stick_r_down
+  - first:
+      213: 2957041579120876745
+    second: playstation_stick_r_horizontal
+  - first:
+      213: -8074391062862053722
+    second: playstation_stick_r_left
+  - first:
+      213: -8732608566544607755
+    second: playstation_stick_r_press
+  - first:
+      213: 8878148816628718214
+    second: playstation_stick_r_right
+  - first:
+      213: 6449897201249139397
+    second: playstation_stick_r_up
+  - first:
+      213: 7572384372632123615
+    second: playstation_stick_r_vertical
+  - first:
+      213: 5313915645940615549
+    second: playstation_stick_side_l
+  - first:
+      213: -4420634081691993037
+    second: playstation_stick_side_r
+  - first:
+      213: 6903450487536858751
+    second: playstation_stick_top_l
+  - first:
+      213: -6041878246212337608
+    second: playstation_stick_top_r
+  - first:
+      213: 5007025940489355785
+    second: playstation_trigger_l1
+  - first:
+      213: -2937734057543964017
+    second: playstation_trigger_l1_alternative
+  - first:
+      213: -8001799940036090292
+    second: playstation_trigger_l1_alternative_outline
+  - first:
+      213: -6422269451319814736
+    second: playstation_trigger_l1_outline
+  - first:
+      213: 5598237106341528590
+    second: playstation_trigger_l2
+  - first:
+      213: 8326721302670286717
+    second: playstation_trigger_l2_alternative
+  - first:
+      213: 196893496644897051
+    second: playstation_trigger_l2_alternative_outline
+  - first:
+      213: -1810200733799484147
+    second: playstation_trigger_l2_outline
+  - first:
+      213: 3189615024104661172
+    second: playstation_trigger_r1
+  - first:
+      213: -7780036340748212863
+    second: playstation_trigger_r1_alternative
+  - first:
+      213: -2228993862228638628
+    second: playstation_trigger_r1_alternative_outline
+  - first:
+      213: 4094497924390610103
+    second: playstation_trigger_r1_outline
+  - first:
+      213: -5413880422144556571
+    second: playstation_trigger_r2
+  - first:
+      213: -5072795427937784826
+    second: playstation_trigger_r2_alternative
+  - first:
+      213: 6108689530093216128
+    second: playstation_trigger_r2_alternative_outline
+  - first:
+      213: 5236452459731862907
+    second: playstation_trigger_r2_outline
+  - first:
+      213: -7233929853992252945
+    second: playstation3_button_select
+  - first:
+      213: -4625555240248033530
+    second: playstation3_button_select_outline
+  - first:
+      213: 1317084009405735918
+    second: playstation3_button_start
+  - first:
+      213: 4190791068534895554
+    second: playstation3_button_start_outline
+  - first:
+      213: 6761788244403523866
+    second: playstation4_button_options
+  - first:
+      213: 3047842974095205329
+    second: playstation4_button_options_outline
+  - first:
+      213: 357567306970720402
+    second: playstation4_button_share
+  - first:
+      213: 7790647351871721423
+    second: playstation4_button_share_outline
+  - first:
+      213: -246492132307865032
+    second: playstation4_touchpad
+  - first:
+      213: 4786426777921351693
+    second: playstation4_touchpad_outline
+  - first:
+      213: 5222191181060421158
+    second: playstation4_touchpad_press
+  - first:
+      213: 6896510547256830294
+    second: playstation4_touchpad_press_center
+  - first:
+      213: -2712579301907690999
+    second: playstation4_touchpad_press_left
+  - first:
+      213: 5726994088551162810
+    second: playstation4_touchpad_press_right
+  - first:
+      213: -2062064506978350231
+    second: playstation4_touchpad_selected
+  - first:
+      213: 3398086063246313670
+    second: playstation4_touchpad_swipe_down
+  - first:
+      213: 568760108736624313
+    second: playstation4_touchpad_swipe_horizontal
+  - first:
+      213: -6661843384683762565
+    second: playstation4_touchpad_swipe_left
+  - first:
+      213: -8596661084813216492
+    second: playstation4_touchpad_swipe_right
+  - first:
+      213: 5948555039918133447
+    second: playstation4_touchpad_swipe_up
+  - first:
+      213: -874884522787667692
+    second: playstation4_touchpad_swipe_vertical
+  - first:
+      213: 4322325688687019487
+    second: playstation4_touchpad_touch
+  - first:
+      213: 2629934062856534586
+    second: playstation4_touchpad_touch_outline
+  - first:
+      213: 6682243034102184834
+    second: playstation5_button_create
+  - first:
+      213: 8569776096242144271
+    second: playstation5_button_create_alternative
+  - first:
+      213: -2468156214343088741
+    second: playstation5_button_create_alternative_outline
+  - first:
+      213: 5193649649217099815
+    second: playstation5_button_create_outline
+  - first:
+      213: 4477034264402189755
+    second: playstation5_button_mute
+  - first:
+      213: 7895448278359597848
+    second: playstation5_button_mute_outline
+  - first:
+      213: -8484926785651212137
+    second: playstation5_button_options
+  - first:
+      213: -5461606613321705702
+    second: playstation5_button_options_alternative
+  - first:
+      213: -3202104812883650070
+    second: playstation5_button_options_alternative_outline
+  - first:
+      213: -4495319451811925192
+    second: playstation5_button_options_outline
+  - first:
+      213: 5146043195703000005
+    second: playstation5_elite_fn_l
+  - first:
+      213: -6398173396523248032
+    second: playstation5_elite_fn_l_outline
+  - first:
+      213: -3605093974482258683
+    second: playstation5_elite_fn_r
+  - first:
+      213: -9043855208448783878
+    second: playstation5_elite_fn_r_outline
+  - first:
+      213: -2645950602821191751
+    second: playstation5_elite_lb
+  - first:
+      213: 3855365035762868453
+    second: playstation5_elite_lb_outline
+  - first:
+      213: -850227353181319605
+    second: playstation5_elite_rb
+  - first:
+      213: -1286182312997241418
+    second: playstation5_elite_rb_outline
+  - first:
+      213: -6026039193088197452
+    second: playstation5_touchpad
+  - first:
+      213: 6331840594994614605
+    second: playstation5_touchpad_outline
+  - first:
+      213: 8367279868684606728
+    second: playstation5_touchpad_press
+  - first:
+      213: 8389985945058342874
+    second: playstation5_touchpad_press_center
+  - first:
+      213: -7589547306006377625
+    second: playstation5_touchpad_press_left
+  - first:
+      213: 2032958203731944035
+    second: playstation5_touchpad_press_right
+  - first:
+      213: 6544365210407357185
+    second: playstation5_touchpad_selected
+  - first:
+      213: -2259543081151641966
+    second: playstation5_touchpad_swipe_down
+  - first:
+      213: 2667048985058959118
+    second: playstation5_touchpad_swipe_horizontal
+  - first:
+      213: -6202110949173667482
+    second: playstation5_touchpad_swipe_left
+  - first:
+      213: -7169479867648404708
+    second: playstation5_touchpad_swipe_right
+  - first:
+      213: -2752073532843532051
+    second: playstation5_touchpad_swipe_up
+  - first:
+      213: -4664635188254635925
+    second: playstation5_touchpad_swipe_vertical
+  - first:
+      213: 2276594274021074782
+    second: playstation5_touchpad_touch
+  - first:
+      213: -3492498487613282852
+    second: playstation5_touchpad_touch_outline
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: controller_playstation1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1dcd82e647097f9b0800000000000000
+      internalID: -5046406027706573615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: controller_playstation2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dba531818a18246b0800000000000000
+      internalID: -5313542051385353539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: controller_playstation3
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc3ca950f91f25b00800000000000000
+      internalID: 815980147803603915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: controller_playstation4
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54c4c68c72b05ac30800000000000000
+      internalID: 4369911278927105093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: controller_playstation5
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 407ee95ef98c33b60800000000000000
+      internalID: 7724738374948284164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation_button_analog
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37f28d9d9e54b6230800000000000000
+      internalID: 3633074395088957299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation_button_analog_outline
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0f87d9a6836922f0800000000000000
+      internalID: -997156412459610358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation_button_circle
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b08bfc6d102c1d060800000000000000
+      internalID: 6976570610928302091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation_button_circle_outline
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6ade341542496d80800000000000000
+      internalID: -8256995577347253650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation_button_color_circle
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 889695e7b43ce5b00800000000000000
+      internalID: 819306911237761416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation_button_color_circle_outline
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2da7abacdc3def0d0800000000000000
+      internalID: -3387036988913059118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation_button_color_cross
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2582172eb03761930800000000000000
+      internalID: 4113601804530427986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation_button_color_cross_outline
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71f145bcb77c07980800000000000000
+      internalID: -8543109158615638249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation_button_color_square
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a443b214ea0f7a00800000000000000
+      internalID: 756335237104092329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation_button_color_square_outline
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b6714224be6ea110800000000000000
+      internalID: 1274077464540313269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation_button_color_triangle
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09f9addcf4dd9a580800000000000000
+      internalID: -8815271460775223408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation_button_color_triangle_outline
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb5627df492a17b40800000000000000
+      internalID: 5436304986003891643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation_button_cross
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33ddec3c4b59765d0800000000000000
+      internalID: -3069320017417937613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation_button_cross_outline
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd9bda96ddc896290800000000000000
+      internalID: -7896625589028800035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation_button_l3
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 715b8568adb748d10800000000000000
+      internalID: 2126961102512764183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation_button_l3_outline
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09516545028344e70800000000000000
+      internalID: 9098458858700281232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation_button_r3
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf8dd4246437b5480800000000000000
+      internalID: -8909400692225091332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation_button_r3_outline
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b33070a8d79bafd0800000000000000
+      internalID: -2329601425573661770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation_button_square
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da5d669ae618a8f70800000000000000
+      internalID: 9190300301891392941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation_button_square_outline
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4dffe1717f6a31260800000000000000
+      internalID: 7067175820449480660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation_button_triangle
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22976fef75e7f8450800000000000000
+      internalID: 6093227737260390690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation_button_triangle_outline
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae523af9ff041d3f0800000000000000
+      internalID: -877848985721428502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation_dpad
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4aea6ad7ac1b96d50800000000000000
+      internalID: 6731106601331502756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation_dpad_all
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 598381a60ae5e95d0800000000000000
+      internalID: -3053899454242867051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation_dpad_down
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49b66553d3f925cd0800000000000000
+      internalID: -2570817352038454380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation_dpad_down_outline
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a08c6616ce8225e70800000000000000
+      internalID: 9102382792580712458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation_dpad_horizontal
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7887bb632cd484d0800000000000000
+      internalID: -3133137396053866371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation_dpad_horizontal_outline
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87b1bc333519e1380800000000000000
+      internalID: -8998595218902410376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation_dpad_left
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87f99363c96c665b0800000000000000
+      internalID: -5375390730993164424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation_dpad_left_outline
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a42e0b5b3299f4930800000000000000
+      internalID: 4129687761973207626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation_dpad_none
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2c7069a5d3313b40800000000000000
+      internalID: 5418168819466140715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation_dpad_right
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5eb14a52f59e9a630800000000000000
+      internalID: 3938935943974886373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation_dpad_right_outline
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1960cee144154e930800000000000000
+      internalID: 4171548507870332561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation_dpad_up
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67bf7da5a12783e10800000000000000
+      internalID: 2177615877352455030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation_dpad_up_outline
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9f369d4503978070800000000000000
+      internalID: 8108611305089679262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation_dpad_vertical
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4efacf46897786630800000000000000
+      internalID: 3920514972039032804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation_dpad_vertical_outline
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6144db1861462de50800000000000000
+      internalID: 6832633632503186454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation_stick_l
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2b685593210be3e0800000000000000
+      internalID: -2023522355231823060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation_stick_l_down
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 359a93f3f883736b0800000000000000
+      internalID: -5316718647195358893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation_stick_l_horizontal
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f3cb1ae092e412b0800000000000000
+      internalID: -5614613723393309711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation_stick_l_left
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48c77578507cb9cd0800000000000000
+      internalID: -2550225937415832444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation_stick_l_press
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3ec8081ab5051ac0800000000000000
+      internalID: -3885192806711898562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation_stick_l_right
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94b997b2b11207330800000000000000
+      internalID: 3706498893903141705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation_stick_l_up
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23b558043ad9fdff0800000000000000
+      internalID: -9115349743740110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation_stick_l_vertical
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47c28aeb65502af50800000000000000
+      internalID: 6891076249954298996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation_stick_r
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b6280e63722e64e0800000000000000
+      internalID: -1986612506461198670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation_stick_r_down
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f417428ef58ad5f0800000000000000
+      internalID: -731124661340400395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation_stick_r_horizontal
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cc5f8d26a5890920800000000000000
+      internalID: 2957041579120876745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation_stick_r_left
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6aeb488bb1002ff80800000000000000
+      internalID: -8074391062862053722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation_stick_r_press
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f5539ca6ca8fc680800000000000000
+      internalID: -8732608566544607755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation_stick_r_right
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68a953e6f45853b70800000000000000
+      internalID: 8878148816628718214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation_stick_r_up
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cabd3ed453a28950800000000000000
+      internalID: 6449897201249139397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation_stick_r_vertical
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd8f4797773861960800000000000000
+      internalID: 7572384372632123615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation_stick_side_l
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d794eaa2022deb940800000000000000
+      internalID: 5313915645940615549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation_stick_side_r
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33c73c669b0c6a2c0800000000000000
+      internalID: -4420634081691993037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation_stick_top_l
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f76b12274abfdcf50800000000000000
+      internalID: 6903450487536858751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation_stick_top_r
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8308a5e0fbfe62ca0800000000000000
+      internalID: -6041878246212337608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation_trigger_l1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 902c80480978c7540800000000000000
+      internalID: 5007025940489355785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation_trigger_l1_alternative
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8a668f70721b37d0800000000000000
+      internalID: -2937734057543964017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation_trigger_l1_alternative_outline
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4628629955e3f090800000000000000
+      internalID: -8001799940036090292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation_trigger_l1_outline
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b55d3ee5f38fd6a0800000000000000
+      internalID: -6422269451319814736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation_trigger_l2
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e04c5ebccfee0bd40800000000000000
+      internalID: 5598237106341528590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation_trigger_l2_alternative
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7f175d68e47e8370800000000000000
+      internalID: 8326721302670286717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation_trigger_l2_alternative_outline
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b198a1e87918bb200800000000000000
+      internalID: 196893496644897051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation_trigger_l2_outline
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d05fab10600e0e6e0800000000000000
+      internalID: -1810200733799484147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation_trigger_r1
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b0e10217f9c34c20800000000000000
+      internalID: 3189615024104661172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation_trigger_r1_alternative
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 185a2122b22c70490800000000000000
+      internalID: -7780036340748212863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation_trigger_r1_alternative_outline
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c54065b54e50111e0800000000000000
+      internalID: -2228993862228638628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation_trigger_r1_outline
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b460ec2b2492d830800000000000000
+      internalID: 4094497924390610103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation_trigger_r2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e1c1a5a0780ed4b0800000000000000
+      internalID: -5413880422144556571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation_trigger_r2_alternative
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60cea836f6fc999b0800000000000000
+      internalID: -5072795427937784826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation_trigger_r2_alternative_outline
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 081aa5c23cc66c450800000000000000
+      internalID: 6108689530093216128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation_trigger_r2_outline
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b75c989a4cd9ba840800000000000000
+      internalID: 5236452459731862907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation3_button_select
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe9c2b2ff1beb9b90800000000000000
+      internalID: -7233929853992252945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation3_button_select_outline
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60fb118240abecfb0800000000000000
+      internalID: -4625555240248033530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation3_button_start
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee3e9f7ade8374210800000000000000
+      internalID: 1317084009405735918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation3_button_start_outline
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c3f6e7e54ea82a30800000000000000
+      internalID: 4190791068534895554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation4_button_options
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1195123592b6dd50800000000000000
+      internalID: 6761788244403523866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation4_button_options_outline
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d36d1a690d1c4a20800000000000000
+      internalID: 3047842974095205329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation4_button_share
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 298684b329556f400800000000000000
+      internalID: 357567306970720402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation4_button_share_outline
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fcfc6aa6d70fd1c60800000000000000
+      internalID: 7790647351871721423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation4_touchpad
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8327cdd26b8449cf0800000000000000
+      internalID: -246492132307865032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation4_touchpad_outline
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d007b618bcdcc6240800000000000000
+      internalID: 4786426777921351693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation4_touchpad_press
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 626b848f533f87840800000000000000
+      internalID: 5222191181060421158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation4_touchpad_press_center
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6596afeadc355bf50800000000000000
+      internalID: 6896510547256830294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation4_touchpad_press_left
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90a07bc2f7bfa5ad0800000000000000
+      internalID: -2712579301907690999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation4_touchpad_press_right
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab3aad6d7ce5a7f40800000000000000
+      internalID: 5726994088551162810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation4_touchpad_selected
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96b4d9591431263e0800000000000000
+      internalID: -2062064506978350231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation4_touchpad_swipe_down
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c8800c454d682f20800000000000000
+      internalID: 3398086063246313670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation4_touchpad_swipe_horizontal
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b6b8a33e44a4e700800000000000000
+      internalID: 568760108736624313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation4_touchpad_swipe_left
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7c63a2dcb06c83a0800000000000000
+      internalID: -6661843384683762565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation4_touchpad_swipe_right
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 415b8495a4682b880800000000000000
+      internalID: -8596661084813216492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation4_touchpad_swipe_up
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c01e21ca438d8250800000000000000
+      internalID: 5948555039918133447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation4_touchpad_swipe_vertical
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41101cf6929cbd3f0800000000000000
+      internalID: -874884522787667692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation4_touchpad_touch
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd54cbd205cfbfb30800000000000000
+      internalID: 4322325688687019487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation4_touchpad_touch_outline
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3a734f98176f7420800000000000000
+      internalID: 2629934062856534586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation5_button_create
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28b3d7ea2a81cbc50800000000000000
+      internalID: 6682243034102184834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation5_button_create_alternative
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f04952574f5fde670800000000000000
+      internalID: 8569776096242144271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation5_button_create_alternative_outline
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9548e9fff85fbdd0800000000000000
+      internalID: -2468156214343088741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation5_button_create_outline
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 728da6db6dc831840800000000000000
+      internalID: 5193649649217099815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation5_button_mute
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbdd1f071fe912e30800000000000000
+      internalID: 4477034264402189755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation5_button_mute_outline
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 813e7169064429d60800000000000000
+      internalID: 7895448278359597848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation5_button_options
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79000142b0c7f3a80800000000000000
+      internalID: -8484926785651212137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation5_button_options_alternative
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 576
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a171906d8b97434b0800000000000000
+      internalID: -5461606613321705702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation5_button_options_alternative_outline
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 576
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae9508e53a6df83d0800000000000000
+      internalID: -3202104812883650070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation5_button_options_outline
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 576
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 833b8da96ca6d91c0800000000000000
+      internalID: -4495319451811925192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation5_elite_fn_l
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 576
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cb71b6850b6a6740800000000000000
+      internalID: 5146043195703000005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation5_elite_fn_l_outline
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 576
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06690e0e13f1537a0800000000000000
+      internalID: -6398173396523248032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation5_elite_fn_r
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 576
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 505751d712228fdc0800000000000000
+      internalID: -3605093974482258683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation5_elite_fn_r_outline
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 576
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af90854ba95cd7280800000000000000
+      internalID: -9043855208448783878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation5_elite_lb
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 576
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b7bc9112f1b74bd0800000000000000
+      internalID: -2645950602821191751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation5_elite_lb_outline
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 576
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e06b1cc212018530800000000000000
+      internalID: 3855365035762868453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation5_elite_rb
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 576
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4e8e4b1ab26334f0800000000000000
+      internalID: -850227353181319605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation5_elite_rb_outline
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 576
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bdb8653000962ee0800000000000000
+      internalID: -1286182312997241418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation5_touchpad
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 576
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bc756df7453f5ca0800000000000000
+      internalID: -6026039193088197452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation5_touchpad_outline
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 640
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d415d0f39773fd750800000000000000
+      internalID: 6331840594994614605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation5_touchpad_press
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 640
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80d193575bc8e1470800000000000000
+      internalID: 8367279868684606728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation5_touchpad_press_center
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 640
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad7f8b5d3c73f6470800000000000000
+      internalID: 8389985945058342874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation5_touchpad_press_left
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 640
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76b8773bfe28ca690800000000000000
+      internalID: -7589547306006377625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation5_touchpad_press_right
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 640
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 362a8a817b4863c10800000000000000
+      internalID: 2032958203731944035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation5_touchpad_selected
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 640
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10b41ce3c7142da50800000000000000
+      internalID: 6544365210407357185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation5_touchpad_swipe_down
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 640
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 296c34d0a8d74a0e0800000000000000
+      internalID: -2259543081151641966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation5_touchpad_swipe_horizontal
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 640
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0f5109dbe2430520800000000000000
+      internalID: 2667048985058959118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation5_touchpad_swipe_left
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 640
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66951f0b3fcade9a0800000000000000
+      internalID: -6202110949173667482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation5_touchpad_swipe_right
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 640
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c139080cb04e08c90800000000000000
+      internalID: -7169479867648404708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation5_touchpad_swipe_up
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 640
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de06b17f3bbaec9d0800000000000000
+      internalID: -2752073532843532051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation5_touchpad_swipe_vertical
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 640
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b688b45b203e34fb0800000000000000
+      internalID: -4664635188254635925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation5_touchpad_touch
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 704
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e57e6b82e66189f10800000000000000
+      internalID: 2276594274021074782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation5_touchpad_touch_outline
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 704
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd5a83b2127288fc0800000000000000
+      internalID: -3492498487613282852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      controller_playstation1: -5046406027706573615
+      controller_playstation2: -5313542051385353539
+      controller_playstation3: 815980147803603915
+      controller_playstation4: 4369911278927105093
+      controller_playstation5: 7724738374948284164
+      playstation-series_sheet_default_0: 4271056875871504606
+      playstation-series_sheet_default_1: -8352052963242126151
+      playstation-series_sheet_default_10: 7031237798025954706
+      playstation-series_sheet_default_100: 3447302862598032721
+      playstation-series_sheet_default_101: 6559562573706014580
+      playstation-series_sheet_default_102: 3708035362396118650
+      playstation-series_sheet_default_103: -7536952429072574442
+      playstation-series_sheet_default_104: -1626651772175731436
+      playstation-series_sheet_default_105: 8800076602203406054
+      playstation-series_sheet_default_106: -2483548242103324648
+      playstation-series_sheet_default_107: 9012340411518147774
+      playstation-series_sheet_default_108: 2171614273483006151
+      playstation-series_sheet_default_109: 2667927342332650035
+      playstation-series_sheet_default_11: -3478353295779639385
+      playstation-series_sheet_default_110: -3211864418365943614
+      playstation-series_sheet_default_111: 7677314610062904522
+      playstation-series_sheet_default_112: -7632586613664773181
+      playstation-series_sheet_default_113: 3747251775508635039
+      playstation-series_sheet_default_114: 5967004914559000583
+      playstation-series_sheet_default_115: 7306742957554431010
+      playstation-series_sheet_default_116: -7991656555918415650
+      playstation-series_sheet_default_117: 7973540983237281687
+      playstation-series_sheet_default_118: -6954648323748483978
+      playstation-series_sheet_default_119: 8194386293469875888
+      playstation-series_sheet_default_12: 7706946675763554846
+      playstation-series_sheet_default_120: -4130715823424373276
+      playstation-series_sheet_default_121: -1666940968767632731
+      playstation-series_sheet_default_122: 5357296267697172172
+      playstation-series_sheet_default_123: -6903519636912724468
+      playstation-series_sheet_default_124: 3991923059384201113
+      playstation-series_sheet_default_125: 3313160074700766150
+      playstation-series_sheet_default_126: -9094831829623710227
+      playstation-series_sheet_default_127: 8536543323672987481
+      playstation-series_sheet_default_128: 1567496600650917274
+      playstation-series_sheet_default_129: -7976100534306678975
+      playstation-series_sheet_default_13: -1355410699891984920
+      playstation-series_sheet_default_130: -5892454278259288210
+      playstation-series_sheet_default_131: -1347086249228595659
+      playstation-series_sheet_default_132: -7089750242842897555
+      playstation-series_sheet_default_133: 1903716581926402433
+      playstation-series_sheet_default_134: -452403336234654322
+      playstation-series_sheet_default_135: 1035050542067567422
+      playstation-series_sheet_default_136: 5282411078936867900
+      playstation-series_sheet_default_137: 7376022683167436531
+      playstation-series_sheet_default_138: 6374895708393491253
+      playstation-series_sheet_default_139: 381525697016320855
+      playstation-series_sheet_default_14: -457835908096513157
+      playstation-series_sheet_default_140: -2525993847420185240
+      playstation-series_sheet_default_141: 4122016863075048479
+      playstation-series_sheet_default_142: 7364188032188808150
+      playstation-series_sheet_default_143: 2758632319835066059
+      playstation-series_sheet_default_144: 1537818547994567087
+      playstation-series_sheet_default_145: -7678029737123900921
+      playstation-series_sheet_default_146: 6996864621549549510
+      playstation-series_sheet_default_147: 7867090950857190538
+      playstation-series_sheet_default_148: -5616303908457458639
+      playstation-series_sheet_default_149: -384083171285845817
+      playstation-series_sheet_default_15: -1158616759730673799
+      playstation-series_sheet_default_150: 1320541821631449766
+      playstation-series_sheet_default_151: -2421042131315665375
+      playstation-series_sheet_default_152: -7083559864324020811
+      playstation-series_sheet_default_153: 8875225170923256749
+      playstation-series_sheet_default_154: -1032739040083214371
+      playstation-series_sheet_default_155: 1256527432281282930
+      playstation-series_sheet_default_156: -4098867584706467060
+      playstation-series_sheet_default_157: -7494688587468201775
+      playstation-series_sheet_default_158: -2590245343411954387
+      playstation-series_sheet_default_159: -5614826065726605943
+      playstation-series_sheet_default_16: -6073117756664769693
+      playstation-series_sheet_default_160: 4593847132159817587
+      playstation-series_sheet_default_161: -6392084746877646221
+      playstation-series_sheet_default_162: 5368450128813932453
+      playstation-series_sheet_default_163: 4869339514285135234
+      playstation-series_sheet_default_164: 6843083082351268487
+      playstation-series_sheet_default_165: 2087618347071909753
+      playstation-series_sheet_default_166: 8297087800569234708
+      playstation-series_sheet_default_167: -528011235726143007
+      playstation-series_sheet_default_168: -8066592612464506508
+      playstation-series_sheet_default_169: 4529330450380085508
+      playstation-series_sheet_default_17: -2451196301496971478
+      playstation-series_sheet_default_170: -7207528246676644085
+      playstation-series_sheet_default_171: 1087594842702395047
+      playstation-series_sheet_default_172: -28211016270463833
+      playstation-series_sheet_default_173: -5868835634481752098
+      playstation-series_sheet_default_174: 7483903073018975433
+      playstation-series_sheet_default_175: 4446778619373591676
+      playstation-series_sheet_default_176: -6597516792985433122
+      playstation-series_sheet_default_177: -7150101442449512501
+      playstation-series_sheet_default_178: -6660972171351517559
+      playstation-series_sheet_default_179: 4127511597080215065
+      playstation-series_sheet_default_18: -5455762733485576455
+      playstation-series_sheet_default_180: -6779286390333668137
+      playstation-series_sheet_default_181: -8667912774604152698
+      playstation-series_sheet_default_182: 7176823281775348004
+      playstation-series_sheet_default_183: 4776026984073335831
+      playstation-series_sheet_default_184: -3185827535657071896
+      playstation-series_sheet_default_185: -1888374541068152418
+      playstation-series_sheet_default_186: -2983446411984969541
+      playstation-series_sheet_default_187: 5659567537638783975
+      playstation-series_sheet_default_188: 4329852132097842721
+      playstation-series_sheet_default_189: 880573600256350434
+      playstation-series_sheet_default_19: -1995917716398231181
+      playstation-series_sheet_default_190: 2077341802882509038
+      playstation-series_sheet_default_191: 7878057524972962737
+      playstation-series_sheet_default_192: -4136670275562442745
+      playstation-series_sheet_default_193: 7473541989770816790
+      playstation-series_sheet_default_194: -217141626386078822
+      playstation-series_sheet_default_195: 2652561930125914608
+      playstation-series_sheet_default_196: -5949987273928949691
+      playstation-series_sheet_default_197: 2313147351109222488
+      playstation-series_sheet_default_198: 2742474657953891711
+      playstation-series_sheet_default_199: -361960037012988452
+      playstation-series_sheet_default_2: 7446773136118889594
+      playstation-series_sheet_default_20: 3566371335982266328
+      playstation-series_sheet_default_200: -3241015054857819745
+      playstation-series_sheet_default_201: -7001339900438693618
+      playstation-series_sheet_default_202: -2536159727524103928
+      playstation-series_sheet_default_203: 8701410779853546232
+      playstation-series_sheet_default_204: -8464142433661395384
+      playstation-series_sheet_default_205: 6257851842847137603
+      playstation-series_sheet_default_206: -7656693117380682284
+      playstation-series_sheet_default_207: -4217920759373526040
+      playstation-series_sheet_default_208: -3458789969074365745
+      playstation-series_sheet_default_209: -2911431991785146024
+      playstation-series_sheet_default_21: -8292939435422295331
+      playstation-series_sheet_default_210: 5352325353312329607
+      playstation-series_sheet_default_211: 281435928295596972
+      playstation-series_sheet_default_212: -2853051418248695536
+      playstation-series_sheet_default_213: 567661158026975132
+      playstation-series_sheet_default_214: -7812181715383721200
+      playstation-series_sheet_default_215: 3531982968114045148
+      playstation-series_sheet_default_216: 638064570001551982
+      playstation-series_sheet_default_217: 5318171203607824923
+      playstation-series_sheet_default_218: 5934369139393341419
+      playstation-series_sheet_default_219: -4304040643444050620
+      playstation-series_sheet_default_22: 4688441925511024676
+      playstation-series_sheet_default_220: -7214612621778900253
+      playstation-series_sheet_default_221: 9076531439329946319
+      playstation-series_sheet_default_222: 4691016239743961761
+      playstation-series_sheet_default_223: 2558740441334827302
+      playstation-series_sheet_default_224: -2904873002077409155
+      playstation-series_sheet_default_225: -2324004525305215334
+      playstation-series_sheet_default_226: 1469957677497531199
+      playstation-series_sheet_default_227: -8838525488231088588
+      playstation-series_sheet_default_228: -6262590134498833850
+      playstation-series_sheet_default_229: 3268824698873733031
+      playstation-series_sheet_default_23: 3528732733571881367
+      playstation-series_sheet_default_230: -6206355036405835476
+      playstation-series_sheet_default_231: 430713561893833134
+      playstation-series_sheet_default_232: 44316729006546445
+      playstation-series_sheet_default_233: 6538585458468861483
+      playstation-series_sheet_default_234: 3683613318722166968
+      playstation-series_sheet_default_235: -8769896010127354754
+      playstation-series_sheet_default_236: 1495161135613848433
+      playstation-series_sheet_default_237: 3901886117160954723
+      playstation-series_sheet_default_238: -3605497252120998951
+      playstation-series_sheet_default_239: 4342543841092194813
+      playstation-series_sheet_default_24: 2452694527336921013
+      playstation-series_sheet_default_240: -1706250111556089381
+      playstation-series_sheet_default_241: 7519577385819505824
+      playstation-series_sheet_default_242: -4490456842949394460
+      playstation-series_sheet_default_243: 493182216782247374
+      playstation-series_sheet_default_244: -7754641127973801897
+      playstation-series_sheet_default_245: 1031918322490362074
+      playstation-series_sheet_default_246: -3009311926431932307
+      playstation-series_sheet_default_247: -4934788781908482733
+      playstation-series_sheet_default_248: -878619064203280420
+      playstation-series_sheet_default_249: -4023276089962722414
+      playstation-series_sheet_default_25: 3390605439471244937
+      playstation-series_sheet_default_250: 2282334566681078564
+      playstation-series_sheet_default_251: 7405983241152179381
+      playstation-series_sheet_default_252: 8530612938735823905
+      playstation-series_sheet_default_253: -7650146626958543175
+      playstation-series_sheet_default_254: 7613256164693409226
+      playstation-series_sheet_default_255: 4342714096379322210
+      playstation-series_sheet_default_256: 1274948017903686468
+      playstation-series_sheet_default_257: 8026966715983649821
+      playstation-series_sheet_default_258: -4452934286952833692
+      playstation-series_sheet_default_259: 503719954494835657
+      playstation-series_sheet_default_26: -8281674640738324965
+      playstation-series_sheet_default_260: 3322880741286983978
+      playstation-series_sheet_default_261: -8341145091918696318
+      playstation-series_sheet_default_262: 6522724406739742620
+      playstation-series_sheet_default_263: -7685538317142459401
+      playstation-series_sheet_default_264: -6582311765105235555
+      playstation-series_sheet_default_265: 7057381374528912459
+      playstation-series_sheet_default_266: -7922369879888121803
+      playstation-series_sheet_default_267: -2852365270180560535
+      playstation-series_sheet_default_268: -1868038833210858128
+      playstation-series_sheet_default_269: -8024887344770887959
+      playstation-series_sheet_default_27: -38325863985284421
+      playstation-series_sheet_default_270: 1891251557024098597
+      playstation-series_sheet_default_271: -8662881225890104798
+      playstation-series_sheet_default_272: 8735423897256883782
+      playstation-series_sheet_default_273: 3033225418213507106
+      playstation-series_sheet_default_274: -8882515764374178431
+      playstation-series_sheet_default_275: -2572132563026881261
+      playstation-series_sheet_default_276: -7363965586490015812
+      playstation-series_sheet_default_277: 4520074138419239608
+      playstation-series_sheet_default_278: 3682459208493547046
+      playstation-series_sheet_default_279: -7424772547755757520
+      playstation-series_sheet_default_28: -5650390898426204626
+      playstation-series_sheet_default_280: 6760868985181588497
+      playstation-series_sheet_default_281: 3589719503769591072
+      playstation-series_sheet_default_282: -6741611850571796810
+      playstation-series_sheet_default_283: -4065416664344051181
+      playstation-series_sheet_default_284: -7447659370677024209
+      playstation-series_sheet_default_285: 7300321384210339894
+      playstation-series_sheet_default_286: -4438164243157194114
+      playstation-series_sheet_default_287: -3181935437937537332
+      playstation-series_sheet_default_288: -2802128054150562838
+      playstation-series_sheet_default_289: -1330463644911257716
+      playstation-series_sheet_default_29: 2971243781835586527
+      playstation-series_sheet_default_290: -7046014673933943232
+      playstation-series_sheet_default_291: 5194446382190930799
+      playstation-series_sheet_default_292: 8407245552412983274
+      playstation-series_sheet_default_293: 4795501824668673761
+      playstation-series_sheet_default_294: -1525746972281051942
+      playstation-series_sheet_default_3: -2576712857246768628
+      playstation-series_sheet_default_30: -2616487815875337838
+      playstation-series_sheet_default_31: 6918213029464230155
+      playstation-series_sheet_default_32: 5256102181641179310
+      playstation-series_sheet_default_33: -6393936395128612562
+      playstation-series_sheet_default_34: -5880053543249153318
+      playstation-series_sheet_default_35: 2660531580370353734
+      playstation-series_sheet_default_36: -8144012328782755285
+      playstation-series_sheet_default_37: -5259723719495353357
+      playstation-series_sheet_default_38: -7982500527281722671
+      playstation-series_sheet_default_39: -3019726589018001310
+      playstation-series_sheet_default_4: 2034294853005312972
+      playstation-series_sheet_default_40: 389877934425719357
+      playstation-series_sheet_default_41: 2075115422312152835
+      playstation-series_sheet_default_42: -8256470061105597977
+      playstation-series_sheet_default_43: -15408152521568366
+      playstation-series_sheet_default_44: -2152030174524756852
+      playstation-series_sheet_default_45: -4627256562358218779
+      playstation-series_sheet_default_46: -7311779707391124690
+      playstation-series_sheet_default_47: -4627756556542385602
+      playstation-series_sheet_default_48: -6328798561919560486
+      playstation-series_sheet_default_49: -7809083645518872061
+      playstation-series_sheet_default_5: 7449847013164184020
+      playstation-series_sheet_default_50: 4038914556568229904
+      playstation-series_sheet_default_51: -8847766150471811238
+      playstation-series_sheet_default_52: -3846677623449186907
+      playstation-series_sheet_default_53: 5655128202533595946
+      playstation-series_sheet_default_54: -1911790015251215274
+      playstation-series_sheet_default_55: 511520926657838771
+      playstation-series_sheet_default_56: 2772374827078554688
+      playstation-series_sheet_default_57: -4084144629888123813
+      playstation-series_sheet_default_58: 6191125728617527949
+      playstation-series_sheet_default_59: -4603159446992781412
+      playstation-series_sheet_default_6: 2677220183191364659
+      playstation-series_sheet_default_60: -2955201838769972461
+      playstation-series_sheet_default_61: -2135973216143373305
+      playstation-series_sheet_default_62: 7467943092168620617
+      playstation-series_sheet_default_63: -930794258810094586
+      playstation-series_sheet_default_64: 1344036123502258112
+      playstation-series_sheet_default_65: -8693612253023134444
+      playstation-series_sheet_default_66: 4702251860019602642
+      playstation-series_sheet_default_67: 4503543032563986390
+      playstation-series_sheet_default_68: -981381611241811446
+      playstation-series_sheet_default_69: 7802963613123283425
+      playstation-series_sheet_default_7: -4713741050081983194
+      playstation-series_sheet_default_70: 6540567061547615388
+      playstation-series_sheet_default_71: -8790008847813659597
+      playstation-series_sheet_default_72: 6702580204863664812
+      playstation-series_sheet_default_73: 2802099368734564127
+      playstation-series_sheet_default_74: 749370190661577440
+      playstation-series_sheet_default_75: -6418236923469200454
+      playstation-series_sheet_default_76: -5492717384604542960
+      playstation-series_sheet_default_77: -8339840902684588156
+      playstation-series_sheet_default_78: -2180262396505982280
+      playstation-series_sheet_default_79: -8129113853232282744
+      playstation-series_sheet_default_8: 4173645243745128598
+      playstation-series_sheet_default_80: 2312543350169557049
+      playstation-series_sheet_default_81: -8636782968876622692
+      playstation-series_sheet_default_82: -8501858458777750336
+      playstation-series_sheet_default_83: -1277722842345460078
+      playstation-series_sheet_default_84: 7776099819824035580
+      playstation-series_sheet_default_85: -3366145411314146522
+      playstation-series_sheet_default_86: 4504662455302749604
+      playstation-series_sheet_default_87: -6529134339621082586
+      playstation-series_sheet_default_88: -6269564025704464817
+      playstation-series_sheet_default_89: 2461762875454799114
+      playstation-series_sheet_default_9: -7785555404669400390
+      playstation-series_sheet_default_90: -8797584187405932900
+      playstation-series_sheet_default_91: -2835920545370362671
+      playstation-series_sheet_default_92: 5597981489448270008
+      playstation-series_sheet_default_93: -4760645436731845964
+      playstation-series_sheet_default_94: -6538853974916471595
+      playstation-series_sheet_default_95: 5055508029268627826
+      playstation-series_sheet_default_96: 4413908305284784115
+      playstation-series_sheet_default_97: -6186945724513873814
+      playstation-series_sheet_default_98: -3950935086769531976
+      playstation-series_sheet_default_99: -1999645773724246498
+      playstation3_button_select: -7233929853992252945
+      playstation3_button_select_outline: -4625555240248033530
+      playstation3_button_start: 1317084009405735918
+      playstation3_button_start_outline: 4190791068534895554
+      playstation4_button_options: 6761788244403523866
+      playstation4_button_options_outline: 3047842974095205329
+      playstation4_button_share: 357567306970720402
+      playstation4_button_share_outline: 7790647351871721423
+      playstation4_touchpad: -246492132307865032
+      playstation4_touchpad_outline: 4786426777921351693
+      playstation4_touchpad_press: 5222191181060421158
+      playstation4_touchpad_press_center: 6896510547256830294
+      playstation4_touchpad_press_left: -2712579301907690999
+      playstation4_touchpad_press_right: 5726994088551162810
+      playstation4_touchpad_selected: -2062064506978350231
+      playstation4_touchpad_swipe_down: 3398086063246313670
+      playstation4_touchpad_swipe_horizontal: 568760108736624313
+      playstation4_touchpad_swipe_left: -6661843384683762565
+      playstation4_touchpad_swipe_right: -8596661084813216492
+      playstation4_touchpad_swipe_up: 5948555039918133447
+      playstation4_touchpad_swipe_vertical: -874884522787667692
+      playstation4_touchpad_touch: 4322325688687019487
+      playstation4_touchpad_touch_outline: 2629934062856534586
+      playstation5_button_create: 6682243034102184834
+      playstation5_button_create_alternative: 8569776096242144271
+      playstation5_button_create_alternative_outline: -2468156214343088741
+      playstation5_button_create_outline: 5193649649217099815
+      playstation5_button_mute: 4477034264402189755
+      playstation5_button_mute_outline: 7895448278359597848
+      playstation5_button_options: -8484926785651212137
+      playstation5_button_options_alternative: -5461606613321705702
+      playstation5_button_options_alternative_outline: -3202104812883650070
+      playstation5_button_options_outline: -4495319451811925192
+      playstation5_elite_fn_l: 5146043195703000005
+      playstation5_elite_fn_l_outline: -6398173396523248032
+      playstation5_elite_fn_r: -3605093974482258683
+      playstation5_elite_fn_r_outline: -9043855208448783878
+      playstation5_elite_lb: -2645950602821191751
+      playstation5_elite_lb_outline: 3855365035762868453
+      playstation5_elite_rb: -850227353181319605
+      playstation5_elite_rb_outline: -1286182312997241418
+      playstation5_touchpad: -6026039193088197452
+      playstation5_touchpad_outline: 6331840594994614605
+      playstation5_touchpad_press: 8367279868684606728
+      playstation5_touchpad_press_center: 8389985945058342874
+      playstation5_touchpad_press_left: -7589547306006377625
+      playstation5_touchpad_press_right: 2032958203731944035
+      playstation5_touchpad_selected: 6544365210407357185
+      playstation5_touchpad_swipe_down: -2259543081151641966
+      playstation5_touchpad_swipe_horizontal: 2667048985058959118
+      playstation5_touchpad_swipe_left: -6202110949173667482
+      playstation5_touchpad_swipe_right: -7169479867648404708
+      playstation5_touchpad_swipe_up: -2752073532843532051
+      playstation5_touchpad_swipe_vertical: -4664635188254635925
+      playstation5_touchpad_touch: 2276594274021074782
+      playstation5_touchpad_touch_outline: -3492498487613282852
+      playstation_button_analog: 3633074395088957299
+      playstation_button_analog_outline: -997156412459610358
+      playstation_button_circle: 6976570610928302091
+      playstation_button_circle_outline: -8256995577347253650
+      playstation_button_color_circle: 819306911237761416
+      playstation_button_color_circle_outline: -3387036988913059118
+      playstation_button_color_cross: 4113601804530427986
+      playstation_button_color_cross_outline: -8543109158615638249
+      playstation_button_color_square: 756335237104092329
+      playstation_button_color_square_outline: 1274077464540313269
+      playstation_button_color_triangle: -8815271460775223408
+      playstation_button_color_triangle_outline: 5436304986003891643
+      playstation_button_cross: -3069320017417937613
+      playstation_button_cross_outline: -7896625589028800035
+      playstation_button_l3: 2126961102512764183
+      playstation_button_l3_outline: 9098458858700281232
+      playstation_button_r3: -8909400692225091332
+      playstation_button_r3_outline: -2329601425573661770
+      playstation_button_square: 9190300301891392941
+      playstation_button_square_outline: 7067175820449480660
+      playstation_button_triangle: 6093227737260390690
+      playstation_button_triangle_outline: -877848985721428502
+      playstation_dpad: 6731106601331502756
+      playstation_dpad_all: -3053899454242867051
+      playstation_dpad_down: -2570817352038454380
+      playstation_dpad_down_outline: 9102382792580712458
+      playstation_dpad_horizontal: -3133137396053866371
+      playstation_dpad_horizontal_outline: -8998595218902410376
+      playstation_dpad_left: -5375390730993164424
+      playstation_dpad_left_outline: 4129687761973207626
+      playstation_dpad_none: 5418168819466140715
+      playstation_dpad_right: 3938935943974886373
+      playstation_dpad_right_outline: 4171548507870332561
+      playstation_dpad_up: 2177615877352455030
+      playstation_dpad_up_outline: 8108611305089679262
+      playstation_dpad_vertical: 3920514972039032804
+      playstation_dpad_vertical_outline: 6832633632503186454
+      playstation_stick_l: -2023522355231823060
+      playstation_stick_l_down: -5316718647195358893
+      playstation_stick_l_horizontal: -5614613723393309711
+      playstation_stick_l_left: -2550225937415832444
+      playstation_stick_l_press: -3885192806711898562
+      playstation_stick_l_right: 3706498893903141705
+      playstation_stick_l_up: -9115349743740110
+      playstation_stick_l_vertical: 6891076249954298996
+      playstation_stick_r: -1986612506461198670
+      playstation_stick_r_down: -731124661340400395
+      playstation_stick_r_horizontal: 2957041579120876745
+      playstation_stick_r_left: -8074391062862053722
+      playstation_stick_r_press: -8732608566544607755
+      playstation_stick_r_right: 8878148816628718214
+      playstation_stick_r_up: 6449897201249139397
+      playstation_stick_r_vertical: 7572384372632123615
+      playstation_stick_side_l: 5313915645940615549
+      playstation_stick_side_r: -4420634081691993037
+      playstation_stick_top_l: 6903450487536858751
+      playstation_stick_top_r: -6041878246212337608
+      playstation_trigger_l1: 5007025940489355785
+      playstation_trigger_l1_alternative: -2937734057543964017
+      playstation_trigger_l1_alternative_outline: -8001799940036090292
+      playstation_trigger_l1_outline: -6422269451319814736
+      playstation_trigger_l2: 5598237106341528590
+      playstation_trigger_l2_alternative: 8326721302670286717
+      playstation_trigger_l2_alternative_outline: 196893496644897051
+      playstation_trigger_l2_outline: -1810200733799484147
+      playstation_trigger_r1: 3189615024104661172
+      playstation_trigger_r1_alternative: -7780036340748212863
+      playstation_trigger_r1_alternative_outline: -2228993862228638628
+      playstation_trigger_r1_outline: 4094497924390610103
+      playstation_trigger_r2: -5413880422144556571
+      playstation_trigger_r2_alternative: -5072795427937784826
+      playstation_trigger_r2_alternative_outline: 6108689530093216128
+      playstation_trigger_r2_outline: 5236452459731862907
+      sprite_0_0: 110063094613122208
+      sprite_0_1: 8399387991679549355
+      sprite_0_10: -7490711298880907892
+      sprite_0_11: -6604967975579919599
+      sprite_0_2: -4644540916198862998
+      sprite_0_3: -4795043959955871156
+      sprite_0_4: -3494256285842108209
+      sprite_0_5: -5524089854009648592
+      sprite_0_6: -5032015725130632474
+      sprite_0_7: -3762007740097770628
+      sprite_0_8: -442952854566836046
+      sprite_0_9: 7449611078251265577
+      sprite_10_0: -8806758135501145626
+      sprite_10_1: -5797769036844628390
+      sprite_10_10: -6461861319048632508
+      sprite_10_11: -9021896214260910084
+      sprite_10_2: -5228443798459094756
+      sprite_10_3: -2067932657631518299
+      sprite_10_4: -2255947436022582961
+      sprite_10_5: 3011080095608812188
+      sprite_10_6: -232618856130532013
+      sprite_10_7: 5618039822078966870
+      sprite_10_8: 3729040108675229550
+      sprite_10_9: -6748669063257076613
+      sprite_11_0: -7039772475811174324
+      sprite_11_1: 668677868148396043
+      sprite_11_10: -6373271016019067468
+      sprite_11_11: -5346390358839915097
+      sprite_11_2: 2056140855703653417
+      sprite_11_3: -7670815896374528646
+      sprite_11_4: -6446480406380705807
+      sprite_11_5: 8706746142791505154
+      sprite_11_6: -8635784727295429079
+      sprite_11_7: 2804680926248203425
+      sprite_11_8: 2478471397811980118
+      sprite_11_9: 8368996188370838489
+      sprite_1_0: 2057516106615078274
+      sprite_1_1: -3990764489541251346
+      sprite_1_10: -3960458611283728488
+      sprite_1_11: -4518150647334813922
+      sprite_1_2: 2978055984150173501
+      sprite_1_3: 4374436090087825753
+      sprite_1_4: -1865975103405758949
+      sprite_1_5: 5447755235192734056
+      sprite_1_6: -3110548652233145160
+      sprite_1_7: 7979798665319425048
+      sprite_1_8: 3795189196210715292
+      sprite_1_9: 6537814790955566056
+      sprite_2_0: -6981641179300335697
+      sprite_2_1: 5742541816403897934
+      sprite_2_10: 1660699091727894837
+      sprite_2_11: 4062562897994135834
+      sprite_2_2: -8331909182945598094
+      sprite_2_3: 1207572534422275166
+      sprite_2_4: -1174721704435091041
+      sprite_2_5: -831797182033384550
+      sprite_2_6: 4201033612598326047
+      sprite_2_7: -5438098755237914677
+      sprite_2_8: -3430383360923295238
+      sprite_2_9: 5693804674990935894
+      sprite_3_0: 1084495889696105424
+      sprite_3_1: 2225496213262365376
+      sprite_3_10: 3628538370435145474
+      sprite_3_11: -6316163990447797962
+      sprite_3_2: 6070790015296760343
+      sprite_3_3: -5552441862961074652
+      sprite_3_4: 4126841619327464038
+      sprite_3_5: 6701578291882550839
+      sprite_3_6: 1379774504831001170
+      sprite_3_7: -353060106142312252
+      sprite_3_8: -1617550654123617344
+      sprite_3_9: -3360491542619311557
+      sprite_4_0: 2656255634667553426
+      sprite_4_1: -4387813859171883846
+      sprite_4_10: -7232892291580652627
+      sprite_4_11: -1336368503967620855
+      sprite_4_2: -6328221562859427745
+      sprite_4_3: -6764491227458556459
+      sprite_4_4: -9059321819315327527
+      sprite_4_5: -7952709348867360171
+      sprite_4_6: -7893236458845504506
+      sprite_4_7: 8239836883484367612
+      sprite_4_8: -1659035041894168371
+      sprite_4_9: -7847834464468981922
+      sprite_5_0: 8953997984617710940
+      sprite_5_1: -2165872854936334853
+      sprite_5_10: 622788194402815628
+      sprite_5_11: 7684535272311863398
+      sprite_5_2: 8660193878091718147
+      sprite_5_3: -3250759276719717477
+      sprite_5_4: 8117653193126307452
+      sprite_5_5: 6376701905813710359
+      sprite_5_6: -5813761523256347358
+      sprite_5_7: 4694203381176120083
+      sprite_5_8: -1586622663987341286
+      sprite_5_9: -2987848764911352829
+      sprite_6_0: 1342954271244971394
+      sprite_6_1: -1952839295128420913
+      sprite_6_10: 590035961193771409
+      sprite_6_11: -5893068194503012365
+      sprite_6_2: -3517363695250348696
+      sprite_6_3: 2544647057885112343
+      sprite_6_4: 8387776498321157292
+      sprite_6_5: -2009650311522802456
+      sprite_6_6: 4027753786967920556
+      sprite_6_7: -6899632942315091753
+      sprite_6_8: -2394323425602237399
+      sprite_6_9: 3010546239958388101
+      sprite_7_0: 4571690783039372443
+      sprite_7_1: -6966581239616719117
+      sprite_7_10: -1571227114132020232
+      sprite_7_11: -2581960350400879550
+      sprite_7_2: -2785933153741337980
+      sprite_7_3: 815498800105216816
+      sprite_7_4: -2289449078155842138
+      sprite_7_5: -7221745212296072410
+      sprite_7_6: -508201043793987729
+      sprite_7_7: -6803456169456466250
+      sprite_7_8: -6702668351367279553
+      sprite_7_9: 3065536094097787862
+      sprite_8_0: -3861509453359391609
+      sprite_8_1: -6801387276256787727
+      sprite_8_10: -8989005256537931782
+      sprite_8_11: 4622349125602735140
+      sprite_8_2: 7395423254468366642
+      sprite_8_3: -7019313587647542253
+      sprite_8_4: -7278835321006384102
+      sprite_8_5: 8825099625217958376
+      sprite_8_6: 2547361843558278568
+      sprite_8_7: -3117219249948475067
+      sprite_8_8: 1920867639296375943
+      sprite_8_9: -2152523833676734928
+      sprite_9_0: 1830147033117497494
+      sprite_9_1: -3858311815166785654
+      sprite_9_10: 8544313906409600615
+      sprite_9_11: 6521614550684884517
+      sprite_9_2: -7938828410451353080
+      sprite_9_3: -5027637434861748301
+      sprite_9_4: -5289545989597829017
+      sprite_9_5: 7077530917396052021
+      sprite_9_6: 7503335287090482069
+      sprite_9_7: 3381113449545255794
+      sprite_9_8: 2217703112298958091
+      sprite_9_9: 8856933986315407574
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

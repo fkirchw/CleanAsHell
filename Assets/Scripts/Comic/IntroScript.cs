@@ -94,7 +94,8 @@ public class IntroScript : MonoBehaviour
         else
         {
             inputActions.Intro.Disable();
-            SceneManager.LoadScene("Level01");
+            SceneManager.LoadScene("Scenes/Tutorial");
+            
         }
     }
 

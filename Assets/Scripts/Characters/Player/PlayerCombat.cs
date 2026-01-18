@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using Blood;
 using Characters.Interfaces;
@@ -12,6 +14,8 @@ namespace Characters.Player
 
         [Header("Components")] [SerializeField]
         private Animator animator;
+
+        [SerializeField] private SpriteRenderer spriteRenderer;
 
         [SerializeField] private int health = 10;
 
@@ -29,37 +33,49 @@ namespace Characters.Player
         [SerializeField] private float heavyAttackRadius = 1.0f;
         [SerializeField] private float heavyAttackKnockback = 8f;
 
+        [Header("Invincibility")] [SerializeField]
+        private float invincibilityDuration = 2f;
+
+        [SerializeField] private bool enableFlashEffect = true;
+        [SerializeField] private float flashInterval = 0.1f;
+
         private PlayerMovement movement;
         private Collider2D playerCollider;
         private PlayerInputHandler input;
         private HashSet<IDamageable> hitThisAttack = new HashSet<IDamageable>();
+        private bool isInvincible = false;
+        private Coroutine invincibilityCoroutine;
 
         public bool IsDead { get; private set; }
         public bool IsAttacking { get; private set; }
         public float HealthPercent => health / 10f;
         public int Health => health;
 
-        private int MAX_HEALTH;
+        private int maxHealth;
 
         private int regenerationCount = 0;
 
-     
 
         private void Awake()
-{
-    movement = GetComponent<PlayerMovement>();
-    playerCollider = GetComponent<Collider2D>();
-    input = GetComponent<PlayerInputHandler>();
-    
-    if (LevelStateManager.Instance != null)
-    {
-        MAX_HEALTH = 10 + (int)LevelStateManager.Instance.GetVitalityHealthBonus();
-    }
-    else
-    {
-        MAX_HEALTH = health;
-    }
-}
+        {
+            movement = GetComponent<PlayerMovement>();
+            playerCollider = GetComponent<Collider2D>();
+            input = GetComponent<PlayerInputHandler>();
+
+            if (!(spriteRenderer && TryGetComponent(out spriteRenderer)))
+            {
+                Debug.LogError("No sprite renderer found on " + gameObject.name);
+            }
+
+            if (LevelStateManager.Instance != null)
+            {
+                maxHealth = 10 + (int)LevelStateManager.Instance.GetVitalityHealthBonus();
+            }
+            else
+            {
+                maxHealth = health;
+            }
+        }
 
 
         // ** Query Helath of player from levelStateManager to work throughout levels
@@ -67,10 +83,9 @@ namespace Characters.Player
         {
             //Get the health of the LevelStateManager
             health = LevelStateManager.Instance.GetPlayerHealth();
-            
         }
 
-        
+
         private void Update()
         {
             if (IsDead)
@@ -83,11 +98,11 @@ namespace Characters.Player
             UpdateAnimations();
         }
 
-private void OnRegenerationHandler(float regeneratedHealth) // Schimbat din int în float
-{
-    regenerationCount++;
-    IncreaseHealth(Mathf.RoundToInt(regeneratedHealth)); // Rotunjește la int
-}
+        private void OnRegenerationHandler(float regeneratedHealth) // Schimbat din int în float
+        {
+            regenerationCount++;
+            IncreaseHealth(Mathf.RoundToInt(regeneratedHealth)); // Rotunjește la int
+        }
 
         private bool attackRequested = false;
 
@@ -149,6 +164,8 @@ private void OnRegenerationHandler(float regeneratedHealth) // Schimbat din int 
 
         public void TakeDamage(int damage, Vector2 knockbackDir, float knockbackForce)
         {
+            if (isInvincible) return;
+
             DecreaseHealth(damage);
 
             animator.speed = 0f;
@@ -156,20 +173,62 @@ private void OnRegenerationHandler(float regeneratedHealth) // Schimbat din int 
 
             BloodSystem.Instance.OnEnemyHit(this.transform.position, knockbackDir, false, damage);
 
-            //Set health for the LevelStateManager
-            
-
             if (health <= 0)
             {
                 IsDead = true;
                 animator.Play("Die");
                 animator.SetBool(Dead, true);
 
-                //LevelState Manager Operations
-
                 LevelStateManager.Instance.ResetStats();
                 LevelStateManager.Instance.IncreaseDeathCounter();
             }
+            else
+            {
+                if (invincibilityCoroutine != null)
+                {
+                    StopCoroutine(invincibilityCoroutine);
+                }
+
+                invincibilityCoroutine = StartCoroutine(InvincibilityCoroutine());
+            }
+        }
+
+        public int GetMaxHealth()
+        {
+            return maxHealth;
+        }
+
+        private IEnumerator InvincibilityCoroutine()
+        {
+            isInvincible = true;
+
+            if (enableFlashEffect && spriteRenderer != null)
+            {
+                float elapsed = 0f;
+                Color originalColor = spriteRenderer.color;
+
+                while (elapsed < invincibilityDuration)
+                {
+                    spriteRenderer.color = new Color(
+                        originalColor.r,
+                        originalColor.g,
+                        originalColor.b,
+                        spriteRenderer.color.a > 0.75f ? 0.3f : 1f
+                    );
+
+                    yield return new WaitForSeconds(flashInterval);
+                    elapsed += flashInterval;
+                }
+
+                spriteRenderer.color = originalColor;
+            }
+            else
+            {
+                yield return new WaitForSeconds(invincibilityDuration);
+            }
+
+            isInvincible = false;
+            invincibilityCoroutine = null;
         }
 
 
@@ -178,73 +237,44 @@ private void OnRegenerationHandler(float regeneratedHealth) // Schimbat din int 
         // See https://docs.unity3d.com/6000.3/Documentation/Manual/script-AnimationWindowEvent.html
         private void DealDamage()
         {
-            PerformAttack(lightAttackPower, lightAttackDistance, lightAttackRadius, lightAttackKnockback);
+            float damageMultiplier = LevelStateManager.Instance.GetLightAttackMultiplier();
+            int attackPower = Mathf.RoundToInt(lightAttackPower * damageMultiplier);
+            PerformAttack(attackPower, lightAttackDistance, lightAttackRadius, lightAttackKnockback);
         }
 
         // Called by animation event in the HeavySweep animation
         private void DealHeavyDamage()
         {
-            PerformAttack(heavyAttackPower, heavyAttackDistance, heavyAttackRadius, heavyAttackKnockback);
+            float damageMultiplier = LevelStateManager.Instance.GetHeavyAttackMultiplier();
+            int attackPower = Mathf.RoundToInt(heavyAttackPower * damageMultiplier);
+            PerformAttack(attackPower, lightAttackDistance, lightAttackRadius, lightAttackKnockback);
         }
 
-        // private void PerformAttack(int attackPower, float attackDistance, float attackRadius, float knockbackForce)
-        // {
-        //     Vector2 dir = movement.FacingDirection;
-        //     Vector2 attackCenter = (Vector2)transform.position + (dir * attackDistance * 0.5f);
-        //     Collider2D[] hits = Physics2D.OverlapCircleAll(attackCenter, attackRadius, LayerMask.GetMask("Enemy"));
-
-        //     foreach (Collider2D hit in hits)
-        //     {
-        //         Vector2 toEnemy = hit.transform.position - transform.position;
-        //         if (Vector2.Dot(toEnemy.normalized, dir) > 0.3f) // ~70° cone
-        //         {
-        //             if (!hit.isTrigger && hit.TryGetComponent(out IDamageable damageable))
-        //             {
-        //                 if (hitThisAttack.Add(damageable))
-        //                 {
-        //                     damageable.TakeDamage(attackPower, dir, knockbackForce);
-        //                 }
-        //             }
-        //         }
-        //     }
-        // }
-
-private void PerformAttack(int attackPower, float attackDistance, float attackRadius, float knockbackForce)
-{
-    Vector2 dir = movement.FacingDirection;
-    Vector2 attackCenter = (Vector2)transform.position + (dir * attackDistance * 0.5f);
-    Collider2D[] hits = Physics2D.OverlapCircleAll(attackCenter, attackRadius, LayerMask.GetMask("Enemy"));
-
-    float damageMultiplier = 1f;
-    if (attackPower == heavyAttackPower)
-    {
-        damageMultiplier = LevelStateManager.Instance.GetHeavyAttackMultiplier();
-    }
-    else if (attackPower == lightAttackPower)
-    {
-        damageMultiplier = LevelStateManager.Instance.GetLightAttackMultiplier();
-    }
-    
-    int actualDamage = Mathf.RoundToInt(attackPower * damageMultiplier);
-
-    foreach (Collider2D hit in hits)
-    {
-        Vector2 closestPoint = hit.ClosestPoint(transform.position);
-        
-        Vector2 toEnemy = closestPoint - (Vector2)transform.position;
-
-        if (Vector2.Dot(toEnemy.normalized, dir) > 0.3f)
+        private void PerformAttack(int attackPower, float attackDistance, float attackRadius, float knockbackForce)
         {
-            if (!hit.isTrigger && hit.TryGetComponent(out IDamageable damageable))
+            Vector2 dir = movement.FacingDirection;
+            Vector2 attackCenter = (Vector2)transform.position + (dir * attackDistance * 0.5f);
+            Collider2D[] hits = Physics2D.OverlapCircleAll(attackCenter, attackRadius, LayerMask.GetMask("Enemy"));
+
+            foreach (Collider2D hit in hits)
             {
-                if (hitThisAttack.Add(damageable))
+                Vector2 closestPoint = hit.ClosestPoint(transform.position);
+
+                Vector2 toEnemy = closestPoint - (Vector2)transform.position;
+
+                if (Vector2.Dot(toEnemy.normalized, dir) > 0.3f)
                 {
-                    damageable.TakeDamage(actualDamage, dir, knockbackForce);
+                    if (!hit.isTrigger && hit.TryGetComponent(out IDamageable damageable))
+                    {
+                        if (hitThisAttack.Add(damageable))
+                        {
+                            damageable.TakeDamage(attackPower, dir, knockbackForce);
+                        }
+                    }
                 }
             }
         }
-    }
-}
+
         private void DecreaseHealth(int damage)
         {
             health -= damage;
@@ -254,7 +284,7 @@ private void PerformAttack(int attackPower, float attackDistance, float attackRa
         private void IncreaseHealth(int healthPoints)
         {
             health += healthPoints;
-            health = Mathf.Min(health, MAX_HEALTH);
+            health = Mathf.Min(health, maxHealth);
             LevelStateManager.Instance.SetPlayerHealth(health);
         }
 
@@ -288,6 +318,5 @@ private void PerformAttack(int attackPower, float attackDistance, float attackRa
         {
             GameEvents.OnRegenerationEvent -= OnRegenerationHandler;
         }
-
     }
 }

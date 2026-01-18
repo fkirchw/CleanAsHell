@@ -18,6 +18,7 @@ namespace Characters.Enemies
         [SerializeField] private float knockbackForce = 15f;
 
         private bool isDead = false;
+        private int maxHealth;
 
         private bool playerDetected = false;
 
@@ -26,6 +27,7 @@ namespace Characters.Enemies
         {
             spriteRenderer = GetComponent<SpriteRenderer>();
             rb = GetComponent<Rigidbody2D>();
+            maxHealth = health;
         }
 
         // Update is called once per frame
@@ -79,6 +81,11 @@ namespace Characters.Enemies
                 //increase Mobs killed
                 LevelStateManager.Instance.IncreaseEnemiesKilled();
             }
+        }
+
+        public int GetMaxHealth()
+        {
+            return maxHealth;
         }
 
         private void HandleMovement()

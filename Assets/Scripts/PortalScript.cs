@@ -7,7 +7,7 @@ public class PortalScript : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             LevelCompletedScript levelCompleted = FindObjectOfType<LevelCompletedScript>();
-            
+
             if (levelCompleted != null)
             {
                 levelCompleted.ShowLevelCompletedMenu();

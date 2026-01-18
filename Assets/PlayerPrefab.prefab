@@ -314,7 +314,7 @@ MonoBehaviour:
   cleanRate: 5
   useGroundBasedCleaning: 1
   maxCleaningHeight: 1
-  verticalTolerance: 1
+  verticalTolerance: 1.2
   useMultiRaycast: 1
   raycastCount: 3
   raycastSpread: 1
@@ -324,6 +324,7 @@ MonoBehaviour:
     m_Bits: 64
   groundCheckDistance: 1
   foamParticlesPerSecond: 20
+  regenerationThreshold: 5
 --- !u!114 &2706030488599201284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -340,6 +341,9 @@ MonoBehaviour:
   jumpForce: 12
   jumpBufferTime: 0.1
   knockbackDuration: 0.3
+  fastFallForce: 5
+  lookDownDelay: 0.4
+  lookDownDelayAfterFastFall: 1
 --- !u!114 &6081579016755929047
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -353,7 +357,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Characters.Player.PlayerCombat
   animator: {fileID: 3276520232718924349}
-  health: 10
+  spriteRenderer: {fileID: 1870786313136268208}
   lightAttackPower: 5
   lightAttackDistance: 1
   lightAttackRadius: 0.7
@@ -362,6 +366,9 @@ MonoBehaviour:
   heavyAttackDistance: 1.2
   heavyAttackRadius: 1
   heavyAttackKnockback: 8
+  invincibilityDuration: 2
+  enableFlashEffect: 1
+  flashInterval: 0.1
 --- !u!114 &3578430122980634713
 MonoBehaviour:
   m_ObjectHideFlags: 0

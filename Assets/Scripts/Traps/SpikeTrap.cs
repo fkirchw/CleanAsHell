@@ -8,13 +8,13 @@ public class SpikeTrap : MonoBehaviour
     [SerializeField] private float activateDelay;
     [SerializeField] private float activeTime;
     [SerializeField] private float damage;
-    [SerializeField] private float damageInterval = 2f; // Timpul între lovituri (ex: la fiecare 0.5s)
+    [SerializeField] private float damageInterval = 2f; // Time between hits (e.g., every 0.5s)
 
     private Animator anim;
     private SpriteRenderer spriteRend;
     private bool active;
     
-    // Referință către jucătorul aflat în capcană
+    // Reference to the player inside the trap
     private IDamageable playerInRange;
     private float nextDamageTime;
 
@@ -27,7 +27,7 @@ public class SpikeTrap : MonoBehaviour
 
     private void Update()
     {
-        // Dacă capcana e activă, jucătorul e înăuntru și a trecut timpul de cooldown
+        // If the trap is active, the player is inside, and the cooldown has passed
         if (active && playerInRange != null && Time.time >= nextDamageTime)
         {
             ApplyDamage();
@@ -37,7 +37,7 @@ public class SpikeTrap : MonoBehaviour
     private void ApplyDamage()
     {
         playerInRange.TakeDamage((int)damage, Vector2.zero, 0f);
-        nextDamageTime = Time.time + damageInterval; // Setează momentul următoarei lovituri
+        nextDamageTime = Time.time + damageInterval; // Set the time for the next hit
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -46,7 +46,7 @@ public class SpikeTrap : MonoBehaviour
         {
             playerInRange = collision.GetComponent<IDamageable>();
             
-            // Dacă intră exact când e activă, dă-i damage imediat
+            // If they enter exactly when it's active, deal damage immediately
             if (active && playerInRange != null)
             {
                 ApplyDamage();
@@ -58,7 +58,7 @@ public class SpikeTrap : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            playerInRange = null; // Jucătorul a ieșit, oprim damage-ul
+            playerInRange = null; // Player has exited, stop dealing damage
         }
     }
 
@@ -68,14 +68,14 @@ public class SpikeTrap : MonoBehaviour
         {
             yield return new WaitForSeconds(activateDelay);
             
-            // Perioada de avertizare (se face roșu înainte să iasă țepii)
+            // Warning period (turns red before spikes come out)
             yield return new WaitForSeconds(activateDelay);
             
-            // ACTIVARE
+            // ACTIVATION
             active = true;
             anim.SetBool("activated", true);
 
-            // Verificăm dacă jucătorul era deja pe capcană când s-a activat
+            // Check if the player was already on the trap when it activated
             if (playerInRange != null)
             {
                 ApplyDamage();
@@ -83,7 +83,7 @@ public class SpikeTrap : MonoBehaviour
 
             yield return new WaitForSeconds(activeTime);
             
-            // DEZACTIVARE
+            // DEACTIVATION
             active = false;
             anim.SetBool("activated", false);
         }

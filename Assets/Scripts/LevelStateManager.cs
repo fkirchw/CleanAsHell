@@ -5,15 +5,15 @@ using UnityEngine.SceneManagement;
 public class LevelStateManager : MonoBehaviour
 {
     private int playerHealth;
-    private int bloodCounter; // Total sânge colectat în nivelul curent
-    private int allLevelsBloodCollected = 0; // Total sânge colectat din toate nivelurile anterioare
+    private int bloodCounter; // Total blood collected in the current level
+    private int allLevelsBloodCollected = 0; // Total blood collected from all previous levels
     private float levelCleaned;
     private int enemiesKilled;
     private int deathCounter;
 
     private int MAX_HEALTH;
     
-    private int[] upgradeLevels = new int[5]; // Upgrade-uri persistente între scene
+    private int[] upgradeLevels = new int[5]; // Persistent upgrades between scenes
     
     private float vitalityHealthBonus = 0;
     private float heavyAttackMultiplier = 1f;
@@ -21,7 +21,7 @@ public class LevelStateManager : MonoBehaviour
     private float cleaningRangeMultiplier = 1f;
     private float cleaningRegenerationBonus = 0;
 
-    private int totalUpgradeCostSpent = 0; // Total cheltuit pe upgrade-uri în sesiunea curentă
+    private int totalUpgradeCostSpent = 0; // Total spent on upgrades in the current session
 
     public static LevelStateManager Instance;
 
@@ -35,11 +35,11 @@ public class LevelStateManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(gameObject);
             
-            // Doar la prima creare resetează sesiunea
+            // Only reset session data on first creation
             ResetSessionData();
             ApplyUpgradeEffects();
             
-            // Abonează-te la schimbarea scenei
+            // Subscribe to scene change event
             SceneManager.sceneLoaded += OnSceneLoaded;
         }
         else
@@ -59,28 +59,28 @@ public class LevelStateManager : MonoBehaviour
 
         if (isNewSceneGame)
         {
-            // Dacă există o scenă anterioară și aceasta a fost tot de joc și este diferită de cea curentă
+            // If there was a previous scene and it was also a game scene and is different from the current one
             if (wasPreviousSceneGame && currentSceneName != scene.name)
             {
-                // Adaugă sângele colectat în nivelul anterior la totalul general
+                // Add blood collected in the previous level to the overall total
                 allLevelsBloodCollected += bloodCounter;
             }
-            // Altfel, dacă este aceeași scenă de joc, nu adăuga (reîncărcare)
-            // Sau dacă anterior a fost meniu, nu adăuga.
+            // Otherwise, if it's the same game scene, don't add (reload)
+            // Or if previously it was a menu, don't add.
 
-            // Resetăm bloodCounter pentru noul nivel (sau pentru reîncărcare)
+            // Reset bloodCounter for the new level (or for reload)
             bloodCounter = 0;
-            levelCleaned = 0; // Resetăm și levelCleaned pentru noul nivel
+            levelCleaned = 0; // Also reset levelCleaned for the new level
         }
         
-        // Actualizăm currentSceneName
+        // Update currentSceneName
         currentSceneName = scene.name;
     }
     
     bool IsGameScene(string sceneName)
     {
-        // Presupunem că scenele de joc nu conțin "Menu"
-        // Poți modifica această logică în funcție de numele scenelor tale
+        // We assume that game scenes don't contain "Menu"
+        // You can modify this logic based on your scene names
         return !sceneName.Contains("Menu");
     }
     
@@ -106,10 +106,10 @@ public class LevelStateManager : MonoBehaviour
 
     public int GetPlayerHealth() => playerHealth;
     
-    // Metoda care returnează sânge colectat din TOATE nivelurile MINUS costul upgrade-urilor
+    // Method that returns blood collected from ALL levels MINUS upgrade costs
     public int GetDisplayBloodCounter() => (allLevelsBloodCollected + bloodCounter) - totalUpgradeCostSpent;
     
-    // Metoda care returnează doar sângele colectat în nivelul curent
+    // Method that returns only blood collected in the current level
     public int GetCurrentLevelBloodCounter() => bloodCounter;
     
     public float GetLevelCleaned() => levelCleaned;
@@ -161,7 +161,7 @@ public class LevelStateManager : MonoBehaviour
         levelCleaned = 0;
     }
 
-    // Resetează doar datele sesiunii (nu și upgrade-urile)
+    // Resets only session data (not upgrades)
     public void ResetSessionData()
     {
         bloodCounter = 0;
@@ -171,15 +171,15 @@ public class LevelStateManager : MonoBehaviour
         enemiesKilled = 0;
         deathCounter = 0;
         
-        // NU reseta upgrade-urile aici - ele persistă între scene
+        // DO NOT reset upgrades here - they persist between scenes
     }
 
-    // Resetează TOT (inclusiv upgrade-urile)
+    // Resets EVERYTHING (including upgrades)
     public void ResetAllGameData()
     {
         ResetSessionData();
         
-        // Resetează și upgrade-urile la 0
+        // Also reset upgrades to 0
         for (int i = 0; i < upgradeLevels.Length; i++)
         {
             upgradeLevels[i] = 0;
@@ -220,7 +220,7 @@ public class LevelStateManager : MonoBehaviour
     public float GetCleaningRangeMultiplier() => cleaningRangeMultiplier;
     public float GetCleaningRegenerationBonus() => cleaningRegenerationBonus;
 
-    // Metodă pentru a obține nivelurile curente de upgrade
+    // Method to get current upgrade levels
     public int[] GetCurrentUpgradeLevels()
     {
         int[] levels = new int[upgradeLevels.Length];
@@ -233,7 +233,7 @@ public class LevelStateManager : MonoBehaviour
 
     void OnDestroy()
     {
-        // Dezabonează-te de la eveniment când obiectul este distrus
+        // Unsubscribe from event when object is destroyed
         if (Instance == this)
         {
             SceneManager.sceneLoaded -= OnSceneLoaded;

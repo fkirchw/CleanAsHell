@@ -244,6 +244,11 @@ namespace Characters.Enemies
             }
         }
 
+        public int GetMaxHealth()
+        {
+            return (int)MAX_HEALTH;
+        }
+
         private void DisableAllColliders()
         {
             Collider2D[] allColliders = GetComponents<Collider2D>();

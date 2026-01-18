@@ -12,6 +12,7 @@ namespace Characters.Player
 
         [Header("Ground-Based Cleaning")] [SerializeField]
         private bool useGroundBasedCleaning = true;
+
         [SerializeField] private float maxCleaningHeight = 2f;
         [SerializeField] private float verticalTolerance = 0.3f;
         [SerializeField] private bool useMultiRaycast = true;
@@ -20,13 +21,14 @@ namespace Characters.Player
 
         [Header("Foam Visual Feedback")] [SerializeField]
         private ParticleSystem foamParticles;
+
         [SerializeField] private LayerMask groundLayer;
         [SerializeField] private float groundCheckDistance = 5f;
         [SerializeField] private int foamParticlesPerSecond = 20;
 
 
-        [Header("Cleaning before regenerating health")]
-        [SerializeField] private int regenerationThreshold = 2;
+        [Header("Cleaning before regenerating health")] [SerializeField]
+        private int regenerationThreshold = 2;
 
         private PlayerMovement movement;
         private Animator animator;
@@ -68,30 +70,31 @@ namespace Characters.Player
         }
 
         private int oldBloodCleaned = 0;
-private void CalculateBloodCleaned()
-{
-    float currentBlood = BloodSystem.Instance.GetCurrentBloodInLevel();
-    float totalBlood = BloodSystem.Instance.GetTotalBloodGenerated();
-    int bloodCleaned = (int)(totalBlood - currentBlood);
 
-    if (bloodCleaned - oldBloodCleaned > 0)
-    {
-        GameEvents.OnBloodScoreChanged?.Invoke(bloodCleaned);
-    }
+        private void CalculateBloodCleaned()
+        {
+            float currentBlood = BloodSystem.Instance.GetCurrentBloodInLevel();
+            float totalBlood = BloodSystem.Instance.GetTotalBloodGenerated();
+            int bloodCleaned = (int)(totalBlood - currentBlood);
 
-    float regenerationBonus = LevelStateManager.Instance.GetCleaningRegenerationBonus();
-    float baseRegeneration = 1f; 
+            if (bloodCleaned - oldBloodCleaned > 0)
+            {
+                GameEvents.OnBloodScoreChanged?.Invoke(bloodCleaned);
+            }
 
-    if (bloodCleaned - oldBloodCleaned > 0 && bloodCleaned % regenerationThreshold == 0)
-    {
-        float regenerationAmount = baseRegeneration + regenerationBonus;
-        GameEvents.OnRegenerationEvent?.Invoke(regenerationAmount);
-    }
+            float regenerationBonus = LevelStateManager.Instance.GetCleaningRegenerationBonus();
+            float baseRegeneration = 1f;
 
-    LevelStateManager.Instance.SetBloodCounter(bloodCleaned);
-    LevelStateManager.Instance.SetLevelCleaned(BloodSystem.Instance.GetPercentageCleaned());
-    oldBloodCleaned = bloodCleaned;
-}
+            if (bloodCleaned - oldBloodCleaned > 0 && bloodCleaned % regenerationThreshold == 0)
+            {
+                float regenerationAmount = baseRegeneration + regenerationBonus;
+                GameEvents.OnRegenerationEvent?.Invoke(regenerationAmount);
+            }
+
+            LevelStateManager.Instance.SetBloodCounter(bloodCleaned);
+            LevelStateManager.Instance.SetLevelCleaned(BloodSystem.Instance.GetPercentageCleaned());
+            oldBloodCleaned = bloodCleaned;
+        }
 
         private void StartCleaning()
         {
@@ -172,15 +175,18 @@ private void CalculateBloodCleaned()
             float cleanAmount = cleanRate * Time.deltaTime;
             float actualRadius = cleanRadius * LevelStateManager.Instance.GetCleaningRangeMultiplier();
 
-            if (useGroundBasedCleaning && hasGroundHeight)
-            {
-                BloodSystem.Instance.CleanBloodOnGround(
-                    transform.position, groundY, verticalTolerance, actualRadius, cleanAmount);
-            }
-            else
-            {
-                BloodSystem.Instance.CleanBlood(transform.position, actualRadius, cleanAmount);
-            }
+            // SIMPLIFIED: Clean at player's X, ground's Y
+            Vector2 cleanPosition = new Vector2(transform.position.x, groundY);
+    
+            Debug.Log($"[PLAYER CLEAN] Player at {transform.position}, cleaning at {cleanPosition}");
+
+            BloodSystem.Instance.CleanBloodOnGround(
+                cleanPosition,
+                groundY, 
+                verticalTolerance, 
+                actualRadius, 
+                cleanAmount
+            );
 
             cleaningFrames++;
         }

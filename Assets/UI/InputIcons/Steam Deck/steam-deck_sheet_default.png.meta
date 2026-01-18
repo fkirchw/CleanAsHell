@@ -1,0 +1,4576 @@
+fileFormatVersion: 2
+guid: c939fc1c914343afafc0ffad21983924
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8447844428051056685
+    second: steam-deck_sheet_default_0
+  - first:
+      213: 5879630199439865879
+    second: steam-deck_sheet_default_1
+  - first:
+      213: 8379654388990219998
+    second: steam-deck_sheet_default_2
+  - first:
+      213: -525696858663024680
+    second: steam-deck_sheet_default_3
+  - first:
+      213: -8893034068114682675
+    second: steam-deck_sheet_default_4
+  - first:
+      213: 1237322898382094418
+    second: steam-deck_sheet_default_5
+  - first:
+      213: -755093750409238604
+    second: steam-deck_sheet_default_6
+  - first:
+      213: -2578100598545468475
+    second: steam-deck_sheet_default_7
+  - first:
+      213: -2574745327688423580
+    second: steam-deck_sheet_default_8
+  - first:
+      213: 7189151968922434194
+    second: steam-deck_sheet_default_9
+  - first:
+      213: -8833355680496502906
+    second: steam-deck_sheet_default_10
+  - first:
+      213: -4247314480386133724
+    second: steam-deck_sheet_default_11
+  - first:
+      213: -7932105600784780417
+    second: steam-deck_sheet_default_12
+  - first:
+      213: 3633778103675858731
+    second: steam-deck_sheet_default_13
+  - first:
+      213: -7698020000869080913
+    second: steam-deck_sheet_default_14
+  - first:
+      213: -3713402258253579142
+    second: steam-deck_sheet_default_15
+  - first:
+      213: 6513437833621511949
+    second: steam-deck_sheet_default_16
+  - first:
+      213: -3551912115433873413
+    second: steam-deck_sheet_default_17
+  - first:
+      213: -5236392312593238893
+    second: steam-deck_sheet_default_18
+  - first:
+      213: -4739942014485683998
+    second: steam-deck_sheet_default_19
+  - first:
+      213: 8423154231138270203
+    second: steam-deck_sheet_default_20
+  - first:
+      213: -5350965515051340106
+    second: steam-deck_sheet_default_21
+  - first:
+      213: -7818031975797296249
+    second: steam-deck_sheet_default_22
+  - first:
+      213: -3131512285787862813
+    second: steam-deck_sheet_default_23
+  - first:
+      213: 4786754800835715582
+    second: steam-deck_sheet_default_24
+  - first:
+      213: 3169774132303823298
+    second: steam-deck_sheet_default_25
+  - first:
+      213: -2641445783255274301
+    second: steam-deck_sheet_default_26
+  - first:
+      213: 4861405781519051371
+    second: steam-deck_sheet_default_27
+  - first:
+      213: 4939426049773343496
+    second: steam-deck_sheet_default_28
+  - first:
+      213: 5322701832660287430
+    second: steam-deck_sheet_default_29
+  - first:
+      213: 7757998753673285309
+    second: steam-deck_sheet_default_30
+  - first:
+      213: -7494020345476234830
+    second: steam-deck_sheet_default_31
+  - first:
+      213: 3367141196790539953
+    second: steam-deck_sheet_default_32
+  - first:
+      213: 6879748655549639017
+    second: steam-deck_sheet_default_33
+  - first:
+      213: 126434865811436196
+    second: steam-deck_sheet_default_34
+  - first:
+      213: -8942786884045835712
+    second: steam-deck_sheet_default_35
+  - first:
+      213: -929621406536003007
+    second: steam-deck_sheet_default_36
+  - first:
+      213: -6055136200411724898
+    second: steam-deck_sheet_default_37
+  - first:
+      213: -8785827421441833979
+    second: steam-deck_sheet_default_38
+  - first:
+      213: 1609615367165146757
+    second: steam-deck_sheet_default_39
+  - first:
+      213: 3381847724569375623
+    second: steam-deck_sheet_default_40
+  - first:
+      213: -8003700086478726074
+    second: steam-deck_sheet_default_41
+  - first:
+      213: -4650618915763651912
+    second: steam-deck_sheet_default_42
+  - first:
+      213: 8064084087006140111
+    second: steam-deck_sheet_default_43
+  - first:
+      213: -8308248360722242899
+    second: steam-deck_sheet_default_44
+  - first:
+      213: -580466909845506459
+    second: steam-deck_sheet_default_45
+  - first:
+      213: -5669631747749074843
+    second: steam-deck_sheet_default_46
+  - first:
+      213: 6787837942539856718
+    second: steam-deck_sheet_default_47
+  - first:
+      213: 8111063833100306877
+    second: steam-deck_sheet_default_48
+  - first:
+      213: -4471519697014460089
+    second: steam-deck_sheet_default_49
+  - first:
+      213: -1982264707646225205
+    second: steam-deck_sheet_default_50
+  - first:
+      213: -728238191170872849
+    second: steam-deck_sheet_default_51
+  - first:
+      213: -1955713503920846681
+    second: steam-deck_sheet_default_52
+  - first:
+      213: 4580701401110923961
+    second: steam-deck_sheet_default_53
+  - first:
+      213: -6343581369935673540
+    second: steam-deck_sheet_default_54
+  - first:
+      213: -9018092029001315690
+    second: steam-deck_sheet_default_55
+  - first:
+      213: 6031777916718003613
+    second: steam-deck_sheet_default_56
+  - first:
+      213: -7669199652756566460
+    second: steam-deck_sheet_default_57
+  - first:
+      213: 4927340297182777616
+    second: steam-deck_sheet_default_58
+  - first:
+      213: -702651783970683957
+    second: steam-deck_sheet_default_59
+  - first:
+      213: -8009542284282901401
+    second: steam-deck_sheet_default_60
+  - first:
+      213: 702209049789077360
+    second: steam-deck_sheet_default_61
+  - first:
+      213: 8897188108197129172
+    second: steam-deck_sheet_default_62
+  - first:
+      213: 3563869577533753368
+    second: steam-deck_sheet_default_63
+  - first:
+      213: -5508488368393670655
+    second: steam-deck_sheet_default_64
+  - first:
+      213: 353844145425883786
+    second: steam-deck_sheet_default_65
+  - first:
+      213: 4371570671094270646
+    second: steam-deck_sheet_default_66
+  - first:
+      213: -8082905519803118079
+    second: steam-deck_sheet_default_67
+  - first:
+      213: 4620893808704448768
+    second: steam-deck_sheet_default_68
+  - first:
+      213: -8951273113788900625
+    second: steam-deck_sheet_default_69
+  - first:
+      213: 2055022580343980286
+    second: steam-deck_sheet_default_70
+  - first:
+      213: 8630156918309068174
+    second: steam-deck_sheet_default_71
+  - first:
+      213: -8576117188599768760
+    second: steam-deck_sheet_default_72
+  - first:
+      213: -611414627885273957
+    second: steam-deck_sheet_default_73
+  - first:
+      213: -7683337096944532275
+    second: steam-deck_sheet_default_74
+  - first:
+      213: -3687646699488926278
+    second: steam-deck_sheet_default_75
+  - first:
+      213: 1214737913218797208
+    second: steam-deck_sheet_default_76
+  - first:
+      213: -5096273514352294481
+    second: steam-deck_sheet_default_77
+  - first:
+      213: -8177712476500386300
+    second: steam-deck_sheet_default_78
+  - first:
+      213: -909765102063568363
+    second: steam-deck_sheet_default_79
+  - first:
+      213: 4737740772757837273
+    second: steam-deck_sheet_default_80
+  - first:
+      213: 1003827073468895730
+    second: steam-deck_sheet_default_81
+  - first:
+      213: -6780535102972333966
+    second: steam-deck_sheet_default_82
+  - first:
+      213: -8210412791541513944
+    second: steam-deck_sheet_default_83
+  - first:
+      213: -4749393021254581508
+    second: steam-deck_sheet_default_84
+  - first:
+      213: 6876248634519473255
+    second: steam-deck_sheet_default_85
+  - first:
+      213: 4603598702435672744
+    second: steam-deck_sheet_default_86
+  - first:
+      213: 148785904520576012
+    second: steam-deck_sheet_default_87
+  - first:
+      213: 5562549397896772221
+    second: steam-deck_sheet_default_88
+  - first:
+      213: 6312394531528699065
+    second: steam-deck_sheet_default_89
+  - first:
+      213: 3152224826091004499
+    second: steam-deck_sheet_default_90
+  - first:
+      213: 7840537801984837849
+    second: steam-deck_sheet_default_91
+  - first:
+      213: -5336904925834862358
+    second: steam-deck_sheet_default_92
+  - first:
+      213: -5938432807079665537
+    second: steam-deck_sheet_default_93
+  - first:
+      213: -2739808565498424860
+    second: steam-deck_sheet_default_94
+  - first:
+      213: 14997381139661283
+    second: steam-deck_sheet_default_95
+  - first:
+      213: 3291569156672426145
+    second: steam-deck_sheet_default_96
+  - first:
+      213: -4675645333562134159
+    second: steam-deck_sheet_default_97
+  - first:
+      213: -8004500307208582813
+    second: steam-deck_sheet_default_98
+  - first:
+      213: -277227647629311272
+    second: steam-deck_sheet_default_99
+  - first:
+      213: 2612467129396310250
+    second: steam-deck_sheet_default_100
+  - first:
+      213: -2122775484310955037
+    second: steam-deck_sheet_default_101
+  - first:
+      213: -4121979616130857350
+    second: steam-deck_sheet_default_102
+  - first:
+      213: -1685006476283379345
+    second: steam-deck_sheet_default_103
+  - first:
+      213: -498957805109497268
+    second: steam-deck_sheet_default_104
+  - first:
+      213: -963462515488798059
+    second: steam-deck_sheet_default_105
+  - first:
+      213: 5022839956632803906
+    second: steam-deck_sheet_default_106
+  - first:
+      213: 8763414712040754355
+    second: steam-deck_sheet_default_107
+  - first:
+      213: 6083847026109953024
+    second: steam-deck_sheet_default_108
+  - first:
+      213: -8595527897370305326
+    second: steam-deck_sheet_default_109
+  - first:
+      213: -4467137478442969511
+    second: steam-deck_sheet_default_110
+  - first:
+      213: 1403664696366607790
+    second: steam-deck_sheet_default_111
+  - first:
+      213: -7685270295912061806
+    second: steam-deck_sheet_default_112
+  - first:
+      213: -1089931187287428009
+    second: steam-deck_sheet_default_113
+  - first:
+      213: 3227024094263318028
+    second: steam-deck_sheet_default_114
+  - first:
+      213: -1345649250366023359
+    second: steam-deck_sheet_default_115
+  - first:
+      213: 531736924870390257
+    second: steam-deck_sheet_default_116
+  - first:
+      213: -5382584926035943355
+    second: steam-deck_sheet_default_117
+  - first:
+      213: -7042204810290081215
+    second: steam-deck_sheet_default_118
+  - first:
+      213: -1205284160870635352
+    second: steam-deck_sheet_default_119
+  - first:
+      213: 9177555577881161746
+    second: steam-deck_sheet_default_120
+  - first:
+      213: 1878660284659293770
+    second: steam-deck_sheet_default_121
+  - first:
+      213: 6195518408683607025
+    second: steam-deck_sheet_default_122
+  - first:
+      213: -4271685805035148321
+    second: steam-deck_sheet_default_123
+  - first:
+      213: -6430522339742351025
+    second: steam-deck_sheet_default_124
+  - first:
+      213: -7273337661806668429
+    second: steam-deck_sheet_default_125
+  - first:
+      213: 7672190217005086537
+    second: steam-deck_sheet_default_126
+  - first:
+      213: 3068869742913394971
+    second: steam-deck_sheet_default_127
+  - first:
+      213: 5224379130823499783
+    second: steam-deck_sheet_default_128
+  - first:
+      213: -8854612579269469794
+    second: steam-deck_sheet_default_129
+  - first:
+      213: 6596621408035423326
+    second: steam-deck_sheet_default_130
+  - first:
+      213: 3709193266321972561
+    second: steam-deck_sheet_default_131
+  - first:
+      213: -7615908817684640713
+    second: steam-deck_sheet_default_132
+  - first:
+      213: 7043477552229557676
+    second: steam-deck_sheet_default_133
+  - first:
+      213: -8738730315414434705
+    second: steam-deck_sheet_default_134
+  - first:
+      213: -7093549830006375252
+    second: steam-deck_sheet_default_135
+  - first:
+      213: 7151154253633579160
+    second: steam-deck_sheet_default_136
+  - first:
+      213: 4861042506873559535
+    second: steam-deck_sheet_default_137
+  - first:
+      213: -272494596951852300
+    second: steam-deck_sheet_default_138
+  - first:
+      213: -4325014552808226828
+    second: steam-deck_sheet_default_139
+  - first:
+      213: -726355362884574834
+    second: steam-deck_sheet_default_140
+  - first:
+      213: -2063026422181516062
+    second: steam-deck_sheet_default_141
+  - first:
+      213: 3996819463923917053
+    second: steam-deck_sheet_default_142
+  - first:
+      213: -3415420192742913721
+    second: steam-deck_sheet_default_143
+  - first:
+      213: 3489619563373062047
+    second: steam-deck_sheet_default_144
+  - first:
+      213: 5180257329205453037
+    second: steam-deck_sheet_default_145
+  - first:
+      213: 5003064013061040656
+    second: steam-deck_sheet_default_146
+  - first:
+      213: 5672001151201648746
+    second: steam-deck_sheet_default_147
+  - first:
+      213: 7414057307787783129
+    second: steam-deck_sheet_default_148
+  - first:
+      213: 7361194988652954402
+    second: steam-deck_sheet_default_149
+  - first:
+      213: 6711581753018956121
+    second: steam-deck_sheet_default_150
+  - first:
+      213: 4473238673483501200
+    second: steam-deck_sheet_default_151
+  - first:
+      213: 4108391284281253143
+    second: steam-deck_sheet_default_152
+  - first:
+      213: 1988730515550336940
+    second: steam-deck_sheet_default_153
+  - first:
+      213: 1670242457175054531
+    second: steam-deck_sheet_default_154
+  - first:
+      213: 6748357074236996513
+    second: steam-deck_sheet_default_155
+  - first:
+      213: 6649454038968575746
+    second: steam-deck_sheet_default_156
+  - first:
+      213: -2741321228014731015
+    second: steam-deck_sheet_default_157
+  - first:
+      213: 1024935459971050974
+    second: steam-deck_sheet_default_158
+  - first:
+      213: 3799049874325459608
+    second: steam-deck_sheet_default_159
+  - first:
+      213: -7022094851020614590
+    second: steam-deck_sheet_default_160
+  - first:
+      213: 7719735395205150437
+    second: steam-deck_sheet_default_161
+  - first:
+      213: 6032930659502545983
+    second: steam-deck_sheet_default_162
+  - first:
+      213: 828776868026999305
+    second: steam-deck_sheet_default_163
+  - first:
+      213: 7286757363741182539
+    second: steam-deck_sheet_default_164
+  - first:
+      213: -7422615196404259230
+    second: steam-deck_sheet_default_165
+  - first:
+      213: -3697741763648729858
+    second: steam-deck_sheet_default_166
+  - first:
+      213: -7633798584450526066
+    second: steam-deck_sheet_default_167
+  - first:
+      213: 7458952526125308390
+    second: steam-deck_sheet_default_168
+  - first:
+      213: -4349156367338267169
+    second: steam-deck_sheet_default_169
+  - first:
+      213: 6840063522984670825
+    second: steam-deck_sheet_default_170
+  - first:
+      213: 8175261240365413199
+    second: steam-deck_sheet_default_171
+  - first:
+      213: -932714419108561507
+    second: steam-deck_sheet_default_172
+  - first:
+      213: -8314793265360510524
+    second: steam-deck_sheet_default_173
+  - first:
+      213: 2218179480995210263
+    second: steam-deck_sheet_default_174
+  - first:
+      213: -7657341206827215857
+    second: steam-deck_sheet_default_175
+  - first:
+      213: 4839332003391711683
+    second: steam-deck_sheet_default_176
+  - first:
+      213: -820711168038710395
+    second: steam-deck_sheet_default_177
+  - first:
+      213: 5537112945066321114
+    second: steam-deck_sheet_default_178
+  - first:
+      213: -7794832031599148123
+    second: steam-deck_sheet_default_179
+  - first:
+      213: 5332015156358170996
+    second: steam-deck_sheet_default_180
+  - first:
+      213: -2539037506623262396
+    second: steam-deck_sheet_default_181
+  - first:
+      213: 3886622973894786714
+    second: steam-deck_sheet_default_182
+  - first:
+      213: -8611801994904719663
+    second: steam-deck_sheet_default_183
+  - first:
+      213: -3579728649792766022
+    second: steam-deck_sheet_default_184
+  - first:
+      213: -2517976220677350608
+    second: steam-deck_sheet_default_185
+  - first:
+      213: -3002278364804031478
+    second: steam-deck_sheet_default_186
+  - first:
+      213: -4497151121048570288
+    second: steam-deck_sheet_default_187
+  - first:
+      213: 5150314845777956143
+    second: steam-deck_sheet_default_188
+  - first:
+      213: -2589137304865417625
+    second: steam-deck_sheet_default_189
+  - first:
+      213: 6986038191703079319
+    second: steam-deck_sheet_default_190
+  - first:
+      213: -3117052153837547960
+    second: steam-deck_sheet_default_191
+  - first:
+      213: -3779628336014209721
+    second: steam-deck_sheet_default_192
+  - first:
+      213: 6213120749922823756
+    second: steam-deck_sheet_default_193
+  - first:
+      213: 7887592060778299211
+    second: steam-deck_sheet_default_194
+  - first:
+      213: 260962242415651883
+    second: steam-deck_sheet_default_195
+  - first:
+      213: -5929286767175312515
+    second: steam-deck_sheet_default_196
+  - first:
+      213: -3749467031122217452
+    second: steam-deck_sheet_default_197
+  - first:
+      213: 7803185986100367453
+    second: steam-deck_sheet_default_198
+  - first:
+      213: -5256063789852954825
+    second: steam-deck_sheet_default_199
+  - first:
+      213: 2002624915936396968
+    second: steam-deck_sheet_default_200
+  - first:
+      213: 6655849426573915156
+    second: steam-deck_sheet_default_201
+  - first:
+      213: 6923986687810489649
+    second: steam-deck_sheet_default_202
+  - first:
+      213: 899826680406731171
+    second: steam-deck_sheet_default_203
+  - first:
+      213: 8162005151174283718
+    second: steam-deck_sheet_default_204
+  - first:
+      213: -6208172696178652735
+    second: steam-deck_sheet_default_205
+  - first:
+      213: -711223320711261135
+    second: steam-deck_sheet_default_206
+  - first:
+      213: -9042330607961836302
+    second: steam-deck_sheet_default_207
+  - first:
+      213: 2104234129872119303
+    second: steam-deck_sheet_default_208
+  - first:
+      213: -4568085503836592069
+    second: steam-deck_sheet_default_209
+  - first:
+      213: -1840491609918923895
+    second: steam-deck_sheet_default_210
+  - first:
+      213: 1387200237270332752
+    second: steam-deck_sheet_default_211
+  - first:
+      213: -284867087438753856
+    second: steam-deck_sheet_default_212
+  - first:
+      213: -221811419209462477
+    second: steam-deck_sheet_default_213
+  - first:
+      213: -5124158776957617108
+    second: steam-deck_sheet_default_214
+  - first:
+      213: 7498457994092856219
+    second: steam-deck_sheet_default_215
+  - first:
+      213: -6214977313511611718
+    second: steam-deck_sheet_default_216
+  - first:
+      213: 8252784433169486804
+    second: steam-deck_sheet_default_217
+  - first:
+      213: -6717311285484035376
+    second: steam-deck_sheet_default_218
+  - first:
+      213: -1026964403528608990
+    second: steam-deck_sheet_default_219
+  - first:
+      213: 6859687964451823440
+    second: steam-deck_sheet_default_220
+  - first:
+      213: 2782147332981956897
+    second: steam-deck_sheet_default_221
+  - first:
+      213: -1682172835441957618
+    second: steam-deck_sheet_default_222
+  - first:
+      213: 2066893381880928624
+    second: steam-deck_sheet_default_223
+  - first:
+      213: 8552825278281554391
+    second: steam-deck_sheet_default_224
+  - first:
+      213: 2902492291853240389
+    second: steam-deck_sheet_default_225
+  - first:
+      213: -9056095650987662123
+    second: steam-deck_sheet_default_226
+  - first:
+      213: -5610225738274767434
+    second: steam-deck_sheet_default_227
+  - first:
+      213: -1320945040864240230
+    second: steam-deck_sheet_default_228
+  - first:
+      213: -6935716074158066472
+    second: steam-deck_sheet_default_229
+  - first:
+      213: 110063094613122208
+    second: sprite_0_0
+  - first:
+      213: 2057516106615078274
+    second: sprite_1_0
+  - first:
+      213: -6981641179300335697
+    second: sprite_2_0
+  - first:
+      213: 1084495889696105424
+    second: sprite_3_0
+  - first:
+      213: 2656255634667553426
+    second: sprite_4_0
+  - first:
+      213: 8953997984617710940
+    second: sprite_5_0
+  - first:
+      213: 1342954271244971394
+    second: sprite_6_0
+  - first:
+      213: 4571690783039372443
+    second: sprite_7_0
+  - first:
+      213: -3861509453359391609
+    second: sprite_8_0
+  - first:
+      213: 1830147033117497494
+    second: sprite_9_0
+  - first:
+      213: -8806758135501145626
+    second: sprite_10_0
+  - first:
+      213: 8399387991679549355
+    second: sprite_0_1
+  - first:
+      213: -3990764489541251346
+    second: sprite_1_1
+  - first:
+      213: 5742541816403897934
+    second: sprite_2_1
+  - first:
+      213: 2225496213262365376
+    second: sprite_3_1
+  - first:
+      213: -4387813859171883846
+    second: sprite_4_1
+  - first:
+      213: -2165872854936334853
+    second: sprite_5_1
+  - first:
+      213: -1952839295128420913
+    second: sprite_6_1
+  - first:
+      213: -6966581239616719117
+    second: sprite_7_1
+  - first:
+      213: -6801387276256787727
+    second: sprite_8_1
+  - first:
+      213: -3858311815166785654
+    second: sprite_9_1
+  - first:
+      213: -5797769036844628390
+    second: sprite_10_1
+  - first:
+      213: -4644540916198862998
+    second: sprite_0_2
+  - first:
+      213: 2978055984150173501
+    second: sprite_1_2
+  - first:
+      213: -8331909182945598094
+    second: sprite_2_2
+  - first:
+      213: 6070790015296760343
+    second: sprite_3_2
+  - first:
+      213: -6328221562859427745
+    second: sprite_4_2
+  - first:
+      213: 8660193878091718147
+    second: sprite_5_2
+  - first:
+      213: -3517363695250348696
+    second: sprite_6_2
+  - first:
+      213: -2785933153741337980
+    second: sprite_7_2
+  - first:
+      213: 7395423254468366642
+    second: sprite_8_2
+  - first:
+      213: -7938828410451353080
+    second: sprite_9_2
+  - first:
+      213: -5228443798459094756
+    second: sprite_10_2
+  - first:
+      213: -4795043959955871156
+    second: sprite_0_3
+  - first:
+      213: 4374436090087825753
+    second: sprite_1_3
+  - first:
+      213: 1207572534422275166
+    second: sprite_2_3
+  - first:
+      213: -5552441862961074652
+    second: sprite_3_3
+  - first:
+      213: -6764491227458556459
+    second: sprite_4_3
+  - first:
+      213: -3250759276719717477
+    second: sprite_5_3
+  - first:
+      213: 2544647057885112343
+    second: sprite_6_3
+  - first:
+      213: 815498800105216816
+    second: sprite_7_3
+  - first:
+      213: -7019313587647542253
+    second: sprite_8_3
+  - first:
+      213: -5027637434861748301
+    second: sprite_9_3
+  - first:
+      213: -2067932657631518299
+    second: sprite_10_3
+  - first:
+      213: -3494256285842108209
+    second: sprite_0_4
+  - first:
+      213: -1865975103405758949
+    second: sprite_1_4
+  - first:
+      213: -1174721704435091041
+    second: sprite_2_4
+  - first:
+      213: 4126841619327464038
+    second: sprite_3_4
+  - first:
+      213: -9059321819315327527
+    second: sprite_4_4
+  - first:
+      213: 8117653193126307452
+    second: sprite_5_4
+  - first:
+      213: 8387776498321157292
+    second: sprite_6_4
+  - first:
+      213: -2289449078155842138
+    second: sprite_7_4
+  - first:
+      213: -7278835321006384102
+    second: sprite_8_4
+  - first:
+      213: -5289545989597829017
+    second: sprite_9_4
+  - first:
+      213: -2255947436022582961
+    second: sprite_10_4
+  - first:
+      213: -5524089854009648592
+    second: sprite_0_5
+  - first:
+      213: 5447755235192734056
+    second: sprite_1_5
+  - first:
+      213: -831797182033384550
+    second: sprite_2_5
+  - first:
+      213: 6701578291882550839
+    second: sprite_3_5
+  - first:
+      213: -7952709348867360171
+    second: sprite_4_5
+  - first:
+      213: 6376701905813710359
+    second: sprite_5_5
+  - first:
+      213: -2009650311522802456
+    second: sprite_6_5
+  - first:
+      213: -7221745212296072410
+    second: sprite_7_5
+  - first:
+      213: 8825099625217958376
+    second: sprite_8_5
+  - first:
+      213: 7077530917396052021
+    second: sprite_9_5
+  - first:
+      213: 3011080095608812188
+    second: sprite_10_5
+  - first:
+      213: -5032015725130632474
+    second: sprite_0_6
+  - first:
+      213: -3110548652233145160
+    second: sprite_1_6
+  - first:
+      213: 4201033612598326047
+    second: sprite_2_6
+  - first:
+      213: 1379774504831001170
+    second: sprite_3_6
+  - first:
+      213: -7893236458845504506
+    second: sprite_4_6
+  - first:
+      213: -5813761523256347358
+    second: sprite_5_6
+  - first:
+      213: 4027753786967920556
+    second: sprite_6_6
+  - first:
+      213: -508201043793987729
+    second: sprite_7_6
+  - first:
+      213: 2547361843558278568
+    second: sprite_8_6
+  - first:
+      213: 7503335287090482069
+    second: sprite_9_6
+  - first:
+      213: -232618856130532013
+    second: sprite_10_6
+  - first:
+      213: -3762007740097770628
+    second: sprite_0_7
+  - first:
+      213: 7979798665319425048
+    second: sprite_1_7
+  - first:
+      213: -5438098755237914677
+    second: sprite_2_7
+  - first:
+      213: -353060106142312252
+    second: sprite_3_7
+  - first:
+      213: 8239836883484367612
+    second: sprite_4_7
+  - first:
+      213: 4694203381176120083
+    second: sprite_5_7
+  - first:
+      213: -6899632942315091753
+    second: sprite_6_7
+  - first:
+      213: -6803456169456466250
+    second: sprite_7_7
+  - first:
+      213: -3117219249948475067
+    second: sprite_8_7
+  - first:
+      213: 3381113449545255794
+    second: sprite_9_7
+  - first:
+      213: 5618039822078966870
+    second: sprite_10_7
+  - first:
+      213: -442952854566836046
+    second: sprite_0_8
+  - first:
+      213: 3795189196210715292
+    second: sprite_1_8
+  - first:
+      213: -3430383360923295238
+    second: sprite_2_8
+  - first:
+      213: -1617550654123617344
+    second: sprite_3_8
+  - first:
+      213: -1659035041894168371
+    second: sprite_4_8
+  - first:
+      213: -1586622663987341286
+    second: sprite_5_8
+  - first:
+      213: -2394323425602237399
+    second: sprite_6_8
+  - first:
+      213: -6702668351367279553
+    second: sprite_7_8
+  - first:
+      213: 1920867639296375943
+    second: sprite_8_8
+  - first:
+      213: 2217703112298958091
+    second: sprite_9_8
+  - first:
+      213: 3729040108675229550
+    second: sprite_10_8
+  - first:
+      213: 7449611078251265577
+    second: sprite_0_9
+  - first:
+      213: 6537814790955566056
+    second: sprite_1_9
+  - first:
+      213: 5693804674990935894
+    second: sprite_2_9
+  - first:
+      213: -3360491542619311557
+    second: sprite_3_9
+  - first:
+      213: -7847834464468981922
+    second: sprite_4_9
+  - first:
+      213: -2987848764911352829
+    second: sprite_5_9
+  - first:
+      213: 3010546239958388101
+    second: sprite_6_9
+  - first:
+      213: 3065536094097787862
+    second: sprite_7_9
+  - first:
+      213: -2152523833676734928
+    second: sprite_8_9
+  - first:
+      213: 8856933986315407574
+    second: sprite_9_9
+  - first:
+      213: -6748669063257076613
+    second: sprite_10_9
+  - first:
+      213: -7490711298880907892
+    second: sprite_0_10
+  - first:
+      213: -3960458611283728488
+    second: sprite_1_10
+  - first:
+      213: 1660699091727894837
+    second: sprite_2_10
+  - first:
+      213: 3628538370435145474
+    second: sprite_3_10
+  - first:
+      213: -7232892291580652627
+    second: sprite_4_10
+  - first:
+      213: 622788194402815628
+    second: sprite_5_10
+  - first:
+      213: 590035961193771409
+    second: sprite_6_10
+  - first:
+      213: -1571227114132020232
+    second: sprite_7_10
+  - first:
+      213: -8989005256537931782
+    second: sprite_8_10
+  - first:
+      213: 8544313906409600615
+    second: sprite_9_10
+  - first:
+      213: -6461861319048632508
+    second: sprite_10_10
+  - first:
+      213: 5506449367337235463
+    second: controller_steamdeck
+  - first:
+      213: -3708116369093104102
+    second: steamdeck_button_a
+  - first:
+      213: 3473978957196028485
+    second: steamdeck_button_a_outline
+  - first:
+      213: -4210130297378115553
+    second: steamdeck_button_b
+  - first:
+      213: -1278595583185864445
+    second: steamdeck_button_b_outline
+  - first:
+      213: 117962006258546473
+    second: steamdeck_button_guide
+  - first:
+      213: 3610280507741264500
+    second: steamdeck_button_guide_outline
+  - first:
+      213: 8990893251682086847
+    second: steamdeck_button_l1
+  - first:
+      213: 3266004440445453561
+    second: steamdeck_button_l1_outline
+  - first:
+      213: 6054563374582180135
+    second: steamdeck_button_l2
+  - first:
+      213: -3291451582114301906
+    second: steamdeck_button_l2_outline
+  - first:
+      213: 6069310983654667933
+    second: steamdeck_button_l4
+  - first:
+      213: -2231968458701559294
+    second: steamdeck_button_l4_outline
+  - first:
+      213: -1520344009940046824
+    second: steamdeck_button_l5
+  - first:
+      213: -7618030966002641095
+    second: steamdeck_button_l5_outline
+  - first:
+      213: 2465443616605958576
+    second: steamdeck_button_options
+  - first:
+      213: -3885151743813196297
+    second: steamdeck_button_options_outline
+  - first:
+      213: 1686230096797608366
+    second: steamdeck_button_quickaccess
+  - first:
+      213: -2778405028710694071
+    second: steamdeck_button_quickaccess_outline
+  - first:
+      213: 2595986534768129428
+    second: steamdeck_button_r1
+  - first:
+      213: 5303694152615709088
+    second: steamdeck_button_r1_outline
+  - first:
+      213: -6664513816666867199
+    second: steamdeck_button_r2
+  - first:
+      213: -3507558104923350068
+    second: steamdeck_button_r2_outline
+  - first:
+      213: 3448861225867403022
+    second: steamdeck_button_r4
+  - first:
+      213: 3140857049314209631
+    second: steamdeck_button_r4_outline
+  - first:
+      213: 79574449294099813
+    second: steamdeck_button_r5
+  - first:
+      213: -7700157757071741606
+    second: steamdeck_button_r5_outline
+  - first:
+      213: -5639251511011652380
+    second: steamdeck_button_view
+  - first:
+      213: 3722910607368033627
+    second: steamdeck_button_view_outline
+  - first:
+      213: 7479814135762968236
+    second: steamdeck_button_x
+  - first:
+      213: -4417505716414781059
+    second: steamdeck_button_x_outline
+  - first:
+      213: -6602447524151702280
+    second: steamdeck_button_y
+  - first:
+      213: -7961823562768409165
+    second: steamdeck_button_y_outline
+  - first:
+      213: 4442627337421308112
+    second: steamdeck_dpad
+  - first:
+      213: -8017794813472367832
+    second: steamdeck_dpad_all
+  - first:
+      213: -2195319860157676566
+    second: steamdeck_dpad_down
+  - first:
+      213: 6857657650715330286
+    second: steamdeck_dpad_down_outline
+  - first:
+      213: 7723680238068105581
+    second: steamdeck_dpad_horizontal
+  - first:
+      213: -1505515353081896542
+    second: steamdeck_dpad_horizontal_outline
+  - first:
+      213: 8155502312573266376
+    second: steamdeck_dpad_left
+  - first:
+      213: 1109632609531521276
+    second: steamdeck_dpad_left_outline
+  - first:
+      213: 4378210727586803067
+    second: steamdeck_dpad_none
+  - first:
+      213: 8503388185408201858
+    second: steamdeck_dpad_right
+  - first:
+      213: -6614894055953665928
+    second: steamdeck_dpad_right_outline
+  - first:
+      213: 1104468614367825669
+    second: steamdeck_dpad_up
+  - first:
+      213: 5402414342489629037
+    second: steamdeck_dpad_up_outline
+  - first:
+      213: -3234161755108995929
+    second: steamdeck_dpad_vertical
+  - first:
+      213: -6037386800426634135
+    second: steamdeck_dpad_vertical_outline
+  - first:
+      213: 6507043694476275558
+    second: steamdeck_stick_l
+  - first:
+      213: -5250188356247416409
+    second: steamdeck_stick_l_down
+  - first:
+      213: 7561677511632118825
+    second: steamdeck_stick_l_horizontal
+  - first:
+      213: 6382186224088824124
+    second: steamdeck_stick_l_left
+  - first:
+      213: 1642960773934047721
+    second: steamdeck_stick_l_press
+  - first:
+      213: 4510905320129284600
+    second: steamdeck_stick_l_right
+  - first:
+      213: -1432654687337257266
+    second: steamdeck_stick_l_up
+  - first:
+      213: 7859973327835950754
+    second: steamdeck_stick_l_vertical
+  - first:
+      213: -8631558776006552658
+    second: steamdeck_stick_r
+  - first:
+      213: 3862764612443387511
+    second: steamdeck_stick_r_down
+  - first:
+      213: -4029123423264269454
+    second: steamdeck_stick_r_horizontal
+  - first:
+      213: -8581105131326475402
+    second: steamdeck_stick_r_left
+  - first:
+      213: 1798557754648947346
+    second: steamdeck_stick_r_press
+  - first:
+      213: 4495651130910948755
+    second: steamdeck_stick_r_right
+  - first:
+      213: 4421115263125990905
+    second: steamdeck_stick_r_up
+  - first:
+      213: 5005385026770651301
+    second: steamdeck_stick_r_vertical
+  - first:
+      213: -6439297015229513794
+    second: steamdeck_stick_side_l
+  - first:
+      213: -7029841349175922
+    second: steamdeck_stick_side_r
+  - first:
+      213: -7054887016296789939
+    second: steamdeck_stick_top_l
+  - first:
+      213: -4522055192318382621
+    second: steamdeck_stick_top_r
+  - first:
+      213: -7013200956214980701
+    second: steamdeck_trackpad
+  - first:
+      213: -5991540827372672809
+    second: steamdeck_trackpad_all
+  - first:
+      213: -2503883129675105850
+    second: steamdeck_trackpad_all_outline
+  - first:
+      213: -4834063241870406117
+    second: steamdeck_trackpad_down
+  - first:
+      213: 8100293684101639545
+    second: steamdeck_trackpad_down_outline
+  - first:
+      213: 8484472985789305589
+    second: steamdeck_trackpad_horizontal
+  - first:
+      213: 9124145803890281414
+    second: steamdeck_trackpad_horizontal_outline
+  - first:
+      213: 2177815596443027921
+    second: steamdeck_trackpad_l
+  - first:
+      213: 8043033139422971979
+    second: steamdeck_trackpad_l_all
+  - first:
+      213: 7311303030628972569
+    second: steamdeck_trackpad_l_all_outline
+  - first:
+      213: 4019072778317095166
+    second: steamdeck_trackpad_l_down
+  - first:
+      213: 6480774077188276263
+    second: steamdeck_trackpad_l_down_outline
+  - first:
+      213: 7851017197996349346
+    second: steamdeck_trackpad_l_horizontal
+  - first:
+      213: -807450819764422644
+    second: steamdeck_trackpad_l_horizontal_outline
+  - first:
+      213: -7599203780047968488
+    second: steamdeck_trackpad_l_left
+  - first:
+      213: -6282680042656385826
+    second: steamdeck_trackpad_l_left_outline
+  - first:
+      213: -2670452253685955189
+    second: steamdeck_trackpad_l_outline
+  - first:
+      213: 5186392203091441536
+    second: steamdeck_trackpad_l_right
+  - first:
+      213: 6240475821238814246
+    second: steamdeck_trackpad_l_right_outline
+  - first:
+      213: 6593490887278012482
+    second: steamdeck_trackpad_l_up
+  - first:
+      213: -2750065712148962653
+    second: steamdeck_trackpad_l_up_outline
+  - first:
+      213: 6861270068338121482
+    second: steamdeck_trackpad_l_vertical
+  - first:
+      213: -5694261258214720149
+    second: steamdeck_trackpad_l_vertical_outline
+  - first:
+      213: -6336942125699184619
+    second: steamdeck_trackpad_left
+  - first:
+      213: -7599933385693307412
+    second: steamdeck_trackpad_left_outline
+  - first:
+      213: 1539570221338376183
+    second: steamdeck_trackpad_outline
+  - first:
+      213: 8245021690446078276
+    second: steamdeck_trackpad_r
+  - first:
+      213: 6304744078706307782
+    second: steamdeck_trackpad_r_all
+  - first:
+      213: -2522329548366470657
+    second: steamdeck_trackpad_r_all_outline
+  - first:
+      213: 4466701211106837428
+    second: steamdeck_trackpad_r_down
+  - first:
+      213: -8730333427111344394
+    second: steamdeck_trackpad_r_down_outline
+  - first:
+      213: -1378057200426718906
+    second: steamdeck_trackpad_r_horizontal
+  - first:
+      213: 5834096613286000121
+    second: steamdeck_trackpad_r_horizontal_outline
+  - first:
+      213: 3129328259165907590
+    second: steamdeck_trackpad_r_left
+  - first:
+      213: 7587063326530572987
+    second: steamdeck_trackpad_r_left_outline
+  - first:
+      213: 6681984000440070075
+    second: steamdeck_trackpad_r_outline
+  - first:
+      213: -7648309603265989155
+    second: steamdeck_trackpad_r_right
+  - first:
+      213: 1434283228961291722
+    second: steamdeck_trackpad_r_right_outline
+  - first:
+      213: -3939255422184776116
+    second: steamdeck_trackpad_r_up
+  - first:
+      213: 3398531528858298736
+    second: steamdeck_trackpad_r_up_outline
+  - first:
+      213: 5065008847071366548
+    second: steamdeck_trackpad_r_vertical
+  - first:
+      213: -4949005928326951686
+    second: steamdeck_trackpad_r_vertical_outline
+  - first:
+      213: -4737445756242790735
+    second: steamdeck_trackpad_right
+  - first:
+      213: -5878972181457096814
+    second: steamdeck_trackpad_right_outline
+  - first:
+      213: 1014006493674757101
+    second: steamdeck_trackpad_up
+  - first:
+      213: -8902864558734117496
+    second: steamdeck_trackpad_up_outline
+  - first:
+      213: 8215826647695781797
+    second: steamdeck_trackpad_vertical
+  - first:
+      213: -5951173931293529663
+    second: steamdeck_trackpad_vertical_outline
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: controller_steamdeck
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7047fc17686da6c40800000000000000
+      internalID: 5506449367337235463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_button_a
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1ee46a0fcf1a8cc0800000000000000
+      internalID: -3708116369093104102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_button_a_outline
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54ae9d4a47d063030800000000000000
+      internalID: 3473978957196028485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_button_b
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f10faaefccc9295c0800000000000000
+      internalID: -4210130297378115553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_button_b_outline
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 309b2d46714814ee0800000000000000
+      internalID: -1278595583185864445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_button_guide
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9277808d1d513a100800000000000000
+      internalID: 117962006258546473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_button_guide_outline
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47a5f636efa4a1230800000000000000
+      internalID: 3610280507741264500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_button_l1
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbfa7ffc6c116cc70800000000000000
+      internalID: 8990893251682086847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_button_l1_outline
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f4899b0cbd235d20800000000000000
+      internalID: 3266004440445453561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_button_l2
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 729af0c8f41260450800000000000000
+      internalID: 6054563374582180135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_button_l2_outline
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e28fda4993a6252d0800000000000000
+      internalID: -3291451582114301906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_button_l4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d96fc1cde268a3450800000000000000
+      internalID: 6069310983654667933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_button_l4_outline
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20aa73523847601e0800000000000000
+      internalID: -2231968458701559294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_button_l5
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81c61279d27a6eae0800000000000000
+      internalID: -1520344009940046824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_button_l5_outline
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9379c7fc231574690800000000000000
+      internalID: -7618030966002641095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_button_options
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b17d8528e3073220800000000000000
+      internalID: 2465443616605958576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_button_options_outline
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f5668bc21b251ac0800000000000000
+      internalID: -3885151743813196297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_button_quickaccess
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea9a139c651b66710800000000000000
+      internalID: 1686230096797608366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_button_quickaccess_outline
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9434a85d85f1179d0800000000000000
+      internalID: -2778405028710694071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_button_r1
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4953d8ecffbc60420800000000000000
+      internalID: 2595986534768129428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_button_r1_outline
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a9c9fb4bb18a9940800000000000000
+      internalID: 5303694152615709088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_button_r2
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10a73ec6ef3e283a0800000000000000
+      internalID: -6664513816666867199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_button_r2_outline
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccb5007cc76a25fc0800000000000000
+      internalID: -3507558104923350068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_button_r4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0fd1771301dcdf20800000000000000
+      internalID: 3448861225867403022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_button_r4_outline
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5fa7aa68d0969b20800000000000000
+      internalID: 3140857049314209631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_button_r5
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5654f5f3a84ba1100800000000000000
+      internalID: 79574449294099813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_button_r5_outline
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5d254f215b832590800000000000000
+      internalID: -7700157757071741606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_button_view
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ecc017f0aa5db1b0800000000000000
+      internalID: -5639251511011652380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_button_view_outline
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5594baf87f6aa330800000000000000
+      internalID: 3722910607368033627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_button_x
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: caed814a353adc760800000000000000
+      internalID: 7479814135762968236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_button_x_outline
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d79e6d3b4fdd1b2c0800000000000000
+      internalID: -4417505716414781059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_button_y
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fcc7c245f46f54a0800000000000000
+      internalID: -6602447524151702280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_button_y_outline
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bd9ad837abe18190800000000000000
+      internalID: -7961823562768409165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_dpad
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d0cf6c760267ad30800000000000000
+      internalID: 4442627337421308112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_dpad_all
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82b9205e8121bb090800000000000000
+      internalID: -8017794813472367832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_dpad_down
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae301fee738a881e0800000000000000
+      internalID: -2195319860157676566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_dpad_down_outline
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee68026cc4b4b2f50800000000000000
+      internalID: 6857657650715330286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_dpad_horizontal
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6101c43146003b60800000000000000
+      internalID: 7723680238068105581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_dpad_horizontal_outline
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a128af43c55b1be0800000000000000
+      internalID: -1505515353081896542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_dpad_left
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c96ec1c42a2e2170800000000000000
+      internalID: 8155502312573266376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_dpad_left_outline
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf8e052baf4366f00800000000000000
+      internalID: 1109632609531521276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_dpad_none
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7dad91c57782cc30800000000000000
+      internalID: 4378210727586803067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_dpad_right
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2846282708a120670800000000000000
+      internalID: 8503388185408201858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_dpad_right_outline
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 870f90047ec2334a0800000000000000
+      internalID: -6614894055953665928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_dpad_up
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50f46f06a5cd35f00800000000000000
+      internalID: 1104468614367825669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_dpad_up_outline
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d61e195a83b39fa40800000000000000
+      internalID: 5402414342489629037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_dpad_vertical
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ac0390e403fd13d0800000000000000
+      internalID: -3234161755108995929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_dpad_vertical_outline
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96430f441b4e63ca0800000000000000
+      internalID: -6037386800426634135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_stick_l
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66f243ba3c9ad4a50800000000000000
+      internalID: 6507043694476275558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_stick_l_down
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a11bf5b1859327b0800000000000000
+      internalID: -5250188356247416409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_stick_l_horizontal
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92464e222a970f860800000000000000
+      internalID: 7561677511632118825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_stick_l_left
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c39b4397e84129850800000000000000
+      internalID: 6382186224088824124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_stick_l_press
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e16d3e7e18fcc610800000000000000
+      internalID: 1642960773934047721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_stick_l_right
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f9c9b52d74f99e30800000000000000
+      internalID: 4510905320129284600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_stick_l_up
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec6e67307203e1ce0800000000000000
+      internalID: -1432654687337257266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_stick_l_vertical
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2aee4b5091c341d60800000000000000
+      internalID: 7859973327835950754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_stick_r
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea35932760b863880800000000000000
+      internalID: -8631558776006552658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_stick_r_down
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77633aff2fb4b9530800000000000000
+      internalID: 3862764612443387511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_stick_r_horizontal
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27b9020089da518c0800000000000000
+      internalID: -4029123423264269454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_stick_r_left
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 673f003095ac9e880800000000000000
+      internalID: -8581105131326475402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_stick_r_press
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29aefd9afb2c5f810800000000000000
+      internalID: 1798557754648947346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_stick_r_right
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39db70472e2c36e30800000000000000
+      internalID: 4495651130910948755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_stick_r_up
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fdaea168e4fa5d30800000000000000
+      internalID: 4421115263125990905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_stick_r_vertical
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a849b48923b67540800000000000000
+      internalID: 5005385026770651301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_stick_side_l
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebff2044b7503a6a0800000000000000
+      internalID: -6439297015229513794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_stick_side_r
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e851e83856607eff0800000000000000
+      internalID: -7029841349175922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_stick_top_l
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d484d1713a1081e90800000000000000
+      internalID: -7054887016296789939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_stick_top_r
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ede62fe2ce6e31c0800000000000000
+      internalID: -4522055192318382621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_trackpad
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3af406a43ea1cae90800000000000000
+      internalID: -7013200956214980701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_trackpad_all
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d8a33fac55c9dca0800000000000000
+      internalID: -5991540827372672809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_trackpad_all_outline
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c93f984f8b604dd0800000000000000
+      internalID: -2503883129675105850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_trackpad_down
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1e8a8ee715f9ecb0800000000000000
+      internalID: -4834063241870406117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_trackpad_down_outline
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97de73140360a6070800000000000000
+      internalID: 8100293684101639545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_trackpad_horizontal
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f29e585a37eeb570800000000000000
+      internalID: 8484472985789305589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_trackpad_horizontal_outline
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6cb40cf444a7f9e70800000000000000
+      internalID: 9124145803890281414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_trackpad_l
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d9ca441fb7293e10800000000000000
+      internalID: 2177815596443027921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_trackpad_l_all
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b484008c6089e9f60800000000000000
+      internalID: 8043033139422971979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_trackpad_l_all_outline
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91870e19e57f67560800000000000000
+      internalID: 7311303030628972569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_trackpad_l_down
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef0680ed56d96c730800000000000000
+      internalID: 4019072778317095166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_trackpad_l_down_outline
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7200e54cfa550f950800000000000000
+      internalID: 6480774077188276263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_trackpad_l_horizontal
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a71e0c8b8a64fc60800000000000000
+      internalID: 7851017197996349346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_trackpad_l_horizontal_outline
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c08f75ae1cb5bc4f0800000000000000
+      internalID: -807450819764422644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_trackpad_l_left
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8176f62ac643a8690800000000000000
+      internalID: -7599203780047968488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_trackpad_l_left_outline
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed4b70cc9cf6fc8a0800000000000000
+      internalID: -6282680042656385826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_trackpad_l_outline
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b85486de2d5a0fad0800000000000000
+      internalID: -2670452253685955189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_trackpad_l_right
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 087fe13ea34c9f740800000000000000
+      internalID: 5186392203091441536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_trackpad_l_right_outline
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6268a5a22bf9a9650800000000000000
+      internalID: 6240475821238814246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_trackpad_l_up
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2482bf53709c08b50800000000000000
+      internalID: 6593490887278012482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_trackpad_l_up_outline
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a221662ecdc5d9d0800000000000000
+      internalID: -2750065712148962653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_trackpad_l_vertical
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0b505b46c0283f50800000000000000
+      internalID: 6861270068338121482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_trackpad_l_vertical_outline
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6db7dd1e8be9f0b0800000000000000
+      internalID: -5694261258214720149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_trackpad_left
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 518cd7316b8ae08a0800000000000000
+      internalID: -6336942125699184619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_trackpad_left_outline
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ced5e151adc978690800000000000000
+      internalID: -7599933385693307412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_trackpad_outline
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f7b4a595f6ad5510800000000000000
+      internalID: 1539570221338376183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_trackpad_r
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 441ed602b833c6270800000000000000
+      internalID: 8245021690446078276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_trackpad_r_all
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c2790be553fe7750800000000000000
+      internalID: 6304744078706307782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_trackpad_r_all_outline
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff1252fb3a2eefcd0800000000000000
+      internalID: -2522329548366470657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_trackpad_r_down
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b384ddf519ecfd30800000000000000
+      internalID: 4466701211106837428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_trackpad_r_down_outline
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f64f4ad000a7d680800000000000000
+      internalID: -8730333427111344394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_trackpad_r_horizontal
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 576
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6496568074820ece0800000000000000
+      internalID: -1378057200426718906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_trackpad_r_horizontal_outline
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 576
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f5b83c95ffd6f050800000000000000
+      internalID: 5834096613286000121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_trackpad_r_left
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 576
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68aec29c87b9d6b20800000000000000
+      internalID: 3129328259165907590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_trackpad_r_left_outline
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 576
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb29f32c5e9aa4960800000000000000
+      internalID: 7587063326530572987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_trackpad_r_outline
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 576
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbfe215bb0d2bbc50800000000000000
+      internalID: 6681984000440070075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_trackpad_r_right
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 576
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd53f1530febbd590800000000000000
+      internalID: -7648309603265989155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_trackpad_r_right_outline
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 576
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: acdb9816ff897e310800000000000000
+      internalID: 1434283228961291722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_trackpad_r_up
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 576
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4e15298014f459c0800000000000000
+      internalID: -3939255422184776116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_trackpad_r_up_outline
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 576
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07960975b620a2f20800000000000000
+      internalID: 3398531528858298736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_trackpad_r_vertical
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 576
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49d46e9f5b68a4640800000000000000
+      internalID: 5065008847071366548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_trackpad_r_vertical_outline
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 576
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afc05c24459915bb0800000000000000
+      internalID: -4949005928326951686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_trackpad_right
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 640
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b6777c4f26314eb0800000000000000
+      internalID: -4737445756242790735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_trackpad_right_outline
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 640
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29fa8d7f2f1b96ea0800000000000000
+      internalID: -5878972181457096814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_trackpad_up
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 640
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: deb5c679889721e00800000000000000
+      internalID: 1014006493674757101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_trackpad_up_outline
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 640
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 885fc3d6adba27480800000000000000
+      internalID: -8902864558734117496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_trackpad_vertical
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 640
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5af68188eca740270800000000000000
+      internalID: 8215826647695781797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: steamdeck_trackpad_vertical_outline
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 640
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c92fa417de296da0800000000000000
+      internalID: -5951173931293529663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      controller_steamdeck: 5506449367337235463
+      sprite_0_0: 110063094613122208
+      sprite_0_1: 8399387991679549355
+      sprite_0_10: -7490711298880907892
+      sprite_0_2: -4644540916198862998
+      sprite_0_3: -4795043959955871156
+      sprite_0_4: -3494256285842108209
+      sprite_0_5: -5524089854009648592
+      sprite_0_6: -5032015725130632474
+      sprite_0_7: -3762007740097770628
+      sprite_0_8: -442952854566836046
+      sprite_0_9: 7449611078251265577
+      sprite_10_0: -8806758135501145626
+      sprite_10_1: -5797769036844628390
+      sprite_10_10: -6461861319048632508
+      sprite_10_2: -5228443798459094756
+      sprite_10_3: -2067932657631518299
+      sprite_10_4: -2255947436022582961
+      sprite_10_5: 3011080095608812188
+      sprite_10_6: -232618856130532013
+      sprite_10_7: 5618039822078966870
+      sprite_10_8: 3729040108675229550
+      sprite_10_9: -6748669063257076613
+      sprite_1_0: 2057516106615078274
+      sprite_1_1: -3990764489541251346
+      sprite_1_10: -3960458611283728488
+      sprite_1_2: 2978055984150173501
+      sprite_1_3: 4374436090087825753
+      sprite_1_4: -1865975103405758949
+      sprite_1_5: 5447755235192734056
+      sprite_1_6: -3110548652233145160
+      sprite_1_7: 7979798665319425048
+      sprite_1_8: 3795189196210715292
+      sprite_1_9: 6537814790955566056
+      sprite_2_0: -6981641179300335697
+      sprite_2_1: 5742541816403897934
+      sprite_2_10: 1660699091727894837
+      sprite_2_2: -8331909182945598094
+      sprite_2_3: 1207572534422275166
+      sprite_2_4: -1174721704435091041
+      sprite_2_5: -831797182033384550
+      sprite_2_6: 4201033612598326047
+      sprite_2_7: -5438098755237914677
+      sprite_2_8: -3430383360923295238
+      sprite_2_9: 5693804674990935894
+      sprite_3_0: 1084495889696105424
+      sprite_3_1: 2225496213262365376
+      sprite_3_10: 3628538370435145474
+      sprite_3_2: 6070790015296760343
+      sprite_3_3: -5552441862961074652
+      sprite_3_4: 4126841619327464038
+      sprite_3_5: 6701578291882550839
+      sprite_3_6: 1379774504831001170
+      sprite_3_7: -353060106142312252
+      sprite_3_8: -1617550654123617344
+      sprite_3_9: -3360491542619311557
+      sprite_4_0: 2656255634667553426
+      sprite_4_1: -4387813859171883846
+      sprite_4_10: -7232892291580652627
+      sprite_4_2: -6328221562859427745
+      sprite_4_3: -6764491227458556459
+      sprite_4_4: -9059321819315327527
+      sprite_4_5: -7952709348867360171
+      sprite_4_6: -7893236458845504506
+      sprite_4_7: 8239836883484367612
+      sprite_4_8: -1659035041894168371
+      sprite_4_9: -7847834464468981922
+      sprite_5_0: 8953997984617710940
+      sprite_5_1: -2165872854936334853
+      sprite_5_10: 622788194402815628
+      sprite_5_2: 8660193878091718147
+      sprite_5_3: -3250759276719717477
+      sprite_5_4: 8117653193126307452
+      sprite_5_5: 6376701905813710359
+      sprite_5_6: -5813761523256347358
+      sprite_5_7: 4694203381176120083
+      sprite_5_8: -1586622663987341286
+      sprite_5_9: -2987848764911352829
+      sprite_6_0: 1342954271244971394
+      sprite_6_1: -1952839295128420913
+      sprite_6_10: 590035961193771409
+      sprite_6_2: -3517363695250348696
+      sprite_6_3: 2544647057885112343
+      sprite_6_4: 8387776498321157292
+      sprite_6_5: -2009650311522802456
+      sprite_6_6: 4027753786967920556
+      sprite_6_7: -6899632942315091753
+      sprite_6_8: -2394323425602237399
+      sprite_6_9: 3010546239958388101
+      sprite_7_0: 4571690783039372443
+      sprite_7_1: -6966581239616719117
+      sprite_7_10: -1571227114132020232
+      sprite_7_2: -2785933153741337980
+      sprite_7_3: 815498800105216816
+      sprite_7_4: -2289449078155842138
+      sprite_7_5: -7221745212296072410
+      sprite_7_6: -508201043793987729
+      sprite_7_7: -6803456169456466250
+      sprite_7_8: -6702668351367279553
+      sprite_7_9: 3065536094097787862
+      sprite_8_0: -3861509453359391609
+      sprite_8_1: -6801387276256787727
+      sprite_8_10: -8989005256537931782
+      sprite_8_2: 7395423254468366642
+      sprite_8_3: -7019313587647542253
+      sprite_8_4: -7278835321006384102
+      sprite_8_5: 8825099625217958376
+      sprite_8_6: 2547361843558278568
+      sprite_8_7: -3117219249948475067
+      sprite_8_8: 1920867639296375943
+      sprite_8_9: -2152523833676734928
+      sprite_9_0: 1830147033117497494
+      sprite_9_1: -3858311815166785654
+      sprite_9_10: 8544313906409600615
+      sprite_9_2: -7938828410451353080
+      sprite_9_3: -5027637434861748301
+      sprite_9_4: -5289545989597829017
+      sprite_9_5: 7077530917396052021
+      sprite_9_6: 7503335287090482069
+      sprite_9_7: 3381113449545255794
+      sprite_9_8: 2217703112298958091
+      sprite_9_9: 8856933986315407574
+      steam-deck_sheet_default_0: -8447844428051056685
+      steam-deck_sheet_default_1: 5879630199439865879
+      steam-deck_sheet_default_10: -8833355680496502906
+      steam-deck_sheet_default_100: 2612467129396310250
+      steam-deck_sheet_default_101: -2122775484310955037
+      steam-deck_sheet_default_102: -4121979616130857350
+      steam-deck_sheet_default_103: -1685006476283379345
+      steam-deck_sheet_default_104: -498957805109497268
+      steam-deck_sheet_default_105: -963462515488798059
+      steam-deck_sheet_default_106: 5022839956632803906
+      steam-deck_sheet_default_107: 8763414712040754355
+      steam-deck_sheet_default_108: 6083847026109953024
+      steam-deck_sheet_default_109: -8595527897370305326
+      steam-deck_sheet_default_11: -4247314480386133724
+      steam-deck_sheet_default_110: -4467137478442969511
+      steam-deck_sheet_default_111: 1403664696366607790
+      steam-deck_sheet_default_112: -7685270295912061806
+      steam-deck_sheet_default_113: -1089931187287428009
+      steam-deck_sheet_default_114: 3227024094263318028
+      steam-deck_sheet_default_115: -1345649250366023359
+      steam-deck_sheet_default_116: 531736924870390257
+      steam-deck_sheet_default_117: -5382584926035943355
+      steam-deck_sheet_default_118: -7042204810290081215
+      steam-deck_sheet_default_119: -1205284160870635352
+      steam-deck_sheet_default_12: -7932105600784780417
+      steam-deck_sheet_default_120: 9177555577881161746
+      steam-deck_sheet_default_121: 1878660284659293770
+      steam-deck_sheet_default_122: 6195518408683607025
+      steam-deck_sheet_default_123: -4271685805035148321
+      steam-deck_sheet_default_124: -6430522339742351025
+      steam-deck_sheet_default_125: -7273337661806668429
+      steam-deck_sheet_default_126: 7672190217005086537
+      steam-deck_sheet_default_127: 3068869742913394971
+      steam-deck_sheet_default_128: 5224379130823499783
+      steam-deck_sheet_default_129: -8854612579269469794
+      steam-deck_sheet_default_13: 3633778103675858731
+      steam-deck_sheet_default_130: 6596621408035423326
+      steam-deck_sheet_default_131: 3709193266321972561
+      steam-deck_sheet_default_132: -7615908817684640713
+      steam-deck_sheet_default_133: 7043477552229557676
+      steam-deck_sheet_default_134: -8738730315414434705
+      steam-deck_sheet_default_135: -7093549830006375252
+      steam-deck_sheet_default_136: 7151154253633579160
+      steam-deck_sheet_default_137: 4861042506873559535
+      steam-deck_sheet_default_138: -272494596951852300
+      steam-deck_sheet_default_139: -4325014552808226828
+      steam-deck_sheet_default_14: -7698020000869080913
+      steam-deck_sheet_default_140: -726355362884574834
+      steam-deck_sheet_default_141: -2063026422181516062
+      steam-deck_sheet_default_142: 3996819463923917053
+      steam-deck_sheet_default_143: -3415420192742913721
+      steam-deck_sheet_default_144: 3489619563373062047
+      steam-deck_sheet_default_145: 5180257329205453037
+      steam-deck_sheet_default_146: 5003064013061040656
+      steam-deck_sheet_default_147: 5672001151201648746
+      steam-deck_sheet_default_148: 7414057307787783129
+      steam-deck_sheet_default_149: 7361194988652954402
+      steam-deck_sheet_default_15: -3713402258253579142
+      steam-deck_sheet_default_150: 6711581753018956121
+      steam-deck_sheet_default_151: 4473238673483501200
+      steam-deck_sheet_default_152: 4108391284281253143
+      steam-deck_sheet_default_153: 1988730515550336940
+      steam-deck_sheet_default_154: 1670242457175054531
+      steam-deck_sheet_default_155: 6748357074236996513
+      steam-deck_sheet_default_156: 6649454038968575746
+      steam-deck_sheet_default_157: -2741321228014731015
+      steam-deck_sheet_default_158: 1024935459971050974
+      steam-deck_sheet_default_159: 3799049874325459608
+      steam-deck_sheet_default_16: 6513437833621511949
+      steam-deck_sheet_default_160: -7022094851020614590
+      steam-deck_sheet_default_161: 7719735395205150437
+      steam-deck_sheet_default_162: 6032930659502545983
+      steam-deck_sheet_default_163: 828776868026999305
+      steam-deck_sheet_default_164: 7286757363741182539
+      steam-deck_sheet_default_165: -7422615196404259230
+      steam-deck_sheet_default_166: -3697741763648729858
+      steam-deck_sheet_default_167: -7633798584450526066
+      steam-deck_sheet_default_168: 7458952526125308390
+      steam-deck_sheet_default_169: -4349156367338267169
+      steam-deck_sheet_default_17: -3551912115433873413
+      steam-deck_sheet_default_170: 6840063522984670825
+      steam-deck_sheet_default_171: 8175261240365413199
+      steam-deck_sheet_default_172: -932714419108561507
+      steam-deck_sheet_default_173: -8314793265360510524
+      steam-deck_sheet_default_174: 2218179480995210263
+      steam-deck_sheet_default_175: -7657341206827215857
+      steam-deck_sheet_default_176: 4839332003391711683
+      steam-deck_sheet_default_177: -820711168038710395
+      steam-deck_sheet_default_178: 5537112945066321114
+      steam-deck_sheet_default_179: -7794832031599148123
+      steam-deck_sheet_default_18: -5236392312593238893
+      steam-deck_sheet_default_180: 5332015156358170996
+      steam-deck_sheet_default_181: -2539037506623262396
+      steam-deck_sheet_default_182: 3886622973894786714
+      steam-deck_sheet_default_183: -8611801994904719663
+      steam-deck_sheet_default_184: -3579728649792766022
+      steam-deck_sheet_default_185: -2517976220677350608
+      steam-deck_sheet_default_186: -3002278364804031478
+      steam-deck_sheet_default_187: -4497151121048570288
+      steam-deck_sheet_default_188: 5150314845777956143
+      steam-deck_sheet_default_189: -2589137304865417625
+      steam-deck_sheet_default_19: -4739942014485683998
+      steam-deck_sheet_default_190: 6986038191703079319
+      steam-deck_sheet_default_191: -3117052153837547960
+      steam-deck_sheet_default_192: -3779628336014209721
+      steam-deck_sheet_default_193: 6213120749922823756
+      steam-deck_sheet_default_194: 7887592060778299211
+      steam-deck_sheet_default_195: 260962242415651883
+      steam-deck_sheet_default_196: -5929286767175312515
+      steam-deck_sheet_default_197: -3749467031122217452
+      steam-deck_sheet_default_198: 7803185986100367453
+      steam-deck_sheet_default_199: -5256063789852954825
+      steam-deck_sheet_default_2: 8379654388990219998
+      steam-deck_sheet_default_20: 8423154231138270203
+      steam-deck_sheet_default_200: 2002624915936396968
+      steam-deck_sheet_default_201: 6655849426573915156
+      steam-deck_sheet_default_202: 6923986687810489649
+      steam-deck_sheet_default_203: 899826680406731171
+      steam-deck_sheet_default_204: 8162005151174283718
+      steam-deck_sheet_default_205: -6208172696178652735
+      steam-deck_sheet_default_206: -711223320711261135
+      steam-deck_sheet_default_207: -9042330607961836302
+      steam-deck_sheet_default_208: 2104234129872119303
+      steam-deck_sheet_default_209: -4568085503836592069
+      steam-deck_sheet_default_21: -5350965515051340106
+      steam-deck_sheet_default_210: -1840491609918923895
+      steam-deck_sheet_default_211: 1387200237270332752
+      steam-deck_sheet_default_212: -284867087438753856
+      steam-deck_sheet_default_213: -221811419209462477
+      steam-deck_sheet_default_214: -5124158776957617108
+      steam-deck_sheet_default_215: 7498457994092856219
+      steam-deck_sheet_default_216: -6214977313511611718
+      steam-deck_sheet_default_217: 8252784433169486804
+      steam-deck_sheet_default_218: -6717311285484035376
+      steam-deck_sheet_default_219: -1026964403528608990
+      steam-deck_sheet_default_22: -7818031975797296249
+      steam-deck_sheet_default_220: 6859687964451823440
+      steam-deck_sheet_default_221: 2782147332981956897
+      steam-deck_sheet_default_222: -1682172835441957618
+      steam-deck_sheet_default_223: 2066893381880928624
+      steam-deck_sheet_default_224: 8552825278281554391
+      steam-deck_sheet_default_225: 2902492291853240389
+      steam-deck_sheet_default_226: -9056095650987662123
+      steam-deck_sheet_default_227: -5610225738274767434
+      steam-deck_sheet_default_228: -1320945040864240230
+      steam-deck_sheet_default_229: -6935716074158066472
+      steam-deck_sheet_default_23: -3131512285787862813
+      steam-deck_sheet_default_24: 4786754800835715582
+      steam-deck_sheet_default_25: 3169774132303823298
+      steam-deck_sheet_default_26: -2641445783255274301
+      steam-deck_sheet_default_27: 4861405781519051371
+      steam-deck_sheet_default_28: 4939426049773343496
+      steam-deck_sheet_default_29: 5322701832660287430
+      steam-deck_sheet_default_3: -525696858663024680
+      steam-deck_sheet_default_30: 7757998753673285309
+      steam-deck_sheet_default_31: -7494020345476234830
+      steam-deck_sheet_default_32: 3367141196790539953
+      steam-deck_sheet_default_33: 6879748655549639017
+      steam-deck_sheet_default_34: 126434865811436196
+      steam-deck_sheet_default_35: -8942786884045835712
+      steam-deck_sheet_default_36: -929621406536003007
+      steam-deck_sheet_default_37: -6055136200411724898
+      steam-deck_sheet_default_38: -8785827421441833979
+      steam-deck_sheet_default_39: 1609615367165146757
+      steam-deck_sheet_default_4: -8893034068114682675
+      steam-deck_sheet_default_40: 3381847724569375623
+      steam-deck_sheet_default_41: -8003700086478726074
+      steam-deck_sheet_default_42: -4650618915763651912
+      steam-deck_sheet_default_43: 8064084087006140111
+      steam-deck_sheet_default_44: -8308248360722242899
+      steam-deck_sheet_default_45: -580466909845506459
+      steam-deck_sheet_default_46: -5669631747749074843
+      steam-deck_sheet_default_47: 6787837942539856718
+      steam-deck_sheet_default_48: 8111063833100306877
+      steam-deck_sheet_default_49: -4471519697014460089
+      steam-deck_sheet_default_5: 1237322898382094418
+      steam-deck_sheet_default_50: -1982264707646225205
+      steam-deck_sheet_default_51: -728238191170872849
+      steam-deck_sheet_default_52: -1955713503920846681
+      steam-deck_sheet_default_53: 4580701401110923961
+      steam-deck_sheet_default_54: -6343581369935673540
+      steam-deck_sheet_default_55: -9018092029001315690
+      steam-deck_sheet_default_56: 6031777916718003613
+      steam-deck_sheet_default_57: -7669199652756566460
+      steam-deck_sheet_default_58: 4927340297182777616
+      steam-deck_sheet_default_59: -702651783970683957
+      steam-deck_sheet_default_6: -755093750409238604
+      steam-deck_sheet_default_60: -8009542284282901401
+      steam-deck_sheet_default_61: 702209049789077360
+      steam-deck_sheet_default_62: 8897188108197129172
+      steam-deck_sheet_default_63: 3563869577533753368
+      steam-deck_sheet_default_64: -5508488368393670655
+      steam-deck_sheet_default_65: 353844145425883786
+      steam-deck_sheet_default_66: 4371570671094270646
+      steam-deck_sheet_default_67: -8082905519803118079
+      steam-deck_sheet_default_68: 4620893808704448768
+      steam-deck_sheet_default_69: -8951273113788900625
+      steam-deck_sheet_default_7: -2578100598545468475
+      steam-deck_sheet_default_70: 2055022580343980286
+      steam-deck_sheet_default_71: 8630156918309068174
+      steam-deck_sheet_default_72: -8576117188599768760
+      steam-deck_sheet_default_73: -611414627885273957
+      steam-deck_sheet_default_74: -7683337096944532275
+      steam-deck_sheet_default_75: -3687646699488926278
+      steam-deck_sheet_default_76: 1214737913218797208
+      steam-deck_sheet_default_77: -5096273514352294481
+      steam-deck_sheet_default_78: -8177712476500386300
+      steam-deck_sheet_default_79: -909765102063568363
+      steam-deck_sheet_default_8: -2574745327688423580
+      steam-deck_sheet_default_80: 4737740772757837273
+      steam-deck_sheet_default_81: 1003827073468895730
+      steam-deck_sheet_default_82: -6780535102972333966
+      steam-deck_sheet_default_83: -8210412791541513944
+      steam-deck_sheet_default_84: -4749393021254581508
+      steam-deck_sheet_default_85: 6876248634519473255
+      steam-deck_sheet_default_86: 4603598702435672744
+      steam-deck_sheet_default_87: 148785904520576012
+      steam-deck_sheet_default_88: 5562549397896772221
+      steam-deck_sheet_default_89: 6312394531528699065
+      steam-deck_sheet_default_9: 7189151968922434194
+      steam-deck_sheet_default_90: 3152224826091004499
+      steam-deck_sheet_default_91: 7840537801984837849
+      steam-deck_sheet_default_92: -5336904925834862358
+      steam-deck_sheet_default_93: -5938432807079665537
+      steam-deck_sheet_default_94: -2739808565498424860
+      steam-deck_sheet_default_95: 14997381139661283
+      steam-deck_sheet_default_96: 3291569156672426145
+      steam-deck_sheet_default_97: -4675645333562134159
+      steam-deck_sheet_default_98: -8004500307208582813
+      steam-deck_sheet_default_99: -277227647629311272
+      steamdeck_button_a: -3708116369093104102
+      steamdeck_button_a_outline: 3473978957196028485
+      steamdeck_button_b: -4210130297378115553
+      steamdeck_button_b_outline: -1278595583185864445
+      steamdeck_button_guide: 117962006258546473
+      steamdeck_button_guide_outline: 3610280507741264500
+      steamdeck_button_l1: 8990893251682086847
+      steamdeck_button_l1_outline: 3266004440445453561
+      steamdeck_button_l2: 6054563374582180135
+      steamdeck_button_l2_outline: -3291451582114301906
+      steamdeck_button_l4: 6069310983654667933
+      steamdeck_button_l4_outline: -2231968458701559294
+      steamdeck_button_l5: -1520344009940046824
+      steamdeck_button_l5_outline: -7618030966002641095
+      steamdeck_button_options: 2465443616605958576
+      steamdeck_button_options_outline: -3885151743813196297
+      steamdeck_button_quickaccess: 1686230096797608366
+      steamdeck_button_quickaccess_outline: -2778405028710694071
+      steamdeck_button_r1: 2595986534768129428
+      steamdeck_button_r1_outline: 5303694152615709088
+      steamdeck_button_r2: -6664513816666867199
+      steamdeck_button_r2_outline: -3507558104923350068
+      steamdeck_button_r4: 3448861225867403022
+      steamdeck_button_r4_outline: 3140857049314209631
+      steamdeck_button_r5: 79574449294099813
+      steamdeck_button_r5_outline: -7700157757071741606
+      steamdeck_button_view: -5639251511011652380
+      steamdeck_button_view_outline: 3722910607368033627
+      steamdeck_button_x: 7479814135762968236
+      steamdeck_button_x_outline: -4417505716414781059
+      steamdeck_button_y: -6602447524151702280
+      steamdeck_button_y_outline: -7961823562768409165
+      steamdeck_dpad: 4442627337421308112
+      steamdeck_dpad_all: -8017794813472367832
+      steamdeck_dpad_down: -2195319860157676566
+      steamdeck_dpad_down_outline: 6857657650715330286
+      steamdeck_dpad_horizontal: 7723680238068105581
+      steamdeck_dpad_horizontal_outline: -1505515353081896542
+      steamdeck_dpad_left: 8155502312573266376
+      steamdeck_dpad_left_outline: 1109632609531521276
+      steamdeck_dpad_none: 4378210727586803067
+      steamdeck_dpad_right: 8503388185408201858
+      steamdeck_dpad_right_outline: -6614894055953665928
+      steamdeck_dpad_up: 1104468614367825669
+      steamdeck_dpad_up_outline: 5402414342489629037
+      steamdeck_dpad_vertical: -3234161755108995929
+      steamdeck_dpad_vertical_outline: -6037386800426634135
+      steamdeck_stick_l: 6507043694476275558
+      steamdeck_stick_l_down: -5250188356247416409
+      steamdeck_stick_l_horizontal: 7561677511632118825
+      steamdeck_stick_l_left: 6382186224088824124
+      steamdeck_stick_l_press: 1642960773934047721
+      steamdeck_stick_l_right: 4510905320129284600
+      steamdeck_stick_l_up: -1432654687337257266
+      steamdeck_stick_l_vertical: 7859973327835950754
+      steamdeck_stick_r: -8631558776006552658
+      steamdeck_stick_r_down: 3862764612443387511
+      steamdeck_stick_r_horizontal: -4029123423264269454
+      steamdeck_stick_r_left: -8581105131326475402
+      steamdeck_stick_r_press: 1798557754648947346
+      steamdeck_stick_r_right: 4495651130910948755
+      steamdeck_stick_r_up: 4421115263125990905
+      steamdeck_stick_r_vertical: 5005385026770651301
+      steamdeck_stick_side_l: -6439297015229513794
+      steamdeck_stick_side_r: -7029841349175922
+      steamdeck_stick_top_l: -7054887016296789939
+      steamdeck_stick_top_r: -4522055192318382621
+      steamdeck_trackpad: -7013200956214980701
+      steamdeck_trackpad_all: -5991540827372672809
+      steamdeck_trackpad_all_outline: -2503883129675105850
+      steamdeck_trackpad_down: -4834063241870406117
+      steamdeck_trackpad_down_outline: 8100293684101639545
+      steamdeck_trackpad_horizontal: 8484472985789305589
+      steamdeck_trackpad_horizontal_outline: 9124145803890281414
+      steamdeck_trackpad_l: 2177815596443027921
+      steamdeck_trackpad_l_all: 8043033139422971979
+      steamdeck_trackpad_l_all_outline: 7311303030628972569
+      steamdeck_trackpad_l_down: 4019072778317095166
+      steamdeck_trackpad_l_down_outline: 6480774077188276263
+      steamdeck_trackpad_l_horizontal: 7851017197996349346
+      steamdeck_trackpad_l_horizontal_outline: -807450819764422644
+      steamdeck_trackpad_l_left: -7599203780047968488
+      steamdeck_trackpad_l_left_outline: -6282680042656385826
+      steamdeck_trackpad_l_outline: -2670452253685955189
+      steamdeck_trackpad_l_right: 5186392203091441536
+      steamdeck_trackpad_l_right_outline: 6240475821238814246
+      steamdeck_trackpad_l_up: 6593490887278012482
+      steamdeck_trackpad_l_up_outline: -2750065712148962653
+      steamdeck_trackpad_l_vertical: 6861270068338121482
+      steamdeck_trackpad_l_vertical_outline: -5694261258214720149
+      steamdeck_trackpad_left: -6336942125699184619
+      steamdeck_trackpad_left_outline: -7599933385693307412
+      steamdeck_trackpad_outline: 1539570221338376183
+      steamdeck_trackpad_r: 8245021690446078276
+      steamdeck_trackpad_r_all: 6304744078706307782
+      steamdeck_trackpad_r_all_outline: -2522329548366470657
+      steamdeck_trackpad_r_down: 4466701211106837428
+      steamdeck_trackpad_r_down_outline: -8730333427111344394
+      steamdeck_trackpad_r_horizontal: -1378057200426718906
+      steamdeck_trackpad_r_horizontal_outline: 5834096613286000121
+      steamdeck_trackpad_r_left: 3129328259165907590
+      steamdeck_trackpad_r_left_outline: 7587063326530572987
+      steamdeck_trackpad_r_outline: 6681984000440070075
+      steamdeck_trackpad_r_right: -7648309603265989155
+      steamdeck_trackpad_r_right_outline: 1434283228961291722
+      steamdeck_trackpad_r_up: -3939255422184776116
+      steamdeck_trackpad_r_up_outline: 3398531528858298736
+      steamdeck_trackpad_r_vertical: 5065008847071366548
+      steamdeck_trackpad_r_vertical_outline: -4949005928326951686
+      steamdeck_trackpad_right: -4737445756242790735
+      steamdeck_trackpad_right_outline: -5878972181457096814
+      steamdeck_trackpad_up: 1014006493674757101
+      steamdeck_trackpad_up_outline: -8902864558734117496
+      steamdeck_trackpad_vertical: 8215826647695781797
+      steamdeck_trackpad_vertical_outline: -5951173931293529663
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

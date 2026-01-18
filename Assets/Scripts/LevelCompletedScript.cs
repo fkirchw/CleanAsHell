@@ -9,6 +9,8 @@ public class LevelCompletedScript : MonoBehaviour
     private GameObject playerObject;
     [SerializeField] private GameObject visualPanel;
     [SerializeField] private GameObject victoryPanelPrefab;
+    [SerializeField] private bool alwaysShowS;
+    [SerializeField] private bool resetStateAfterLevel;
     private bool menuShown = false;
     private bool sceneLoading = false;
     private float levelStartTime;
@@ -56,15 +58,15 @@ public class LevelCompletedScript : MonoBehaviour
 
     private int CountAllEnemiesInLevel()
     {
-        // Caută toate obiectele cu tag-ul "Enemy"
+        // Find all objects with the "Enemy" tag
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         
-        // Filtrează doar părinții unici
+        // Filter only unique parents
         List<GameObject> uniqueEnemies = new List<GameObject>();
         
         foreach (GameObject enemy in enemies)
         {
-            // Găsește obiectul părinte (rădăcina ierarhiei)
+            // Find the parent object (root of the hierarchy)
             Transform root = enemy.transform;
             while (root.parent != null && root.parent.CompareTag("Enemy"))
             {
@@ -141,22 +143,26 @@ public class LevelCompletedScript : MonoBehaviour
         if (visualPanel == null || LevelStateManager.Instance == null) return;
 
         string timeFormatted = GetFormattedTime();
-        float bloodScore = LevelStateManager.Instance.GetCurrentLevelBloodCounter(); // Schimbat aici
+        float bloodScore = LevelStateManager.Instance.GetCurrentLevelBloodCounter(); // Changed here
         float cleanedScore = LevelStateManager.Instance.GetLevelCleaned();
         int enemiesKilled = LevelStateManager.Instance.GetEnemiesKilled();
         string enemiesFormatted = $"{enemiesKilled}/{totalEnemiesInLevel}";
         
-        // Calculăm scorul total cu formula complexă
+        // Calculate total score with complex formula
         float timeMultiplier = CalculateTimeMultiplier();
         float enemyMultiplier = CalculateEnemyMultiplier(enemiesKilled);
         float cleanedMultiplier = CalculateCleanedMultiplier(cleanedScore);
         
-        // FORMULA MODIFICATĂ: Fără bloodScore în calculul notei
-        // Doar inamicii contează pentru notă, fiecare inactiv dă 100 puncte
+        // MODIFIED FORMULA: Without bloodScore in grade calculation
+        // Only enemies count for grade, each inactive one gives 100 points
         float totalScore = enemiesKilled * 100 * timeMultiplier * enemyMultiplier * cleanedMultiplier;
         
-        // Obținem gradul bazat pe scor
-        string grade = CalculateGrade(totalScore);
+        // Get grade based on score
+        string grade = "S";
+        if (!alwaysShowS) // Shows S regardless of values. For tutorial.
+        {
+            grade = CalculateGrade(totalScore);
+        }
 
         SetTextIfExists("TotalTimeScore", timeFormatted);
         SetTextIfExists("TotalBloodScore", bloodScore.ToString("F0"));
@@ -203,7 +209,7 @@ public class LevelCompletedScript : MonoBehaviour
 
     private string CalculateGrade(float totalScore)
     {
-        // Grade ajustate pentru noua formulă fără bloodScore
+        // Grades adjusted for new formula without bloodScore
         if (totalScore >= 1200f) return "S";
         if (totalScore >= 1000f) return "A+";
         if (totalScore >= 900f) return "A";
@@ -277,6 +283,12 @@ public class LevelCompletedScript : MonoBehaviour
         if (sceneLoading) return;
         
         sceneLoading = true;
+        
+        if(resetStateAfterLevel)
+        {
+            LevelStateManager.Instance.ResetAllGameData();
+        }
+        
         StartCoroutine(LoadNextLevelAsync());
     }
     

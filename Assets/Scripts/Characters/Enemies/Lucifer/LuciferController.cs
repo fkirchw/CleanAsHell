@@ -254,6 +254,11 @@ namespace Characters.Enemies
             }
         }
 
+        public int GetMaxHealth()
+        {
+            return (int)MAX_HEALTH;
+        }
+
         private void OnFinishedDeathAniEvent()
         {
             Destroy(gameObject);

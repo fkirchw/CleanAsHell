@@ -7,6 +7,7 @@ Shader "Custom/TilemapBlood"
         _BloodTexture ("Blood Splatter Pattern", 2D) = "white" {}
         _BloodColor ("Blood Tint", Color) = (0.5, 0, 0, 1)
         _BloodTiling ("Blood Pattern Tiling", Float) = 2.0
+        _CellSize ("Cell Size", Vector) = (1, 1, 0, 0)
         [MaterialToggle] PixelSnap ("Pixel snap", Float) = 0
     }
 
@@ -36,16 +37,15 @@ Shader "Custom/TilemapBlood"
 
             #include "UnityCG.cginc"
 
-            // Texture samplers
             sampler2D _MainTex;
             sampler2D _BloodMask;
             sampler2D _BloodTexture;
 
-            // Properties
             float4 _BloodColor;
             float _BloodTiling;
             float4 _MainTex_ST;
             float4 _BloodMask_ST;
+            float2 _CellSize;
 
             struct appdata
             {
@@ -59,7 +59,7 @@ Shader "Custom/TilemapBlood"
                 float4 vertex : SV_POSITION;
                 fixed4 color : COLOR;
                 float2 texcoord : TEXCOORD0;
-                float2 worldPos : TEXCOORD1; // Add world position
+                float2 worldPos : TEXCOORD1;
             };
 
             v2f vert(appdata v)
@@ -69,8 +69,6 @@ Shader "Custom/TilemapBlood"
                 o.vertex = UnityObjectToClipPos(v.vertex);
                 o.texcoord = TRANSFORM_TEX(v.texcoord, _MainTex);
                 o.color = v.color;
-
-                // Calculate world position for blood mask sampling
                 o.worldPos = mul(unity_ObjectToWorld, v.vertex).xy;
 
                 #ifdef PIXELSNAP_ON
@@ -82,40 +80,32 @@ Shader "Custom/TilemapBlood"
 
             fixed4 frag(v2f i) : SV_Target
             {
-                // Sample the base tile texture
                 fixed4 baseColor = tex2D(_MainTex, i.texcoord);
 
-                // Convert world position to blood mask UV coordinates
-                // Map world position to 0-1 range based on grid bounds
+                // Blood mask UV
                 float2 bloodMaskUV = (i.worldPos - _BloodMask_ST.zw) * _BloodMask_ST.xy;
 
-                // Clamp to prevent tiling/wrapping
-                bloodMaskUV = saturate(bloodMaskUV);
+                // Clamp to valid range with a tiny epsilon to avoid edge bleeding
+                bloodMaskUV = clamp(bloodMaskUV, 0.001, 0.999);
 
                 fixed bloodAmount = tex2D(_BloodMask, bloodMaskUV).r;
 
-                // Early exit if no blood
                 if (bloodAmount < 0.001)
                 {
                     return baseColor * i.color;
                 }
 
-                // Sample blood splatter pattern based on world position (consistent across tilesets)
-                fixed4 bloodPattern = tex2D(_BloodTexture, i.worldPos * _BloodTiling);
+                // Use cell-relative coordinates for pattern sampling
+                // Divide world pos by cell size to get cell-space coords
+                float2 cellSpacePos = i.worldPos / _CellSize;
 
-                // Darken the base tile where blood is (blood soaks in)
+                // Sample blood pattern using cell-space coordinates
+                fixed4 bloodPattern = tex2D(_BloodTexture, cellSpacePos * _BloodTiling);
+
                 fixed4 darkenedBase = baseColor * (1.0 - bloodAmount * 0.15);
-
-                // Create blood overlay color
                 fixed4 bloodOverlay = bloodPattern * _BloodColor;
-
-                // Combine: darkened base + blood on top
                 fixed4 finalColor = darkenedBase + (bloodOverlay * bloodAmount * 2.0);
-
-                // Apply vertex color
                 finalColor *= i.color;
-
-                // Preserve original alpha
                 finalColor.a = baseColor.a;
 
                 return finalColor;

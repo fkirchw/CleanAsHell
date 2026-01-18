@@ -9,7 +9,7 @@ namespace Characters.Enemies
     {
         [SerializeField] private SpriteRenderer spriteRenderer;
         [SerializeField] private bool isAirbourne;
-        private float health = 100;
+        private int health =  0;
         private Material spriteMaterial;
         private Coroutine flashCoroutine;
 
@@ -29,6 +29,11 @@ namespace Characters.Enemies
                 StopCoroutine(flashCoroutine);
             }
             flashCoroutine = StartCoroutine(FlashInverted());
+        }
+
+        public int GetMaxHealth()
+        {
+            return health;
         }
 
         private IEnumerator FlashInverted()

@@ -13,6 +13,7 @@ public class TrapChest1 : MonoBehaviour, IDamageable
     private BoxCollider2D boxCollider;
     private SpriteRenderer spriteRenderer;
     private bool isDestroyed = false;
+    private int health = 0;
     
     private void Awake()
     {
@@ -54,7 +55,12 @@ public class TrapChest1 : MonoBehaviour, IDamageable
         
         TriggerFloorDisappear();
     }
-    
+
+    public int GetMaxHealth()
+    {
+        return health;
+    }
+
     private void TriggerFloorDisappear()
     {
         isDestroyed = true;

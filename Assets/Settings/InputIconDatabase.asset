@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbc11d72499991232b7cb49d427b579c, type: 3}
+  m_Name: InputIconDatabase
+  m_EditorClassIdentifier: Assembly-CSharp::InputIconDatabase
+  keyboardMouseSheet:
+    spriteSheet: {fileID: 2800000, guid: 36db774dac714be6ba913a1fa9f9aae5, type: 3}
+  xboxSheet:
+    spriteSheet: {fileID: 2800000, guid: 6d52909f403d45379dc0ba63ed97c32a, type: 3}
+  playstationSheet:
+    spriteSheet: {fileID: 2800000, guid: fb51026b8a5e4710a3eed0f6fc98d7c1, type: 3}
+  steamDeckSheet:
+    spriteSheet: {fileID: 2800000, guid: c939fc1c914343afafc0ffad21983924, type: 3}

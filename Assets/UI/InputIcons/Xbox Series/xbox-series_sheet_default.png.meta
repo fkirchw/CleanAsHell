@@ -1,0 +1,3622 @@
+fileFormatVersion: 2
+guid: 6d52909f403d45379dc0ba63ed97c32a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5660276307042549244
+    second: xbox-series_sheet_default_0
+  - first:
+      213: -7789439290800008878
+    second: xbox-series_sheet_default_1
+  - first:
+      213: 1716441789497042748
+    second: xbox-series_sheet_default_2
+  - first:
+      213: -6618256052159167871
+    second: xbox-series_sheet_default_3
+  - first:
+      213: 1861747873036988299
+    second: xbox-series_sheet_default_4
+  - first:
+      213: -6797364057324063542
+    second: xbox-series_sheet_default_5
+  - first:
+      213: 4702402066461978157
+    second: xbox-series_sheet_default_6
+  - first:
+      213: 6365818269979949638
+    second: xbox-series_sheet_default_7
+  - first:
+      213: -1694354487793916271
+    second: xbox-series_sheet_default_8
+  - first:
+      213: 6803666507712706023
+    second: xbox-series_sheet_default_9
+  - first:
+      213: 3834160200469293023
+    second: xbox-series_sheet_default_10
+  - first:
+      213: 1003741493822010533
+    second: xbox-series_sheet_default_11
+  - first:
+      213: 5601054039551463457
+    second: xbox-series_sheet_default_12
+  - first:
+      213: 2964631995512729572
+    second: xbox-series_sheet_default_13
+  - first:
+      213: -7217386144949864356
+    second: xbox-series_sheet_default_14
+  - first:
+      213: 4862720481470344752
+    second: xbox-series_sheet_default_15
+  - first:
+      213: -5470634068756528699
+    second: xbox-series_sheet_default_16
+  - first:
+      213: -9178277032890115513
+    second: xbox-series_sheet_default_17
+  - first:
+      213: -1588545668913847096
+    second: xbox-series_sheet_default_18
+  - first:
+      213: 7927039434712993947
+    second: xbox-series_sheet_default_19
+  - first:
+      213: 4447193890427978330
+    second: xbox-series_sheet_default_20
+  - first:
+      213: 657918920890076170
+    second: xbox-series_sheet_default_21
+  - first:
+      213: -8917909729164939372
+    second: xbox-series_sheet_default_22
+  - first:
+      213: 3242908933657672674
+    second: xbox-series_sheet_default_23
+  - first:
+      213: 1178855817784731088
+    second: xbox-series_sheet_default_24
+  - first:
+      213: -7137539890468614573
+    second: xbox-series_sheet_default_25
+  - first:
+      213: -4757152028621326807
+    second: xbox-series_sheet_default_26
+  - first:
+      213: 7060448425216450026
+    second: xbox-series_sheet_default_27
+  - first:
+      213: 3637033001197800189
+    second: xbox-series_sheet_default_28
+  - first:
+      213: 1619471856323010539
+    second: xbox-series_sheet_default_29
+  - first:
+      213: 9114480293190166952
+    second: xbox-series_sheet_default_30
+  - first:
+      213: -4400306717338034088
+    second: xbox-series_sheet_default_31
+  - first:
+      213: 8647445967335993172
+    second: xbox-series_sheet_default_32
+  - first:
+      213: -6701526890389942211
+    second: xbox-series_sheet_default_33
+  - first:
+      213: -8609667044726911972
+    second: xbox-series_sheet_default_34
+  - first:
+      213: 4655031662939588859
+    second: xbox-series_sheet_default_35
+  - first:
+      213: -5687924905892676761
+    second: xbox-series_sheet_default_36
+  - first:
+      213: -6939622587353249101
+    second: xbox-series_sheet_default_37
+  - first:
+      213: -5299369147298743176
+    second: xbox-series_sheet_default_38
+  - first:
+      213: 3121779915058900349
+    second: xbox-series_sheet_default_39
+  - first:
+      213: 1521691740353913087
+    second: xbox-series_sheet_default_40
+  - first:
+      213: 2144602527096829961
+    second: xbox-series_sheet_default_41
+  - first:
+      213: -3950096948128202595
+    second: xbox-series_sheet_default_42
+  - first:
+      213: -2883643077161476793
+    second: xbox-series_sheet_default_43
+  - first:
+      213: -149238439748165658
+    second: xbox-series_sheet_default_44
+  - first:
+      213: -7569226877183212543
+    second: xbox-series_sheet_default_45
+  - first:
+      213: 3610396621573181181
+    second: xbox-series_sheet_default_46
+  - first:
+      213: 1581695261690010667
+    second: xbox-series_sheet_default_47
+  - first:
+      213: -1655765631277706516
+    second: xbox-series_sheet_default_48
+  - first:
+      213: 4442465934680808809
+    second: xbox-series_sheet_default_49
+  - first:
+      213: -7215803473718479461
+    second: xbox-series_sheet_default_50
+  - first:
+      213: 1962421932135580746
+    second: xbox-series_sheet_default_51
+  - first:
+      213: -5510117948397941938
+    second: xbox-series_sheet_default_52
+  - first:
+      213: 568795964191903769
+    second: xbox-series_sheet_default_53
+  - first:
+      213: -7016873323037269420
+    second: xbox-series_sheet_default_54
+  - first:
+      213: -8251865427538055298
+    second: xbox-series_sheet_default_55
+  - first:
+      213: 1677831957684310651
+    second: xbox-series_sheet_default_56
+  - first:
+      213: 3173372274303518830
+    second: xbox-series_sheet_default_57
+  - first:
+      213: 1815434293845216710
+    second: xbox-series_sheet_default_58
+  - first:
+      213: -7649469875029798427
+    second: xbox-series_sheet_default_59
+  - first:
+      213: -7891009314593566465
+    second: xbox-series_sheet_default_60
+  - first:
+      213: -5485615628256082837
+    second: xbox-series_sheet_default_61
+  - first:
+      213: -140753253553866836
+    second: xbox-series_sheet_default_62
+  - first:
+      213: 3810129421901073610
+    second: xbox-series_sheet_default_63
+  - first:
+      213: -5313762630807133439
+    second: xbox-series_sheet_default_64
+  - first:
+      213: 4862818793612518568
+    second: xbox-series_sheet_default_65
+  - first:
+      213: 3591223676558632787
+    second: xbox-series_sheet_default_66
+  - first:
+      213: 3535339483587531409
+    second: xbox-series_sheet_default_67
+  - first:
+      213: 6062455075830003151
+    second: xbox-series_sheet_default_68
+  - first:
+      213: 5656476313824395221
+    second: xbox-series_sheet_default_69
+  - first:
+      213: -8108488988848379872
+    second: xbox-series_sheet_default_70
+  - first:
+      213: -8137071334583359028
+    second: xbox-series_sheet_default_71
+  - first:
+      213: 8933533997462792505
+    second: xbox-series_sheet_default_72
+  - first:
+      213: -1732137402461535892
+    second: xbox-series_sheet_default_73
+  - first:
+      213: 1222332025219363765
+    second: xbox-series_sheet_default_74
+  - first:
+      213: -7347394031040973824
+    second: xbox-series_sheet_default_75
+  - first:
+      213: 5999002962593926652
+    second: xbox-series_sheet_default_76
+  - first:
+      213: -7574138492269295415
+    second: xbox-series_sheet_default_77
+  - first:
+      213: -887982276881149595
+    second: xbox-series_sheet_default_78
+  - first:
+      213: 1734420632630393594
+    second: xbox-series_sheet_default_79
+  - first:
+      213: 5033338306162614108
+    second: xbox-series_sheet_default_80
+  - first:
+      213: 7229959745676666379
+    second: xbox-series_sheet_default_81
+  - first:
+      213: 5241625944891950499
+    second: xbox-series_sheet_default_82
+  - first:
+      213: 1466067852877461465
+    second: xbox-series_sheet_default_83
+  - first:
+      213: -5229082730168716058
+    second: xbox-series_sheet_default_84
+  - first:
+      213: 7404184552697171332
+    second: xbox-series_sheet_default_85
+  - first:
+      213: 299173297298728486
+    second: xbox-series_sheet_default_86
+  - first:
+      213: 6526077229535291771
+    second: xbox-series_sheet_default_87
+  - first:
+      213: 4149175900648445624
+    second: xbox-series_sheet_default_88
+  - first:
+      213: 5276063797391755100
+    second: xbox-series_sheet_default_89
+  - first:
+      213: 6213760252784838436
+    second: xbox-series_sheet_default_90
+  - first:
+      213: -1727486330295249565
+    second: xbox-series_sheet_default_91
+  - first:
+      213: 2417994679271472929
+    second: xbox-series_sheet_default_92
+  - first:
+      213: 2357911888487805984
+    second: xbox-series_sheet_default_93
+  - first:
+      213: 2275255539451695118
+    second: xbox-series_sheet_default_94
+  - first:
+      213: -847678217468527715
+    second: xbox-series_sheet_default_95
+  - first:
+      213: 2659853676512558331
+    second: xbox-series_sheet_default_96
+  - first:
+      213: 129618313370340057
+    second: xbox-series_sheet_default_97
+  - first:
+      213: 3910144958766706193
+    second: xbox-series_sheet_default_98
+  - first:
+      213: 4400725525727037623
+    second: xbox-series_sheet_default_99
+  - first:
+      213: 4782766392896751422
+    second: xbox-series_sheet_default_100
+  - first:
+      213: -557650460395496534
+    second: xbox-series_sheet_default_101
+  - first:
+      213: -6327152618271122163
+    second: xbox-series_sheet_default_102
+  - first:
+      213: 2704848721685414062
+    second: xbox-series_sheet_default_103
+  - first:
+      213: -8907517116054296029
+    second: xbox-series_sheet_default_104
+  - first:
+      213: -1521576762247522536
+    second: xbox-series_sheet_default_105
+  - first:
+      213: -8732078750821995891
+    second: xbox-series_sheet_default_106
+  - first:
+      213: 5693697828646014099
+    second: xbox-series_sheet_default_107
+  - first:
+      213: -8207599813758531845
+    second: xbox-series_sheet_default_108
+  - first:
+      213: -651622620185262938
+    second: xbox-series_sheet_default_109
+  - first:
+      213: -4598994502228047942
+    second: xbox-series_sheet_default_110
+  - first:
+      213: -3187388284602836405
+    second: xbox-series_sheet_default_111
+  - first:
+      213: -4992531936349526811
+    second: xbox-series_sheet_default_112
+  - first:
+      213: 3983028337777645420
+    second: xbox-series_sheet_default_113
+  - first:
+      213: -9150611559173268235
+    second: xbox-series_sheet_default_114
+  - first:
+      213: -868546103610739517
+    second: xbox-series_sheet_default_115
+  - first:
+      213: 5136473139697387494
+    second: xbox-series_sheet_default_116
+  - first:
+      213: -6656383133882452155
+    second: xbox-series_sheet_default_117
+  - first:
+      213: -8455341985578584205
+    second: xbox-series_sheet_default_118
+  - first:
+      213: 188512448405969343
+    second: xbox-series_sheet_default_119
+  - first:
+      213: -1963215931882782354
+    second: xbox-series_sheet_default_120
+  - first:
+      213: 823335244424044154
+    second: xbox-series_sheet_default_121
+  - first:
+      213: 8267504936955749476
+    second: xbox-series_sheet_default_122
+  - first:
+      213: 110063094613122208
+    second: sprite_0_0
+  - first:
+      213: 2057516106615078274
+    second: sprite_1_0
+  - first:
+      213: -6981641179300335697
+    second: sprite_2_0
+  - first:
+      213: 1084495889696105424
+    second: sprite_3_0
+  - first:
+      213: 2656255634667553426
+    second: sprite_4_0
+  - first:
+      213: 8953997984617710940
+    second: sprite_5_0
+  - first:
+      213: 1342954271244971394
+    second: sprite_6_0
+  - first:
+      213: 4571690783039372443
+    second: sprite_7_0
+  - first:
+      213: -3861509453359391609
+    second: sprite_8_0
+  - first:
+      213: 1830147033117497494
+    second: sprite_9_0
+  - first:
+      213: 8399387991679549355
+    second: sprite_0_1
+  - first:
+      213: -3990764489541251346
+    second: sprite_1_1
+  - first:
+      213: 5742541816403897934
+    second: sprite_2_1
+  - first:
+      213: 2225496213262365376
+    second: sprite_3_1
+  - first:
+      213: -4387813859171883846
+    second: sprite_4_1
+  - first:
+      213: -2165872854936334853
+    second: sprite_5_1
+  - first:
+      213: -1952839295128420913
+    second: sprite_6_1
+  - first:
+      213: -6966581239616719117
+    second: sprite_7_1
+  - first:
+      213: -6801387276256787727
+    second: sprite_8_1
+  - first:
+      213: -3858311815166785654
+    second: sprite_9_1
+  - first:
+      213: -4644540916198862998
+    second: sprite_0_2
+  - first:
+      213: 2978055984150173501
+    second: sprite_1_2
+  - first:
+      213: -8331909182945598094
+    second: sprite_2_2
+  - first:
+      213: 6070790015296760343
+    second: sprite_3_2
+  - first:
+      213: -6328221562859427745
+    second: sprite_4_2
+  - first:
+      213: 8660193878091718147
+    second: sprite_5_2
+  - first:
+      213: -3517363695250348696
+    second: sprite_6_2
+  - first:
+      213: -2785933153741337980
+    second: sprite_7_2
+  - first:
+      213: 7395423254468366642
+    second: sprite_8_2
+  - first:
+      213: -7938828410451353080
+    second: sprite_9_2
+  - first:
+      213: -4795043959955871156
+    second: sprite_0_3
+  - first:
+      213: 4374436090087825753
+    second: sprite_1_3
+  - first:
+      213: 1207572534422275166
+    second: sprite_2_3
+  - first:
+      213: -5552441862961074652
+    second: sprite_3_3
+  - first:
+      213: -6764491227458556459
+    second: sprite_4_3
+  - first:
+      213: -3250759276719717477
+    second: sprite_5_3
+  - first:
+      213: 2544647057885112343
+    second: sprite_6_3
+  - first:
+      213: 815498800105216816
+    second: sprite_7_3
+  - first:
+      213: -7019313587647542253
+    second: sprite_8_3
+  - first:
+      213: -5027637434861748301
+    second: sprite_9_3
+  - first:
+      213: -3494256285842108209
+    second: sprite_0_4
+  - first:
+      213: -1865975103405758949
+    second: sprite_1_4
+  - first:
+      213: -1174721704435091041
+    second: sprite_2_4
+  - first:
+      213: 4126841619327464038
+    second: sprite_3_4
+  - first:
+      213: -9059321819315327527
+    second: sprite_4_4
+  - first:
+      213: 8117653193126307452
+    second: sprite_5_4
+  - first:
+      213: 8387776498321157292
+    second: sprite_6_4
+  - first:
+      213: -2289449078155842138
+    second: sprite_7_4
+  - first:
+      213: -7278835321006384102
+    second: sprite_8_4
+  - first:
+      213: -5289545989597829017
+    second: sprite_9_4
+  - first:
+      213: -5524089854009648592
+    second: sprite_0_5
+  - first:
+      213: 5447755235192734056
+    second: sprite_1_5
+  - first:
+      213: -831797182033384550
+    second: sprite_2_5
+  - first:
+      213: 6701578291882550839
+    second: sprite_3_5
+  - first:
+      213: -7952709348867360171
+    second: sprite_4_5
+  - first:
+      213: 6376701905813710359
+    second: sprite_5_5
+  - first:
+      213: -2009650311522802456
+    second: sprite_6_5
+  - first:
+      213: -7221745212296072410
+    second: sprite_7_5
+  - first:
+      213: 8825099625217958376
+    second: sprite_8_5
+  - first:
+      213: 7077530917396052021
+    second: sprite_9_5
+  - first:
+      213: -5032015725130632474
+    second: sprite_0_6
+  - first:
+      213: -3110548652233145160
+    second: sprite_1_6
+  - first:
+      213: 4201033612598326047
+    second: sprite_2_6
+  - first:
+      213: 1379774504831001170
+    second: sprite_3_6
+  - first:
+      213: -7893236458845504506
+    second: sprite_4_6
+  - first:
+      213: -5813761523256347358
+    second: sprite_5_6
+  - first:
+      213: 4027753786967920556
+    second: sprite_6_6
+  - first:
+      213: -508201043793987729
+    second: sprite_7_6
+  - first:
+      213: 2547361843558278568
+    second: sprite_8_6
+  - first:
+      213: 7503335287090482069
+    second: sprite_9_6
+  - first:
+      213: -3762007740097770628
+    second: sprite_0_7
+  - first:
+      213: 7979798665319425048
+    second: sprite_1_7
+  - first:
+      213: -5438098755237914677
+    second: sprite_2_7
+  - first:
+      213: -353060106142312252
+    second: sprite_3_7
+  - first:
+      213: 8239836883484367612
+    second: sprite_4_7
+  - first:
+      213: 4694203381176120083
+    second: sprite_5_7
+  - first:
+      213: -6899632942315091753
+    second: sprite_6_7
+  - first:
+      213: -6803456169456466250
+    second: sprite_7_7
+  - first:
+      213: -3117219249948475067
+    second: sprite_8_7
+  - first:
+      213: 3381113449545255794
+    second: sprite_9_7
+  - first:
+      213: -442952854566836046
+    second: sprite_0_8
+  - first:
+      213: 3795189196210715292
+    second: sprite_1_8
+  - first:
+      213: -3430383360923295238
+    second: sprite_2_8
+  - first:
+      213: -1617550654123617344
+    second: sprite_3_8
+  - first:
+      213: -1659035041894168371
+    second: sprite_4_8
+  - first:
+      213: -1586622663987341286
+    second: sprite_5_8
+  - first:
+      213: -2394323425602237399
+    second: sprite_6_8
+  - first:
+      213: -6702668351367279553
+    second: sprite_7_8
+  - first:
+      213: 1920867639296375943
+    second: sprite_8_8
+  - first:
+      213: 2217703112298958091
+    second: sprite_9_8
+  - first:
+      213: 7449611078251265577
+    second: sprite_0_9
+  - first:
+      213: 6537814790955566056
+    second: sprite_1_9
+  - first:
+      213: 5693804674990935894
+    second: sprite_2_9
+  - first:
+      213: -3360491542619311557
+    second: sprite_3_9
+  - first:
+      213: -7847834464468981922
+    second: sprite_4_9
+  - first:
+      213: -2987848764911352829
+    second: sprite_5_9
+  - first:
+      213: 3010546239958388101
+    second: sprite_6_9
+  - first:
+      213: 3065536094097787862
+    second: sprite_7_9
+  - first:
+      213: -2152523833676734928
+    second: sprite_8_9
+  - first:
+      213: 8856933986315407574
+    second: sprite_9_9
+  - first:
+      213: -6505657492696343147
+    second: controller_xbox_adaptive
+  - first:
+      213: 4053007178919220606
+    second: controller_xbox360
+  - first:
+      213: -2668176720798941876
+    second: controller_xboxone
+  - first:
+      213: -8521261252205663999
+    second: controller_xboxseries
+  - first:
+      213: -1763733032299919666
+    second: xbox_button_a
+  - first:
+      213: 9021212445963244428
+    second: xbox_button_a_outline
+  - first:
+      213: 4595819355805352913
+    second: xbox_button_b
+  - first:
+      213: -2336283771223426185
+    second: xbox_button_b_outline
+  - first:
+      213: 7016952397451120387
+    second: xbox_button_back
+  - first:
+      213: -5919777367144728994
+    second: xbox_button_back_icon
+  - first:
+      213: 1133757742804959831
+    second: xbox_button_back_icon_outline
+  - first:
+      213: 5145797931863603683
+    second: xbox_button_back_outline
+  - first:
+      213: 1247237500078207089
+    second: xbox_button_color_a
+  - first:
+      213: -7586722982395486506
+    second: xbox_button_color_a_outline
+  - first:
+      213: -7840270524386194143
+    second: xbox_button_color_b
+  - first:
+      213: -3754970376597388454
+    second: xbox_button_color_b_outline
+  - first:
+      213: 8685564054283324079
+    second: xbox_button_color_x
+  - first:
+      213: 2758087569604253927
+    second: xbox_button_color_x_outline
+  - first:
+      213: 6413887796485071898
+    second: xbox_button_color_y
+  - first:
+      213: -8368651945231354444
+    second: xbox_button_color_y_outline
+  - first:
+      213: -4187758759448505707
+    second: xbox_button_menu
+  - first:
+      213: 3675416295430250021
+    second: xbox_button_menu_outline
+  - first:
+      213: 3914321525480649719
+    second: xbox_button_share
+  - first:
+      213: 112282736304596128
+    second: xbox_button_share_outline
+  - first:
+      213: 7690785891960221319
+    second: xbox_button_start
+  - first:
+      213: -8523612992961896913
+    second: xbox_button_start_icon
+  - first:
+      213: 218433801512956968
+    second: xbox_button_start_icon_outline
+  - first:
+      213: 8330953114533607092
+    second: xbox_button_start_outline
+  - first:
+      213: -1482815271936417117
+    second: xbox_button_view
+  - first:
+      213: 1530225783534455476
+    second: xbox_button_view_outline
+  - first:
+      213: 7711321138431855192
+    second: xbox_button_x
+  - first:
+      213: 4645112215978090179
+    second: xbox_button_x_outline
+  - first:
+      213: -8972355617782916593
+    second: xbox_button_y
+  - first:
+      213: 4602617622490311685
+    second: xbox_button_y_outline
+  - first:
+      213: -4673782274592020654
+    second: xbox_dpad
+  - first:
+      213: 6546497596387291119
+    second: xbox_dpad_all
+  - first:
+      213: -8818831588182813891
+    second: xbox_dpad_down
+  - first:
+      213: 6242082371298792688
+    second: xbox_dpad_down_outline
+  - first:
+      213: 3675438954557350192
+    second: xbox_dpad_horizontal
+  - first:
+      213: 1382573363395044154
+    second: xbox_dpad_horizontal_outline
+  - first:
+      213: 7867241007871372632
+    second: xbox_dpad_left
+  - first:
+      213: -7585064484646993782
+    second: xbox_dpad_left_outline
+  - first:
+      213: -5930317345163734200
+    second: xbox_dpad_none
+  - first:
+      213: 7305050432731074075
+    second: xbox_dpad_right
+  - first:
+      213: 7571145283847425167
+    second: xbox_dpad_right_outline
+  - first:
+      213: 9108487614228638638
+    second: xbox_dpad_round
+  - first:
+      213: 6772275622200066980
+    second: xbox_dpad_round_all
+  - first:
+      213: 2477528732383432822
+    second: xbox_dpad_round_down
+  - first:
+      213: -5760375596338304962
+    second: xbox_dpad_round_horizontal
+  - first:
+      213: -2855045742085623639
+    second: xbox_dpad_round_left
+  - first:
+      213: -1399167570058401930
+    second: xbox_dpad_round_right
+  - first:
+      213: 2145660433789105653
+    second: xbox_dpad_round_up
+  - first:
+      213: 8235309211028240634
+    second: xbox_dpad_round_vertical
+  - first:
+      213: -2328080907609485555
+    second: xbox_dpad_up
+  - first:
+      213: -761387325448490623
+    second: xbox_dpad_up_outline
+  - first:
+      213: -4271495949713985937
+    second: xbox_dpad_vertical
+  - first:
+      213: -6661963366495508502
+    second: xbox_dpad_vertical_outline
+  - first:
+      213: 4712762884920173887
+    second: xbox_elite_paddle_bottom_left
+  - first:
+      213: 3581747812113841994
+    second: xbox_elite_paddle_bottom_left_outline
+  - first:
+      213: -1878617975818870069
+    second: xbox_elite_paddle_bottom_right
+  - first:
+      213: -8466409296302169098
+    second: xbox_elite_paddle_bottom_right_outline
+  - first:
+      213: -1485781816089939302
+    second: xbox_elite_paddle_top_left
+  - first:
+      213: 1955530723809233932
+    second: xbox_elite_paddle_top_left_outline
+  - first:
+      213: 501510627125824678
+    second: xbox_elite_paddle_top_right
+  - first:
+      213: 4803734507216646328
+    second: xbox_elite_paddle_top_right_outline
+  - first:
+      213: -5441536251571902155
+    second: xbox_guide
+  - first:
+      213: 3823018384962967847
+    second: xbox_guide_outline
+  - first:
+      213: -8690202470262144181
+    second: xbox_lb
+  - first:
+      213: 3179119433720732040
+    second: xbox_lb_outline
+  - first:
+      213: 1124128035716253436
+    second: xbox_ls
+  - first:
+      213: 4454119529632489562
+    second: xbox_ls_outline
+  - first:
+      213: 6527404361641441907
+    second: xbox_lt
+  - first:
+      213: -508338618389574459
+    second: xbox_lt_outline
+  - first:
+      213: 8775496722935046269
+    second: xbox_rb
+  - first:
+      213: 3826264261548194964
+    second: xbox_rb_outline
+  - first:
+      213: -4022372901327385006
+    second: xbox_rs
+  - first:
+      213: -9099073449627763849
+    second: xbox_rs_outline
+  - first:
+      213: -8485347889684111294
+    second: xbox_rt
+  - first:
+      213: 1885111357250558743
+    second: xbox_rt_outline
+  - first:
+      213: 990700479192681150
+    second: xbox_stick_l
+  - first:
+      213: 3617569414782245886
+    second: xbox_stick_l_down
+  - first:
+      213: -4904839956336349899
+    second: xbox_stick_l_horizontal
+  - first:
+      213: -9109696446538251023
+    second: xbox_stick_l_left
+  - first:
+      213: 3660298755530050699
+    second: xbox_stick_l_press
+  - first:
+      213: -1190893419649108628
+    second: xbox_stick_l_right
+  - first:
+      213: 6964226833900438817
+    second: xbox_stick_l_up
+  - first:
+      213: -1262392249451555786
+    second: xbox_stick_l_vertical
+  - first:
+      213: -8068572354977228075
+    second: xbox_stick_r
+  - first:
+      213: 8236984641019955868
+    second: xbox_stick_r_down
+  - first:
+      213: 8934269111576181139
+    second: xbox_stick_r_horizontal
+  - first:
+      213: 9149089666612145072
+    second: xbox_stick_r_left
+  - first:
+      213: 2763642955174205510
+    second: xbox_stick_r_press
+  - first:
+      213: 5182132346981606022
+    second: xbox_stick_r_right
+  - first:
+      213: 3413272497186488969
+    second: xbox_stick_r_up
+  - first:
+      213: 398972930952162818
+    second: xbox_stick_r_vertical
+  - first:
+      213: -7359925005017285583
+    second: xbox_stick_side_l
+  - first:
+      213: 1835644914431763547
+    second: xbox_stick_side_r
+  - first:
+      213: -5459697190900349771
+    second: xbox_stick_top_l
+  - first:
+      213: -2131250071769521142
+    second: xbox_stick_top_r
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: controller_xbox_adaptive
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59dd9759af247b5a0800000000000000
+      internalID: -6505657492696343147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: controller_xbox360
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7596933e8c2f3830800000000000000
+      internalID: 4053007178919220606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: controller_xboxone
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4dffc6b86bb8fad0800000000000000
+      internalID: -2668176720798941876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: controller_xboxseries
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1092bf7e9066eb980800000000000000
+      internalID: -8521261252205663999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_button_a
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec6042bd626f587e0800000000000000
+      internalID: -1763733032299919666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_button_a_outline
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c83d8f45ce8c13d70800000000000000
+      internalID: 9021212445963244428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_button_b
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d384aaba51a7cf30800000000000000
+      internalID: 4595819355805352913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_button_b_outline
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77bb7b9c94ad39fd0800000000000000
+      internalID: -2336283771223426185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_button_back
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30f46ef2709316160800000000000000
+      internalID: 7016952397451120387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_button_back_icon
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e56f0f159d9b8dda0800000000000000
+      internalID: -5919777367144728994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_button_back_icon_outline
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7520d3109aaebbf00800000000000000
+      internalID: 1133757742804959831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_button_back_outline
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e97ba694fb896740800000000000000
+      internalID: 5145797931863603683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_button_color_a
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17035bee5e31f4110800000000000000
+      internalID: 1247237500078207089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_button_color_a_outline
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6de5609c4ab86b690800000000000000
+      internalID: -7586722982395486506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_button_color_b
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12dcef26f73c13390800000000000000
+      internalID: -7840270524386194143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_button_color_b_outline
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a534cc0565aa3ebc0800000000000000
+      internalID: -3754970376597388454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_button_color_x
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: faa85714d72598870800000000000000
+      internalID: 8685564054283324079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_button_color_x_outline
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e89ea51802b64620800000000000000
+      internalID: 2758087569604253927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_button_color_y
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a14a4baf7f4b20950800000000000000
+      internalID: 6413887796485071898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_button_color_y_outline
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b57a9315639cdb80800000000000000
+      internalID: -8368651945231354444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_button_menu
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5929a02989712e5c0800000000000000
+      internalID: -4187758759448505707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_button_menu_outline
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52e5dc2c5a3b10330800000000000000
+      internalID: 3675416295430250021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_button_share
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f370fe30b6725630800000000000000
+      internalID: 3914321525480649719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_button_share_outline
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a428d3cd88ee8100800000000000000
+      internalID: 112282736304596128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_button_start
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78eefdd65092bba60800000000000000
+      internalID: 7690785891960221319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_button_start_icon
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2e1a97942b06b980800000000000000
+      internalID: -8523612992961896913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_button_start_icon_outline
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8243e1a9268080300800000000000000
+      internalID: 218433801512956968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_button_start_outline
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b6b538e7bd7d9370800000000000000
+      internalID: 8330953114533607092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_button_view
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a2a4b0dd5bfb6be0800000000000000
+      internalID: -1482815271936417117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_button_view_outline
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ba07bd1e347c3510800000000000000
+      internalID: 1530225783534455476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_button_x
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85a013518bd140b60800000000000000
+      internalID: 7711321138431855192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_button_x_outline
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ce933713f0c67040800000000000000
+      internalID: 4645112215978090179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_button_y
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0a919b6a1acb7380800000000000000
+      internalID: -8972355617782916593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_button_y_outline
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50cec798758cfdf30800000000000000
+      internalID: 4602617622490311685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_dpad
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 257ec65b8c3632fb0800000000000000
+      internalID: -4673782274592020654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_dpad_all
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fefec9b01e4d9da50800000000000000
+      internalID: 6546497596387291119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_dpad_down
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d339e5c05673d9580800000000000000
+      internalID: -8818831588182813891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_dpad_down_outline
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f41eff38d450a650800000000000000
+      internalID: 6242082371298792688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_dpad_horizontal
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03126008148c10330800000000000000
+      internalID: 3675438954557350192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_dpad_horizontal_outline
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3324191623ef2310800000000000000
+      internalID: 1382573363395044154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_dpad_left
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85d2f84a30e0e2d60800000000000000
+      internalID: 7867241007871372632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_dpad_left_outline
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a804f22e9007cb690800000000000000
+      internalID: -7585064484646993782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_dpad_none
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8439d247bc743bda0800000000000000
+      internalID: -5930317345163734200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_dpad_right
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1ecf3d2aa0c06560800000000000000
+      internalID: 7305050432731074075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_dpad_right_outline
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8c8992a58c121960800000000000000
+      internalID: 7571145283847425167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_dpad_round
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eaba42fe939d76e70800000000000000
+      internalID: 9108487614228638638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_dpad_round_all
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a3c54e1cc4fbfd50800000000000000
+      internalID: 6772275622200066980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_dpad_round_down
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 670d98e6143f16220800000000000000
+      internalID: 2477528732383432822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_dpad_round_horizontal
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e382d673ae80f00b0800000000000000
+      internalID: -5760375596338304962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_dpad_round_left
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a0be753607d068d0800000000000000
+      internalID: -2855045742085623639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_dpad_round_right
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6772c651288259ce0800000000000000
+      internalID: -1399167570058401930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_dpad_round_up
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f53c9cdbcae6cd10800000000000000
+      internalID: 2145660433789105653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_dpad_round_vertical
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af837da4812b94270800000000000000
+      internalID: 8235309211028240634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_dpad_up
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0f419dcfbef0bfd0800000000000000
+      internalID: -2328080907609485555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_dpad_up_outline
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1817822f2420f65f0800000000000000
+      internalID: -761387325448490623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_dpad_vertical
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6e27c9a01998b4c0800000000000000
+      internalID: -4271495949713985937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_dpad_vertical_outline
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae7ae516d93fb83a0800000000000000
+      internalID: -6661963366495508502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_elite_paddle_bottom_left
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f35ef42efd8176140800000000000000
+      internalID: 4712762884920173887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_elite_paddle_bottom_left_outline
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4ff31088ace4b130800000000000000
+      internalID: 3581747812113841994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_elite_paddle_bottom_right
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc227a287eecde5e0800000000000000
+      internalID: -1878617975818870069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_elite_paddle_bottom_right_outline
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f328da1a95418a80800000000000000
+      internalID: -8466409296302169098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_elite_paddle_top_left
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a92793e6f41716be0800000000000000
+      internalID: -1485781816089939302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_elite_paddle_top_left_outline
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0c030c15d0732b10800000000000000
+      internalID: 1955530723809233932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_elite_paddle_top_right
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ac0bec1249b5f600800000000000000
+      internalID: 501510627125824678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_elite_paddle_top_right_outline
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b03fe1451b4aa240800000000000000
+      internalID: 4803734507216646328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_guide
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53965a41c97cb74b0800000000000000
+      internalID: -5441536251571902155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_guide_outline
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 729518547f61e0530800000000000000
+      internalID: 3823018384962967847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_lb
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b438dcd55e2366780800000000000000
+      internalID: -8690202470262144181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_lb_outline
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 889177108408e1c20800000000000000
+      internalID: 3179119433720732040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_ls
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf6ccea1e74b99f00800000000000000
+      internalID: 1124128035716253436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_ls_outline
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a50efdefc1630dd30800000000000000
+      internalID: 4454119529632489562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_lt
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37a39f8eeaff59a50800000000000000
+      internalID: 6527404361641441907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_lt_outline
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ccc64948b402f8f0800000000000000
+      internalID: -508338618389574459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_rb
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d70e52266c3d8c970800000000000000
+      internalID: 8775496722935046269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_rb_outline
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49c3a5ec21f991530800000000000000
+      internalID: 3826264261548194964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_rs
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25e493e5829ad28c0800000000000000
+      internalID: -4022372901327385006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_rs_outline
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77bbfb118e899b180800000000000000
+      internalID: -9099073449627763849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_rt
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 240a4c73d0dfd3a80800000000000000
+      internalID: -8485347889684111294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_rt_outline
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71b59faaac2492a10800000000000000
+      internalID: 1885111357250558743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_stick_l
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebac61d36dcafbd00800000000000000
+      internalID: 990700479192681150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_stick_l_down
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efbd96e4730343230800000000000000
+      internalID: 3617569414782245886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_stick_l_horizontal
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53ded62fb028eebb0800000000000000
+      internalID: -4904839956336349899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_stick_l_left
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f4037cd85bd39180800000000000000
+      internalID: -9109696446538251023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_stick_l_press
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8c4c27335efbc230800000000000000
+      internalID: 3660298755530050699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_stick_l_right
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c65f6749eb8197fe0800000000000000
+      internalID: -1190893419649108628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_stick_l_up
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12501e94867e5a060800000000000000
+      internalID: 6964226833900438817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_stick_l_vertical
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 634db3400f41b7ee0800000000000000
+      internalID: -1262392249451555786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_stick_r
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5da9b09313ca60090800000000000000
+      internalID: -8068572354977228075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_stick_r_down
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9ac75cb3e5af4270800000000000000
+      internalID: 8236984641019955868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_stick_r_horizontal
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3993e33db66ecfb70800000000000000
+      internalID: 8934269111576181139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_stick_r_left
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 576
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bb2d9ce39818fe70800000000000000
+      internalID: 9149089666612145072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_stick_r_press
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 576
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6485b2510ae6a5620800000000000000
+      internalID: 2763642955174205510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_stick_r_right
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 576
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68266e8d9e1aae740800000000000000
+      internalID: 5182132346981606022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_stick_r_up
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 576
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 982496c70416e5f20800000000000000
+      internalID: 3413272497186488969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_stick_r_vertical
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 576
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20e666054cf698500800000000000000
+      internalID: 398972930952162818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_stick_side_l
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 576
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13cfd66d33b4cd990800000000000000
+      internalID: -7359925005017285583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_stick_side_r
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 576
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b542572f255897910800000000000000
+      internalID: 1835644914431763547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_stick_top_l
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 576
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b4cf23e4524b34b0800000000000000
+      internalID: -5459697190900349771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox_stick_top_r
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 576
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a04e6a00a574c62e0800000000000000
+      internalID: -2131250071769521142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      controller_xbox360: 4053007178919220606
+      controller_xbox_adaptive: -6505657492696343147
+      controller_xboxone: -2668176720798941876
+      controller_xboxseries: -8521261252205663999
+      sprite_0_0: 110063094613122208
+      sprite_0_1: 8399387991679549355
+      sprite_0_2: -4644540916198862998
+      sprite_0_3: -4795043959955871156
+      sprite_0_4: -3494256285842108209
+      sprite_0_5: -5524089854009648592
+      sprite_0_6: -5032015725130632474
+      sprite_0_7: -3762007740097770628
+      sprite_0_8: -442952854566836046
+      sprite_0_9: 7449611078251265577
+      sprite_1_0: 2057516106615078274
+      sprite_1_1: -3990764489541251346
+      sprite_1_2: 2978055984150173501
+      sprite_1_3: 4374436090087825753
+      sprite_1_4: -1865975103405758949
+      sprite_1_5: 5447755235192734056
+      sprite_1_6: -3110548652233145160
+      sprite_1_7: 7979798665319425048
+      sprite_1_8: 3795189196210715292
+      sprite_1_9: 6537814790955566056
+      sprite_2_0: -6981641179300335697
+      sprite_2_1: 5742541816403897934
+      sprite_2_2: -8331909182945598094
+      sprite_2_3: 1207572534422275166
+      sprite_2_4: -1174721704435091041
+      sprite_2_5: -831797182033384550
+      sprite_2_6: 4201033612598326047
+      sprite_2_7: -5438098755237914677
+      sprite_2_8: -3430383360923295238
+      sprite_2_9: 5693804674990935894
+      sprite_3_0: 1084495889696105424
+      sprite_3_1: 2225496213262365376
+      sprite_3_2: 6070790015296760343
+      sprite_3_3: -5552441862961074652
+      sprite_3_4: 4126841619327464038
+      sprite_3_5: 6701578291882550839
+      sprite_3_6: 1379774504831001170
+      sprite_3_7: -353060106142312252
+      sprite_3_8: -1617550654123617344
+      sprite_3_9: -3360491542619311557
+      sprite_4_0: 2656255634667553426
+      sprite_4_1: -4387813859171883846
+      sprite_4_2: -6328221562859427745
+      sprite_4_3: -6764491227458556459
+      sprite_4_4: -9059321819315327527
+      sprite_4_5: -7952709348867360171
+      sprite_4_6: -7893236458845504506
+      sprite_4_7: 8239836883484367612
+      sprite_4_8: -1659035041894168371
+      sprite_4_9: -7847834464468981922
+      sprite_5_0: 8953997984617710940
+      sprite_5_1: -2165872854936334853
+      sprite_5_2: 8660193878091718147
+      sprite_5_3: -3250759276719717477
+      sprite_5_4: 8117653193126307452
+      sprite_5_5: 6376701905813710359
+      sprite_5_6: -5813761523256347358
+      sprite_5_7: 4694203381176120083
+      sprite_5_8: -1586622663987341286
+      sprite_5_9: -2987848764911352829
+      sprite_6_0: 1342954271244971394
+      sprite_6_1: -1952839295128420913
+      sprite_6_2: -3517363695250348696
+      sprite_6_3: 2544647057885112343
+      sprite_6_4: 8387776498321157292
+      sprite_6_5: -2009650311522802456
+      sprite_6_6: 4027753786967920556
+      sprite_6_7: -6899632942315091753
+      sprite_6_8: -2394323425602237399
+      sprite_6_9: 3010546239958388101
+      sprite_7_0: 4571690783039372443
+      sprite_7_1: -6966581239616719117
+      sprite_7_2: -2785933153741337980
+      sprite_7_3: 815498800105216816
+      sprite_7_4: -2289449078155842138
+      sprite_7_5: -7221745212296072410
+      sprite_7_6: -508201043793987729
+      sprite_7_7: -6803456169456466250
+      sprite_7_8: -6702668351367279553
+      sprite_7_9: 3065536094097787862
+      sprite_8_0: -3861509453359391609
+      sprite_8_1: -6801387276256787727
+      sprite_8_2: 7395423254468366642
+      sprite_8_3: -7019313587647542253
+      sprite_8_4: -7278835321006384102
+      sprite_8_5: 8825099625217958376
+      sprite_8_6: 2547361843558278568
+      sprite_8_7: -3117219249948475067
+      sprite_8_8: 1920867639296375943
+      sprite_8_9: -2152523833676734928
+      sprite_9_0: 1830147033117497494
+      sprite_9_1: -3858311815166785654
+      sprite_9_2: -7938828410451353080
+      sprite_9_3: -5027637434861748301
+      sprite_9_4: -5289545989597829017
+      sprite_9_5: 7077530917396052021
+      sprite_9_6: 7503335287090482069
+      sprite_9_7: 3381113449545255794
+      sprite_9_8: 2217703112298958091
+      sprite_9_9: 8856933986315407574
+      xbox-series_sheet_default_0: -5660276307042549244
+      xbox-series_sheet_default_1: -7789439290800008878
+      xbox-series_sheet_default_10: 3834160200469293023
+      xbox-series_sheet_default_100: 4782766392896751422
+      xbox-series_sheet_default_101: -557650460395496534
+      xbox-series_sheet_default_102: -6327152618271122163
+      xbox-series_sheet_default_103: 2704848721685414062
+      xbox-series_sheet_default_104: -8907517116054296029
+      xbox-series_sheet_default_105: -1521576762247522536
+      xbox-series_sheet_default_106: -8732078750821995891
+      xbox-series_sheet_default_107: 5693697828646014099
+      xbox-series_sheet_default_108: -8207599813758531845
+      xbox-series_sheet_default_109: -651622620185262938
+      xbox-series_sheet_default_11: 1003741493822010533
+      xbox-series_sheet_default_110: -4598994502228047942
+      xbox-series_sheet_default_111: -3187388284602836405
+      xbox-series_sheet_default_112: -4992531936349526811
+      xbox-series_sheet_default_113: 3983028337777645420
+      xbox-series_sheet_default_114: -9150611559173268235
+      xbox-series_sheet_default_115: -868546103610739517
+      xbox-series_sheet_default_116: 5136473139697387494
+      xbox-series_sheet_default_117: -6656383133882452155
+      xbox-series_sheet_default_118: -8455341985578584205
+      xbox-series_sheet_default_119: 188512448405969343
+      xbox-series_sheet_default_12: 5601054039551463457
+      xbox-series_sheet_default_120: -1963215931882782354
+      xbox-series_sheet_default_121: 823335244424044154
+      xbox-series_sheet_default_122: 8267504936955749476
+      xbox-series_sheet_default_13: 2964631995512729572
+      xbox-series_sheet_default_14: -7217386144949864356
+      xbox-series_sheet_default_15: 4862720481470344752
+      xbox-series_sheet_default_16: -5470634068756528699
+      xbox-series_sheet_default_17: -9178277032890115513
+      xbox-series_sheet_default_18: -1588545668913847096
+      xbox-series_sheet_default_19: 7927039434712993947
+      xbox-series_sheet_default_2: 1716441789497042748
+      xbox-series_sheet_default_20: 4447193890427978330
+      xbox-series_sheet_default_21: 657918920890076170
+      xbox-series_sheet_default_22: -8917909729164939372
+      xbox-series_sheet_default_23: 3242908933657672674
+      xbox-series_sheet_default_24: 1178855817784731088
+      xbox-series_sheet_default_25: -7137539890468614573
+      xbox-series_sheet_default_26: -4757152028621326807
+      xbox-series_sheet_default_27: 7060448425216450026
+      xbox-series_sheet_default_28: 3637033001197800189
+      xbox-series_sheet_default_29: 1619471856323010539
+      xbox-series_sheet_default_3: -6618256052159167871
+      xbox-series_sheet_default_30: 9114480293190166952
+      xbox-series_sheet_default_31: -4400306717338034088
+      xbox-series_sheet_default_32: 8647445967335993172
+      xbox-series_sheet_default_33: -6701526890389942211
+      xbox-series_sheet_default_34: -8609667044726911972
+      xbox-series_sheet_default_35: 4655031662939588859
+      xbox-series_sheet_default_36: -5687924905892676761
+      xbox-series_sheet_default_37: -6939622587353249101
+      xbox-series_sheet_default_38: -5299369147298743176
+      xbox-series_sheet_default_39: 3121779915058900349
+      xbox-series_sheet_default_4: 1861747873036988299
+      xbox-series_sheet_default_40: 1521691740353913087
+      xbox-series_sheet_default_41: 2144602527096829961
+      xbox-series_sheet_default_42: -3950096948128202595
+      xbox-series_sheet_default_43: -2883643077161476793
+      xbox-series_sheet_default_44: -149238439748165658
+      xbox-series_sheet_default_45: -7569226877183212543
+      xbox-series_sheet_default_46: 3610396621573181181
+      xbox-series_sheet_default_47: 1581695261690010667
+      xbox-series_sheet_default_48: -1655765631277706516
+      xbox-series_sheet_default_49: 4442465934680808809
+      xbox-series_sheet_default_5: -6797364057324063542
+      xbox-series_sheet_default_50: -7215803473718479461
+      xbox-series_sheet_default_51: 1962421932135580746
+      xbox-series_sheet_default_52: -5510117948397941938
+      xbox-series_sheet_default_53: 568795964191903769
+      xbox-series_sheet_default_54: -7016873323037269420
+      xbox-series_sheet_default_55: -8251865427538055298
+      xbox-series_sheet_default_56: 1677831957684310651
+      xbox-series_sheet_default_57: 3173372274303518830
+      xbox-series_sheet_default_58: 1815434293845216710
+      xbox-series_sheet_default_59: -7649469875029798427
+      xbox-series_sheet_default_6: 4702402066461978157
+      xbox-series_sheet_default_60: -7891009314593566465
+      xbox-series_sheet_default_61: -5485615628256082837
+      xbox-series_sheet_default_62: -140753253553866836
+      xbox-series_sheet_default_63: 3810129421901073610
+      xbox-series_sheet_default_64: -5313762630807133439
+      xbox-series_sheet_default_65: 4862818793612518568
+      xbox-series_sheet_default_66: 3591223676558632787
+      xbox-series_sheet_default_67: 3535339483587531409
+      xbox-series_sheet_default_68: 6062455075830003151
+      xbox-series_sheet_default_69: 5656476313824395221
+      xbox-series_sheet_default_7: 6365818269979949638
+      xbox-series_sheet_default_70: -8108488988848379872
+      xbox-series_sheet_default_71: -8137071334583359028
+      xbox-series_sheet_default_72: 8933533997462792505
+      xbox-series_sheet_default_73: -1732137402461535892
+      xbox-series_sheet_default_74: 1222332025219363765
+      xbox-series_sheet_default_75: -7347394031040973824
+      xbox-series_sheet_default_76: 5999002962593926652
+      xbox-series_sheet_default_77: -7574138492269295415
+      xbox-series_sheet_default_78: -887982276881149595
+      xbox-series_sheet_default_79: 1734420632630393594
+      xbox-series_sheet_default_8: -1694354487793916271
+      xbox-series_sheet_default_80: 5033338306162614108
+      xbox-series_sheet_default_81: 7229959745676666379
+      xbox-series_sheet_default_82: 5241625944891950499
+      xbox-series_sheet_default_83: 1466067852877461465
+      xbox-series_sheet_default_84: -5229082730168716058
+      xbox-series_sheet_default_85: 7404184552697171332
+      xbox-series_sheet_default_86: 299173297298728486
+      xbox-series_sheet_default_87: 6526077229535291771
+      xbox-series_sheet_default_88: 4149175900648445624
+      xbox-series_sheet_default_89: 5276063797391755100
+      xbox-series_sheet_default_9: 6803666507712706023
+      xbox-series_sheet_default_90: 6213760252784838436
+      xbox-series_sheet_default_91: -1727486330295249565
+      xbox-series_sheet_default_92: 2417994679271472929
+      xbox-series_sheet_default_93: 2357911888487805984
+      xbox-series_sheet_default_94: 2275255539451695118
+      xbox-series_sheet_default_95: -847678217468527715
+      xbox-series_sheet_default_96: 2659853676512558331
+      xbox-series_sheet_default_97: 129618313370340057
+      xbox-series_sheet_default_98: 3910144958766706193
+      xbox-series_sheet_default_99: 4400725525727037623
+      xbox_button_a: -1763733032299919666
+      xbox_button_a_outline: 9021212445963244428
+      xbox_button_b: 4595819355805352913
+      xbox_button_b_outline: -2336283771223426185
+      xbox_button_back: 7016952397451120387
+      xbox_button_back_icon: -5919777367144728994
+      xbox_button_back_icon_outline: 1133757742804959831
+      xbox_button_back_outline: 5145797931863603683
+      xbox_button_color_a: 1247237500078207089
+      xbox_button_color_a_outline: -7586722982395486506
+      xbox_button_color_b: -7840270524386194143
+      xbox_button_color_b_outline: -3754970376597388454
+      xbox_button_color_x: 8685564054283324079
+      xbox_button_color_x_outline: 2758087569604253927
+      xbox_button_color_y: 6413887796485071898
+      xbox_button_color_y_outline: -8368651945231354444
+      xbox_button_menu: -4187758759448505707
+      xbox_button_menu_outline: 3675416295430250021
+      xbox_button_share: 3914321525480649719
+      xbox_button_share_outline: 112282736304596128
+      xbox_button_start: 7690785891960221319
+      xbox_button_start_icon: -8523612992961896913
+      xbox_button_start_icon_outline: 218433801512956968
+      xbox_button_start_outline: 8330953114533607092
+      xbox_button_view: -1482815271936417117
+      xbox_button_view_outline: 1530225783534455476
+      xbox_button_x: 7711321138431855192
+      xbox_button_x_outline: 4645112215978090179
+      xbox_button_y: -8972355617782916593
+      xbox_button_y_outline: 4602617622490311685
+      xbox_dpad: -4673782274592020654
+      xbox_dpad_all: 6546497596387291119
+      xbox_dpad_down: -8818831588182813891
+      xbox_dpad_down_outline: 6242082371298792688
+      xbox_dpad_horizontal: 3675438954557350192
+      xbox_dpad_horizontal_outline: 1382573363395044154
+      xbox_dpad_left: 7867241007871372632
+      xbox_dpad_left_outline: -7585064484646993782
+      xbox_dpad_none: -5930317345163734200
+      xbox_dpad_right: 7305050432731074075
+      xbox_dpad_right_outline: 7571145283847425167
+      xbox_dpad_round: 9108487614228638638
+      xbox_dpad_round_all: 6772275622200066980
+      xbox_dpad_round_down: 2477528732383432822
+      xbox_dpad_round_horizontal: -5760375596338304962
+      xbox_dpad_round_left: -2855045742085623639
+      xbox_dpad_round_right: -1399167570058401930
+      xbox_dpad_round_up: 2145660433789105653
+      xbox_dpad_round_vertical: 8235309211028240634
+      xbox_dpad_up: -2328080907609485555
+      xbox_dpad_up_outline: -761387325448490623
+      xbox_dpad_vertical: -4271495949713985937
+      xbox_dpad_vertical_outline: -6661963366495508502
+      xbox_elite_paddle_bottom_left: 4712762884920173887
+      xbox_elite_paddle_bottom_left_outline: 3581747812113841994
+      xbox_elite_paddle_bottom_right: -1878617975818870069
+      xbox_elite_paddle_bottom_right_outline: -8466409296302169098
+      xbox_elite_paddle_top_left: -1485781816089939302
+      xbox_elite_paddle_top_left_outline: 1955530723809233932
+      xbox_elite_paddle_top_right: 501510627125824678
+      xbox_elite_paddle_top_right_outline: 4803734507216646328
+      xbox_guide: -5441536251571902155
+      xbox_guide_outline: 3823018384962967847
+      xbox_lb: -8690202470262144181
+      xbox_lb_outline: 3179119433720732040
+      xbox_ls: 1124128035716253436
+      xbox_ls_outline: 4454119529632489562
+      xbox_lt: 6527404361641441907
+      xbox_lt_outline: -508338618389574459
+      xbox_rb: 8775496722935046269
+      xbox_rb_outline: 3826264261548194964
+      xbox_rs: -4022372901327385006
+      xbox_rs_outline: -9099073449627763849
+      xbox_rt: -8485347889684111294
+      xbox_rt_outline: 1885111357250558743
+      xbox_stick_l: 990700479192681150
+      xbox_stick_l_down: 3617569414782245886
+      xbox_stick_l_horizontal: -4904839956336349899
+      xbox_stick_l_left: -9109696446538251023
+      xbox_stick_l_press: 3660298755530050699
+      xbox_stick_l_right: -1190893419649108628
+      xbox_stick_l_up: 6964226833900438817
+      xbox_stick_l_vertical: -1262392249451555786
+      xbox_stick_r: -8068572354977228075
+      xbox_stick_r_down: 8236984641019955868
+      xbox_stick_r_horizontal: 8934269111576181139
+      xbox_stick_r_left: 9149089666612145072
+      xbox_stick_r_press: 2763642955174205510
+      xbox_stick_r_right: 5182132346981606022
+      xbox_stick_r_up: 3413272497186488969
+      xbox_stick_r_vertical: 398972930952162818
+      xbox_stick_side_l: -7359925005017285583
+      xbox_stick_side_r: 1835644914431763547
+      xbox_stick_top_l: -5459697190900349771
+      xbox_stick_top_r: -2131250071769521142
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
