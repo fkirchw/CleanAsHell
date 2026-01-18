@@ -231,6 +231,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 189561939763261279}
     m_Modifications:
+    - target: {fileID: 644222366638310150, guid: 3ae974e4e1a12bc40b456a26ab7fc05a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2237577583247075813}
     - target: {fileID: 1888646158447555178, guid: 3ae974e4e1a12bc40b456a26ab7fc05a, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -239,6 +243,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelCompletedManager
       objectReference: {fileID: 0}
+    - target: {fileID: 4098942000325796750, guid: 3ae974e4e1a12bc40b456a26ab7fc05a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2237577583247075813}
     - target: {fileID: 5123718664048468257, guid: 3ae974e4e1a12bc40b456a26ab7fc05a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -350,6 +358,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   visualPanel: {fileID: 0}
   victoryPanelPrefab: {fileID: 0}
+  alwaysShowS: 0
+  resetStateAfterLevel: 0
 --- !u!224 &5722162084769598426 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5123718664048468257, guid: 3ae974e4e1a12bc40b456a26ab7fc05a, type: 3}
@@ -489,6 +499,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 189561939763261279}
     m_Modifications:
+    - target: {fileID: 1761690326953755681, guid: 8dc299cec06a728499defb1805bffa58, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2678840288402282177, guid: 8dc299cec06a728499defb1805bffa58, type: 3}
       propertyPath: m_Name
       value: LevelUpPannelContoler
