@@ -9,7 +9,8 @@ public class FakeWall : MonoBehaviour, IDamageable
     [Header("Wall Settings")]
     [SerializeField] private bool debugMode = true;
     [SerializeField] private int health = 10;
-    [SerializeField] private List<FakeWall> linkedWalls = new List<FakeWall>(); // Pereții care se distrug împreună
+    [SerializeField] private List<FakeWall> linkedWalls = new List<FakeWall>();
+    [SerializeField] private bool spawnBlood = false;
     
     private BoxCollider2D boxCollider;
     private SpriteRenderer spriteRenderer;
@@ -77,7 +78,7 @@ public class FakeWall : MonoBehaviour, IDamageable
         health -= damage;
         
         // EFECT DE SÂNGE
-        if (BloodSystem.Instance != null)
+        if (spawnBlood && BloodSystem.Instance != null)
         {
             BloodSystem.Instance.OnEnemyHit(transform.position, knockbackDir, true, damage);
         }

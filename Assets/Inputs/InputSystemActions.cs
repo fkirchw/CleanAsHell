@@ -391,7 +391,7 @@ namespace Inputs
                 {
                     ""name"": """",
                     ""id"": ""1ceaa2e6-2312-406b-99f4-3ddb9b72f9b5"",
-                    ""path"": ""<Keyboard>/leftAlt"",
+                    ""path"": ""<Keyboard>/leftShift"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
