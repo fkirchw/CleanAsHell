@@ -7,12 +7,12 @@ namespace Characters.Enemies
     public class TrapChest : MonoBehaviour, IDamageable
     {
         [Header("Settings")]
-        [SerializeField] public int health { get; private set; }  = 0;
         [SerializeField] private string uniqueID; 
         [SerializeField] private GameObject floorTile; 
         [SerializeField] private GameObject destroyEffect; 
 
         private bool isDestroyed = false;
+        private int health = 0;
 
         private void Awake()
         {
@@ -46,6 +46,11 @@ namespace Characters.Enemies
                 Debug.Log("<color=red>TrapChest has been destroyed!</color>");
                 TriggerChestTrap();
             }
+        }
+
+        public int GetMaxHealth()
+        {
+            return health;
         }
 
         private void TriggerChestTrap()

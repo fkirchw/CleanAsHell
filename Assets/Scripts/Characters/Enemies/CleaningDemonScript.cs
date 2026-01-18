@@ -10,7 +10,7 @@ namespace Characters.Enemies
         [SerializeField] private Animator animator;
         [SerializeField] private float moveSpeed = 2f;
         [SerializeField] private float attackDistance = 3f;
-        [SerializeField] public int health { get; private set; } = 10;
+        [SerializeField] private int health = 10;
         [SerializeField] private int damage = 5;
         [SerializeField] private Vector2 knockbackDir = new Vector2(1, 1);
         [SerializeField] private float knockbackForce = 2f;
@@ -29,6 +29,7 @@ namespace Characters.Enemies
         private bool isInAttack = false;
 
         private bool canAttack = true;
+        private int maxHealth;
 
 
         void Start()
@@ -39,6 +40,7 @@ namespace Characters.Enemies
             {
                 return;
             }
+            maxHealth =  health;
            
         }
 
@@ -203,6 +205,11 @@ namespace Characters.Enemies
                 //increase Mobs killed
                 LevelStateManager.Instance.IncreaseEnemiesKilled();
             }
+        }
+
+        public int GetMaxHealth()
+        {
+            return maxHealth;
         }
 
         private void OnFinishedDeathAniEvent()

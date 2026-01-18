@@ -17,7 +17,7 @@ namespace Characters.Player
 
         [SerializeField] private SpriteRenderer spriteRenderer;
 
-        [SerializeField] public int health { get; private set; } = 10;
+        [SerializeField] private int health = 10;
 
         [Header("Light Attack")] [SerializeField]
         private int lightAttackPower = 5;
@@ -191,6 +191,11 @@ namespace Characters.Player
 
                 invincibilityCoroutine = StartCoroutine(InvincibilityCoroutine());
             }
+        }
+
+        public int GetMaxHealth()
+        {
+            return maxHealth;
         }
 
         private IEnumerator InvincibilityCoroutine()

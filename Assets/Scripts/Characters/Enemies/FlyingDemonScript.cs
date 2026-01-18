@@ -13,11 +13,12 @@ namespace Characters.Enemies
         private Vector2 direction;
         [SerializeField] private float moveSpeed = 4f;
         [SerializeField] private float attackDistance = 4f;
-        [SerializeField] public int health { get; private set; } = 10;
+        [SerializeField] private int health = 10;
         [SerializeField] private int damage = 10;
         [SerializeField] private float knockbackForce = 15f;
 
         private bool isDead = false;
+        private int maxHealth;
 
         private bool playerDetected = false;
 
@@ -26,6 +27,7 @@ namespace Characters.Enemies
         {
             spriteRenderer = GetComponent<SpriteRenderer>();
             rb = GetComponent<Rigidbody2D>();
+            maxHealth = health;
         }
 
         // Update is called once per frame
@@ -79,6 +81,11 @@ namespace Characters.Enemies
                 //increase Mobs killed
                 LevelStateManager.Instance.IncreaseEnemiesKilled();
             }
+        }
+
+        public int GetMaxHealth()
+        {
+            return maxHealth;
         }
 
         private void HandleMovement()

@@ -88,7 +88,7 @@ namespace Blood
         {
             List<IDamageable> damageables = GameObject.FindGameObjectsWithTag("Enemy")
                 .Select(x => x.GetComponent<IDamageable>()).ToList();
-            maxBloodInLevel = damageables.Sum(x => x.health);
+            maxBloodInLevel = damageables.Sum(x => x.GetMaxHealth());
             Debug.Log("Maximum Blood in Level: " + maxBloodInLevel);
         }
 

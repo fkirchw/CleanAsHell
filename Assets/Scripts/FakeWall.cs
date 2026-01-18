@@ -8,13 +8,13 @@ public class FakeWall : MonoBehaviour, IDamageable
 {
     [Header("Wall Settings")]
     [SerializeField] private bool debugMode = true;
-    [SerializeField] public int health { get; private set; } = 0;
     [SerializeField] private List<FakeWall> linkedWalls = new List<FakeWall>();
     [SerializeField] private bool spawnBlood = false;
     
     private BoxCollider2D boxCollider;
     private SpriteRenderer spriteRenderer;
     private bool isDestroyed = false;
+    private int health = 0;
     
     private void Awake()
     {
@@ -92,7 +92,12 @@ public class FakeWall : MonoBehaviour, IDamageable
             DestroyWallAndLinked();
         }
     }
-    
+
+    public int GetMaxHealth()
+    {
+        return health;
+    }
+
     private void DestroyWallAndLinked()
     {
         if (debugMode) Debug.Log($"Destroying FakeWall: {name} and {linkedWalls.Count} linked walls");

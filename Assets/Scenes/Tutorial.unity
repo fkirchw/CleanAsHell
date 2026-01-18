@@ -176,11 +176,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da03b599d60efb0d8b1517cbbd4de7ae, type: 3}
---- !u!1 &453032579 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 227184334918309083, guid: cc59fff9b6add5a4ab96866953e207da, type: 3}
-  m_PrefabInstance: {fileID: 1445902494}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &474089205
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13083,10 +13078,6 @@ PrefabInstance:
       propertyPath: m_fontSizeBase
       value: 50
       objectReference: {fileID: 0}
-    - target: {fileID: 3118427627264677961, guid: cc59fff9b6add5a4ab96866953e207da, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 453032579}
     - target: {fileID: 3483870468131098392, guid: cc59fff9b6add5a4ab96866953e207da, type: 3}
       propertyPath: m_SizeDelta.x
       value: 73.7159

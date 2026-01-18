@@ -7,13 +7,13 @@ using Blood;
 public class TrapChest1 : MonoBehaviour, IDamageable
 {
     [SerializeField] private GameObject floorTile;
-    [SerializeField] public int health { get; private set; }  = 0;
     [SerializeField] private GameObject destroyEffect;
     [SerializeField] private List<TrapChest1> linkedTraps = new List<TrapChest1>();
     
     private BoxCollider2D boxCollider;
     private SpriteRenderer spriteRenderer;
     private bool isDestroyed = false;
+    private int health = 0;
     
     private void Awake()
     {
@@ -55,7 +55,12 @@ public class TrapChest1 : MonoBehaviour, IDamageable
         
         TriggerFloorDisappear();
     }
-    
+
+    public int GetMaxHealth()
+    {
+        return health;
+    }
+
     private void TriggerFloorDisappear()
     {
         isDestroyed = true;

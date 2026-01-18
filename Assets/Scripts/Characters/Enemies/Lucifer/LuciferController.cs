@@ -13,7 +13,7 @@ namespace Characters.Enemies
     {
         [SerializeField] private Animator animator;
         [SerializeField] private float moveSpeed = 2f;
-        [SerializeField] public int health { get; private set; } = 10;
+        [SerializeField] private int health = 10;
         private PlayerData playerData;
         [SerializeField] private int contactDamage = 1;
         [SerializeField] private float contactDamageCooldown = 0.5f;
@@ -252,6 +252,11 @@ namespace Characters.Enemies
                     bossHealthBarPanel.SetActive(false);
                 }
             }
+        }
+
+        public int GetMaxHealth()
+        {
+            return (int)MAX_HEALTH;
         }
 
         private void OnFinishedDeathAniEvent()
