@@ -7,7 +7,7 @@ namespace Characters.Enemies
     public class TrapChest : MonoBehaviour, IDamageable
     {
         [Header("Settings")]
-        [SerializeField] private int health = 1;
+        [SerializeField] public int health { get; private set; }  = 0;
         [SerializeField] private string uniqueID; 
         [SerializeField] private GameObject floorTile; 
         [SerializeField] private GameObject destroyEffect; 
@@ -27,10 +27,10 @@ namespace Characters.Enemies
             }
         }
 
-        // Aceasta functie ne confirma daca AI-ul Unity vede vreo coliziune
+        // This function confirms if Unity's AI detects any collision
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            Debug.Log($"Ceva a atins Trigger-ul cufarului: {collision.name}");
+            Debug.Log($"Something touched the chest trigger: {collision.name}");
         }
 
         public void TakeDamage(int damage, Vector2 knockbackDir, float knockbackForce)
@@ -39,11 +39,11 @@ namespace Characters.Enemies
 
             health -= damage;
 
-            Debug.Log($"<color=yellow>TrapChest a primit {damage} damage!</color> Viata ramasa: {health}");
+            Debug.Log($"<color=yellow>TrapChest took {damage} damage!</color> Remaining health: {health}");
 
             if (health <= 0)
             {
-                Debug.Log("<color=red>TrapChest a fost distrus!</color>");
+                Debug.Log("<color=red>TrapChest has been destroyed!</color>");
                 TriggerChestTrap();
             }
         }
@@ -77,7 +77,7 @@ namespace Characters.Enemies
         public void ResetChest()
         {
             PlayerPrefs.DeleteKey(uniqueID);
-            Debug.Log("Cufarul a fost resetat.");
+            Debug.Log("Chest has been reset.");
         }
     }
 }

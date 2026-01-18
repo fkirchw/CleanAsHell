@@ -8,7 +8,7 @@ public class FakeWall : MonoBehaviour, IDamageable
 {
     [Header("Wall Settings")]
     [SerializeField] private bool debugMode = true;
-    [SerializeField] private int health = 10;
+    [SerializeField] public int health { get; private set; } = 0;
     [SerializeField] private List<FakeWall> linkedWalls = new List<FakeWall>();
     [SerializeField] private bool spawnBlood = false;
     
@@ -21,7 +21,7 @@ public class FakeWall : MonoBehaviour, IDamageable
         boxCollider = GetComponent<BoxCollider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         
-        // SETEAZĂ LAYER-UL ENEMY LA RUNTIME
+        // SET ENEMY LAYER AT RUNTIME
         int enemyLayer = LayerMask.NameToLayer("Enemy");
         if (enemyLayer != -1)
         {
@@ -38,7 +38,7 @@ public class FakeWall : MonoBehaviour, IDamageable
         }
     }
     
-    // Metodă pentru a link-ui pereții manual sau prin script
+    // Method to link walls manually or via script
     public void LinkWall(FakeWall wallToLink)
     {
         if (!linkedWalls.Contains(wallToLink))
@@ -47,7 +47,7 @@ public class FakeWall : MonoBehaviour, IDamageable
         }
     }
     
-    // Detectează automat pereții vecini
+    // Automatically detects neighboring walls
     public void AutoLinkNeighbors(float maxDistance = 1.5f)
     {
         FakeWall[] allWalls = FindObjectsOfType<FakeWall>();
@@ -57,12 +57,12 @@ public class FakeWall : MonoBehaviour, IDamageable
             if (wall != this && Vector2.Distance(transform.position, wall.transform.position) <= maxDistance)
             {
                 LinkWall(wall);
-                wall.LinkWall(this); // Link reciproc
+                wall.LinkWall(this); // Reciprocal link
             }
         }
     }
     
-    // ACEASTĂ METODĂ TREBUIE SĂ FIE IDENTICĂ CU CEA DIN FlyingDemonScript
+    // THIS METHOD MUST BE IDENTICAL TO THE ONE IN FlyingDemonScript
     public void TakeDamage(int damage, Vector2 knockbackDir, float knockbackForce)
     {
         if (isDestroyed) return;
@@ -77,7 +77,7 @@ public class FakeWall : MonoBehaviour, IDamageable
         
         health -= damage;
         
-        // EFECT DE SÂNGE
+        // BLOOD EFFECT
         if (spawnBlood && BloodSystem.Instance != null)
         {
             BloodSystem.Instance.OnEnemyHit(transform.position, knockbackDir, true, damage);
@@ -97,10 +97,10 @@ public class FakeWall : MonoBehaviour, IDamageable
     {
         if (debugMode) Debug.Log($"Destroying FakeWall: {name} and {linkedWalls.Count} linked walls");
         
-        // Distruge acest perete
+        // Destroy this wall
         StartCoroutine(DestroySingleWall(this));
         
-        // Distruge toți pereții link-uiți
+        // Destroy all linked walls
         foreach (FakeWall linkedWall in linkedWalls)
         {
             if (linkedWall != null && !linkedWall.isDestroyed)
