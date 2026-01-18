@@ -46,12 +46,20 @@ namespace Characters.Player
      
 
         private void Awake()
-        {
-            movement = GetComponent<PlayerMovement>();
-            playerCollider = GetComponent<Collider2D>();
-            input = GetComponent<PlayerInputHandler>();
-            MAX_HEALTH = health;
-        }
+{
+    movement = GetComponent<PlayerMovement>();
+    playerCollider = GetComponent<Collider2D>();
+    input = GetComponent<PlayerInputHandler>();
+    
+    if (LevelStateManager.Instance != null)
+    {
+        MAX_HEALTH = 10 + (int)LevelStateManager.Instance.GetVitalityHealthBonus();
+    }
+    else
+    {
+        MAX_HEALTH = health;
+    }
+}
 
 
         // ** Query Helath of player from levelStateManager to work throughout levels
@@ -75,13 +83,11 @@ namespace Characters.Player
             UpdateAnimations();
         }
 
-        private void OnRegenerationHandler(int regeneratedHealth)
-        {
-
-            regenerationCount++;
-            //Debug.Log("Regeneration Count " + regenerationCount);
-            IncreaseHealth(regeneratedHealth);
-        }
+private void OnRegenerationHandler(float regeneratedHealth) // Schimbat din int în float
+{
+    regenerationCount++;
+    IncreaseHealth(Mathf.RoundToInt(regeneratedHealth)); // Rotunjește la int
+}
 
         private bool attackRequested = false;
 
@@ -209,20 +215,31 @@ private void PerformAttack(int attackPower, float attackDistance, float attackRa
     Vector2 attackCenter = (Vector2)transform.position + (dir * attackDistance * 0.5f);
     Collider2D[] hits = Physics2D.OverlapCircleAll(attackCenter, attackRadius, LayerMask.GetMask("Enemy"));
 
+    float damageMultiplier = 1f;
+    if (attackPower == heavyAttackPower)
+    {
+        damageMultiplier = LevelStateManager.Instance.GetHeavyAttackMultiplier();
+    }
+    else if (attackPower == lightAttackPower)
+    {
+        damageMultiplier = LevelStateManager.Instance.GetLightAttackMultiplier();
+    }
+    
+    int actualDamage = Mathf.RoundToInt(attackPower * damageMultiplier);
+
     foreach (Collider2D hit in hits)
     {
-
         Vector2 closestPoint = hit.ClosestPoint(transform.position);
         
         Vector2 toEnemy = closestPoint - (Vector2)transform.position;
 
-        if (Vector2.Dot(toEnemy.normalized, dir) > 0.3f) // ~70° cone
+        if (Vector2.Dot(toEnemy.normalized, dir) > 0.3f)
         {
             if (!hit.isTrigger && hit.TryGetComponent(out IDamageable damageable))
             {
                 if (hitThisAttack.Add(damageable))
                 {
-                    damageable.TakeDamage(attackPower, dir, knockbackForce);
+                    damageable.TakeDamage(actualDamage, dir, knockbackForce);
                 }
             }
         }

@@ -1,29 +1,31 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class BloodCounterScript : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     public TMP_Text bloodCounter;
-
+    
     private void Start()
     {
-        bloodCounter.text = LevelStateManager.Instance.GetBloodCounter().ToString();
+        UpdateBloodCounter();
     }
-
+    
     private void OnEnable()
     {
-        GameEvents.OnBloodScoreChanged += UpdateScoreText;
+        UpdateBloodCounter();
     }
-
-    private void OnDisable()
+    
+    void Update()
     {
-        GameEvents.OnBloodScoreChanged -= UpdateScoreText;
+        UpdateBloodCounter();
     }
-
-    public void UpdateScoreText(int newScore)
+    
+    void UpdateBloodCounter()
     {
-        bloodCounter.text = newScore.ToString();
+        if (LevelStateManager.Instance != null && bloodCounter != null)
+        {
+            // Folosește noua metodă GetDisplayBloodCounter()
+            bloodCounter.text = LevelStateManager.Instance.GetDisplayBloodCounter().ToString();
+        }
     }
 }
