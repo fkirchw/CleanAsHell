@@ -9,6 +9,8 @@ public class LevelCompletedScript : MonoBehaviour
     private GameObject playerObject;
     [SerializeField] private GameObject visualPanel;
     [SerializeField] private GameObject victoryPanelPrefab;
+    [SerializeField] private bool alwaysShowS;
+    [SerializeField] private bool resetStateAfterLevel;
     private bool menuShown = false;
     private bool sceneLoading = false;
     private float levelStartTime;
@@ -156,7 +158,11 @@ public class LevelCompletedScript : MonoBehaviour
         float totalScore = enemiesKilled * 100 * timeMultiplier * enemyMultiplier * cleanedMultiplier;
         
         // Obținem gradul bazat pe scor
-        string grade = CalculateGrade(totalScore);
+        string grade = "S";
+        if (!alwaysShowS) //Shows S regardless of values. For tutorial.
+        {
+            grade = CalculateGrade(totalScore);
+        }
 
         SetTextIfExists("TotalTimeScore", timeFormatted);
         SetTextIfExists("TotalBloodScore", bloodScore.ToString("F0"));
@@ -277,6 +283,12 @@ public class LevelCompletedScript : MonoBehaviour
         if (sceneLoading) return;
         
         sceneLoading = true;
+        
+        if(resetStateAfterLevel)
+        {
+            LevelStateManager.Instance.ResetAllGameData();
+        }
+        
         StartCoroutine(LoadNextLevelAsync());
     }
     
