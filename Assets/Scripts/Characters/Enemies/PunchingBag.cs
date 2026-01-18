@@ -9,7 +9,7 @@ namespace Characters.Enemies
     {
         [SerializeField] private SpriteRenderer spriteRenderer;
         [SerializeField] private bool isAirbourne;
-        private float health = 100;
+        public int health { get; private set; }= 0;
         private Material spriteMaterial;
         private Coroutine flashCoroutine;
 

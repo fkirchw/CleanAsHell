@@ -12,7 +12,7 @@ namespace Characters.Enemies
         [SerializeField] private float attackDistance = 3f;
         
         [Header("Combat Settings")]
-        [SerializeField] private int health = 10;
+        [SerializeField] public int health { get; private set; }= 10;
         [SerializeField] private int attackDamage = 5;
         [SerializeField] private Vector2 attackKnockbackDir = new Vector2(3, 1).normalized;
         [SerializeField] private float attackKnockbackForce = 15f;

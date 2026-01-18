@@ -13,7 +13,7 @@ namespace Characters.Player
         [Header("Components")] [SerializeField]
         private Animator animator;
 
-        [SerializeField] private int health = 10;
+        [SerializeField] public int health { get; private set; }  = 10;
 
         [Header("Light Attack")] [SerializeField]
         private int lightAttackPower = 5;

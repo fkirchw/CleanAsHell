@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using Characters.Interfaces;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -62,6 +64,7 @@ namespace Blood
         private HashSet<Vector2Int> surfaceTiles;
         private HashSet<Vector2Int> validFloorTiles;
         private float totalBloodGenerated;
+        private float maxBloodInLevel;
 
         void Awake()
         {
@@ -78,7 +81,16 @@ namespace Blood
         {
             InitializeBloodSystem();
             CacheSurfaceAndFloorTiles();
+            CacheMaxBloodInLevel();
         }
+
+        void CacheMaxBloodInLevel()
+        {
+            List<IDamageable> damageables = GameObject.FindGameObjectsWithTag("Enemy").Select(x =>x.GetComponent<IDamageable>()).ToList();
+            maxBloodInLevel = damageables.Sum(x => x.health);
+            Debug.Log("Maximum Blood in Level: " + maxBloodInLevel);
+        }
+
 
         void CacheSurfaceAndFloorTiles()
         {
@@ -231,7 +243,8 @@ namespace Blood
 
             // Calculate world space bounds of the grid
             Vector2 worldMin = floorTilemap.CellToWorld(new Vector3Int(gridOffset.x, gridOffset.y, 0));
-            Vector2 worldMax = floorTilemap.CellToWorld(new Vector3Int(gridOffset.x + gridWidth, gridOffset.y + gridHeight, 0));
+            Vector2 worldMax =
+                floorTilemap.CellToWorld(new Vector3Int(gridOffset.x + gridWidth, gridOffset.y + gridHeight, 0));
 
             // Set up the blood mask tiling/offset
             Vector2 cellHalfSize = floorTilemap.cellSize * 0.5f;
@@ -678,6 +691,19 @@ namespace Blood
             return totalBloodGenerated;
         }
 
+        public float GetMaxBloodInLevel()
+        {
+            return maxBloodInLevel;
+        }
+        
+        /// <summary>
+        /// Get cleaned blood in this level.
+        /// </summary>
+        public float GetBloodCleaned()
+        {
+            return totalBloodGenerated - GetCurrentBloodInLevel();
+        }
+
         /// <summary>
         /// Get percentage of blood cleaned (0-100)
         /// </summary>
@@ -722,7 +748,8 @@ namespace Blood
                         Gizmos.color = gizmoColor;
 
                         // Draw cube at cell position
-                        Vector3 cubeSize = new Vector3(floorTilemap.cellSize.x * 0.9f, floorTilemap.cellSize.y * 0.9f, 0.1f);
+                        Vector3 cubeSize = new Vector3(floorTilemap.cellSize.x * 0.9f, floorTilemap.cellSize.y * 0.9f,
+                            0.1f);
                         Gizmos.DrawCube(cellCenter, cubeSize);
 
                         // Draw wire cube outline

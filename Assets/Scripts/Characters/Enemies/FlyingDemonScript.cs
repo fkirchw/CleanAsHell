@@ -13,7 +13,7 @@ namespace Characters.Enemies
         private Vector2 direction;
         [SerializeField] private float moveSpeed = 4f;
         [SerializeField] private float attackDistance = 4f;
-        [SerializeField] private int health = 10;
+        [SerializeField] public int health { get; private set; } = 10;
         [SerializeField] private int damage = 10;
         [SerializeField] private float knockbackForce = 15f;
 

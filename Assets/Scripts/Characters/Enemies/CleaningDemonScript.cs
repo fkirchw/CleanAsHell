@@ -10,7 +10,7 @@ namespace Characters.Enemies
         [SerializeField] private Animator animator;
         [SerializeField] private float moveSpeed = 2f;
         [SerializeField] private float attackDistance = 3f;
-        [SerializeField] private int health = 10;
+        [SerializeField] public int health { get; private set; } = 10;
         [SerializeField] private int damage = 5;
         [SerializeField] private Vector2 knockbackDir = new Vector2(1, 1);
         [SerializeField] private float knockbackForce = 2f;
