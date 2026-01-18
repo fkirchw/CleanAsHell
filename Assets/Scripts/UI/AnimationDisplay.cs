@@ -88,6 +88,16 @@ namespace UI
             return 1f; // Default fallback
         }
 
+        public void DealDamage()
+        {
+            //Stub so the animation has something to call
+        }
+
+        public void DealHeavyDamage()
+        {
+            //Stub so the animation has something to call
+        }
+
         private void EmitFoamParticle()
         {
             Vector2 randomOffset = UnityEngine.Random.insideUnitCircle * 1f;

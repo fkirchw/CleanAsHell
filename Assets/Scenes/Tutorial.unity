@@ -13271,10 +13271,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Health Bar
       objectReference: {fileID: 0}
-    - target: {fileID: 8311586960391706421, guid: cc59fff9b6add5a4ab96866953e207da, type: 3}
-      propertyPath: m_ScaleFactor
-      value: 0.75
-      objectReference: {fileID: 0}
     - target: {fileID: 8449576527981571314, guid: cc59fff9b6add5a4ab96866953e207da, type: 3}
       propertyPath: bossScript
       value: 
@@ -29908,33 +29904,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2706030488599201284, guid: 2c634abe36fa3a1c7b7a09f9ea4ad2e7, type: 3}
-      propertyPath: fastFallForce
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2706030488599201284, guid: 2c634abe36fa3a1c7b7a09f9ea4ad2e7, type: 3}
-      propertyPath: lookDownDelay
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2706030488599201284, guid: 2c634abe36fa3a1c7b7a09f9ea4ad2e7, type: 3}
-      propertyPath: lookDownDelayAfterFastFall
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5238352174512194233, guid: 2c634abe36fa3a1c7b7a09f9ea4ad2e7, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 7888525575863758627, guid: 2c634abe36fa3a1c7b7a09f9ea4ad2e7, type: 3}
-      propertyPath: maxCleaningHeight
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7888525575863758627, guid: 2c634abe36fa3a1c7b7a09f9ea4ad2e7, type: 3}
-      propertyPath: verticalTolerance
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7888525575863758627, guid: 2c634abe36fa3a1c7b7a09f9ea4ad2e7, type: 3}
-      propertyPath: regenerationThreshold
-      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

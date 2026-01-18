@@ -62,7 +62,7 @@ namespace Characters.Player
             playerCollider = GetComponent<Collider2D>();
             input = GetComponent<PlayerInputHandler>();
 
-            if (TryGetComponent(out spriteRenderer))
+            if (!(spriteRenderer && TryGetComponent(out spriteRenderer)))
             {
                 Debug.LogError("No sprite renderer found on " + gameObject.name);
             }
