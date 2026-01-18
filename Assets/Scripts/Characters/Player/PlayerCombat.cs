@@ -176,13 +176,17 @@ namespace Characters.Player
         // See https://docs.unity3d.com/6000.3/Documentation/Manual/script-AnimationWindowEvent.html
         private void DealDamage()
         {
-            PerformAttack(lightAttackPower, lightAttackDistance, lightAttackRadius, lightAttackKnockback);
+            float damageMultiplier = LevelStateManager.Instance.GetLightAttackMultiplier();
+            int attackPower = Mathf.RoundToInt(lightAttackPower * damageMultiplier);
+            PerformAttack(attackPower, lightAttackDistance, lightAttackRadius, lightAttackKnockback);
         }
 
         // Called by animation event in the HeavySweep animation
         private void DealHeavyDamage()
         {
-            PerformAttack(heavyAttackPower, heavyAttackDistance, heavyAttackRadius, heavyAttackKnockback);
+            float damageMultiplier = LevelStateManager.Instance.GetHeavyAttackMultiplier();
+            int attackPower = Mathf.RoundToInt(heavyAttackPower * damageMultiplier);
+            PerformAttack(attackPower, lightAttackDistance, lightAttackRadius, lightAttackKnockback);
         }
 
         private void PerformAttack(int attackPower, float attackDistance, float attackRadius, float knockbackForce)
@@ -190,19 +194,7 @@ namespace Characters.Player
             Vector2 dir = movement.FacingDirection;
             Vector2 attackCenter = (Vector2)transform.position + (dir * attackDistance * 0.5f);
             Collider2D[] hits = Physics2D.OverlapCircleAll(attackCenter, attackRadius, LayerMask.GetMask("Enemy"));
-
-            float damageMultiplier = 1f;
-            if (attackPower == heavyAttackPower)
-            {
-                damageMultiplier = LevelStateManager.Instance.GetHeavyAttackMultiplier();
-            }
-            else if (attackPower == lightAttackPower)
-            {
-                damageMultiplier = LevelStateManager.Instance.GetLightAttackMultiplier();
-            }
-
-            int actualDamage = Mathf.RoundToInt(attackPower * damageMultiplier);
-
+            
             foreach (Collider2D hit in hits)
             {
                 Vector2 closestPoint = hit.ClosestPoint(transform.position);
@@ -215,7 +207,7 @@ namespace Characters.Player
                     {
                         if (hitThisAttack.Add(damageable))
                         {
-                            damageable.TakeDamage(actualDamage, dir, knockbackForce);
+                            damageable.TakeDamage(attackPower, dir, knockbackForce);
                         }
                     }
                 }
