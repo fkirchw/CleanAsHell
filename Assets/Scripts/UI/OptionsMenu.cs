@@ -78,9 +78,6 @@ namespace UI
 
         private void OnPauseTriggered(InputAction.CallbackContext context)
         {
-            // Ignore pause input in main menu
-            //if (SceneManager.GetActiveScene().buildIndex == 0) return;
-        
             if (visualPanel == null) return;
 
             if (visualPanel.activeSelf)
@@ -95,9 +92,6 @@ namespace UI
 
         private void OnCancelTriggered(InputAction.CallbackContext context)
         {
-            // Only close if menu is open and not in main menu
-            if (SceneManager.GetActiveScene().buildIndex == 0) return;
-        
             if (visualPanel != null && visualPanel.activeSelf)
             {
                 Resume();
