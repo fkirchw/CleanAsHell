@@ -79,7 +79,7 @@ namespace UI
         private void OnPauseTriggered(InputAction.CallbackContext context)
         {
             // Ignore pause input in main menu
-            if (SceneManager.GetActiveScene().buildIndex == 0) return;
+            //if (SceneManager.GetActiveScene().buildIndex == 0) return;
         
             if (visualPanel == null) return;
 
