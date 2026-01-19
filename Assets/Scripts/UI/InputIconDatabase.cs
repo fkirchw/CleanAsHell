@@ -8,36 +8,25 @@ public class InputIconDatabase : ScriptableObject
     public class SpriteSheetReference
     {
         public Texture2D spriteSheet;
+        public Sprite[] sprites;  // Auto-populated by editor script
         private Dictionary<string, Sprite> spriteCache;
         
         public Sprite GetSprite(string spriteName)
         {
-            if (spriteSheet == null) return null;
+            if (sprites == null || sprites.Length == 0) return null;
             
             // Build cache on first access
             if (spriteCache == null)
             {
                 spriteCache = new Dictionary<string, Sprite>();
                 
-#if UNITY_EDITOR
-                string assetPath = UnityEditor.AssetDatabase.GetAssetPath(spriteSheet);
-                Object[] assets = UnityEditor.AssetDatabase.LoadAllAssetsAtPath(assetPath);
-                
-                foreach (Object asset in assets)
+                foreach (Sprite sprite in sprites)
                 {
-                    if (asset is Sprite sprite)
+                    if (sprite != null)
                     {
                         spriteCache[sprite.name] = sprite;
                     }
                 }
-#else
-                // Runtime fallback - load from Resources if needed
-                Sprite[] sprites = Resources.LoadAll<Sprite>(spriteSheet.name);
-                foreach (Sprite sprite in sprites)
-                {
-                    spriteCache[sprite.name] = sprite;
-                }
-#endif
             }
             
             spriteCache.TryGetValue(spriteName, out Sprite result);
@@ -213,9 +202,9 @@ public class InputIconDatabase : ScriptableObject
             }
         }
         
-        if (sheet == null || sheet.spriteSheet == null)
+        if (sheet == null || sheet.sprites == null || sheet.sprites.Length == 0)
         {
-            Debug.LogWarning($"No sprite sheet assigned for scheme: {controlScheme}, device: {deviceName}");
+            Debug.LogWarning($"No sprites assigned for scheme: {controlScheme}, device: {deviceName}");
             return null;
         }
         
@@ -240,7 +229,7 @@ public class InputIconDatabase : ScriptableObject
         
         if (sprite == null)
         {
-            Debug.LogWarning($"Sprite '{spriteName}' not found in sheet: {sheet.spriteSheet.name}");
+            Debug.LogWarning($"Sprite '{spriteName}' not found in sprite sheet");
         }
         
         return sprite;
