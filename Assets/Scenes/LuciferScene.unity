@@ -6077,6 +6077,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6081579016755929047, guid: 2c634abe36fa3a1c7b7a09f9ea4ad2e7, type: 3}
+      propertyPath: invincibilityDuration
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7888525575863758627, guid: 2c634abe36fa3a1c7b7a09f9ea4ad2e7, type: 3}
       propertyPath: maxCleaningHeight
       value: 1
@@ -6484,11 +6488,11 @@ MonoBehaviour:
   tongue: {fileID: 375614499}
   tongueIKTarget: {fileID: 827595447}
   tongueIKBase: {fileID: 2078791549}
-  tongueSpeed: 7
+  tongueSpeed: 8
   retractSpeed: 10
-  attackDistance: 3
+  attackDistance: 7
   attackDuration: 1.5
-  attackCooldown: 6
+  attackCooldown: 5
   damage: 1
   knockbackDir: {x: -2, y: 1.5}
   knockBackForce: 1
@@ -6617,7 +6621,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LuciferController
   animator: {fileID: 1305216813}
-  moveSpeed: 3
+  moveSpeed: 2.5
   health: 70
   contactDamage: 1
   contactDamageCooldown: 2
@@ -6636,12 +6640,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bcaab6336a709446b40e1699b5010b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AttackTrident
-  attackCooldown: 5
-  attackDistance: 4
+  attackCooldown: 3
+  attackDistance: 3
   knockbackDir: {x: 1, y: 1}
   knockbackForce: 1
-  damage: 3
-  damageRange: {x: 3, y: 2}
+  damage: 5
+  damageRange: {x: 3.5, y: 1}
 --- !u!114 &1305216820
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6654,12 +6658,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0708255fb5a21964b9d5e1e9cbe5ad07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SweepAttack
-  attackCooldown: 3
+  attackCooldown: 5
   attackDistance: 2
   knockbackDir: {x: 3, y: 2}
   damageRange: {x: 2, y: 2}
   knockbackForce: 2
-  damage: 3
+  damage: 5
 --- !u!1 &1695455591
 GameObject:
   m_ObjectHideFlags: 0

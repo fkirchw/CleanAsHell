@@ -17,10 +17,20 @@ public class AttackTrident : MonoBehaviour, IAttack
 
     Animator animator;
 
-    void Start()
+    void Awake()
     {
         animator = GetComponent<Animator>();
         controller = GetComponent<LuciferController>();
+
+        if(controller == null)
+        {
+            Debug.LogError("LuciferController not found on " + gameObject.name);
+        }
+
+        if (animator == null)
+        {
+            Debug.LogError("LuciferAnimator not found on " + gameObject.name);
+        }
     }
     
     public void Attack()

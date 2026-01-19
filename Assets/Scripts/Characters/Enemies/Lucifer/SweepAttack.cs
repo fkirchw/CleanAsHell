@@ -18,12 +18,25 @@ public class AttackSweep : MonoBehaviour, IAttack
 
     Animator animator;
 
-    void Start()
+ 
+
+    private void Awake()
     {
-        animator = GetComponent<Animator>();
         controller = GetComponent<LuciferController>();
+        animator = GetComponent<Animator>();
+
+        if (controller == null)
+        {
+            Debug.LogError("LuciferController not found on " + gameObject.name);
+        }
+
+        if (animator == null)
+        {
+            Debug.LogError("LuciferAnimator not found on " + gameObject.name);
+        }
     }
-    
+
+
     public void Attack()
     {
         StartCoroutine(AttackRoutine());
@@ -40,6 +53,7 @@ public class AttackSweep : MonoBehaviour, IAttack
     private IEnumerator AttackRoutine()
     {
         yield return new WaitForSeconds(0.35f); // 10 ms
+
         controller.OnDamageDelt(this);
     }
 
