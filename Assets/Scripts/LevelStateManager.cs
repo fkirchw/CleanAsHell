@@ -5,23 +5,23 @@ using UnityEngine.SceneManagement;
 public class LevelStateManager : MonoBehaviour
 {
     private int playerHealth;
-    private int bloodCounter; // Total blood collected in the current level
-    private int allLevelsBloodCollected = 0; // Total blood collected from all previous levels
+    private int bloodCounter;
+    private int allLevelsBloodCollected = 0;
     private float levelCleaned;
     private int enemiesKilled;
     private int deathCounter;
 
     private int MAX_HEALTH;
     
-    private int[] upgradeLevels = new int[5]; // Persistent upgrades between scenes
+    private int[] upgradeLevels = new int[5];
     
     private float vitalityHealthBonus = 0;
-    private float heavyAttackMultiplier = 1f;
-    private float lightAttackMultiplier = 1f;
+    private int heavyAttackBonus = 0; 
+    private int lightAttackBonus = 0; 
     private float cleaningRangeMultiplier = 1f;
     private float cleaningRegenerationBonus = 0;
 
-    private int totalUpgradeCostSpent = 0; // Total spent on upgrades in the current session
+    private int totalUpgradeCostSpent = 0;
 
     public static LevelStateManager Instance;
 
@@ -35,11 +35,14 @@ public class LevelStateManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(gameObject);
             
-            // Only reset session data on first creation
+            for (int i = 0; i < upgradeLevels.Length; i++)
+            {
+                upgradeLevels[i] = 0;
+            }
+            
             ResetSessionData();
             ApplyUpgradeEffects();
             
-            // Subscribe to scene change event
             SceneManager.sceneLoaded += OnSceneLoaded;
         }
         else
@@ -54,39 +57,31 @@ public class LevelStateManager : MonoBehaviour
     
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        
         bool isNewSceneGame = IsGameScene(scene.name);
         bool wasPreviousSceneGame = IsGameScene(currentSceneName);
 
         if (isNewSceneGame)
         {
-            // If there was a previous scene and it was also a game scene and is different from the current one
             if (wasPreviousSceneGame && currentSceneName != scene.name)
             {
-                // Add blood collected in the previous level to the overall total
                 allLevelsBloodCollected += bloodCounter;
             }
-            // Otherwise, if it's the same game scene, don't add (reload)
-            // Or if previously it was a menu, don't add.
-
-            // Reset bloodCounter for the new level (or for reload)
+            
             bloodCounter = 0;
-            levelCleaned = 0; // Also reset levelCleaned for the new level
+            levelCleaned = 0;
         }
         
-        // Update currentSceneName
         currentSceneName = scene.name;
     }
     
     bool IsGameScene(string sceneName)
     {
-        // We assume that game scenes don't contain "Menu"
-        // You can modify this logic based on your scene names
         return !sceneName.Contains("Menu");
     }
     
     void Start()
     {
-        // Initialize health after scene is loaded
         InitilizeHealth();
     }
     
@@ -106,10 +101,8 @@ public class LevelStateManager : MonoBehaviour
 
     public int GetPlayerHealth() => playerHealth;
     
-    // Method that returns blood collected from ALL levels MINUS upgrade costs
     public int GetDisplayBloodCounter() => (allLevelsBloodCollected + bloodCounter) - totalUpgradeCostSpent;
     
-    // Method that returns only blood collected in the current level
     public int GetCurrentLevelBloodCounter() => bloodCounter;
     
     public float GetLevelCleaned() => levelCleaned;
@@ -161,7 +154,6 @@ public class LevelStateManager : MonoBehaviour
         levelCleaned = 0;
     }
 
-    // Resets only session data (not upgrades)
     public void ResetSessionData()
     {
         bloodCounter = 0;
@@ -170,16 +162,12 @@ public class LevelStateManager : MonoBehaviour
         levelCleaned = 0;
         enemiesKilled = 0;
         deathCounter = 0;
-        
-        // DO NOT reset upgrades here - they persist between scenes
     }
 
-    // Resets EVERYTHING (including upgrades)
     public void ResetAllGameData()
     {
         ResetSessionData();
         
-        // Also reset upgrades to 0
         for (int i = 0; i < upgradeLevels.Length; i++)
         {
             upgradeLevels[i] = 0;
@@ -206,21 +194,21 @@ public class LevelStateManager : MonoBehaviour
     void ApplyUpgradeEffects()
     {
         vitalityHealthBonus = upgradeLevels[0] * 10;
-        heavyAttackMultiplier = 1f + (upgradeLevels[1] * 0.25f);
-        lightAttackMultiplier = 1f + (upgradeLevels[2] * 0.25f);
+        heavyAttackBonus = upgradeLevels[1] * 2; 
+        lightAttackBonus = upgradeLevels[2] * 1; 
         cleaningRangeMultiplier = 1f + (upgradeLevels[3] * 0.25f);
         cleaningRegenerationBonus = upgradeLevels[4] * 0.5f;
         
         MAX_HEALTH = 10 + (int)vitalityHealthBonus;
+        
     }
     
     public float GetVitalityHealthBonus() => vitalityHealthBonus;
-    public float GetHeavyAttackMultiplier() => heavyAttackMultiplier;
-    public float GetLightAttackMultiplier() => lightAttackMultiplier;
+    public int GetHeavyAttackBonus() => heavyAttackBonus;
+    public int GetLightAttackBonus() => lightAttackBonus;
     public float GetCleaningRangeMultiplier() => cleaningRangeMultiplier;
     public float GetCleaningRegenerationBonus() => cleaningRegenerationBonus;
 
-    // Method to get current upgrade levels
     public int[] GetCurrentUpgradeLevels()
     {
         int[] levels = new int[upgradeLevels.Length];
@@ -233,7 +221,6 @@ public class LevelStateManager : MonoBehaviour
 
     void OnDestroy()
     {
-        // Unsubscribe from event when object is destroyed
         if (Instance == this)
         {
             SceneManager.sceneLoaded -= OnSceneLoaded;

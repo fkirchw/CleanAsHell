@@ -48,13 +48,12 @@ namespace Characters.Player
 
         public bool IsDead { get; private set; }
         public bool IsAttacking { get; private set; }
-        public float HealthPercent => health / 10f;
+        public float HealthPercent => (float)health / GetMaxHealth();
         public int Health => health;
 
         private int maxHealth;
 
         private int regenerationCount = 0;
-
 
         private void Awake()
         {
@@ -67,6 +66,11 @@ namespace Characters.Player
                 Debug.LogError("No sprite renderer found on " + gameObject.name);
             }
 
+            UpdateMaxHealth();
+        }
+
+        private void UpdateMaxHealth()
+        {
             if (LevelStateManager.Instance != null)
             {
                 maxHealth = 10 + (int)LevelStateManager.Instance.GetVitalityHealthBonus();
@@ -77,14 +81,24 @@ namespace Characters.Player
             }
         }
 
-
-        // ** Query Helath of player from levelStateManager to work throughout levels
         private void Start()
         {
-            //Get the health of the LevelStateManager
+            UpdateMaxHealth();
+            
             health = LevelStateManager.Instance.GetPlayerHealth();
+            
+            if (health > maxHealth)
+            {
+                health = maxHealth;
+                LevelStateManager.Instance.SetPlayerHealth(health);
+            }
+            
+            int lightBonus = LevelStateManager.Instance.GetLightAttackBonus();
+            int heavyBonus = LevelStateManager.Instance.GetHeavyAttackBonus();
+            int vitBonus = (int)LevelStateManager.Instance.GetVitalityHealthBonus();
+            
+            Debug.Log($"PlayerCombat Start - Health: {health}/{maxHealth}, LightBonus: {lightBonus}, HeavyBonus: {heavyBonus}, VitBonus: {vitBonus}");
         }
-
 
         private void Update()
         {
@@ -98,10 +112,10 @@ namespace Characters.Player
             UpdateAnimations();
         }
 
-        private void OnRegenerationHandler(float regeneratedHealth) // Schimbat din int în float
+        private void OnRegenerationHandler(float regeneratedHealth)
         {
             regenerationCount++;
-            IncreaseHealth(Mathf.RoundToInt(regeneratedHealth)); // Rotunjește la int
+            IncreaseHealth(Mathf.RoundToInt(regeneratedHealth));
         }
 
         private bool attackRequested = false;
@@ -111,41 +125,36 @@ namespace Characters.Player
             bool isInHitAnimation = animator.GetCurrentAnimatorStateInfo(0).IsName("Hit");
             bool isInHeavySwipeAnimation = animator.GetCurrentAnimatorStateInfo(0).IsName("HeavySwipe");
 
-            // Prevent new attacks while already attacking
             if (isInHitAnimation || isInHeavySwipeAnimation)
                 return;
 
             if (input.HeavySweepPressed)
             {
                 hitThisAttack.Clear();
-                attackRequested = true; // SET FLAG
+                attackRequested = true;
                 animator.Play("HeavySwipe");
             }
             else if (input.AttackPressed)
             {
                 hitThisAttack.Clear();
-                attackRequested = true; // SET FLAG
+                attackRequested = true;
                 animator.Play("Hit");
             }
         }
 
         private void UpdateAnimations()
         {
-            // Combat priority animations
             if (IsDead) return;
 
-            // Update IsAttacking based on current animation state
             bool isInHitAnimation = animator.GetCurrentAnimatorStateInfo(0).IsName("Hit");
             bool isInHeavySwipeAnimation = animator.GetCurrentAnimatorStateInfo(0).IsName("HeavySwipe");
-            IsAttacking = isInHitAnimation || isInHeavySwipeAnimation || attackRequested; // CHECK FLAG TOO
+            IsAttacking = isInHitAnimation || isInHeavySwipeAnimation || attackRequested;
 
-            // Clear flag once we're actually in the animation
             if ((isInHitAnimation || isInHeavySwipeAnimation) && attackRequested)
             {
                 attackRequested = false;
             }
 
-            // Otherwise update movement animations
             animator.SetBool(IsRunning, movement.HorizontalInput != 0);
 
             if (!movement.IsGrounded && !IsAttacking)
@@ -195,6 +204,7 @@ namespace Characters.Player
 
         public int GetMaxHealth()
         {
+            UpdateMaxHealth();
             return maxHealth;
         }
 
@@ -231,30 +241,35 @@ namespace Characters.Player
             invincibilityCoroutine = null;
         }
 
-
-        // Important: Now called by event in the hit animation, not by direct invocation in this file.
-        // To change timing, adjust animation event marker in the hit animation.
-        // See https://docs.unity3d.com/6000.3/Documentation/Manual/script-AnimationWindowEvent.html
         private void DealDamage()
         {
-            float damageMultiplier = LevelStateManager.Instance.GetLightAttackMultiplier();
-            int attackPower = Mathf.RoundToInt(lightAttackPower * damageMultiplier);
+            int attackBonus = LevelStateManager.Instance.GetLightAttackBonus();
+            int attackPower = lightAttackPower + attackBonus;
+            
+            Debug.Log($"Light Attack - Base: {lightAttackPower}, Bonus: {attackBonus}, Final: {attackPower}");
+            
             PerformAttack(attackPower, lightAttackDistance, lightAttackRadius, lightAttackKnockback);
         }
 
-        // Called by animation event in the HeavySweep animation
         private void DealHeavyDamage()
         {
-            float damageMultiplier = LevelStateManager.Instance.GetHeavyAttackMultiplier();
-            int attackPower = Mathf.RoundToInt(heavyAttackPower * damageMultiplier);
-            PerformAttack(attackPower, lightAttackDistance, lightAttackRadius, lightAttackKnockback);
+            int attackBonus = LevelStateManager.Instance.GetHeavyAttackBonus();
+            int attackPower = heavyAttackPower + attackBonus;
+            
+            Debug.Log($"Heavy Attack - Base: {heavyAttackPower}, Bonus: {attackBonus}, Final: {attackPower}");
+            
+            PerformAttack(attackPower, heavyAttackDistance, heavyAttackRadius, heavyAttackKnockback);
         }
 
         private void PerformAttack(int attackPower, float attackDistance, float attackRadius, float knockbackForce)
         {
+            Debug.Log($"PerformAttack with power: {attackPower}");
+            
             Vector2 dir = movement.FacingDirection;
             Vector2 attackCenter = (Vector2)transform.position + (dir * attackDistance * 0.5f);
             Collider2D[] hits = Physics2D.OverlapCircleAll(attackCenter, attackRadius, LayerMask.GetMask("Enemy"));
+
+            Debug.Log($"Found {hits.Length} enemies in attack area");
 
             foreach (Collider2D hit in hits)
             {
@@ -268,6 +283,7 @@ namespace Characters.Player
                     {
                         if (hitThisAttack.Add(damageable))
                         {
+                            Debug.Log($"Dealing {attackPower} damage to enemy");
                             damageable.TakeDamage(attackPower, dir, knockbackForce);
                         }
                     }
@@ -284,7 +300,7 @@ namespace Characters.Player
         private void IncreaseHealth(int healthPoints)
         {
             health += healthPoints;
-            health = Mathf.Min(health, maxHealth);
+            health = Mathf.Min(health, GetMaxHealth());
             LevelStateManager.Instance.SetPlayerHealth(health);
         }
 
@@ -297,12 +313,10 @@ namespace Characters.Player
         {
             Vector2 direction = movement ? movement.FacingDirection : Vector2.right;
 
-            // Light attack gizmo (red)
             Vector2 lightAttackCenter = (Vector2)transform.position + direction * lightAttackDistance * 0.5f;
             Gizmos.color = new Color(1, 0, 0, 0.3f);
             Gizmos.DrawSphere(lightAttackCenter, lightAttackRadius);
 
-            // Heavy attack gizmo (orange)
             Vector2 heavyAttackCenter = (Vector2)transform.position + direction * heavyAttackDistance * 0.5f;
             Gizmos.color = new Color(1, 0.5f, 0, 0.3f);
             Gizmos.DrawSphere(heavyAttackCenter, heavyAttackRadius);
@@ -313,7 +327,6 @@ namespace Characters.Player
             GameEvents.OnRegenerationEvent += OnRegenerationHandler;
         }
 
-        //Called when scene is changed and Obj Destroyed
         private void OnDisable()
         {
             GameEvents.OnRegenerationEvent -= OnRegenerationHandler;

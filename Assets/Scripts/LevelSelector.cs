@@ -233,29 +233,29 @@ public class LevelSelector : MonoBehaviour
         }
     }
     
-    public void ApplyUpgrade()
+public void ApplyUpgrade()
+{
+    int totalCost = CalculateTotalUpgradeCost();
+    
+    if (LevelStateManager.Instance != null && LevelStateManager.Instance.GetDisplayBloodCounter() >= totalCost)
     {
-        int totalCost = CalculateTotalUpgradeCost();
+        LevelStateManager.Instance.SpendBloodOnUpgrades(totalCost);
         
-        if (LevelStateManager.Instance != null && LevelStateManager.Instance.GetDisplayBloodCounter() >= totalCost)
+        for (int i = 0; i < upgradeOptions.Length; i++)
         {
-            LevelStateManager.Instance.SpendBloodOnUpgrades(totalCost);
-            
-            for (int i = 0; i < upgradeOptions.Length; i++)
-            {
-                upgradeOptions[i].currentLevel = upgradeOptions[i].previewLevel;
-                UpdateTilesDisplay(i);
-            }
-            
-            ApplyUpgradeEffects();
-            SaveInitialState();
-            
-            // Actualizează mai întâi blood counter display pentru a avea availableBlood corect
-            UpdateBloodCounterDisplay();
-            // Apoi actualizează interactivitatea săgeților bazat pe noul availableBlood
-            UpdateAllArrowsInteractability();
+            upgradeOptions[i].currentLevel = upgradeOptions[i].previewLevel;
+            UpdateTilesDisplay(i);
         }
+        
+        int[] currentLevels = GetCurrentUpgradeLevels();
+        LevelStateManager.Instance.SaveUpgradeLevels(currentLevels);
+        
+        SaveInitialState();
+        
+        UpdateBloodCounterDisplay();
+        UpdateAllArrowsInteractability();
     }
+}
     
     void ApplyUpgradeEffects()
     {
