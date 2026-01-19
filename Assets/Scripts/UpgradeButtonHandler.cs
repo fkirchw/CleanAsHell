@@ -6,25 +6,25 @@ public class UpgradeButtonHandler : MonoBehaviour
     public Button upgradeButton;
     public Button cancelButton;
     public LevelSelector levelSelector;
-    
+
     void Start()
     {
         if (upgradeButton == null)
             upgradeButton = GetComponent<Button>();
-            
+
         if (levelSelector == null)
             levelSelector = FindObjectOfType<LevelSelector>();
-            
+
         upgradeButton.onClick.AddListener(OnUpgradeClicked);
-        
+
         if (cancelButton != null)
         {
             cancelButton.onClick.AddListener(OnCancelClicked);
         }
-        
+
         UpdateButtonInteractability();
     }
-    
+
     void Update()
     {
         if (levelSelector != null)
@@ -32,38 +32,49 @@ public class UpgradeButtonHandler : MonoBehaviour
             UpdateButtonInteractability();
         }
     }
-    
+
     void UpdateButtonInteractability()
     {
         if (levelSelector != null && upgradeButton != null)
         {
-            upgradeButton.interactable = levelSelector.HasChanges();
+            Image buttonImage = upgradeButton.GetComponent<Image>();
+            Color originalColor = buttonImage.color;
+            if (levelSelector.HasChanges())
+            {
+                // Normal color
+                buttonImage.color = originalColor;
+            }
+            else
+            {
+                // Gray out but keep interactable
+                buttonImage.color = new Color(0.6f, 0.6f, 0.6f, 0.7f);
+            }
         }
     }
-    
+
     void OnUpgradeClicked()
     {
-        if (levelSelector != null)
+        if (levelSelector != null && levelSelector.HasChanges())
         {
             levelSelector.ApplyUpgrade();
-            
+
             StartCoroutine(ButtonFeedback(upgradeButton));
         }
     }
-    
+
     void OnCancelClicked()
     {
         if (levelSelector != null)
         {
             levelSelector.CancelUpgrade();
-            
+
             if (cancelButton != null)
             {
                 StartCoroutine(ButtonFeedback(cancelButton));
             }
         }
     }
-    
+
     System.Collections.IEnumerator ButtonFeedback(Button button)
     {
         Image buttonImage = button.GetComponent<Image>();
