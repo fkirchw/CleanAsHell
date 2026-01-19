@@ -56,24 +56,57 @@ public class LevelStateManager : MonoBehaviour
     }
     
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+{
+    string sceneName = scene.name;
+    
+    if (sceneName.Contains("Menu"))
     {
-        
-        bool isNewSceneGame = IsGameScene(scene.name);
-        bool wasPreviousSceneGame = IsGameScene(currentSceneName);
+        ResetAllGameData();
+        currentSceneName = sceneName;
+        return;
+    }
+    
+   
+    bool wasPreviousSceneTutorial = currentSceneName.Contains("Tutorial");
+ 
+    if (wasPreviousSceneTutorial && !sceneName.Contains("Tutorial"))
+    {
 
-        if (isNewSceneGame)
+        playerHealth = MAX_HEALTH;
+        
+
+        allLevelsBloodCollected = 0;
+        bloodCounter = 0;
+        totalUpgradeCostSpent = 0;
+        
+        Debug.Log($"Reset after Tutorial: Health={playerHealth}, Blood reset to 0");
+    }
+    
+    bool isNewSceneGame = IsGameScene(sceneName);
+    bool wasPreviousSceneGame = IsGameScene(currentSceneName);
+    
+    if (isNewSceneGame)
+    {
+      
+        if (wasPreviousSceneGame && currentSceneName != sceneName)
         {
-            if (wasPreviousSceneGame && currentSceneName != scene.name)
-            {
-                allLevelsBloodCollected += bloodCounter;
-            }
-            
-            bloodCounter = 0;
-            levelCleaned = 0;
+
+            allLevelsBloodCollected += bloodCounter;
         }
         
-        currentSceneName = scene.name;
+        if (!sceneName.Contains("Tutorial"))
+        {
+            enemiesKilled = 0; 
+        }
+        
+        bloodCounter = 0;
+        levelCleaned = 0;
     }
+    
+    currentSceneName = sceneName;
+    
+    Debug.Log($"Scene loaded: {sceneName}, EnemiesKilled: {enemiesKilled}, Health: {playerHealth}/{MAX_HEALTH}");
+}
     
     bool IsGameScene(string sceneName)
     {
