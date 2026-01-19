@@ -6,9 +6,7 @@ public class HealthBar : MonoBehaviour
 {
     private PlayerData playerData;
     private Slider slider;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-
-    //INITIALIZE all UI components in Start, not Awake to avoid timing issues.
+    
     void Start()
     {
         playerData = FindFirstObjectByType<PlayerData>();
@@ -19,11 +17,15 @@ public class HealthBar : MonoBehaviour
         }
 
         slider = GetComponent<Slider>();
+        
+        // Initialize slider max value
+        slider.maxValue = 1f; // For percent
+        slider.value = playerData.HealthPercent;
     }
 
-    // Update is called once per frame
     void Update()
     {
+        // Update health percent every frame
         slider.value = playerData.HealthPercent;
     }
 }

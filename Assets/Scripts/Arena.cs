@@ -7,8 +7,9 @@ public class Arena : MonoBehaviour
     [SerializeField] private List<GameObject> linkedEnemies;
     
     [Header("Objects to Control")]
-    [SerializeField] private GameObject[] objectsToAppear; // Apare când intri în arena
-    [SerializeField] private GameObject[] objectsToDisappear; // Dispare când toți inamicii mor
+    [SerializeField] private GameObject[] objectsToAppear;
+    [SerializeField] private GameObject[] objectsToDisappear;
+    [SerializeField] private GameObject[] objectsToDestroy;
     
     [Header("Debug")]
     [SerializeField] private bool debugMode = true;
@@ -20,7 +21,6 @@ public class Arena : MonoBehaviour
     {
         if (debugMode) Debug.Log($"[Arena] Start called on {gameObject.name}");
         
-        // Dezactivează obiectele care trebuie să apară (vor fi activate când intri în arena)
         foreach (GameObject obj in objectsToAppear)
         {
             if (obj != null)
@@ -30,7 +30,6 @@ public class Arena : MonoBehaviour
             }
         }
         
-        // Dezactivează și obiectele care trebuie să dispară (vor fi activate când intri în arena)
         foreach (GameObject obj in objectsToDisappear)
         {
             if (obj != null)
@@ -40,7 +39,15 @@ public class Arena : MonoBehaviour
             }
         }
         
-        // Dezactivează inamicii la început (vor fi activați când intri în arena)
+        foreach (GameObject obj in objectsToDestroy)
+        {
+            if (obj != null)
+            {
+                obj.SetActive(true);
+                if (debugMode) Debug.Log($"[Arena] Kept active for destruction {obj.name}");
+            }
+        }
+        
         foreach (GameObject enemy in linkedEnemies)
         {
             if (enemy != null)
@@ -94,7 +101,6 @@ public class Arena : MonoBehaviour
         isActivated = true;
         if (debugMode) Debug.Log($"[Arena] Activating arena on {gameObject.name}");
         
-        // Activează toți inamicii
         foreach (GameObject enemy in linkedEnemies)
         {
             if (enemy != null)
@@ -104,7 +110,6 @@ public class Arena : MonoBehaviour
             }
         }
         
-        // Activează obiectele care trebuie să apară
         foreach (GameObject obj in objectsToAppear)
         {
             if (obj != null)
@@ -118,7 +123,6 @@ public class Arena : MonoBehaviour
             }
         }
         
-        // Activează și obiectele care trebuie să dispară mai târziu
         foreach (GameObject obj in objectsToDisappear)
         {
             if (obj != null)
@@ -140,7 +144,6 @@ public class Arena : MonoBehaviour
         isCompleted = true;
         if (debugMode) Debug.Log($"[Arena] Completing arena on {gameObject.name}");
         
-        // Dezactivează obiectele care au apărut
         foreach (GameObject obj in objectsToAppear)
         {
             if (obj != null)
@@ -150,7 +153,6 @@ public class Arena : MonoBehaviour
             }
         }
         
-        // Dezactivează obiectele care trebuie să dispară
         foreach (GameObject obj in objectsToDisappear)
         {
             if (obj != null)
@@ -159,14 +161,21 @@ public class Arena : MonoBehaviour
                 if (debugMode) Debug.Log($"[Arena] Disappeared {obj.name}");
             }
         }
+        
+        foreach (GameObject obj in objectsToDestroy)
+        {
+            if (obj != null)
+            {
+                Destroy(obj);
+                if (debugMode) Debug.Log($"[Arena] Destroyed {obj.name}");
+            }
+        }
     }
     
-    // Metodă pentru debugging în inspector
     void OnDrawGizmos()
     {
         if (!debugMode) return;
         
-        // Arată zona de trigger
         BoxCollider2D collider = GetComponent<BoxCollider2D>();
         if (collider != null)
         {
@@ -174,7 +183,6 @@ public class Arena : MonoBehaviour
             Gizmos.DrawWireCube(transform.position + (Vector3)collider.offset, collider.size);
         }
         
-        // Arată conexiunile cu inamicii
         Gizmos.color = Color.red;
         foreach (GameObject enemy in linkedEnemies)
         {

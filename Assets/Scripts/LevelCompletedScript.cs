@@ -207,24 +207,46 @@ public class LevelCompletedScript : MonoBehaviour
         return 0.4f;
     }
 
-    private string CalculateGrade(float totalScore)
+private string CalculateGrade(float totalScore)
+{
+    int enemiesKilled = LevelStateManager.Instance.GetEnemiesKilled();
+    
+    bool allEnemiesKilled = enemiesKilled >= totalEnemiesInLevel;
+    
+    float killPercentage = totalEnemiesInLevel > 0 ? (float)enemiesKilled / totalEnemiesInLevel : 1f;
+    bool atLeast90PercentKilled = killPercentage >= 0.9f;
+
+    if (totalScore >= 1200f)
     {
-        // Grades adjusted for new formula without bloodScore
-        if (totalScore >= 1200f) return "S";
-        if (totalScore >= 1000f) return "A+";
-        if (totalScore >= 900f) return "A";
-        if (totalScore >= 800f) return "A-";
-        if (totalScore >= 700f) return "B+";
-        if (totalScore >= 600f) return "B";
-        if (totalScore >= 500f) return "B-";
-        if (totalScore >= 400f) return "C+";
-        if (totalScore >= 300f) return "C";
-        if (totalScore >= 200f) return "C-";
-        if (totalScore >= 150f) return "D+";
-        if (totalScore >= 100f) return "D";
-        if (totalScore >= 50f) return "D-";
-        return "F";
+        return allEnemiesKilled ? "S" : "A+";
     }
+    
+    if (totalScore >= 1000f)
+    {
+        return atLeast90PercentKilled ? "A+" : "B+";
+    }
+    
+    if (totalScore >= 900f)
+    {
+        return atLeast90PercentKilled ? "A" : "B";
+    }
+    
+    if (totalScore >= 800f)
+    {
+        return atLeast90PercentKilled ? "A-" : "B-";
+    }
+    
+    if (totalScore >= 700f) return "B+";
+    if (totalScore >= 600f) return "B";
+    if (totalScore >= 500f) return "B-";
+    if (totalScore >= 400f) return "C+";
+    if (totalScore >= 300f) return "C";
+    if (totalScore >= 200f) return "C-";
+    if (totalScore >= 150f) return "D+";
+    if (totalScore >= 100f) return "D";
+    if (totalScore >= 50f) return "D-";
+    return "F";
+}
 
     private string GetFormattedTime()
     {
