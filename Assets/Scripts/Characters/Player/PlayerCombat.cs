@@ -34,7 +34,7 @@ namespace Characters.Player
         [SerializeField] private float heavyAttackKnockback = 8f;
 
         [Header("Invincibility")] [SerializeField]
-        private float invincibilityDuration = 2f;
+        private float invincibilityDuration = 1f;
 
         [SerializeField] private bool enableFlashEffect = true;
         [SerializeField] private float flashInterval = 0.1f;
