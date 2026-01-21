@@ -22,7 +22,11 @@ namespace Characters.Enemies
 
         private bool playerDetected = false;
 
-        // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+        [Header("SoundClips")]
+        [SerializeField] private AudioClip dealDamageSoundClip;
+
+
         void Start()
         {
             spriteRenderer = GetComponent<SpriteRenderer>();
@@ -126,6 +130,9 @@ namespace Characters.Enemies
             }
         }
 
+
+        //Animation Events called in Editor
+
         public void OnFinishedDeathAniEvent()
         {
             Destroy(gameObject);
@@ -138,6 +145,8 @@ namespace Characters.Enemies
 
         public void OnDamageDeltAniEvent()
         {
+            
+
             animator.SetBool("isAttacking", false);
 
             float distanceToPlayer = Vector2.Distance(new Vector2(transform.position.x, transform.position.y),
@@ -149,5 +158,14 @@ namespace Characters.Enemies
             }
             
         }
+
+
+        public void OnScreamAniEvent()
+        {
+            //Cry Sound
+            SoundManager.instance.PlaySoundFxClip(dealDamageSoundClip, transform, 0.3f);
+        }
+
+
     }
 }

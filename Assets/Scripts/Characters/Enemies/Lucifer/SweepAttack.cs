@@ -13,12 +13,13 @@ public class AttackSweep : MonoBehaviour, IAttack
     [SerializeField] private float knockbackForce = 3f;
     [SerializeField] private int damage = 5;
 
+    [Header("Sound Clips")]
+    [SerializeField] private AudioClip sweepAttack;
+
     private bool canAttack = true;
     private LuciferController controller;
 
     Animator animator;
-
- 
 
     private void Awake()
     {
@@ -39,6 +40,9 @@ public class AttackSweep : MonoBehaviour, IAttack
 
     public void Attack()
     {
+        //Attack Sound
+        SoundManager.instance.PlaySoundFxClip(sweepAttack, transform, 0.3f);
+
         StartCoroutine(AttackRoutine());
     }
 

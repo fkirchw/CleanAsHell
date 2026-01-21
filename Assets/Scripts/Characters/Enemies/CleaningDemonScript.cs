@@ -32,6 +32,10 @@ namespace Characters.Enemies
         private int maxHealth;
 
 
+        [Header("SoundClips")]
+        [SerializeField] private AudioClip cleaningDemonAttackClip;
+
+
         void Start()
         {
             spriteRenderer = GetComponent<SpriteRenderer>();
@@ -63,8 +67,6 @@ namespace Characters.Enemies
                 HandleMovement();
                 HandleAttack();
             }
-
-
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
@@ -137,6 +139,9 @@ namespace Characters.Enemies
                 animator.SetTrigger("hitTrigger");
                 StartCoroutine(AttackRoutine());
                 StartCoroutine(AttackCooldown());
+                
+                //Attack Sound
+                SoundManager.instance.PlaySoundFxClip(cleaningDemonAttackClip, transform, 0.5f);
             }
         }
 
@@ -158,7 +163,6 @@ namespace Characters.Enemies
                 
             }
 
-
             float moveX = moveSpeed * direction.x;
 
             bool isGround = isGroundInMoveDir(myDirection);
@@ -168,6 +172,8 @@ namespace Characters.Enemies
             else
                 rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
 
+            animator.SetBool("isRunning", isGround);
+
         }
 
         private bool isGroundInMoveDir(Vector2 moveDir)
@@ -175,10 +181,10 @@ namespace Characters.Enemies
             float distanceDown = 2f;
             float forwardOffset = 0.5f;
 
-            // Startpunkt leicht vor dem Gegner
+            // startingpoint straight ahead of player
             Vector2 origin = (Vector2)transform.position + moveDir * forwardOffset;
 
-            // Gerade nach unten casten
+            // cast ray straight down
             RaycastHit2D hit = Physics2D.Raycast(origin, Vector2.down, distanceDown, LayerMask.GetMask("Ground"));
 
             Debug.DrawRay(origin, Vector2.down * distanceDown, Color.red);

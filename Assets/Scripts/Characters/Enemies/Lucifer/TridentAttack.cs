@@ -12,6 +12,9 @@ public class AttackTrident : MonoBehaviour, IAttack
     [SerializeField] private int damage = 5;
     [SerializeField] private Vector2 damageRange = new Vector2(3, 1);
 
+    [Header("Sound Clip")]
+    [SerializeField] private AudioClip tridentAttackClip;
+
     private bool canAttack = true;
     private LuciferController controller;
 
@@ -49,7 +52,9 @@ public class AttackTrident : MonoBehaviour, IAttack
 
     private IEnumerator AttackRoutine()
     {
-        yield return new WaitForSeconds(0.5f); // 10 ms
+        //Attack Sound
+        SoundManager.instance.PlaySoundFxClip(tridentAttackClip, transform, 0.8f);
+        yield return new WaitForSeconds(0.6f); 
         controller.OnDamageDelt(this);
     }
 
