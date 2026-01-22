@@ -39,6 +39,13 @@ namespace Characters.Player
         [SerializeField] private bool enableFlashEffect = true;
         [SerializeField] private float flashInterval = 0.1f;
 
+
+        [Header("SoundClips")]
+        [SerializeField] private AudioClip dealDamageSoundClip;
+        [SerializeField] private AudioClip lightHitSoundClip;
+        [SerializeField] private AudioClip heavyHitSoundClip;
+        [SerializeField] private AudioClip getDamageSoundClip;
+
         private PlayerMovement movement;
         private Collider2D playerCollider;
         private PlayerInputHandler input;
@@ -177,6 +184,9 @@ namespace Characters.Player
 
             DecreaseHealth(damage);
 
+            //Play Damage Sound Effect
+            SoundManager.instance.PlaySoundFxClip(getDamageSoundClip, transform, 0.5f);
+
             animator.speed = 0f;
             movement.ApplyKnockback(knockbackDir, knockbackForce);
 
@@ -249,6 +259,9 @@ namespace Characters.Player
             Debug.Log($"Light Attack - Base: {lightAttackPower}, Bonus: {attackBonus}, Final: {attackPower}");
             
             PerformAttack(attackPower, lightAttackDistance, lightAttackRadius, lightAttackKnockback);
+
+            //Make Hit SoundEffect
+            SoundManager.instance.PlaySoundFxClip(lightHitSoundClip, transform, 0.8f);
         }
 
         private void DealHeavyDamage()
@@ -259,6 +272,9 @@ namespace Characters.Player
             Debug.Log($"Heavy Attack - Base: {heavyAttackPower}, Bonus: {attackBonus}, Final: {attackPower}");
             
             PerformAttack(attackPower, heavyAttackDistance, heavyAttackRadius, heavyAttackKnockback);
+
+            //Make Hit SoundEffect
+            SoundManager.instance.PlaySoundFxClip(heavyHitSoundClip, transform, 0.5f);
         }
 
         private void PerformAttack(int attackPower, float attackDistance, float attackRadius, float knockbackForce)
@@ -283,8 +299,13 @@ namespace Characters.Player
                     {
                         if (hitThisAttack.Add(damageable))
                         {
+                            
                             Debug.Log($"Dealing {attackPower} damage to enemy");
                             damageable.TakeDamage(attackPower, dir, knockbackForce);
+
+                            //Make Damage SoundEffect
+                            SoundManager.instance.PlaySoundFxClip(dealDamageSoundClip, transform, 0.5f);
+
                         }
                     }
                 }

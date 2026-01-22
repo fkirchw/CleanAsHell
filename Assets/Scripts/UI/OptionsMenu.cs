@@ -13,7 +13,11 @@ namespace UI
         [Header("Input")]
         [SerializeField] private InputActionReference pauseActionRef;
         [SerializeField] private InputActionReference cancelActionRef;
-    
+
+        [Header("UI Root")]
+        //Get the components where Gameobjects are
+        [SerializeField] Transform uiComponentRoot; 
+
         private InputAction pauseAction;
         private InputAction cancelAction;
 
@@ -78,9 +82,7 @@ namespace UI
 
         private void OnPauseTriggered(InputAction.CallbackContext context)
         {
-            // Ignore pause input in main menu
             if (SceneManager.GetActiveScene().buildIndex == 0) return;
-        
             if (visualPanel == null) return;
 
             if (visualPanel.activeSelf)
@@ -95,9 +97,7 @@ namespace UI
 
         private void OnCancelTriggered(InputAction.CallbackContext context)
         {
-            // Only close if menu is open and not in main menu
             if (SceneManager.GetActiveScene().buildIndex == 0) return;
-        
             if (visualPanel != null && visualPanel.activeSelf)
             {
                 Resume();
@@ -136,5 +136,16 @@ namespace UI
             Time.timeScale = 1f;
             SceneManager.LoadSceneAsync(0);
         }
+
+        //For Later to show the audio manager
+        /*
+        public void ShowOnlyAudioManager()
+        {
+            foreach (Transform child in uiComponentRoot)
+            {
+                child.gameObject.SetActive(child.gameObject == uiComponentRoot);
+            }
+        }*/
+
     }
 }

@@ -325,6 +325,8 @@ MonoBehaviour:
   groundCheckDistance: 1
   foamParticlesPerSecond: 20
   regenerationThreshold: 5
+  cleaningSoundClip: {fileID: 8300000, guid: 7a5791c3b5175cb4496c96afe87f91d7, type: 3}
+  soundCooldown: 1
 --- !u!114 &2706030488599201284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -358,6 +360,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Characters.Player.PlayerCombat
   animator: {fileID: 3276520232718924349}
   spriteRenderer: {fileID: 1870786313136268208}
+  health: 10
   lightAttackPower: 5
   lightAttackDistance: 1
   lightAttackRadius: 0.7
@@ -366,9 +369,13 @@ MonoBehaviour:
   heavyAttackDistance: 1.2
   heavyAttackRadius: 1
   heavyAttackKnockback: 8
-  invincibilityDuration: 2
+  invincibilityDuration: 1
   enableFlashEffect: 1
   flashInterval: 0.1
+  dealDamageSoundClip: {fileID: 8300000, guid: e7770bf5d78e21d42a2128cbfdca642b, type: 3}
+  lightHitSoundClip: {fileID: 8300000, guid: 7ee0cd5c4c07f4d49b6b98efe1dc8c15, type: 3}
+  heavyHitSoundClip: {fileID: 8300000, guid: 364b96f9d616b074b8bd0de342629193, type: 3}
+  getDamageSoundClip: {fileID: 8300000, guid: e31bf05f7ed531b45adc53062cedceec, type: 3}
 --- !u!114 &3578430122980634713
 MonoBehaviour:
   m_ObjectHideFlags: 0

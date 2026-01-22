@@ -21,6 +21,13 @@ namespace Characters.Enemies
         [SerializeField] private float contactKnockbackForce = 3f;
         [SerializeField] private GameObject bossHealthBarPanel;
 
+
+        [Header("Sound Clips")]
+        [SerializeField] private AudioClip heavyDamage;
+        [SerializeField] private AudioClip playerDeadClip;
+        [SerializeField] private AudioClip luciferDeadClip;
+
+
         private Transform playerPosition;
         private SpriteRenderer spriteRenderer;
         private Rigidbody2D rb;
@@ -34,6 +41,7 @@ namespace Characters.Enemies
         private float playerOffset = -1.05f;
         private float MAX_HEALTH;
         private float lastContactDamageTime;
+        private bool playerDeathSoundPlayed = false;
 
         void Start()
         {
@@ -73,6 +81,12 @@ namespace Characters.Enemies
                 ResetAllParameters();
                 rb.constraints = RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionX;
                 animator.SetBool("isIdle", true);
+                //Death Sound
+                if (!playerDeathSoundPlayed)
+                {
+                    PlayPlayerDeathSound();
+                }
+                
                 return; 
             }
 
@@ -96,6 +110,13 @@ namespace Characters.Enemies
                 HandleAttack();
             }
         }
+
+        private void PlayPlayerDeathSound()
+        {
+            playerDeathSoundPlayed = true;
+            SoundManager.instance.PlaySoundFxClip(playerDeadClip, transform, 0.8f);
+        }
+
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
@@ -165,9 +186,12 @@ namespace Characters.Enemies
 
             if (attack.GetDamageRange().x >= deltaX && attack.GetDamageRange().y >= deltaY)
             {
+
                 IDamageable playerScript = playerPosition.GetComponent<IDamageable>();
                 if (playerScript != null)
                 {
+                    PlayHeavyAttackSound(attack);
+
                     Vector2 knockbackDir = attack.GetKnockbackDir();
 
                     if (direction.x < 0)
@@ -176,7 +200,17 @@ namespace Characters.Enemies
                     }
 
                     playerScript.TakeDamage(attack.GetDamage(), knockbackDir, 6f);
+
                 }
+            }
+        }
+
+        private void PlayHeavyAttackSound(IAttack attack)
+        {
+            if (attack is AttackTrident || attack is AttackSweep)
+            {
+                //Damage Sound
+                SoundManager.instance.PlaySoundFxClip(heavyDamage, transform, 0.1f);
             }
         }
 
@@ -251,6 +285,10 @@ namespace Characters.Enemies
                 {
                     bossHealthBarPanel.SetActive(false);
                 }
+
+                //Death Sound
+                SoundManager.instance.PlaySoundFxClip(luciferDeadClip, transform, 0.8f);
+
             }
         }
 

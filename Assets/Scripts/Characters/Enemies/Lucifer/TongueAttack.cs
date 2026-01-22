@@ -28,6 +28,9 @@ public class AttackTongue : MonoBehaviour, IAttack
     [Header("Player")]
     [SerializeField] public GameObject player;
 
+    [Header("Sound Clip")]
+    [SerializeField] private AudioClip tongueAttack;
+
     private LuciferController controller;
 
     bool canAttack = true;
@@ -81,6 +84,9 @@ public class AttackTongue : MonoBehaviour, IAttack
         isShooting = true;
         isRetracting = false;
         attackTimer = 0f;
+
+        //Tongue Sound
+        SoundManager.instance.PlaySoundFxClip(tongueAttack, transform, 1f);
     }
 
     private void ShootTongue()

@@ -31,7 +31,11 @@ namespace Characters.Enemies
         [Header("References")]
         [SerializeField] private Animator animator;
         [SerializeField] private BossManager bossManager;
-        
+
+        [Header("Sound Effects")]
+        [SerializeField] private AudioClip bossHitSoundClip;
+        [SerializeField] private AudioClip bossDeathSoundClip;
+
         private Transform playerPosition;
         private SpriteRenderer spriteRenderer;
         private Rigidbody2D rb;
@@ -146,6 +150,8 @@ namespace Characters.Enemies
             // Opțional: putem opri mișcarea când atacă
             if (distanceToPlayer < attackDistance)
             {
+
+
                 // Oprim mișcarea când suntem suficient de aproape pentru atac
                 rb.linearVelocity = Vector2.zero;
             }
@@ -156,6 +162,13 @@ namespace Characters.Enemies
                 float moveY = moveSpeed * direction.y;
                 rb.linearVelocity = new Vector2(moveX, moveY);
             }
+        }
+
+
+        public void PlayHitAniEvent()
+        {
+            //Hit Sound
+            SoundManager.instance.PlaySoundFxClip(bossHitSoundClip, transform, 0.5f);
         }
 
         public void OnDamageDeltAniEvent()
@@ -241,6 +254,10 @@ namespace Characters.Enemies
                 {
                     bossManager.HideBossHealthBar();
                 }
+
+                //Play boss death Sound
+                SoundManager.instance.PlaySoundFxClip(bossDeathSoundClip, transform, 1.5f);
+
             }
         }
 

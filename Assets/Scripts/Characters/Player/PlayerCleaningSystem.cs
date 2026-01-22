@@ -1,4 +1,5 @@
 using Blood;
+using System.Collections;
 using UnityEngine;
 
 namespace Characters.Player
@@ -29,6 +30,13 @@ namespace Characters.Player
 
         [Header("Cleaning before regenerating health")] [SerializeField]
         private int regenerationThreshold = 2;
+
+
+        [Header("Cleaning Sound")]
+        [SerializeField] private AudioClip cleaningSoundClip;
+        [SerializeField] private float soundCooldown = 1f;
+
+        private float lastSoundTime;
 
         private PlayerMovement movement;
         private Animator animator;
@@ -189,6 +197,9 @@ namespace Characters.Player
             );
 
             cleaningFrames++;
+
+            //Play Sound
+            PlayCleaningSound();
         }
 
         private void SpawnGroundFoam()
@@ -230,6 +241,19 @@ namespace Characters.Player
                 };
                 foamParticles.Emit(emitParams, 1);
             }
+
+            
+           
+        }
+
+        void PlayCleaningSound()
+        {
+            if (Time.time - lastSoundTime < soundCooldown)
+            { 
+                return;
+            }
+            SoundManager.instance.PlaySoundFxClip(cleaningSoundClip, transform, 0.8f);
+            lastSoundTime = Time.time;
         }
 
         void OnDrawGizmosSelected()

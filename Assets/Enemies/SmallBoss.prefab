@@ -202,10 +202,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e0fb2cf655cdb94297c38eca4752243, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LuciferMain
-  animator: {fileID: 8380894436046007109}
   moveSpeed: 2
   attackDistance: 4
   health: 20
+  attackDamage: 5
+  attackKnockbackDir: {x: 0.94868326, y: 0.31622776}
+  attackKnockbackForce: 15
+  attackCooldown: 2
+  wallToDestroy: {fileID: 0}
+  GateToBoss: {fileID: 0}
+  contactDamage: 1
+  contactDamageCooldown: 0.5
+  contactKnockbackDir: {x: 1, y: 1}
+  contactKnockbackForce: 3
+  animator: {fileID: 8380894436046007109}
+  bossManager: {fileID: 0}
+  bossHitSoundClip: {fileID: 8300000, guid: c746602c9d9bc064db933bf90f4507cd, type: 3}
+  bossDeathSoundClip: {fileID: 8300000, guid: e7a63d3233983734f8cceff1941ca63d, type: 3}
 --- !u!70 &7559051757088666065
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
