@@ -11,12 +11,6 @@ public class LevelStateManager : MonoBehaviour
     private float levelCleaned;
     private int enemiesKilled;
     private int deathCounter;
-
-    //Audio Settings
-    private float masterAudioValue = 1f;
-    private float sfxAudioValue = 1f;
-    private float musicAudioValue = 1f;
-
     private int MAX_HEALTH;
     
     private int[] upgradeLevels = new int[5];
@@ -33,6 +27,9 @@ public class LevelStateManager : MonoBehaviour
 
     private PlayerCombat playerCombat;
     private string currentSceneName = "";
+
+    
+
 
     void Awake()
     {
@@ -62,57 +59,56 @@ public class LevelStateManager : MonoBehaviour
     }
     
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-{
-    string sceneName = scene.name;
-    
-    if (sceneName.Contains("Menu"))
     {
-        ResetAllGameData();
-        currentSceneName = sceneName;
-        return;
-    }
+        string sceneName = scene.name;
     
-   
-    bool wasPreviousSceneTutorial = currentSceneName.Contains("Tutorial");
+        if (sceneName.Contains("Menu"))
+        {
+            ResetAllGameData();
+            currentSceneName = sceneName;
+            return;
+        }
+
+        bool wasPreviousSceneTutorial = currentSceneName.Contains("Tutorial");
  
-    if (wasPreviousSceneTutorial && !sceneName.Contains("Tutorial"))
-    {
+        if (wasPreviousSceneTutorial && !sceneName.Contains("Tutorial"))
+        {
 
-        playerHealth = MAX_HEALTH;
+            playerHealth = MAX_HEALTH;
         
 
-        allLevelsBloodCollected = 0;
-        bloodCounter = 0;
-        totalUpgradeCostSpent = 0;
+            allLevelsBloodCollected = 0;
+            bloodCounter = 0;
+            totalUpgradeCostSpent = 0;
         
-        Debug.Log($"Reset after Tutorial: Health={playerHealth}, Blood reset to 0");
-    }
+            Debug.Log($"Reset after Tutorial: Health={playerHealth}, Blood reset to 0");
+        }
     
-    bool isNewSceneGame = IsGameScene(sceneName);
-    bool wasPreviousSceneGame = IsGameScene(currentSceneName);
+        bool isNewSceneGame = IsGameScene(sceneName);
+        bool wasPreviousSceneGame = IsGameScene(currentSceneName);
     
-    if (isNewSceneGame)
-    {
+        if (isNewSceneGame)
+        {
       
-        if (wasPreviousSceneGame && currentSceneName != sceneName)
-        {
+            if (wasPreviousSceneGame && currentSceneName != sceneName)
+            {
 
-            allLevelsBloodCollected += bloodCounter;
-        }
+                allLevelsBloodCollected += bloodCounter;
+            }
         
-        if (!sceneName.Contains("Tutorial"))
-        {
-            enemiesKilled = 0; 
-        }
+            if (!sceneName.Contains("Tutorial"))
+            {
+                enemiesKilled = 0; 
+            }
         
-        bloodCounter = 0;
-        levelCleaned = 0;
+            bloodCounter = 0;
+            levelCleaned = 0;
+        }
+    
+        currentSceneName = sceneName;
+    
+        Debug.Log($"Scene loaded: {sceneName}, EnemiesKilled: {enemiesKilled}, Health: {playerHealth}/{MAX_HEALTH}");
     }
-    
-    currentSceneName = sceneName;
-    
-    Debug.Log($"Scene loaded: {sceneName}, EnemiesKilled: {enemiesKilled}, Health: {playerHealth}/{MAX_HEALTH}");
-}
     
     bool IsGameScene(string sceneName)
     {
@@ -264,35 +260,5 @@ public class LevelStateManager : MonoBehaviour
         {
             SceneManager.sceneLoaded -= OnSceneLoaded;
         }
-    }
-
-    public float GetMusicAudioValue()
-    {
-        return musicAudioValue;
-    }
-
-    public float GetMasterAudioValue()
-    {
-        return masterAudioValue;
-    }
-
-    public float GetSfxAudioValue()
-    {
-        return sfxAudioValue;
-    }
-
-    public void SetMusicAudioValue(float level)
-    {
-        musicAudioValue = level;
-    }
-
-    public void SetMasterAudioValue(float level)
-    {
-        masterAudioValue = level;
-    }
-
-    public void SetSfxAudioValue(float level)
-    {
-        sfxAudioValue = level;
     }
 }

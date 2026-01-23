@@ -1062,6 +1062,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BossBarManager
       objectReference: {fileID: 0}
+    - target: {fileID: 5703289346885210490, guid: 22cafdfa4a311f94ca307bb472171092, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8211541765397200927, guid: 22cafdfa4a311f94ca307bb472171092, type: 3}
       propertyPath: m_LocalPosition.x
       value: 251.63062

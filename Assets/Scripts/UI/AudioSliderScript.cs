@@ -11,26 +11,26 @@ public class AudioSliderScript : MonoBehaviour
     void Start()
     {
 
-        if(LevelStateManager.Instance == null)
+        if(SoundManager.instance == null)
         {
             return;
         }
 
         if (musicSlider != null)
         {
-            musicSlider.value = LevelStateManager.Instance.GetMusicAudioValue();
+            musicSlider.value = SoundManager.instance.GetMusicVolume();
             //SoundManager.instance.SetMusicVolume(LevelStateManager.Instance.GetMusicAudioValue());
         }
 
         if(sfxSlider != null)
         {
-            sfxSlider.value = LevelStateManager.Instance.GetSfxAudioValue();
+            sfxSlider.value = SoundManager.instance.GetSfxVolume();
             //SoundManager.instance.SetSfxVolume(LevelStateManager.Instance.GetSfxAudioValue());
         }
 
         if (masterSlider != null)
         {
-            masterSlider.value = LevelStateManager.Instance.GetMasterAudioValue();
+            masterSlider.value = SoundManager.instance.GetMasterVolume();
             //SoundManager.instance.SetMasterVolume(LevelStateManager.Instance.GetMasterAudioValue());
         }
     }
