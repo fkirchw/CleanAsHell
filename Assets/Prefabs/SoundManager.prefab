@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5951321320310943718}
-  - component: {fileID: 1011539586244658158}
+  - component: {fileID: 9189943920181391297}
   m_Layer: 0
   m_Name: SoundManager
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1011539586244658158
+--- !u!114 &9189943920181391297
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -45,3 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SoundManager
   soundFXObj: {fileID: 5106518267666057299, guid: 219f8b6b8de96094ca77464b540b173f, type: 3}
+  musicClip: {fileID: 0}
+  musicSource: {fileID: 0}
