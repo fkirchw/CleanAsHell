@@ -268,6 +268,13 @@ namespace Characters.Enemies
 
         public void TakeDamage(int damage, Vector2 knockbackDir, float knockbackForce)
         {
+            //Don't take damage if player is already dead
+            if(playerData.IsDead)
+            {
+                return;
+            }
+
+
             health -= damage;
 
             if (BloodSystem.Instance)

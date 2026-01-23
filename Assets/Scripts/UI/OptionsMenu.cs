@@ -16,10 +16,15 @@ namespace UI
 
         [Header("UI Root")]
         //Get the components where Gameobjects are
-        [SerializeField] Transform uiComponentRoot; 
+        [SerializeField] Transform uiComponentRoot;
+        [SerializeField] GameObject audioManager;
+        [SerializeField] GameObject closeButton;
 
         private InputAction pauseAction;
         private InputAction cancelAction;
+
+        private bool haveClickedOnAudio = false;
+
 
         private void Awake()
         {
@@ -44,6 +49,12 @@ namespace UI
 
         private void OnEnable()
         {
+
+            if (haveClickedOnAudio)
+            {
+                RenablePauseComponents();
+            }
+
             if (pauseAction != null)
             {
                 pauseAction.performed += OnPauseTriggered;
@@ -82,6 +93,11 @@ namespace UI
 
         private void OnPauseTriggered(InputAction.CallbackContext context)
         {
+            if (haveClickedOnAudio)
+            {
+                RenablePauseComponents();
+            }
+
             if (SceneManager.GetActiveScene().buildIndex == 0) return;
             if (visualPanel == null) return;
 
@@ -137,15 +153,54 @@ namespace UI
             SceneManager.LoadSceneAsync(0);
         }
 
-        //For Later to show the audio manager
-        /*
-        public void ShowOnlyAudioManager()
+        public void OnAudioClicked()
         {
             foreach (Transform child in uiComponentRoot)
             {
-                child.gameObject.SetActive(child.gameObject == uiComponentRoot);
+               
+              child.gameObject.SetActive(child.gameObject == uiComponentRoot);
+
             }
-        }*/
+
+            audioManager.gameObject.SetActive(true);
+            closeButton.gameObject.SetActive(true);
+
+            haveClickedOnAudio = true;
+
+        }
+
+        public void RenablePauseComponents()
+        {
+            foreach (Transform child in uiComponentRoot)
+            {
+                child.gameObject.SetActive(child.gameObject != uiComponentRoot);
+            }
+
+            audioManager.gameObject.SetActive(false);
+
+            haveClickedOnAudio = false;
+        }
+
+
+        public void OnAudioMasterSlider(float value)
+        {
+            //Debug.Log("Master Slider " +  value);
+            SoundManager.instance.SetMasterVolume(value);
+            
+        }
+
+        public void OnAudioSfxSlider(float value)
+        {
+            //Debug.Log("Audio Slider " + value);
+            SoundManager.instance.SetSfxVolume(value);
+
+        }
+
+        public void OnAudioMusicSlider(float value)
+        {
+            //Debug.Log("Music Slider " + value);
+            SoundManager.instance.SetMusicVolume(value);
+        }
 
     }
 }

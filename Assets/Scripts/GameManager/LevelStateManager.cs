@@ -4,12 +4,18 @@ using UnityEngine.SceneManagement;
 
 public class LevelStateManager : MonoBehaviour
 {
+    
     private int playerHealth;
     private int bloodCounter;
     private int allLevelsBloodCollected = 0;
     private float levelCleaned;
     private int enemiesKilled;
     private int deathCounter;
+
+    //Audio Settings
+    private float masterAudioValue = 1f;
+    private float sfxAudioValue = 1f;
+    private float musicAudioValue = 1f;
 
     private int MAX_HEALTH;
     
@@ -258,5 +264,35 @@ public class LevelStateManager : MonoBehaviour
         {
             SceneManager.sceneLoaded -= OnSceneLoaded;
         }
+    }
+
+    public float GetMusicAudioValue()
+    {
+        return musicAudioValue;
+    }
+
+    public float GetMasterAudioValue()
+    {
+        return masterAudioValue;
+    }
+
+    public float GetSfxAudioValue()
+    {
+        return sfxAudioValue;
+    }
+
+    public void SetMusicAudioValue(float level)
+    {
+        musicAudioValue = level;
+    }
+
+    public void SetMasterAudioValue(float level)
+    {
+        masterAudioValue = level;
+    }
+
+    public void SetSfxAudioValue(float level)
+    {
+        sfxAudioValue = level;
     }
 }

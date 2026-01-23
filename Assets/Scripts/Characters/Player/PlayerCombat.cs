@@ -91,20 +91,24 @@ namespace Characters.Player
         private void Start()
         {
             UpdateMaxHealth();
-            
+
+           
             health = LevelStateManager.Instance.GetPlayerHealth();
-            
+
             if (health > maxHealth)
             {
                 health = maxHealth;
                 LevelStateManager.Instance.SetPlayerHealth(health);
             }
-            
+
             int lightBonus = LevelStateManager.Instance.GetLightAttackBonus();
             int heavyBonus = LevelStateManager.Instance.GetHeavyAttackBonus();
             int vitBonus = (int)LevelStateManager.Instance.GetVitalityHealthBonus();
-            
             Debug.Log($"PlayerCombat Start - Health: {health}/{maxHealth}, LightBonus: {lightBonus}, HeavyBonus: {heavyBonus}, VitBonus: {vitBonus}");
+
+            
+            
+            
         }
 
         private void Update()
@@ -256,7 +260,7 @@ namespace Characters.Player
             int attackBonus = LevelStateManager.Instance.GetLightAttackBonus();
             int attackPower = lightAttackPower + attackBonus;
             
-            Debug.Log($"Light Attack - Base: {lightAttackPower}, Bonus: {attackBonus}, Final: {attackPower}");
+            //Debug.Log($"Light Attack - Base: {lightAttackPower}, Bonus: {attackBonus}, Final: {attackPower}");
             
             PerformAttack(attackPower, lightAttackDistance, lightAttackRadius, lightAttackKnockback);
 
@@ -269,7 +273,7 @@ namespace Characters.Player
             int attackBonus = LevelStateManager.Instance.GetHeavyAttackBonus();
             int attackPower = heavyAttackPower + attackBonus;
             
-            Debug.Log($"Heavy Attack - Base: {heavyAttackPower}, Bonus: {attackBonus}, Final: {attackPower}");
+            //Debug.Log($"Heavy Attack - Base: {heavyAttackPower}, Bonus: {attackBonus}, Final: {attackPower}");
             
             PerformAttack(attackPower, heavyAttackDistance, heavyAttackRadius, heavyAttackKnockback);
 
@@ -279,13 +283,13 @@ namespace Characters.Player
 
         private void PerformAttack(int attackPower, float attackDistance, float attackRadius, float knockbackForce)
         {
-            Debug.Log($"PerformAttack with power: {attackPower}");
+            //Debug.Log($"PerformAttack with power: {attackPower}");
             
             Vector2 dir = movement.FacingDirection;
             Vector2 attackCenter = (Vector2)transform.position + (dir * attackDistance * 0.5f);
             Collider2D[] hits = Physics2D.OverlapCircleAll(attackCenter, attackRadius, LayerMask.GetMask("Enemy"));
 
-            Debug.Log($"Found {hits.Length} enemies in attack area");
+            //Debug.Log($"Found {hits.Length} enemies in attack area");
 
             foreach (Collider2D hit in hits)
             {
