@@ -11333,6 +11333,11 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &360923097 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8839161912215254292, guid: 808c9f16b32c4f54baa87662d337d7c2, type: 3}
+  m_PrefabInstance: {fileID: 1612919013}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &391128539
 GameObject:
   m_ObjectHideFlags: 0
@@ -16422,6 +16427,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -87.506516
       objectReference: {fileID: 0}
+    - target: {fileID: 2720978546662635690, guid: cc59fff9b6add5a4ab96866953e207da, type: 3}
+      propertyPath: bossHealthBarPanel
+      value: 
+      objectReference: {fileID: 1614043878}
     - target: {fileID: 2791346276197427605, guid: cc59fff9b6add5a4ab96866953e207da, type: 3}
       propertyPath: m_fontSize
       value: 50
@@ -16550,6 +16559,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4364293377945500176, guid: cc59fff9b6add5a4ab96866953e207da, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4462666987421372549, guid: cc59fff9b6add5a4ab96866953e207da, type: 3}
       propertyPath: m_AnchorMax.x
       value: 1
@@ -16569,6 +16582,10 @@ PrefabInstance:
     - target: {fileID: 4794434251495220237, guid: cc59fff9b6add5a4ab96866953e207da, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5278224790807451965, guid: cc59fff9b6add5a4ab96866953e207da, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5344096006265622890, guid: cc59fff9b6add5a4ab96866953e207da, type: 3}
       propertyPath: m_AnchorMax.x
@@ -16846,6 +16863,10 @@ PrefabInstance:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnAudioMasterSlider
       objectReference: {fileID: 0}
+    - target: {fileID: 8449576527981571314, guid: cc59fff9b6add5a4ab96866953e207da, type: 3}
+      propertyPath: bossObject
+      value: 
+      objectReference: {fileID: 360923097}
     - target: {fileID: 8737719414844171791, guid: cc59fff9b6add5a4ab96866953e207da, type: 3}
       propertyPath: m_AnchorMax.x
       value: 1
@@ -16873,10 +16894,7 @@ PrefabInstance:
     - {fileID: 9053520813532546879, guid: cc59fff9b6add5a4ab96866953e207da, type: 3}
     - {fileID: 8787645238837361800, guid: cc59fff9b6add5a4ab96866953e207da, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5278224790807451965, guid: cc59fff9b6add5a4ab96866953e207da, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 612225609}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc59fff9b6add5a4ab96866953e207da, type: 3}
 --- !u!224 &612225606 stripped
 RectTransform:
@@ -16894,23 +16912,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91f441a16edc0b249a1c34eceeb4929f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OptionsMenu
---- !u!1 &612225608 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5278224790807451965, guid: cc59fff9b6add5a4ab96866953e207da, type: 3}
-  m_PrefabInstance: {fileID: 612225605}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &612225609
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 612225608}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bc2f0af9dc11044d8e03042132574f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -128354,7 +128355,7 @@ PrefabInstance:
     - target: {fileID: 4685658209486376388, guid: 808c9f16b32c4f54baa87662d337d7c2, type: 3}
       propertyPath: bossManager
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1827689689}
     - target: {fileID: 4685658209486376388, guid: 808c9f16b32c4f54baa87662d337d7c2, type: 3}
       propertyPath: wallToDestroy
       value: 
@@ -128412,6 +128413,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 808c9f16b32c4f54baa87662d337d7c2, type: 3}
+--- !u!1 &1614043878 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4364293377945500176, guid: cc59fff9b6add5a4ab96866953e207da, type: 3}
+  m_PrefabInstance: {fileID: 612225605}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1622277863
 GameObject:
   m_ObjectHideFlags: 0
@@ -129707,6 +129713,17 @@ CompositeCollider2D:
   m_OffsetDistance: 0.00005
   m_UseDelaunayMesh: 0
   m_CompositeGameObject: {fileID: 1622277863}
+--- !u!114 &1827689689 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2720978546662635690, guid: cc59fff9b6add5a4ab96866953e207da, type: 3}
+  m_PrefabInstance: {fileID: 612225605}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7c747d0d10b28f468a7fff2375dc558, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1 &1864794738
 GameObject:
   m_ObjectHideFlags: 0

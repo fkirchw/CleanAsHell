@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,36 +14,54 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private AudioSource soundFXObj;
     [SerializeField] private AudioSource musicObj;    // Für Musik
 
+    [Header("Music Clip")]
+    [SerializeField] private AudioClip levelMusic;
+    
+    [SerializeField] private AudioClip titleMusic;
+
+
+    private bool isMusicPlaying = false;
+
 
     private float masterVolume = 1.0f;
     private float sfxVolume = 1.0f;
     private float musicVolume = 0.3f;
+
     
+
+
     private void Awake()
     {
 
         if (instance == null)
         {
             instance = this;
+
+            DontDestroyOnLoad(gameObject);
+
         } else
         {
             Destroy(gameObject);
         }
+
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
-    private void Start()
+    private void OnSceneLoaded(Scene scene, LoadSceneMode arg1)
     {
-        if (LevelStateManager.Instance == null)
+       
+        if (scene.name.Contains("Level01"))
         {
-            return;
+           PlayMusic(levelMusic, true, 0.1f);
         }
 
-       
+        if (scene.name.Contains("Menu"))
+        {
+            PlayMusic(titleMusic, true, 0.1f);
+        }
 
-        musicVolume = LevelStateManager.Instance.GetMusicAudioValue();
-        sfxVolume = LevelStateManager.Instance.GetSfxAudioValue();
-        masterVolume = LevelStateManager.Instance.GetMasterAudioValue();
     }
+
 
     public void PlaySoundFxClip(AudioClip audioClip, Transform spawnTransform, float controlVolume)
     {
@@ -63,13 +82,47 @@ public class SoundManager : MonoBehaviour
         float clipLength = audioSource.clip.length;
 
         Destroy(audioSource.gameObject, clipLength);
+
+        
     }
 
+
+    public void FadeMusicOut(float strength)
+    {
+        float fadeOutSpeed = 1.0f / (strength *10);
+        if (musicObj == null) return;
+
+        StartCoroutine(FadeOut(fadeOutSpeed));
+    }
+
+
+    private IEnumerator FadeOut(float fadeOutSpeed)
+    {        
+        while (musicObj.volume > 0.001f)
+        {
+            musicObj.volume -= fadeOutSpeed * Time.deltaTime;
+            yield return null;
+        }
+
+        StopMusic();
+
+    }
+
+
+    public void StopMusic()
+    {
+        musicObj.Stop();
+        isMusicPlaying = false;
+    }
+
+    
     public void SetMasterVolume(float volume)
     {
         masterVolume = volume;
         UpdateMusicVolume();
     }
+
+
 
     public void SetSfxVolume(float volume)
     {
@@ -84,7 +137,7 @@ public class SoundManager : MonoBehaviour
         
     }
 
-    public void OnDestroy()
+    /*public void OnDestroy()
     {
         if(LevelStateManager.Instance == null)
         {
@@ -94,31 +147,54 @@ public class SoundManager : MonoBehaviour
         LevelStateManager.Instance.SetMusicAudioValue(musicVolume);
         LevelStateManager.Instance.SetSfxAudioValue(sfxVolume);
         LevelStateManager.Instance.SetMasterAudioValue(masterVolume);
-    }
+    }*/
 
-    private AudioSource musicSource;
+    
+
     public void PlayMusic(AudioClip musicClip, bool loop, float controlVolume)
     {
-        if (musicObj == null) return;
+        
+        if (musicObj == null || isMusicPlaying) return;
 
         float volume = sfxVolume * masterVolume * controlVolume;
 
-
-        musicSource = Instantiate(musicObj, transform.position, Quaternion.identity);
         // gleiche Musik schon aktiv
 
-        musicSource.volume = musicVolume;
+        musicObj.volume = musicVolume;
 
-        musicSource.clip = musicClip;
-        musicSource.loop = loop;
-        musicSource.volume = volume;
-        musicSource.Play();
+        musicObj.clip = musicClip;
+        musicObj.loop = loop;
+        musicObj.volume = volume;
+        musicObj.Play();
     }
 
     private void UpdateMusicVolume()
     {
-        if(musicSource == null) return;
-        musicSource.volume = musicVolume * masterVolume;
+        if(musicObj == null) return;
+        musicObj.volume = musicVolume * masterVolume;
+    }
+
+    public float GetMusicVolume()
+    {
+        return musicVolume;
+    }
+
+    public float GetMasterVolume()
+    {
+        return masterVolume;
+    }
+
+    public float GetSfxVolume()
+    {
+        return sfxVolume;
+    }
+
+    void OnDestroy()
+    {
+        if (instance == this)
+        {
+            SceneManager.sceneLoaded -= OnSceneLoaded;
+        }
     }
 
 }

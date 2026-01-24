@@ -186,7 +186,6 @@ namespace UI
         {
             //Debug.Log("Master Slider " +  value);
             SoundManager.instance.SetMasterVolume(value);
-            
         }
 
         public void OnAudioSfxSlider(float value)

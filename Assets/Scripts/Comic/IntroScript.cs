@@ -19,8 +19,10 @@ public class IntroScript : MonoBehaviour
     {
         comicImage.sprite = panels[0];
 
-            nextImgIdx++;
-        
+        nextImgIdx++;
+
+        SoundManager.instance.FadeMusicOut(1);
+       
     }
 
     private void Awake()
