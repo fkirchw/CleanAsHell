@@ -2,6 +2,7 @@
 using Characters.Interfaces;
 using Characters.Player;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 namespace Characters.Enemies
 {
@@ -16,6 +17,9 @@ namespace Characters.Enemies
         [SerializeField] private float knockbackForce = 2f;
         [SerializeField] private float attackCooldown = 2f;
         [SerializeField] private PlayerData playerData;
+        [SerializeField] private Vector2 damageRange = new Vector2(3, 1);
+
+
 
         private Transform playerPosition;
         private SpriteRenderer spriteRenderer;
@@ -106,6 +110,14 @@ namespace Characters.Enemies
             float distanceToPlayer = Vector2.Distance(new Vector2(transform.position.x, transform.position.y),
                 new Vector2(playerPosition.position.x, playerPosition.position.y));
 
+            float deltaX = Mathf.Abs(playerPosition.position.x - transform.position.x);
+            float deltaY = Mathf.Abs(transform.position.y - playerPosition.position.y);
+            if (!(damageRange.x >= deltaX && damageRange.y >= deltaY))
+            {
+                return;
+            }
+
+
             if (distanceToPlayer < attackDistance)
             {
                 IDamageable playerScript = playerPosition.GetComponent<IDamageable>();
@@ -120,7 +132,7 @@ namespace Characters.Enemies
                     playerScript.TakeDamage(damage, knockbackDir, knockbackForce);
                 }
             }
-        }
+         }   
 
         private void HandleAttack()
         {

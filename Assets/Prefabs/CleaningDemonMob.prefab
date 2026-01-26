@@ -141,6 +141,7 @@ MonoBehaviour:
   knockbackForce: 3
   attackCooldown: 2
   playerData: {fileID: 0}
+  damageRange: {x: 2, y: 0.5}
   cleaningDemonAttackClip: {fileID: 8300000, guid: a93dc2c369be5fb46aa2c9e2e78e594b, type: 3}
 --- !u!50 &4643872769728507050
 Rigidbody2D:
