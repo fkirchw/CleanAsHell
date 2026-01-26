@@ -57,9 +57,9 @@ namespace Characters.Player
         public bool IsAttacking { get; private set; }
         public float HealthPercent => (float)health / GetMaxHealth();
         public int Health => health;
+        public bool IsInvincible => isInvincible;
 
         private int maxHealth;
-
         private int regenerationCount = 0;
 
         private void Awake()
@@ -105,9 +105,6 @@ namespace Characters.Player
             int heavyBonus = LevelStateManager.Instance.GetHeavyAttackBonus();
             int vitBonus = (int)LevelStateManager.Instance.GetVitalityHealthBonus();
             Debug.Log($"PlayerCombat Start - Health: {health}/{maxHealth}, LightBonus: {lightBonus}, HeavyBonus: {heavyBonus}, VitBonus: {vitBonus}");
-
-            
-            
             
         }
 
@@ -216,11 +213,7 @@ namespace Characters.Player
             }
         }
 
-        public int GetMaxHealth()
-        {
-            UpdateMaxHealth();
-            return maxHealth;
-        }
+        
 
         private IEnumerator InvincibilityCoroutine()
         {
@@ -355,6 +348,12 @@ namespace Characters.Player
         private void OnDisable()
         {
             GameEvents.OnRegenerationEvent -= OnRegenerationHandler;
+        }
+
+        public int GetMaxHealth()
+        {
+            UpdateMaxHealth();
+            return maxHealth;
         }
     }
 }

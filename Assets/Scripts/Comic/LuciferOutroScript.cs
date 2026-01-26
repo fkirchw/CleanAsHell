@@ -86,8 +86,8 @@ public class LuciferOutroScript : MonoBehaviour
         }
         else
         {
-            inputActions.Intro.Disable();
-            
+           inputActions.Intro.Disable();
+           SceneManager.LoadScene("Scenes/Main Menu");
         }
     }
 }

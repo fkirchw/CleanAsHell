@@ -26,10 +26,6 @@ public class SoundManager : MonoBehaviour
     private float masterVolume = 1.0f;
     private float sfxVolume = 1.0f;
     private float musicVolume = 0.3f;
-
-    
-
-
     private void Awake()
     {
 
@@ -82,8 +78,6 @@ public class SoundManager : MonoBehaviour
         float clipLength = audioSource.clip.length;
 
         Destroy(audioSource.gameObject, clipLength);
-
-        
     }
 
 
@@ -105,9 +99,7 @@ public class SoundManager : MonoBehaviour
         }
 
         StopMusic();
-
     }
-
 
     public void StopMusic()
     {
@@ -137,28 +129,12 @@ public class SoundManager : MonoBehaviour
         
     }
 
-    /*public void OnDestroy()
-    {
-        if(LevelStateManager.Instance == null)
-        {
-            return;
-        }
-
-        LevelStateManager.Instance.SetMusicAudioValue(musicVolume);
-        LevelStateManager.Instance.SetSfxAudioValue(sfxVolume);
-        LevelStateManager.Instance.SetMasterAudioValue(masterVolume);
-    }*/
-
-    
-
     public void PlayMusic(AudioClip musicClip, bool loop, float controlVolume)
     {
         
         if (musicObj == null || isMusicPlaying) return;
 
         float volume = sfxVolume * masterVolume * controlVolume;
-
-        // gleiche Musik schon aktiv
 
         musicObj.volume = musicVolume;
 
@@ -188,7 +164,6 @@ public class SoundManager : MonoBehaviour
     {
         return sfxVolume;
     }
-
     void OnDestroy()
     {
         if (instance == this)
