@@ -134,7 +134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CleaningDemonScript
   animator: {fileID: 5289278934856465478}
   moveSpeed: 3
-  attackDistance: 1.5
+  attackDistance: 2
   health: 10
   damage: 5
   knockbackDir: {x: 1, y: 1}
@@ -356,8 +356,8 @@ Transform:
   m_GameObject: {fileID: 6554665953789345085}
   serializedVersion: 2
   m_LocalRotation: {x: -0.00000017450532, y: 0.00000033136627, z: 0.8848058, w: -0.46596012}
-  m_LocalPosition: {x: -0.0066000186, y: 0.011400014, z: 0}
-  m_LocalScale: {x: 0.5625, y: 0.5625, z: 0}
+  m_LocalPosition: {x: -0.0066000186, y: 0.011400014, z: 5.684342e-14}
+  m_LocalScale: {x: 0.65, y: 0.65, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2938868072123693803}

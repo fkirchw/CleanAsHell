@@ -74,8 +74,11 @@ namespace Characters.Enemies
 
         void Update()
         {
-            if (playerData == null) return;
-            
+            if (isDead)
+            {
+                return;
+            }
+
             if(playerData.IsDead) 
             {
                 ResetAllParameters();
@@ -97,11 +100,6 @@ namespace Characters.Enemies
             else
             {
                 rb.constraints = RigidbodyConstraints2D.FreezeRotation;
-            }
-
-            if (isDead)
-            {
-                return;
             }
 
             if (playerDetected && !isInAttack)
@@ -180,6 +178,7 @@ namespace Characters.Enemies
         private void DealDamage(IAttack attack)
         {
             if (playerPosition == null) return;
+            if (isDead) return;
             
             float deltaX = Mathf.Abs(playerPosition.position.x - transform.position.x);
             float deltaY = Mathf.Abs(transform.position.y + playerOffset - playerPosition.position.y);
@@ -234,7 +233,13 @@ namespace Characters.Enemies
         private void HandleAttack()
         {
             if (playerPosition == null) return;
-            
+
+            //When player is invincible return!
+            if(playerData.IsInvincible)
+            {
+                return;
+            }
+
             IAttack myNextAttack = ChooseAttack();
 
             if (myNextAttack==null)
@@ -257,7 +262,8 @@ namespace Characters.Enemies
 
             foreach (IAttack possibleAttack in attacks)
             {
-               if(distanceToPlayer < possibleAttack.GetAttackDistance() && possibleAttack.GetCanAttack() )
+                bool isValidAttack = distanceToPlayer < possibleAttack.GetAttackDistance() && possibleAttack.GetCanAttack();
+                if (isValidAttack)
                 {
                     return possibleAttack;
                 }

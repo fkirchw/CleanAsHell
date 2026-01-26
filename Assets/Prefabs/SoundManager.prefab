@@ -176,4 +176,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SoundManager
   soundFXObj: {fileID: 5106518267666057299, guid: 219f8b6b8de96094ca77464b540b173f, type: 3}
   musicObj: {fileID: 7205899960800624156}
-  levelMusic: {fileID: 8300000, guid: df7d339ebc97ce24fbc1d305ed06fbf7, type: 3}
+  levelMusic: {fileID: 8300000, guid: d57f116d24e99ac46802bb74f37acba4, type: 3}
+  titleMusic: {fileID: 8300000, guid: b550a59713fffa14b918a87ad1cc673e, type: 3}

@@ -248,6 +248,11 @@ namespace Characters.Player
 
         void PlayCleaningSound()
         {
+            if(!movement.IsGrounded)
+            {
+                return;
+            }
+
             if (Time.time - lastSoundTime < soundCooldown)
             { 
                 return;

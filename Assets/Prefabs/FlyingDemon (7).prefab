@@ -204,7 +204,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FlyingDemonScript
   animator: {fileID: 7351829411937572745}
   moveSpeed: 4
-  attackDistance: 1
+  attackDistance: 1.5
   health: 10
   damage: 5
   knockbackForce: 15

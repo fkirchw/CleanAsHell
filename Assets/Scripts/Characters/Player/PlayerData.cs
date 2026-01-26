@@ -21,5 +21,7 @@ namespace Characters.Player
         public bool IsDead => combat.IsDead;
         public Vector3 Position => this.transform.position;
         public bool IsLookingDown { get; set; }
+
+        public bool IsInvincible => combat.IsInvincible;
     }
 }
