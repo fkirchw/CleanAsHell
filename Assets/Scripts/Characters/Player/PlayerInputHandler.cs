@@ -16,6 +16,7 @@ namespace Characters.Player
         public bool AttackPressed => inputActions.Player.Attack.triggered;
         public bool HeavySweepPressed => inputActions.Player.HeavyAttack.triggered;
         public bool CleanHeld => inputActions.Player.Clean.IsPressed();
+        public bool ToggleInvincibilityPressed => inputActions.Player.ToggleInvincibility.triggered;
 
         private void Awake()
         {
@@ -44,6 +45,9 @@ namespace Characters.Player
                     
                 if (inputActions.Player.HeavyAttack.triggered)
                     Debug.Log("HeavySweep action TRIGGERED");
+
+                if (inputActions.Player.ToggleInvincibility.triggered)
+                    Debug.Log("ToggleInvincibility action TRIGGERED");
             }
         }
 

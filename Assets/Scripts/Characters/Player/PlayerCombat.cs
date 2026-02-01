@@ -17,7 +17,7 @@ namespace Characters.Player
 
         [SerializeField] private SpriteRenderer spriteRenderer;
 
-        [SerializeField] private int health = 10;
+        [SerializeField] private int health = 30;
 
         [Header("Light Attack")] [SerializeField]
         private int lightAttackPower = 5;
@@ -39,6 +39,10 @@ namespace Characters.Player
         [SerializeField] private bool enableFlashEffect = true;
         [SerializeField] private float flashInterval = 0.1f;
 
+        [Header("Manual Invincibility")]
+        [SerializeField] private Color manualInvincibilityColor = new Color(1f, 1f, 1f, 0.5f);
+        [SerializeField] private bool isManuallyInvincible = false;
+
 
         [Header("SoundClips")]
         [SerializeField] private AudioClip dealDamageSoundClip;
@@ -57,10 +61,12 @@ namespace Characters.Player
         public bool IsAttacking { get; private set; }
         public float HealthPercent => (float)health / GetMaxHealth();
         public int Health => health;
-        public bool IsInvincible => isInvincible;
+        public bool IsInvincible => isInvincible || isManuallyInvincible;
+        public bool IsManuallyInvincible => isManuallyInvincible;
 
         private int maxHealth;
         private int regenerationCount = 0;
+        private Color originalColor;
 
         private void Awake()
         {
@@ -72,6 +78,10 @@ namespace Characters.Player
             {
                 Debug.LogError("No sprite renderer found on " + gameObject.name);
             }
+            else
+            {
+                originalColor = spriteRenderer.color;
+            }
 
             UpdateMaxHealth();
         }
@@ -80,7 +90,7 @@ namespace Characters.Player
         {
             if (LevelStateManager.Instance != null)
             {
-                maxHealth = 10 + (int)LevelStateManager.Instance.GetVitalityHealthBonus();
+                maxHealth = 30 + (int)LevelStateManager.Instance.GetVitalityHealthBonus();
             }
             else
             {
@@ -118,6 +128,31 @@ namespace Characters.Player
 
             HandleCombatInput();
             UpdateAnimations();
+            
+            // Handle manual invincibility toggle
+            if (input.ToggleInvincibilityPressed)
+            {
+                ToggleManualInvincibility();
+            }
+        }
+
+        private void ToggleManualInvincibility()
+        {
+            isManuallyInvincible = !isManuallyInvincible;
+            
+            if (spriteRenderer != null)
+            {
+                if (isManuallyInvincible)
+                {
+                    spriteRenderer.color = manualInvincibilityColor;
+                    Debug.Log("Manual invincibility ENABLED");
+                }
+                else
+                {
+                    spriteRenderer.color = originalColor;
+                    Debug.Log("Manual invincibility DISABLED");
+                }
+            }
         }
 
         private void OnRegenerationHandler(float regeneratedHealth)
@@ -181,7 +216,7 @@ namespace Characters.Player
 
         public void TakeDamage(int damage, Vector2 knockbackDir, float knockbackForce)
         {
-            if (isInvincible) return;
+            if (IsInvincible) return;
 
             DecreaseHealth(damage);
 
@@ -204,12 +239,16 @@ namespace Characters.Player
             }
             else
             {
-                if (invincibilityCoroutine != null)
+                // Only start temporary invincibility if not manually invincible
+                if (!isManuallyInvincible)
                 {
-                    StopCoroutine(invincibilityCoroutine);
-                }
+                    if (invincibilityCoroutine != null)
+                    {
+                        StopCoroutine(invincibilityCoroutine);
+                    }
 
-                invincibilityCoroutine = StartCoroutine(InvincibilityCoroutine());
+                    invincibilityCoroutine = StartCoroutine(InvincibilityCoroutine());
+                }
             }
         }
 
@@ -222,22 +261,30 @@ namespace Characters.Player
             if (enableFlashEffect && spriteRenderer != null)
             {
                 float elapsed = 0f;
-                Color originalColor = spriteRenderer.color;
+                Color currentColor = spriteRenderer.color;
 
                 while (elapsed < invincibilityDuration)
                 {
-                    spriteRenderer.color = new Color(
-                        originalColor.r,
-                        originalColor.g,
-                        originalColor.b,
-                        spriteRenderer.color.a > 0.75f ? 0.3f : 1f
-                    );
+                    // Don't flash if manually invincible
+                    if (!isManuallyInvincible)
+                    {
+                        spriteRenderer.color = new Color(
+                            currentColor.r,
+                            currentColor.g,
+                            currentColor.b,
+                            spriteRenderer.color.a > 0.75f ? 0.3f : 1f
+                        );
+                    }
 
                     yield return new WaitForSeconds(flashInterval);
                     elapsed += flashInterval;
                 }
 
-                spriteRenderer.color = originalColor;
+                // Restore to appropriate color
+                if (!isManuallyInvincible)
+                {
+                    spriteRenderer.color = originalColor;
+                }
             }
             else
             {
