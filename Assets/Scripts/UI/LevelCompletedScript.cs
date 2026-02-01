@@ -58,15 +58,12 @@ public class LevelCompletedScript : MonoBehaviour
 
     private int CountAllEnemiesInLevel()
     {
-        // Find all objects with the "Enemy" tag
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         
-        // Filter only unique parents
         List<GameObject> uniqueEnemies = new List<GameObject>();
         
         foreach (GameObject enemy in enemies)
         {
-            // Find the parent object (root of the hierarchy)
             Transform root = enemy.transform;
             while (root.parent != null && root.parent.CompareTag("Enemy"))
             {
@@ -143,23 +140,19 @@ public class LevelCompletedScript : MonoBehaviour
         if (visualPanel == null || LevelStateManager.Instance == null) return;
 
         string timeFormatted = GetFormattedTime();
-        float bloodScore = LevelStateManager.Instance.GetCurrentLevelBloodCounter(); // Changed here
+        float bloodScore = LevelStateManager.Instance.GetCurrentLevelBloodCounter();
         float cleanedScore = LevelStateManager.Instance.GetLevelCleaned();
         int enemiesKilled = LevelStateManager.Instance.GetEnemiesKilled();
         string enemiesFormatted = $"{enemiesKilled}/{totalEnemiesInLevel}";
         
-        // Calculate total score with complex formula
         float timeMultiplier = CalculateTimeMultiplier();
         float enemyMultiplier = CalculateEnemyMultiplier(enemiesKilled);
         float cleanedMultiplier = CalculateCleanedMultiplier(cleanedScore);
         
-        // MODIFIED FORMULA: Without bloodScore in grade calculation
-        // Only enemies count for grade, each inactive one gives 100 points
         float totalScore = enemiesKilled * 100 * timeMultiplier * enemyMultiplier * cleanedMultiplier;
         
-        // Get grade based on score
         string grade = "S";
-        if (!alwaysShowS) // Shows S regardless of values. For tutorial.
+        if (!alwaysShowS)
         {
             grade = CalculateGrade(totalScore);
         }
@@ -209,6 +202,11 @@ public class LevelCompletedScript : MonoBehaviour
 
 private string CalculateGrade(float totalScore)
 {
+    if (totalEnemiesInLevel == 0)
+    {
+        return "S";
+    }
+    
     int enemiesKilled = LevelStateManager.Instance.GetEnemiesKilled();
     
     bool allEnemiesKilled = enemiesKilled >= totalEnemiesInLevel;
