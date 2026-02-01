@@ -14,18 +14,31 @@ Fight through the depths of Hell, defeat enemies and bosses, and clean up the bl
 - Upgrade system to enhance player abilities
 
 ## Controls
-- **Move:** A / D / S  
-- **Jump:** W / Space  
-- **Clean:** Shift  
-- **Upgrade Screen:** E  
-- **Pause / Settings:** Esc  
+### Keyboard/Mouse
+- **Move:** A / D / S
+- **Jump:** W / Space
+- **Clean:** Shift
+- **Upgrade Screen:** E
+- **Pause / Settings:** Esc
+- **Light Attack** Left Click
+- **Heavy Attack** Right Click
+
+### Gamepad
+- **Move:** Right Stick
+- **Jump:** A / Button South
+- **Clean:** Left Button
+- **Upgrade Screen:** Select
+- **Pause / Settings:** Start
+- **Light Attack** Right Button
+- **Heavy Attack** Right Trigger
 
 ## Team & Contributions
 
 ### Felix Kirchweger (k12113772)
 - Player movement & attacks  
 - Cleaning / blood system  
-- Player animations  
+- Player animations
+- Controls
 
 ### Nica Anatol (k12524430)
 - HP & blood UI indicators  
@@ -41,7 +54,7 @@ Fight through the depths of Hell, defeat enemies and bosses, and clean up the bl
 
 ## Ressources
 
-*A combination of our own Art and free (unhanged or changed) ressources listed below*
+*A combination of our own Art and free (some of them adapted) ressources listed below*
 
 ### Music 
 -  Level Music by *AlexGrohl* (https://pixabay.com/de/users/alexgrohl-25289918/)
@@ -59,6 +72,3 @@ Fight through the depths of Hell, defeat enemies and bosses, and clean up the bl
 ### Texture Tiles
 - by *The Flavare* (https://theflavare.itch.io/)
 
-## Status
-🚧 **Work in Progress**  
-The game is actively being developed and improved.

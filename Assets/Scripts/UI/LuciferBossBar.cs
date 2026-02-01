@@ -1,36 +1,37 @@
-using Characters.Enemies;
-using Characters.Player;
-using Unity.VisualScripting;
+using Characters.Enemies.Lucifer;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LuciferBossBar : MonoBehaviour
+namespace UI
 {
-    private LuciferController luciferController;
-    private Slider slider;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-
-    //INITIALIZE all UI components in Start, not Awake to avoid timing issues.
-    void Start()
+    public class LuciferBossBar : MonoBehaviour
     {
-        luciferController = FindFirstObjectByType<LuciferController>();
+        private LuciferController luciferController;
+        private Slider slider;
+        // Start is called once before the first execution of Update after the MonoBehaviour is created
 
-        if (!luciferController)
+        //INITIALIZE all UI components in Start, not Awake to avoid timing issues.
+        void Start()
         {
-            throw new UnityException("PlayerData not found");
+            luciferController = FindFirstObjectByType<LuciferController>();
+
+            if (!luciferController)
+            {
+                throw new UnityException("PlayerData not found");
+            }
+
+            slider = GetComponent<Slider>();
         }
 
-        slider = GetComponent<Slider>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        slider.value = luciferController.GetHealthPercent();
-
-        if (slider.value <= 0)
+        // Update is called once per frame
+        void Update()
         {
-            Destroy(gameObject);
+            slider.value = luciferController.GetHealthPercent();
+
+            if (slider.value <= 0)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }

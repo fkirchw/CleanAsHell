@@ -1,8 +1,7 @@
-using UnityEngine;
 using Characters.Interfaces;
-using System.Collections;
+using UnityEngine;
 
-namespace Characters.Enemies
+namespace Traps
 {
     public class TrapChest : MonoBehaviour, IDamageable
     {

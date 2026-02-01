@@ -360,7 +360,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Characters.Player.PlayerCombat
   animator: {fileID: 3276520232718924349}
   spriteRenderer: {fileID: 1870786313136268208}
-  health: 10
+  health: 30
   lightAttackPower: 5
   lightAttackDistance: 1
   lightAttackRadius: 0.7
@@ -372,6 +372,8 @@ MonoBehaviour:
   invincibilityDuration: 1
   enableFlashEffect: 1
   flashInterval: 0.1
+  manualInvincibilityColor: {r: 1, g: 1, b: 1, a: 0.5}
+  isManuallyInvincible: 0
   dealDamageSoundClip: {fileID: 8300000, guid: e7770bf5d78e21d42a2128cbfdca642b, type: 3}
   lightHitSoundClip: {fileID: 8300000, guid: 7ee0cd5c4c07f4d49b6b98efe1dc8c15, type: 3}
   heavyHitSoundClip: {fileID: 8300000, guid: 364b96f9d616b074b8bd0de342629193, type: 3}

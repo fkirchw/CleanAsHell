@@ -1,31 +1,35 @@
+using GameManager;
 using TMPro;
 using UnityEngine;
 
-public class BloodCounterScript : MonoBehaviour
+namespace UI
 {
-    public TMP_Text bloodCounter;
-    
-    private void Start()
+    public class BloodCounterScript : MonoBehaviour
     {
-        UpdateBloodCounter();
-    }
+        public TMP_Text bloodCounter;
     
-    private void OnEnable()
-    {
-        UpdateBloodCounter();
-    }
-    
-    void Update()
-    {
-        UpdateBloodCounter();
-    }
-    
-    void UpdateBloodCounter()
-    {
-        if (LevelStateManager.Instance != null && bloodCounter != null)
+        private void Start()
         {
-            // Folosește noua metodă GetDisplayBloodCounter()
-            bloodCounter.text = LevelStateManager.Instance.GetDisplayBloodCounter().ToString();
+            UpdateBloodCounter();
+        }
+    
+        private void OnEnable()
+        {
+            UpdateBloodCounter();
+        }
+    
+        void Update()
+        {
+            UpdateBloodCounter();
+        }
+    
+        void UpdateBloodCounter()
+        {
+            if (LevelStateManager.Instance != null && bloodCounter != null)
+            {
+                // Folosește noua metodă GetDisplayBloodCounter()
+                bloodCounter.text = LevelStateManager.Instance.GetDisplayBloodCounter().ToString();
+            }
         }
     }
 }

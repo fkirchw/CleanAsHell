@@ -1,46 +1,49 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class BossManager : MonoBehaviour
+namespace GameManager
 {
-    [SerializeField] private GameObject bossHealthBarPanel;
-    
-    void Start()
+    public class BossManager : MonoBehaviour
     {
-        if (bossHealthBarPanel != null)
+        [SerializeField] private GameObject bossHealthBarPanel;
+    
+        void Start()
         {
-            bossHealthBarPanel.SetActive(false);
-        }
+            if (bossHealthBarPanel != null)
+            {
+                bossHealthBarPanel.SetActive(false);
+            }
         
-        SceneManager.sceneLoaded += OnSceneLoaded;
-    }
-    
-    void OnDestroy()
-    {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
-    }
-    
-    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        if (bossHealthBarPanel != null)
-        {
-            bossHealthBarPanel.SetActive(false);
+            SceneManager.sceneLoaded += OnSceneLoaded;
         }
-    }
     
-    public void ShowBossHealthBar()
-    {
-        if (bossHealthBarPanel != null)
+        void OnDestroy()
         {
-            bossHealthBarPanel.SetActive(true);
+            SceneManager.sceneLoaded -= OnSceneLoaded;
         }
-    }
     
-    public void HideBossHealthBar()
-    {
-        if (bossHealthBarPanel != null)
+        private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
         {
-            bossHealthBarPanel.SetActive(false);
+            if (bossHealthBarPanel != null)
+            {
+                bossHealthBarPanel.SetActive(false);
+            }
+        }
+    
+        public void ShowBossHealthBar()
+        {
+            if (bossHealthBarPanel != null)
+            {
+                bossHealthBarPanel.SetActive(true);
+            }
+        }
+    
+        public void HideBossHealthBar()
+        {
+            if (bossHealthBarPanel != null)
+            {
+                bossHealthBarPanel.SetActive(false);
+            }
         }
     }
 }
