@@ -1,11 +1,13 @@
 using Characters.Player;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro; 
 
 public class HealthBar : MonoBehaviour
 {
     private PlayerData playerData;
     private Slider slider;
+    private TextMeshProUGUI hpText;
     
     void Start()
     {
@@ -18,14 +20,24 @@ public class HealthBar : MonoBehaviour
 
         slider = GetComponent<Slider>();
         
-        // Initialize slider max value
-        slider.maxValue = 1f; // For percent
+        slider.maxValue = 1f; 
         slider.value = playerData.HealthPercent;
+        
+        hpText = GameObject.Find("HP")?.GetComponent<TextMeshProUGUI>();
+        
+        if (!hpText)
+        {
+            Debug.LogWarning("TextMeshPro with name 'HP' not found");
+        }
     }
 
     void Update()
     {
-        // Update health percent every frame
         slider.value = playerData.HealthPercent;
+        
+        if (hpText != null)
+        {
+            hpText.text = $"{playerData.Health}";
+        }
     }
 }
