@@ -25,6 +25,10 @@ namespace GameManager
         private float cleaningRangeMultiplier = 1f;
         private float cleaningRegenerationBonus = 0;
     
+        // audio settings
+        private float masterVolume = 1.0f;
+        private float musicVolume = 1.0f;
+        private float sfxVolume = 1.0f;
 
         private int totalUpgradeCostSpent = 0;
 
@@ -288,7 +292,13 @@ namespace GameManager
         public int GetLightAttackBonus() => lightAttackBonus;
         public float GetCleaningRangeMultiplier() => cleaningRangeMultiplier;
         public float GetCleaningRegenerationBonus() => cleaningRegenerationBonus;
-
+        
+        public float MasterVolume { get =>  masterVolume; internal set => masterVolume = value; }
+        
+        public float MusicVolume { get =>  musicVolume; internal set => musicVolume = value; }
+        
+        public float SfxVolume { get =>  sfxVolume; internal set => sfxVolume = value; }
+        
         public int[] GetCurrentUpgradeLevels()
         {
             // Return total upgrade levels

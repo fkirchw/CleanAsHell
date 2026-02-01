@@ -19,11 +19,8 @@ namespace GameManager
 
 
         private bool isMusicPlaying = false;
-
-
-        private float masterVolume = 1.0f;
-        private float sfxVolume = 1.0f;
-        private float musicVolume = 0.3f;
+        private LevelStateManager LevelStateManager => LevelStateManager.Instance;
+        
         private void Awake()
         {
 
@@ -44,7 +41,7 @@ namespace GameManager
         private void OnSceneLoaded(Scene scene, LoadSceneMode arg1)
         {
        
-            if (scene.name.Contains("Level01"))
+            if (scene.name.Contains("Level"))
             {
                 PlayMusic(levelMusic, true, 0.1f);
             }
@@ -60,7 +57,7 @@ namespace GameManager
         public void PlaySoundFxClip(AudioClip audioClip, Transform spawnTransform, float controlVolume)
         {
 
-            float volume = sfxVolume * masterVolume * controlVolume;
+            float volume = LevelStateManager.SfxVolume * LevelStateManager.MasterVolume * controlVolume;
             //spawn gameObj
             AudioSource audioSource = Instantiate(soundFXObj, spawnTransform.position, Quaternion.identity);
 
@@ -108,7 +105,7 @@ namespace GameManager
     
         public void SetMasterVolume(float volume)
         {
-            masterVolume = volume;
+            LevelStateManager.MasterVolume = volume;
             UpdateMusicVolume();
         }
 
@@ -116,13 +113,13 @@ namespace GameManager
 
         public void SetSfxVolume(float volume)
         {
-            sfxVolume = volume;
+            LevelStateManager.SfxVolume = volume;
         
         }
 
         public void SetMusicVolume(float volume)
         {
-            musicVolume = volume;
+            LevelStateManager.MusicVolume = volume;
             UpdateMusicVolume();
         
         }
@@ -132,9 +129,9 @@ namespace GameManager
         
             if (musicObj == null || isMusicPlaying) return;
 
-            float volume = sfxVolume * masterVolume * controlVolume;
+            float volume = LevelStateManager.SfxVolume * LevelStateManager.MasterVolume * controlVolume;
 
-            musicObj.volume = musicVolume;
+            musicObj.volume = LevelStateManager.MusicVolume;
 
             musicObj.clip = musicClip;
             musicObj.loop = loop;
@@ -145,22 +142,22 @@ namespace GameManager
         private void UpdateMusicVolume()
         {
             if(musicObj == null) return;
-            musicObj.volume = musicVolume * masterVolume;
+            musicObj.volume = LevelStateManager.MusicVolume * LevelStateManager.MasterVolume;
         }
 
         public float GetMusicVolume()
         {
-            return musicVolume;
+            return LevelStateManager.MusicVolume;
         }
 
         public float GetMasterVolume()
         {
-            return masterVolume;
+            return LevelStateManager.MasterVolume;
         }
 
         public float GetSfxVolume()
         {
-            return sfxVolume;
+            return LevelStateManager.SfxVolume;
         }
         void OnDestroy()
         {
