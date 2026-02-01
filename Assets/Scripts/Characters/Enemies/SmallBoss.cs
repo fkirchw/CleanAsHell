@@ -1,6 +1,7 @@
 using Blood;
 using Characters.Interfaces;
 using System.Collections;
+using GameManager;
 using UnityEngine;
 
 namespace Characters.Enemies

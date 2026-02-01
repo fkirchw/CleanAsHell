@@ -2,6 +2,7 @@
 using Characters.Interfaces;
 using Characters.Player;
 using System.Collections;
+using GameManager;
 using UnityEngine;
 namespace Characters.Enemies
 {

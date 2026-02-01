@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Blood;
 using Characters.Interfaces;
+using GameManager;
 using UnityEngine;
 
 namespace Characters.Player

@@ -1,23 +1,26 @@
 using System.Collections;
 using UnityEngine;
 
-public interface IAttack
+namespace Characters.Enemies.Lucifer
 {
-    void Attack();
-    string GetAttackName();
-    float GetAttackDistance();
-    Vector2 GetDamageRange();
-    float GetAttackCooldown();
-    bool GetCanAttack();
+    public interface IAttack
+    {
+        void Attack();
+        string GetAttackName();
+        float GetAttackDistance();
+        Vector2 GetDamageRange();
+        float GetAttackCooldown();
+        bool GetCanAttack();
 
-    int GetDamage();
+        int GetDamage();
 
-    Vector2 GetKnockbackDir();
+        Vector2 GetKnockbackDir();
 
-    float GetKnockbackForce();
+        float GetKnockbackForce();
 
-    IEnumerator AttackCooldown();
+        IEnumerator AttackCooldown();
 
     
 
+    }
 }

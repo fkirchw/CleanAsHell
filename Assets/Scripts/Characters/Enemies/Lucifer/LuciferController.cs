@@ -1,13 +1,13 @@
+using System.Collections;
+using System.Collections.Generic;
 using Blood;
 using Characters.Interfaces;
-using UnityEngine;
-using System.Collections;
 using Characters.Player;
-using System.Collections.Generic;
-using System;
+using GameManager;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Characters.Enemies
+namespace Characters.Enemies.Lucifer
 {
     public class LuciferController : MonoBehaviour, IDamageable
     {

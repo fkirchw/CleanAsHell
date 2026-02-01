@@ -1,100 +1,103 @@
 using System.Collections;
-using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.SceneManagement;
-using UnityEngine.InputSystem;
+using GameManager;
 using Inputs;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
-public class IntroScript : MonoBehaviour
+namespace Comic
 {
-    public Image comicImage = null;
-    public Sprite[] panels;
-
-    public float autoDelay = 5f; // 0 = nur manuell
-    private float timer = 0f;
-
-    private int nextImgIdx = 0;
-    private bool isSwitching = false;
-
-    private InputSystemActions inputActions;
-
-    private void Awake()
+    public class IntroScript : MonoBehaviour
     {
-        inputActions = new InputSystemActions();
-        inputActions.Intro.Enable();
-    }
+        public Image comicImage = null;
+        public Sprite[] panels;
 
-    void Start()
-    {
-        comicImage.sprite = panels[0];
-        nextImgIdx = 1;
+        public float autoDelay = 5f; // 0 = nur manuell
+        private float timer = 0f;
 
-        SoundManager.instance.FadeMusicOut(1);
-    }
+        private int nextImgIdx = 0;
+        private bool isSwitching = false;
 
-    void Update()
-    {
-        // Manuell weiterschalten
-        if (inputActions.Intro.Next.WasPressedThisFrame())
+        private InputSystemActions inputActions;
+
+        private void Awake()
         {
-            timer = 0f;
-            ShowNextPanel();
+            inputActions = new InputSystemActions();
+            inputActions.Intro.Enable();
         }
 
-        // Automatisch weiterschalten (nur wenn kein Fade läuft)
-        if (autoDelay > 0 && !isSwitching)
+        void Start()
         {
-            timer += Time.deltaTime;
-            if (timer >= autoDelay)
+            comicImage.sprite = panels[0];
+            nextImgIdx = 1;
+
+            SoundManager.instance.FadeMusicOut(1);
+        }
+
+        void Update()
+        {
+            // Manuell weiterschalten
+            if (inputActions.Intro.Next.WasPressedThisFrame())
             {
                 timer = 0f;
                 ShowNextPanel();
             }
+
+            // Automatisch weiterschalten (nur wenn kein Fade lï¿½uft)
+            if (autoDelay > 0 && !isSwitching)
+            {
+                timer += Time.deltaTime;
+                if (timer >= autoDelay)
+                {
+                    timer = 0f;
+                    ShowNextPanel();
+                }
+            }
         }
-    }
 
-    private void ShowNextPanel()
-    {
-        if (isSwitching) return;
-
-        if (nextImgIdx < panels.Length)
+        private void ShowNextPanel()
         {
-            isSwitching = true;
-            StartCoroutine(SwitchPanelWithFade(panels[nextImgIdx]));
+            if (isSwitching) return;
+
+            if (nextImgIdx < panels.Length)
+            {
+                isSwitching = true;
+                StartCoroutine(SwitchPanelWithFade(panels[nextImgIdx]));
+            }
+            else
+            {
+                inputActions.Intro.Disable();
+                SceneManager.LoadScene("Scenes/Tutorial");
+            }
         }
-        else
+
+        IEnumerator SwitchPanelWithFade(Sprite nextSprite)
         {
-            inputActions.Intro.Disable();
-            SceneManager.LoadScene("Scenes/Tutorial");
+            CanvasGroup cg = comicImage.GetComponent<CanvasGroup>();
+            if (cg == null)
+                cg = comicImage.gameObject.AddComponent<CanvasGroup>();
+
+            float fadeSpeed = 2f;
+
+            // Fade Out
+            for (float t = 1; t > 0; t -= Time.deltaTime * fadeSpeed)
+            {
+                cg.alpha = t;
+                yield return null;
+            }
+
+            comicImage.sprite = nextSprite;
+            nextImgIdx++;
+
+            // Fade In
+            for (float t = 0; t < 1; t += Time.deltaTime * fadeSpeed)
+            {
+                cg.alpha = t;
+                yield return null;
+            }
+
+            cg.alpha = 1f;
+            isSwitching = false;
         }
-    }
-
-    IEnumerator SwitchPanelWithFade(Sprite nextSprite)
-    {
-        CanvasGroup cg = comicImage.GetComponent<CanvasGroup>();
-        if (cg == null)
-            cg = comicImage.gameObject.AddComponent<CanvasGroup>();
-
-        float fadeSpeed = 2f;
-
-        // Fade Out
-        for (float t = 1; t > 0; t -= Time.deltaTime * fadeSpeed)
-        {
-            cg.alpha = t;
-            yield return null;
-        }
-
-        comicImage.sprite = nextSprite;
-        nextImgIdx++;
-
-        // Fade In
-        for (float t = 0; t < 1; t += Time.deltaTime * fadeSpeed)
-        {
-            cg.alpha = t;
-            yield return null;
-        }
-
-        cg.alpha = 1f;
-        isSwitching = false;
     }
 }

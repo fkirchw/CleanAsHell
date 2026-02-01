@@ -1,68 +1,72 @@
+using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro; // Adaugă această linie
-using System.Collections;
+// Adaugă această linie
 
-public class ResetButtonHandler : MonoBehaviour
+namespace UI
 {
-    public Button resetButton;
-    public LevelSelector levelSelector;
-    public TextMeshProUGUI confirmationText; // Acum va funcționa cu using TMPro
-    public float confirmationDisplayTime = 2f;
-    
-    void Start()
+    public class ResetButtonHandler : MonoBehaviour
     {
-        if (resetButton == null)
-            resetButton = GetComponent<Button>();
+        public Button resetButton;
+        public LevelSelector levelSelector;
+        public TextMeshProUGUI confirmationText; // Acum va funcționa cu using TMPro
+        public float confirmationDisplayTime = 2f;
+    
+        void Start()
+        {
+            if (resetButton == null)
+                resetButton = GetComponent<Button>();
             
-        if (levelSelector == null)
-            levelSelector = FindObjectOfType<LevelSelector>();
+            if (levelSelector == null)
+                levelSelector = FindObjectOfType<LevelSelector>();
             
-        resetButton.onClick.AddListener(OnResetClicked);
+            resetButton.onClick.AddListener(OnResetClicked);
         
-        if (confirmationText != null)
-        {
-            confirmationText.gameObject.SetActive(false);
+            if (confirmationText != null)
+            {
+                confirmationText.gameObject.SetActive(false);
+            }
         }
-    }
     
-    void OnResetClicked()
-    {
-        if (levelSelector != null)
+        void OnResetClicked()
         {
-            levelSelector.ResetAllToZero();
-            ShowConfirmationMessage("All upgrades reset to zero!");
-            StartCoroutine(ButtonFeedback());
+            if (levelSelector != null)
+            {
+                levelSelector.ResetAllToZero();
+                ShowConfirmationMessage("All upgrades reset to zero!");
+                StartCoroutine(ButtonFeedback());
+            }
         }
-    }
     
-    IEnumerator ButtonFeedback()
-    {
-        Image buttonImage = resetButton.GetComponent<Image>();
-        if (buttonImage != null)
+        IEnumerator ButtonFeedback()
         {
-            Color originalColor = buttonImage.color;
-            buttonImage.color = Color.red;
-            yield return new WaitForSeconds(0.5f);
-            buttonImage.color = originalColor;
+            Image buttonImage = resetButton.GetComponent<Image>();
+            if (buttonImage != null)
+            {
+                Color originalColor = buttonImage.color;
+                buttonImage.color = Color.red;
+                yield return new WaitForSeconds(0.5f);
+                buttonImage.color = originalColor;
+            }
         }
-    }
     
-    void ShowConfirmationMessage(string message)
-    {
-        if (confirmationText != null)
+        void ShowConfirmationMessage(string message)
         {
-            confirmationText.text = message;
-            confirmationText.gameObject.SetActive(true);
-            Invoke("HideConfirmationMessage", confirmationDisplayTime);
+            if (confirmationText != null)
+            {
+                confirmationText.text = message;
+                confirmationText.gameObject.SetActive(true);
+                Invoke("HideConfirmationMessage", confirmationDisplayTime);
+            }
         }
-    }
     
-    void HideConfirmationMessage()
-    {
-        if (confirmationText != null)
+        void HideConfirmationMessage()
         {
-            confirmationText.gameObject.SetActive(false);
+            if (confirmationText != null)
+            {
+                confirmationText.gameObject.SetActive(false);
+            }
         }
     }
 }
