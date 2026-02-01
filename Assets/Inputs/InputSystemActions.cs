@@ -183,6 +183,15 @@ namespace Inputs
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ToggleInvincibility"",
+                    ""type"": ""Button"",
+                    ""id"": ""a1b2c3d4-e5f6-7890-abcd-ef1234567890"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -513,6 +522,17 @@ namespace Inputs
                     ""processors"": """",
                     ""groups"": "";Gamepad"",
                     ""action"": ""Upgrade"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b2c3d4e5-f6g7-8901-bcde-f23456789012"",
+                    ""path"": ""<Keyboard>/t"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""ToggleInvincibility"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1160,6 +1180,7 @@ namespace Inputs
             m_Player_HeavyAttack = m_Player.FindAction("HeavyAttack", throwIfNotFound: true);
             m_Player_Pause = m_Player.FindAction("Pause", throwIfNotFound: true);
             m_Player_Upgrade = m_Player.FindAction("Upgrade", throwIfNotFound: true);
+            m_Player_ToggleInvincibility = m_Player.FindAction("ToggleInvincibility", throwIfNotFound: true);
             // UI
             m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
             m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1267,6 +1288,7 @@ namespace Inputs
         private readonly InputAction m_Player_HeavyAttack;
         private readonly InputAction m_Player_Pause;
         private readonly InputAction m_Player_Upgrade;
+        private readonly InputAction m_Player_ToggleInvincibility;
         /// <summary>
         /// Provides access to input actions defined in input action map "Player".
         /// </summary>
@@ -1318,6 +1340,10 @@ namespace Inputs
             /// Provides access to the underlying input action "Player/Upgrade".
             /// </summary>
             public InputAction @Upgrade => m_Wrapper.m_Player_Upgrade;
+            /// <summary>
+            /// Provides access to the underlying input action "Player/ToggleInvincibility".
+            /// </summary>
+            public InputAction @ToggleInvincibility => m_Wrapper.m_Player_ToggleInvincibility;
             /// <summary>
             /// Provides access to the underlying input action map instance.
             /// </summary>
@@ -1374,6 +1400,9 @@ namespace Inputs
                 @Upgrade.started += instance.OnUpgrade;
                 @Upgrade.performed += instance.OnUpgrade;
                 @Upgrade.canceled += instance.OnUpgrade;
+                @ToggleInvincibility.started += instance.OnToggleInvincibility;
+                @ToggleInvincibility.performed += instance.OnToggleInvincibility;
+                @ToggleInvincibility.canceled += instance.OnToggleInvincibility;
             }
 
             /// <summary>
@@ -1415,6 +1444,9 @@ namespace Inputs
                 @Upgrade.started -= instance.OnUpgrade;
                 @Upgrade.performed -= instance.OnUpgrade;
                 @Upgrade.canceled -= instance.OnUpgrade;
+                @ToggleInvincibility.started -= instance.OnToggleInvincibility;
+                @ToggleInvincibility.performed -= instance.OnToggleInvincibility;
+                @ToggleInvincibility.canceled -= instance.OnToggleInvincibility;
             }
 
             /// <summary>
@@ -1881,6 +1913,13 @@ namespace Inputs
             /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
             /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
             void OnUpgrade(InputAction.CallbackContext context);
+            /// <summary>
+            /// Method invoked when associated input action "ToggleInvincibility" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// </summary>
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+            void OnToggleInvincibility(InputAction.CallbackContext context);
         }
         /// <summary>
         /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "UI" which allows adding and removing callbacks.

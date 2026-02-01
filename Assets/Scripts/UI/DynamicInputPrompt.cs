@@ -19,7 +19,8 @@ namespace UI
             Jump,
             Clean,
             Jab,
-            HeavySweep
+            HeavySweep,
+            ToggleInvincibility
         }
 
         [Header("Action Selection")] [SerializeField]
@@ -118,6 +119,8 @@ namespace UI
                     return inputActions.Player.Move;
                 case ActionType.Clean:
                     return inputActions.Player.Clean;
+                case ActionType.ToggleInvincibility:
+                    return inputActions.Player.ToggleInvincibility;
                 default:
                     Debug.LogWarning($"Action type {type} not mapped in GetActionFromType!");
                     return null;
