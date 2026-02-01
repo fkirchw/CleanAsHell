@@ -16,6 +16,7 @@ namespace Characters.Player
 
         public float HealthPercent => combat.HealthPercent;
         public int Health => combat.Health;
+        // public int Health => combat.GetMaxHealth();
         public bool IsCleaning => cleaning.IsCleaning;
         public bool IsDead => combat.IsDead;
         public Vector3 Position => this.transform.position;

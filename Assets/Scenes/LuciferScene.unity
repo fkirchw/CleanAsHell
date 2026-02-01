@@ -6497,6 +6497,10 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 6081579016755929047, guid: 2c634abe36fa3a1c7b7a09f9ea4ad2e7, type: 3}
+      propertyPath: health
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 6081579016755929047, guid: 2c634abe36fa3a1c7b7a09f9ea4ad2e7, type: 3}
       propertyPath: invincibilityDuration
       value: 1
       objectReference: {fileID: 0}
